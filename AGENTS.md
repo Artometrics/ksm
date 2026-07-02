@@ -117,6 +117,13 @@ From `README.md` (run at repo root):
 - Prefer **minimal diffs** and follow existing import style (`@/…`).
 - **Coordinated edits:** changing collections or `site`/`integrations` in `astro.config.mjs` may require updates to routes, RSS, or sitemap behavior — verify builds.
 
+## Cursor Cloud specific instructions
+
+- **Runtime:** Use Node 22 (matches `NODE_VERSION` in `netlify.toml`). Dependencies are refreshed automatically via the startup update script (`npm install`).
+- **Run:** `npm run dev` serves on `http://localhost:4321/`. There is no server backend — this is a fully static Astro site, so no databases/services are required.
+- **Lint:** There is **no** lint script and `astro check` is not wired up (`@astrojs/check`/`typescript` are not dependencies). Treat `npm run build` as the effective correctness gate — it type-checks content collections and fails on schema/route errors.
+- **Expected theme behavior (not bugs):** posts/episodes with `isLocked: true` show a "subscribers only" paywall and hide body content; podcast episodes only show an audio player when the entry defines `audioSrc`; blog post pages intentionally render a large decorative background title behind the hero image.
+
 ## Lexington docs & support (from README)
 
 - **Theme specs:** https://lexingtonthemes.com/templates/hemingway  
