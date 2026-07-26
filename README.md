@@ -26,3 +26,13 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`     | Preview the production build locally             |
 | `npm run astro ...`    | Run Astro CLI commands                           |
 | `npm run astro --help` | Get help using the Astro CLI                     |
+
+## Expo contact sheet
+
+A Portra-style film contact sheet UI lives in [`expo-contact-sheet/`](./expo-contact-sheet/):
+
+```bash
+cd expo-contact-sheet
+npm install
+npm run web
+```
