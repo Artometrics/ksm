@@ -16,6 +16,7 @@ export default function RootLayout() {
         }}
       >
         <Stack.Screen name="(site)" />
+        <Stack.Screen name="bio" />
         <Stack.Screen name="+not-found" />
       </Stack>
     </GestureHandlerRootView>

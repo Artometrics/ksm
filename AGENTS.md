@@ -74,8 +74,9 @@ Schemas are enforced by `scripts/build-content.mjs` (not Astro Zod).
 - **Authors:** `/authors`, `/authors/<id>`
 - **Legal:** `/legal/<id>`
 - **Marketing:** `/about`, `/pricing`, `/contact`, `/login`, `/signup`
+- **Link in bio (unlisted):** `/bio` — Complex-style Instagram bio page (`app/bio.tsx`, config in `data/bio.ts`). Live by direct URL; **do not** add to header/footer/nav.
 
-Chrome: `app/(site)/_layout.tsx` mounts `SiteHeader`, `SiteFooter`, `SiteNavOverlay`, theme + scroll chrome.
+Chrome: `app/(site)/_layout.tsx` mounts `SiteHeader`, `SiteFooter`, `SiteNavOverlay`, theme + scroll chrome. `/bio` sits outside `(site)` so it has no site chrome.
 
 ## Customization
 

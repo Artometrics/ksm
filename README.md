@@ -25,6 +25,10 @@ Magazine + podcast site built with **Expo** + **Uniwind** (web and native from o
 | `npm start` | Expo CLI (web / iOS / Android) |
 | `npm run build` | Content build + `expo export -p web` → `./dist/` |
 
+## Link in bio
+
+Unlisted Instagram bio page at **`/bio`** (not linked from nav). Edit handles, socials, and CTAs in `data/bio.ts`.
+
 ## Content
 
 | Collection | Path | Notes |
