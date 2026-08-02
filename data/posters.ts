@@ -41,12 +41,12 @@ export const posters: Poster[] = [
     image: "/images/posters/joan-of-arc.jpg",
   },
   {
-    id: "alexander",
-    title: "ALEXANDER",
-    subject: "Alexander the Great",
-    dek: "A map redrawn before twenty-five. Ambition without a border.",
-    era: "356–323 BCE",
-    image: "/images/posters/alexander.jpg",
+    id: "boudica",
+    title: "BOUDICA",
+    subject: "Boudica",
+    dek: "Rebellion as spectacle. A queen who made empire flinch.",
+    era: "d. c. 61 CE",
+    image: "/images/posters/boudica.jpg",
   },
   {
     id: "nefertiti",
