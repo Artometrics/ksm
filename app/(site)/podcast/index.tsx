@@ -14,13 +14,16 @@ export default function PodcastIndex() {
         description="Interviews with design engineers and creative technologists."
         path="/podcast"
       />
-      <View className="border-b-2 border-border bg-accent py-10">
-        <Wrapper>
-          <Text className="font-[GreatVibes] text-4xl text-black">Listen</Text>
-          <Text className="font-[Anton] text-5xl uppercase tracking-[2px] text-black md:text-7xl">
+      <View className="border-b border-border bg-black py-12">
+        <Wrapper className="gap-3">
+          <Text className="font-[DMMono] text-[12px] uppercase tracking-[0.1em] text-accent">
+            Listen
+          </Text>
+          <Text className="font-[Chomsky] text-5xl text-white md:text-7xl">
             Podcast
           </Text>
-          <Text className="mt-3 max-w-[40ch] font-sans text-[15px] leading-6 text-black/75">
+          <View className="h-0.5 w-[120px] bg-accent-print" />
+          <Text className="mt-2 max-w-[40ch] font-sans text-[16px] leading-7 text-subtle">
             Long-form conversations with the people shaping digital products.
           </Text>
         </Wrapper>

@@ -3,7 +3,7 @@
   "main": "expo-router/entry",
   "version": "0.0.1",
   "private": true,
-  "description": "KSM — Expo + Uniwind magazine (crimson zine)",
+  "description": "KSM — Expo + Uniwind magazine (Swiss / editorial red)",
   "scripts": {
     "content": "node scripts/build-content.mjs",
     "content:ensure": "node scripts/ensure-generated-content.mjs",

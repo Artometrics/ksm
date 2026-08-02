@@ -7,7 +7,9 @@ export default function LoginScreen() {
   return (
     <Wrapper variant="narrow" className="gap-4 py-10">
       <PageSeo title="Log in" path="/login" />
-      <Text className="font-serif text-4xl font-light text-fg">Log in</Text>
+      <Text className="font-[DMMono] text-4xl font-medium uppercase tracking-[-0.01em] text-fg">
+        Log in
+      </Text>
       <Text className="font-sans text-base text-muted">
         Access member essays and full podcast transcripts.
       </Text>
@@ -25,9 +27,9 @@ export default function LoginScreen() {
           secureTextEntry
           className="border border-border bg-bg-elevated px-4 py-3 font-sans text-base text-fg"
         />
-        <Pressable className="self-start bg-fg px-5 py-3">
-          <Text className="text-xs font-medium uppercase tracking-wide text-inverse">
-            Continue
+        <Pressable className="self-start bg-accent px-5 py-3">
+          <Text className="font-[DMMono] text-xs font-medium uppercase tracking-[0.06em] text-white">
+            Continue →
           </Text>
         </Pressable>
       </View>

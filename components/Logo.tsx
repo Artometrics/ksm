@@ -1,4 +1,4 @@
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 import { Link } from "expo-router";
 
 export function Logo({
@@ -6,23 +6,60 @@ export function Logo({
   variant = "display",
 }: {
   className?: string;
-  variant?: "display" | "gothic" | "mark";
+  variant?: "display" | "mark" | "block";
 }) {
-  const base =
-    variant === "gothic"
-      ? "font-[UnifrakturCook] text-3xl text-accent"
-      : variant === "mark"
-        ? "font-[Anton] text-sm uppercase tracking-[3px] text-fg"
-        : "font-[Anton] text-2xl uppercase tracking-[2px] text-fg";
+  if (variant === "block") {
+    return (
+      <Link href="/" asChild>
+        <View
+          accessibilityRole="header"
+          className={["bg-accent-print px-2.5 py-1.5", className]
+            .filter(Boolean)
+            .join(" ")}
+        >
+          <Text className="font-[DMMono] text-[13px] font-medium tracking-[0.12em] text-white">
+            K S M
+          </Text>
+        </View>
+      </Link>
+    );
+  }
+
+  if (variant === "mark") {
+    return (
+      <Link href="/" asChild>
+        <Text
+          accessibilityRole="header"
+          className={[
+            "font-[DMMono] text-sm font-medium uppercase tracking-[0.12em] text-fg",
+            className,
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
+          KSM
+        </Text>
+      </Link>
+    );
+  }
 
   return (
     <Link href="/" asChild>
-      <Text
+      <View
         accessibilityRole="header"
-        className={[base, className].filter(Boolean).join(" ")}
+        className={["flex-row items-center gap-3", className]
+          .filter(Boolean)
+          .join(" ")}
       >
-        {variant === "gothic" ? "ksm" : "KSM"}
-      </Text>
+        <View className="bg-accent-print px-2.5 py-1.5">
+          <Text className="font-[DMMono] text-[13px] font-medium tracking-[0.12em] text-white">
+            K S M
+          </Text>
+        </View>
+        <Text className="font-[Chomsky] text-[26px] leading-none text-fg">
+          KSM
+        </Text>
+      </View>
     </Link>
   );
 }

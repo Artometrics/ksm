@@ -1,6 +1,6 @@
 # KSM
 
-Magazine + podcast site built with **Expo** + **Uniwind** — crimson / black / white zine aesthetic, KSM Soul imagery from Higgsfield.
+Magazine + podcast + posters site built with **Expo** + **Uniwind** — black / white / editorial red Swiss-magazine system, legend posters from Higgsfield.
 
 ## Tech stack
 
@@ -8,7 +8,8 @@ Magazine + podcast site built with **Expo** + **Uniwind** — crimson / black / 
 - React Native / React Native Web (`expo export -p web`)
 - [Uniwind](https://uniwind.dev/) + Tailwind CSS v4
 - Markdown → JSON via `npm run content`
-- Brand assets in `public/images/brand/` (KSM Soul generations)
+- Brand fonts: DM Mono, DM Sans, Chomsky
+- Posters in `public/images/posters/` (`data/posters.ts`)
 
 ## Commands
 
@@ -31,5 +32,6 @@ Unlisted page at **`/bio`**. Edit `data/bio.ts`.
 | Podcast | `src/content/podcast/` |
 | Authors | `src/content/authors/` |
 | Legal | `src/content/legal/` |
+| Posters | `data/posters.ts` |
 
 See [AGENTS.md](./AGENTS.md) for routing and guardrails.

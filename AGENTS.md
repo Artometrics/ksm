@@ -4,15 +4,16 @@ This file describes **this repo only** (`ksm-web`).
 
 ## What this project is
 
-KSM is a multi-page **magazine + podcast** product with a high-contrast **crimson / black / white zine** visual system: landing home, blog, podcast, authors, legal, membership flows, and an unlisted `/bio` Instagram page. Imagery for heroes and brand blocks is generated with the **KSM Soul** on Higgsfield.
+KSM is a multi-page **magazine + podcast + graphic** product with a high-contrast **black / white / editorial red** Swiss-magazine visual system: newsstand home, blog, posters, podcast, authors, legal, membership flows, and an unlisted `/bio` Instagram page. Legend posters are hyperrealistic Higgsfield stills finished with Kruger-blunt type blocks.
 
 ## Tech stack
 
 - **Expo** `~57` + **Expo Router** (`app/`)
 - **React Native** / **React Native Web** (static export)
 - **Uniwind** + Tailwind v4 (`global.css`, `metro.config.js`)
-- **Fonts:** Anton, BebasNeue, UnifrakturCook, GreatVibes, Inter (`assets/fonts/` + `public/fonts/`)
+- **Fonts:** DM Mono (display), DM Sans (body), Chomsky (wordmark only), Anton (poster alternate)
 - **Content:** `src/content/*` → `scripts/build-content.mjs` → `src/generated/*.json`
+- **Posters:** `data/posters.ts` + `public/images/posters/`
 - **Brand images:** `public/images/brand/`
 
 ## Folder map
@@ -24,16 +25,18 @@ KSM is a multi-page **magazine + podcast** product with a high-contrast **crimso
 | Lib | `lib/` |
 | Tokens | `constants/Colors.ts`, `global.css` |
 | Bio config | `data/bio.ts` |
+| Posters | `data/posters.ts` |
 | Content source | `src/content/` |
 | Content built | `src/generated/` |
-| Brand assets | `public/images/brand/`, `assets/fonts/` |
+| Brand assets | `public/images/brand/`, `public/images/posters/`, `assets/fonts/` |
 
 Path alias: `@/*` → project root.
 
 ## Routing
 
-- `/` home (full-bleed KSM hero)
+- `/` home (newsstand)
 - `/blog`, `/blog/posts/<slug>`
+- `/posters`, `/posters/<id>`
 - `/podcast`, `/podcast/interviews/<id>`
 - `/authors`, `/authors/<id>`
 - `/legal/<id>`
@@ -42,10 +45,11 @@ Path alias: `@/*` → project root.
 
 ## Visual system
 
-- Palette: `#E60000` crimson, `#000000`, `#FFFFFF`
-- Display: Anton (condensed caps); accents: UnifrakturCook (gothic), GreatVibes (script); body: Inter
-- Hard borders (`border-2`), zero radius, grain overlay on web (`ksm-grain`)
-- Prefer full-bleed heroes and red utility bars over card chrome
+- Palette: `#000000`, `#FFFFFF`, gray `#F5F5F5` / `#E5E5E5` / `#525252`
+- Print accent `#C0392B`, UI accent `#D9251B`
+- Display: DM Mono; body: DM Sans; wordmark: Chomsky only
+- Hard 2px rules, zero radius, sparse red, grain overlay on web (`ksm-grain`)
+- Prefer full-bleed heroes and newsstand covers over card chrome
 
 ## Commands
 
@@ -59,4 +63,4 @@ Path alias: `@/*` → project root.
 
 - Prefer minimal diffs and `@/` imports.
 - Do not add `/bio` to header/footer/nav.
-- Regenerating brand images: use Higgsfield `soul_2` with Soul id for **KSM**.
+- Regenerating legend posters: Higgsfield `soul_2`, hyperrealistic editorial portraits, no baked-in text.

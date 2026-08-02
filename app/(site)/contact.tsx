@@ -10,10 +10,10 @@ export default function ContactScreen() {
         description="Get in touch with the Hemingway editorial team."
         path="/contact"
       />
-      <Text className="text-xs font-medium uppercase tracking-[1.8px] text-accent">
+      <Text className="font-[DMMono] text-[12px] uppercase tracking-[0.1em] text-accent">
         Contact
       </Text>
-      <Text className="font-serif text-4xl font-light text-fg">
+      <Text className="font-[DMMono] text-4xl font-medium uppercase tracking-[-0.01em] text-fg">
         Say hello
       </Text>
       <Text className="font-sans text-base leading-7 text-muted">

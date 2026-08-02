@@ -4,7 +4,8 @@ import { Wrapper } from "@/components/Wrapper";
 import { useChrome } from "@/lib/chrome";
 
 const LINKS = [
-  { href: "/blog", label: "Magazine" },
+  { href: "/blog", label: "Blog" },
+  { href: "/posters", label: "Posters" },
   { href: "/podcast", label: "Podcast" },
   { href: "/authors", label: "Authors" },
   { href: "/about", label: "About" },
@@ -28,16 +29,14 @@ export function SiteNavOverlay() {
             asChild
             onPress={() => setMenuOpen(false)}
           >
-            <Pressable className="border-b border-white/20 py-5">
-              <Text className="font-[Anton] text-4xl uppercase tracking-[2px] text-white">
+            <Pressable className="border-b border-white/15 py-5">
+              <Text className="font-[DMMono] text-3xl font-medium uppercase tracking-[0.04em] text-white">
                 {item.label}
               </Text>
             </Pressable>
           </Link>
         ))}
-        <Text className="mt-8 font-[GreatVibes] text-3xl text-accent">
-          ksm
-        </Text>
+        <Text className="mt-8 font-[Chomsky] text-4xl text-accent">KSM</Text>
       </Wrapper>
     </View>
   );

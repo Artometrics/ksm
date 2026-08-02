@@ -17,7 +17,7 @@ export function PodcastCard({ episode }: { episode: PodcastEpisode }) {
 
   return (
     <Link href={href} asChild>
-      <Pressable className="flex-row items-stretch gap-0 border-b-2 border-border">
+      <Pressable className="flex-row items-stretch gap-0 border-b border-border">
         {cover ? (
           <Image
             source={{ uri: cover }}
@@ -27,16 +27,16 @@ export function PodcastCard({ episode }: { episode: PodcastEpisode }) {
             accessibilityLabel={episode.title}
           />
         ) : (
-          <View className="h-[110px] w-[110px] bg-accent" />
+          <View className="h-[110px] w-[110px] bg-accent-print" />
         )}
         <View className="flex-1 justify-center gap-1 px-4 py-4">
           {episode.episodeNumber != null ? (
-            <Text className="font-[Anton] text-[11px] uppercase tracking-[2px] text-accent">
+            <Text className="font-[DMMono] text-[11px] uppercase tracking-[0.08em] text-accent">
               Ep {episode.episodeNumber}
               {episode.duration ? ` · ${episode.duration}` : ""}
             </Text>
           ) : null}
-          <Text className="font-[Anton] text-xl uppercase leading-6 tracking-[1px] text-fg">
+          <Text className="font-[DMMono] text-xl font-medium uppercase leading-6 tracking-[-0.01em] text-fg">
             {episode.title}
           </Text>
           <Text
@@ -45,7 +45,7 @@ export function PodcastCard({ episode }: { episode: PodcastEpisode }) {
           >
             {episode.description}
           </Text>
-          <Text className="text-[11px] uppercase tracking-[1.2px] text-subtle">
+          <Text className="font-[DMMono] text-[11px] uppercase tracking-[0.06em] text-subtle">
             {formatDate(episode.pubDate)}
           </Text>
         </View>
