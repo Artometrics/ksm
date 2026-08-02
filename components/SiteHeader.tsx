@@ -1,6 +1,7 @@
 import { Pressable, Text, View } from "react-native";
 import { Link } from "expo-router";
 import { Menu, X } from "lucide-react-native";
+import { Logo } from "@/components/Logo";
 import { Wrapper } from "@/components/Wrapper";
 import { useChrome } from "@/lib/chrome";
 
@@ -20,13 +21,7 @@ export function SiteHeader() {
     <View className="border-b-2 border-white bg-black">
       <Wrapper className="py-3">
         <View className="flex-row items-center justify-between gap-4">
-          <Link href="/" asChild>
-            <Pressable accessibilityRole="header" accessibilityLabel="KSM home">
-              <Text className="font-[Anton] text-2xl uppercase tracking-[2px] text-white">
-                KSM
-              </Text>
-            </Pressable>
-          </Link>
+          <Logo inverted />
           <View className="hidden flex-row items-center gap-6 lg:flex">
             {NAV.map((item) => (
               <Link key={item.href} href={item.href} asChild>

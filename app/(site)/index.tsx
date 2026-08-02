@@ -4,6 +4,7 @@ import { Link } from "expo-router";
 import { Wrapper } from "@/components/Wrapper";
 import { WorkCard } from "@/components/WorkCard";
 import { PageSeo } from "@/components/PageSeo";
+import { SunCrossMark } from "@/components/SunCrossMark";
 import { getHomeWork } from "@/data/work";
 
 const HERO = "/images/brand/hero-cover.jpg";
@@ -31,9 +32,12 @@ export default function HomeScreen() {
         />
         <View className="absolute inset-0 bg-black/45" />
         <Wrapper className="relative z-10 min-h-[88vh] justify-end gap-4 pb-12 pt-24">
-          <Text className="font-[UnifrakturCook] text-5xl text-accent md:text-6xl">
-            ksm
-          </Text>
+          <View className="flex-row items-center gap-3">
+            <SunCrossMark size={52} />
+            <Text className="font-[UnifrakturCook] text-5xl text-accent md:text-6xl">
+              ksm
+            </Text>
+          </View>
           <Text className="max-w-[16ch] font-[Anton] text-5xl uppercase leading-[0.92] tracking-[1px] text-white md:text-7xl">
             Killing boys of comfort
           </Text>

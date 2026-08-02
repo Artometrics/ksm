@@ -11,15 +11,16 @@ import { Image } from "expo-image";
 import { Link, router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { Instagram, Linkedin, Music2, Youtube } from "lucide-react-native";
+import { Camera, Link2, Music2, Play } from "lucide-react-native";
 import { PageSeo } from "@/components/PageSeo";
+import { SunCrossMark } from "@/components/SunCrossMark";
 import { bio, type BioSocial } from "@/data/bio";
 import { assetUrl } from "@/lib/assets";
 import { getRecentEpisodes, getRecentPosts } from "@/lib/content";
 
 type FeedTab = "magazine" | "podcast";
 
-const HERO = "/images/brand/hero-square.png";
+const OG_IMAGE = "/images/brand/hero-square.png";
 
 function openHref(href: string, external?: boolean) {
   if (external || /^https?:\/\//i.test(href)) {
@@ -33,15 +34,15 @@ function SocialIcon({ id, color }: { id: BioSocial["id"]; color: string }) {
   const size = 22;
   switch (id) {
     case "instagram":
-      return <Instagram size={size} color={color} strokeWidth={1.5} />;
+      return <Camera size={size} color={color} strokeWidth={1.5} />;
     case "x":
       return <Text style={{ color, fontSize: 16, fontWeight: "700" }}>𝕏</Text>;
     case "tiktok":
       return <Music2 size={size} color={color} strokeWidth={1.5} />;
     case "youtube":
-      return <Youtube size={size} color={color} strokeWidth={1.5} />;
+      return <Play size={size} color={color} strokeWidth={1.5} />;
     case "linkedin":
-      return <Linkedin size={size} color={color} strokeWidth={1.5} />;
+      return <Link2 size={size} color={color} strokeWidth={1.5} />;
     default:
       return null;
   }
@@ -109,7 +110,7 @@ export default function BioScreen() {
           title="KSM · Links"
           description="Magazine, podcast, membership, and socials — KSM link in bio."
           path="/bio"
-          image={HERO}
+          image={OG_IMAGE}
         />
 
         <ScrollView
@@ -119,11 +120,9 @@ export default function BioScreen() {
         >
           <View className="w-full px-5 pb-12 pt-8" style={{ maxWidth: 480 }}>
             <View className="items-center gap-3">
-              <Image
-                source={{ uri: HERO }}
-                className="mb-2 h-28 w-28 border-2 border-white"
-                contentFit="cover"
-              />
+              <View className="mb-2 h-28 w-28 items-center justify-center border-2 border-white bg-black">
+                <SunCrossMark size={72} />
+              </View>
               <Text className="font-[UnifrakturCook] text-5xl text-accent">
                 ksm
               </Text>
@@ -167,7 +166,7 @@ export default function BioScreen() {
                   key={cta.label}
                   label={cta.label}
                   href={cta.href}
-                  external={cta.external}
+                  external={"external" in cta ? cta.external : undefined}
                 />
               ))}
             </View>

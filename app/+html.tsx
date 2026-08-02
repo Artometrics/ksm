@@ -25,6 +25,9 @@ export default function Root({ children }: PropsWithChildren) {
         />
         <meta name="theme-color" content="#000000" />
         <meta name="color-scheme" content="dark" />
+        <link rel="icon" href="/images/brand/sun-cross.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/brand/sun-cross.png" />
         <ScrollViewStyleReset />
         <style
           dangerouslySetInnerHTML={{
