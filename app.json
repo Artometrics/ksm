@@ -1,27 +1,27 @@
 {
   "expo": {
-    "name": "Hemingway",
+    "name": "KSM",
     "slug": "ksm-web",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "hemingway",
+    "scheme": "ksm",
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ksm.hemingway",
+      "bundleIdentifier": "com.ksm.web",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#FAFAFA",
+        "backgroundColor": "#000000",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "package": "com.ksm.hemingway"
+      "package": "com.ksm.web"
     },
     "web": {
       "bundler": "metro",
@@ -35,7 +35,7 @@
         {
           "image": "./assets/images/splash-icon.png",
           "resizeMode": "contain",
-          "backgroundColor": "#FAFAFA"
+          "backgroundColor": "#000000"
         }
       ],
       "expo-asset",

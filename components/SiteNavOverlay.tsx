@@ -12,8 +12,6 @@ const LINKS = [
   { href: "/contact", label: "Contact" },
   { href: "/login", label: "Log in" },
   { href: "/signup", label: "Sign up" },
-  { href: "/legal/privacy", label: "Privacy" },
-  { href: "/legal/terms", label: "Terms" },
 ] as const;
 
 export function SiteNavOverlay() {
@@ -21,8 +19,8 @@ export function SiteNavOverlay() {
   if (!menuOpen) return null;
 
   return (
-    <View className="absolute inset-0 z-50 bg-overlay lg:hidden">
-      <Wrapper className="gap-1 pt-20">
+    <View className="absolute inset-0 z-50 bg-black lg:hidden">
+      <Wrapper className="gap-0 pt-24">
         {LINKS.map((item) => (
           <Link
             key={item.href}
@@ -30,13 +28,16 @@ export function SiteNavOverlay() {
             asChild
             onPress={() => setMenuOpen(false)}
           >
-            <Pressable className="border-b border-border py-4">
-              <Text className="font-serif text-2xl font-light text-fg">
+            <Pressable className="border-b border-white/20 py-5">
+              <Text className="font-[Anton] text-4xl uppercase tracking-[2px] text-white">
                 {item.label}
               </Text>
             </Pressable>
           </Link>
         ))}
+        <Text className="mt-8 font-[GreatVibes] text-3xl text-accent">
+          ksm
+        </Text>
       </Wrapper>
     </View>
   );

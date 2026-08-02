@@ -1,16 +1,27 @@
 import { Text } from "react-native";
 import { Link } from "expo-router";
 
-export function Logo({ className }: { className?: string }) {
+export function Logo({
+  className,
+  variant = "display",
+}: {
+  className?: string;
+  variant?: "display" | "gothic" | "mark";
+}) {
+  const base =
+    variant === "gothic"
+      ? "font-[UnifrakturCook] text-3xl text-accent"
+      : variant === "mark"
+        ? "font-[Anton] text-sm uppercase tracking-[3px] text-fg"
+        : "font-[Anton] text-2xl uppercase tracking-[2px] text-fg";
+
   return (
     <Link href="/" asChild>
       <Text
         accessibilityRole="header"
-        className={["font-serif text-xl font-semibold tracking-tight text-fg", className]
-          .filter(Boolean)
-          .join(" ")}
+        className={[base, className].filter(Boolean).join(" ")}
       >
-        Hemingway
+        {variant === "gothic" ? "ksm" : "KSM"}
       </Text>
     </Link>
   );

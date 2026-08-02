@@ -2,37 +2,39 @@
 @import "uniwind";
 
 /*
-  Hemingway design tokens — warm gold accent + Inter / STIX Two Text magazine.
+  KSM zine system — crimson / black / white, condensed display + gothic accents.
 */
 
 @theme {
-  --color-accent-50: #fffbeb;
-  --color-accent-100: #fef3c7;
-  --color-accent-200: #fde68a;
-  --color-accent-300: #fcd34d;
-  --color-accent-400: #fbbf24;
-  --color-accent-500: #d4a017;
-  --color-accent-600: #b8860b;
-  --color-accent-700: #92700a;
-  --color-accent-800: #6b5208;
-  --color-accent-900: #453505;
-  --color-accent-950: #2a2003;
+  --color-accent-50: #ffe5e5;
+  --color-accent-100: #ffb8b8;
+  --color-accent-200: #ff8a8a;
+  --color-accent-300: #ff5c5c;
+  --color-accent-400: #ff2e2e;
+  --color-accent-500: #e60000;
+  --color-accent-600: #b80000;
+  --color-accent-700: #8a0000;
+  --color-accent-800: #5c0000;
+  --color-accent-900: #2e0000;
+  --color-accent-950: #1a0000;
 
-  --color-base-50: #fafafa;
-  --color-base-100: #f5f5f5;
+  --color-base-50: #ffffff;
+  --color-base-100: #f4f4f4;
   --color-base-200: #e5e5e5;
   --color-base-300: #d4d4d4;
   --color-base-400: #a3a3a3;
-  --color-base-500: #737373;
+  --color-base-500: #8a8a8a;
   --color-base-600: #525252;
-  --color-base-700: #404040;
-  --color-base-800: #262626;
-  --color-base-900: #171717;
-  --color-base-950: #0a0a0a;
+  --color-base-700: #333333;
+  --color-base-800: #1a1a1a;
+  --color-base-900: #0a0a0a;
+  --color-base-950: #000000;
 
-  --font-display: "STIX Two Text", Georgia, "Times New Roman", serif;
-  --font-sans: Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
-  --font-serif: "STIX Two Text", Georgia, "Times New Roman", serif;
+  --font-display: "Anton", Impact, Haettenschweiler, sans-serif;
+  --font-gothic: "UnifrakturCook", "Times New Roman", serif;
+  --font-script: "GreatVibes", "Brush Script MT", cursive;
+  --font-sans: "Inter", Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
+  --font-serif: "Inter", Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --radius-btn: 0px;
@@ -41,33 +43,33 @@
 @layer theme {
   :root {
     @variant light {
-      --color-bg: #fafafa;
-      --color-bg-elevated: #ffffff;
-      --color-fg: #171717;
-      --color-muted: #525252;
-      --color-subtle: #737373;
-      --color-border: #e5e5e5;
-      --color-accent: #d4a017;
-      --color-accent-soft: #fffbeb;
+      --color-bg: #ffffff;
+      --color-bg-elevated: #f4f4f4;
+      --color-fg: #000000;
+      --color-muted: #333333;
+      --color-subtle: #8a8a8a;
+      --color-border: #000000;
+      --color-accent: #e60000;
+      --color-accent-soft: #ffe5e5;
       --color-inverse: #ffffff;
-      --color-header: #fafafa;
+      --color-header: #ffffff;
       --color-overlay: #ffffff;
-      --color-rule: #e5e5e5;
+      --color-rule: #000000;
     }
 
     @variant dark {
-      --color-bg: #0a0a0a;
-      --color-bg-elevated: #171717;
-      --color-fg: #fafafa;
-      --color-muted: #a3a3a3;
-      --color-subtle: #737373;
-      --color-border: #404040;
-      --color-accent: #fbbf24;
-      --color-accent-soft: #2a2003;
-      --color-inverse: #0a0a0a;
-      --color-header: #0a0a0a;
-      --color-overlay: #171717;
-      --color-rule: #404040;
+      --color-bg: #000000;
+      --color-bg-elevated: #1a1a1a;
+      --color-fg: #ffffff;
+      --color-muted: #c8c8c8;
+      --color-subtle: #8a8a8a;
+      --color-border: #ffffff;
+      --color-accent: #e60000;
+      --color-accent-soft: #3a0000;
+      --color-inverse: #000000;
+      --color-header: #000000;
+      --color-overlay: #1a1a1a;
+      --color-rule: #ffffff;
     }
   }
 }

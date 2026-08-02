@@ -10,20 +10,17 @@ type Props = {
   type?: "website" | "article";
 };
 
-/** Best-effort document head updates for Expo web static export. */
 export function PageSeo({
   title,
   description,
   path = "/",
-  image = "/images/thumbnails/1.jpg",
+  image = "/images/brand/hero-cover.png",
   type = "website",
 }: Props) {
   useEffect(() => {
     if (Platform.OS !== "web" || typeof document === "undefined") return;
     const SITE = siteUrl();
-    const fullTitle = title.includes("Hemingway")
-      ? title
-      : `${title} · Hemingway`;
+    const fullTitle = title.includes("KSM") ? title : `${title} · KSM`;
     document.title = fullTitle;
 
     const ensure = (attr: "name" | "property", key: string, content: string) => {
@@ -45,7 +42,7 @@ export function PageSeo({
     ensure("property", "og:url", url);
     ensure("property", "og:type", type);
     ensure("property", "og:image", img);
-    ensure("property", "og:site_name", "Hemingway");
+    ensure("property", "og:site_name", "KSM");
     ensure("name", "twitter:card", "summary_large_image");
     ensure("name", "twitter:title", fullTitle);
     ensure("name", "twitter:description", description ?? "");

@@ -8,28 +8,29 @@ export default function BlogIndex() {
   const posts = getBlogPosts();
 
   return (
-    <Wrapper className="gap-3 py-10">
+    <>
       <PageSeo
         title="Magazine"
         description="Essays and interviews on design, systems, and craft."
         path="/blog"
       />
-      <Text className="text-xs font-medium uppercase tracking-[1.8px] text-accent">
-        Archive
-      </Text>
-      <Text className="font-serif text-[40px] font-light tracking-tight text-fg">
-        Magazine
-      </Text>
-      <Text className="mb-2 max-w-[560px] font-sans text-[17px] leading-[26px] text-muted">
-        Essays and interviews on design systems, UI patterns, and the craft of
-        building products.
-      </Text>
-      <View className="mb-1 mt-2 h-px bg-border" />
-      <View>
+      <View className="border-b-2 border-border bg-black py-10">
+        <Wrapper>
+          <Text className="font-[GreatVibes] text-3xl text-accent">Archive</Text>
+          <Text className="font-[Anton] text-5xl uppercase tracking-[2px] text-white md:text-7xl">
+            Magazine
+          </Text>
+          <Text className="mt-3 max-w-[40ch] font-sans text-[15px] leading-6 text-white/70">
+            Essays and interviews on design systems, UI patterns, and the craft
+            of building products.
+          </Text>
+        </Wrapper>
+      </View>
+      <Wrapper className="gap-0 py-2">
         {posts.map((post) => (
           <BlogCard key={post.slug} post={post} variant="row" />
         ))}
-      </View>
-    </Wrapper>
+      </Wrapper>
+    </>
   );
 }

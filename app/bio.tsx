@@ -11,18 +11,15 @@ import { Image } from "expo-image";
 import { Link, router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import {
-  Instagram,
-  Linkedin,
-  Music2,
-  Youtube,
-} from "lucide-react-native";
+import { Instagram, Linkedin, Music2, Youtube } from "lucide-react-native";
 import { PageSeo } from "@/components/PageSeo";
 import { bio, type BioSocial } from "@/data/bio";
 import { assetUrl } from "@/lib/assets";
 import { getRecentEpisodes, getRecentPosts } from "@/lib/content";
 
 type FeedTab = "magazine" | "podcast";
+
+const HERO = "/images/brand/hero-square.png";
 
 function openHref(href: string, external?: boolean) {
   if (external || /^https?:\/\//i.test(href)) {
@@ -38,9 +35,7 @@ function SocialIcon({ id, color }: { id: BioSocial["id"]; color: string }) {
     case "instagram":
       return <Instagram size={size} color={color} strokeWidth={1.5} />;
     case "x":
-      return (
-        <Text style={{ color, fontSize: 16, fontWeight: "700" }}>𝕏</Text>
-      );
+      return <Text style={{ color, fontSize: 16, fontWeight: "700" }}>𝕏</Text>;
     case "tiktok":
       return <Music2 size={size} color={color} strokeWidth={1.5} />;
     case "youtube":
@@ -66,9 +61,9 @@ function BioLinkButton({
       onPress={() => openHref(href, external)}
       accessibilityRole="link"
       accessibilityLabel={label}
-      className="w-full border border-white px-4 py-4 active:bg-white/10"
+      className="w-full border-2 border-white bg-black px-4 py-4 active:bg-accent"
     >
-      <Text className="text-center text-[13px] font-medium uppercase tracking-[1.4px] text-white">
+      <Text className="text-center font-[Anton] text-[14px] uppercase tracking-[2px] text-white">
         {label}
       </Text>
     </Pressable>
@@ -111,9 +106,10 @@ export default function BioScreen() {
       <SafeAreaView className="flex-1 bg-black" edges={["top", "bottom"]}>
         <StatusBar style="light" />
         <PageSeo
-          title="Hemingway · Links"
-          description="Magazine, podcast, membership, and socials — Hemingway link in bio."
+          title="KSM · Links"
+          description="Magazine, podcast, membership, and socials — KSM link in bio."
           path="/bio"
+          image={HERO}
         />
 
         <ScrollView
@@ -121,27 +117,29 @@ export default function BioScreen() {
           contentContainerClassName="items-center grow"
           keyboardShouldPersistTaps="handled"
         >
-          <View className="w-full px-5 pb-10 pt-8" style={{ maxWidth: 480 }}>
-            {/* Brand */}
+          <View className="w-full px-5 pb-12 pt-8" style={{ maxWidth: 480 }}>
             <View className="items-center gap-3">
-              <Text className="text-[11px] font-semibold uppercase tracking-[4px] text-white">
+              <Image
+                source={{ uri: HERO }}
+                className="mb-2 h-28 w-28 border-2 border-white"
+                contentFit="cover"
+              />
+              <Text className="font-[UnifrakturCook] text-5xl text-accent">
+                ksm
+              </Text>
+              <Text className="font-[Anton] text-[40px] uppercase tracking-[3px] text-white">
                 {bio.brand}
               </Text>
-              <Text className="font-sans text-[34px] font-bold uppercase tracking-[2px] text-white">
-                {bio.brand}
-              </Text>
-              <Text className="text-[12px] uppercase tracking-[1.6px] text-white/55">
+              <Text className="text-[11px] uppercase tracking-[2px] text-white/55">
                 {bio.tagline}
               </Text>
             </View>
 
-            {/* Handles */}
             <View className="mt-6 flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2">
               {bio.handles.map((handle) => (
                 <Pressable
                   key={handle.label}
                   onPress={() => openHref(handle.href, true)}
-                  accessibilityRole="link"
                 >
                   <Text className="text-[12px] text-white/80">
                     {handle.label}
@@ -150,7 +148,6 @@ export default function BioScreen() {
               ))}
             </View>
 
-            {/* Social icons */}
             <View className="mt-6 flex-row items-center justify-center gap-5">
               {bio.socials.map((social) => (
                 <Pressable
@@ -164,7 +161,6 @@ export default function BioScreen() {
               ))}
             </View>
 
-            {/* CTAs */}
             <View className="mt-8 gap-3">
               {bio.ctas.map((cta) => (
                 <BioLinkButton
@@ -176,7 +172,6 @@ export default function BioScreen() {
               ))}
             </View>
 
-            {/* Feed tabs */}
             <View className="mt-10 flex-row border-b border-white/25">
               {(
                 [
@@ -191,13 +186,13 @@ export default function BioScreen() {
                     onPress={() => setTab(id)}
                     className="flex-1 items-center pb-3"
                     style={{
-                      borderBottomWidth: active ? 2 : 0,
-                      borderBottomColor: "#FFFFFF",
+                      borderBottomWidth: active ? 3 : 0,
+                      borderBottomColor: "#E60000",
                     }}
                   >
                     <Text
-                      className={`text-[12px] font-semibold uppercase tracking-[1.6px] ${
-                        active ? "text-white" : "text-white/45"
+                      className={`font-[Anton] text-[13px] uppercase tracking-[2px] ${
+                        active ? "text-white" : "text-white/40"
                       }`}
                     >
                       {label}
@@ -207,7 +202,6 @@ export default function BioScreen() {
               })}
             </View>
 
-            {/* Media grid */}
             <View className="mt-0.5 flex-row flex-wrap" style={{ gap }}>
               {feed.map((item) => (
                 <Link key={item.key} href={item.href as `/`} asChild>
@@ -223,26 +217,18 @@ export default function BioScreen() {
                         transition={150}
                       />
                     ) : (
-                      <View className="h-full w-full items-center justify-center bg-white/10 px-2">
+                      <View className="h-full w-full items-center justify-center bg-accent px-2">
                         <Text
-                          className="text-center text-[10px] uppercase tracking-wide text-white/70"
+                          className="text-center font-[Anton] text-[10px] uppercase tracking-wide text-white"
                           numberOfLines={3}
                         >
                           {item.title}
                         </Text>
                       </View>
                     )}
-                    <View className="absolute right-1.5 top-1.5">
-                      <Text className="text-[8px] font-bold uppercase tracking-widest text-white">
-                        {bio.brand.slice(0, 1)}
-                      </Text>
-                    </View>
-                    <View className="absolute bottom-0 left-0 right-0 bg-black/55 px-1.5 py-1">
-                      <Text
-                        className="text-[9px] uppercase tracking-wide text-white"
-                        numberOfLines={2}
-                      >
-                        {item.title}
+                    <View className="absolute right-1 top-1 bg-accent px-1">
+                      <Text className="font-[Anton] text-[9px] text-white">
+                        K
                       </Text>
                     </View>
                   </Pressable>

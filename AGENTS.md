@@ -1,102 +1,62 @@
-# AGENTS.md — Hemingway (Expo + Uniwind)
+# AGENTS.md — KSM (Expo + Uniwind)
 
-This file describes **this repo only** (`ksm-web` / Hemingway).
+This file describes **this repo only** (`ksm-web`).
 
 ## What this project is
 
-Hemingway is a multi-page **magazine + podcast** product: landing home with blog and podcast previews, full **blog** and **podcast** sections, **authors** profiles, **legal** pages, and membership-style **login/signup/contact/pricing** flows. Primary use case: content-led media brands that publish articles and interview-style podcast episodes — on **web and native** from one Expo codebase.
-
-Structure and tooling mirror [Artometrics/artometrics-web](https://github.com/Artometrics/artometrics-web) (Expo Router + Uniwind + markdown → JSON), without Artometrics-specific Studio/Supabase/CMS features.
+KSM is a multi-page **magazine + podcast** product with a high-contrast **crimson / black / white zine** visual system: landing home, blog, podcast, authors, legal, membership flows, and an unlisted `/bio` Instagram page. Imagery for heroes and brand blocks is generated with the **KSM Soul** on Higgsfield.
 
 ## Tech stack
 
-From `package.json` and `app.json`:
-
-- **Expo** `~57` + **Expo Router** (file-based routes in `app/`)
-- **React Native** / **React Native Web** (static web export via `expo export -p web`)
-- **Uniwind** + **Tailwind CSS** v4 (`global.css`, `metro.config.js` via `withUniwindConfig`)
-- **Content:** markdown in `src/content/*` → `scripts/build-content.mjs` → `src/generated/*.json`
-- **SEO:** `components/PageSeo.tsx` (document head on web)
-- **Site URL:** `EXPO_PUBLIC_SITE_URL` / `app.config.js` (default placeholder `https://kylesmcauliffe.com`)
+- **Expo** `~57` + **Expo Router** (`app/`)
+- **React Native** / **React Native Web** (static export)
+- **Uniwind** + Tailwind v4 (`global.css`, `metro.config.js`)
+- **Fonts:** Anton, BebasNeue, UnifrakturCook, GreatVibes, Inter (`assets/fonts/` + `public/fonts/`)
+- **Content:** `src/content/*` → `scripts/build-content.mjs` → `src/generated/*.json`
+- **Brand images:** `public/images/brand/`
 
 ## Folder map
 
-| Area | Path | Notes |
-|------|------|--------|
-| Routes | `app/` | Expo Router (`(site)` chrome + screens) |
-| Components | `components/` | Header, footer, cards, article body |
-| Lib | `lib/` | Content accessors, theme, chrome, assets |
-| Brand tokens | `constants/Colors.ts` + `global.css` | Warm gold accent + Inter / STIX Two Text |
-| Content (source) | `src/content/` | Markdown per collection (`posts`, `podcast`, `authors`, `legal`) |
-| Content (built) | `src/generated/` | JSON consumed by the app |
-| Images (source) | `src/images/` | Copied to `public/images/` by content build |
-| Public assets | `public/` | Audios, robots, built images |
-| Native assets | `assets/images/` | Icons, splash, favicon |
-| Scripts | `scripts/` | Content build + ensure hook |
-| Contact sheet demo | `expo-contact-sheet/` | Standalone Expo UI experiment |
+| Area | Path |
+|------|------|
+| Routes | `app/` |
+| Components | `components/` |
+| Lib | `lib/` |
+| Tokens | `constants/Colors.ts`, `global.css` |
+| Bio config | `data/bio.ts` |
+| Content source | `src/content/` |
+| Content built | `src/generated/` |
+| Brand assets | `public/images/brand/`, `assets/fonts/` |
 
-Path alias: `@/*` → project root (`tsconfig.json`).
+Path alias: `@/*` → project root.
 
-## Content collections
+## Routing
 
-Schemas are enforced by `scripts/build-content.mjs` (not Astro Zod).
+- `/` home (full-bleed KSM hero)
+- `/blog`, `/blog/posts/<slug>`
+- `/podcast`, `/podcast/interviews/<id>`
+- `/authors`, `/authors/<id>`
+- `/legal/<id>`
+- `/about`, `/pricing`, `/contact`, `/login`, `/signup`
+- `/bio` — unlisted link-in-bio (outside `(site)` chrome; do not add to nav)
 
-### `posts` — `src/content/posts/`
+## Visual system
 
-- Required frontmatter: `title`, `pubDate`, `description`, `author`, `image: { url, alt }`, `tags`
-- Optional: `isRecent`, `isPopular`, `isLocked`, `draft`, `slug`
-- Template: `src/content/posts/1.md`
-- Routes: listing `/blog`, post `/blog/posts/<slug>`
-
-### `authors` — `src/content/authors/`
-
-- Required: `name`, `image: { url, alt }`
-- Optional: `role`, `bio`, `socials`
-- Template: `src/content/authors/juliet-ramos.md`
-
-### `podcast` — `src/content/podcast/`
-
-- Required: `title`, `pubDate`, `description`, `author`, `image`, `guestAvatar`, `tags`
-- Optional: `episodeNumber`, `duration`, `audioSrc`, `isRecent`, `isPopular`, `isLocked`
-- Template: `src/content/podcast/1.md` (`audioSrc` under `/audios/...` → `public/audios/`)
-
-### `legal` — `src/content/legal/`
-
-- Required: `page`, `pubDate`
-- Template: `src/content/legal/privacy.md`
-
-## Routing conventions
-
-- **Home:** `app/(site)/index.tsx` → `/`
-- **Blog listing:** `/blog`
-- **Blog post:** `/blog/posts/<slug>`
-- **Podcast:** `/podcast`, episodes `/podcast/interviews/<id>`
-- **Authors:** `/authors`, `/authors/<id>`
-- **Legal:** `/legal/<id>`
-- **Marketing:** `/about`, `/pricing`, `/contact`, `/login`, `/signup`
-- **Link in bio (unlisted):** `/bio` — Complex-style Instagram bio page (`app/bio.tsx`, config in `data/bio.ts`). Live by direct URL; **do not** add to header/footer/nav.
-
-Chrome: `app/(site)/_layout.tsx` mounts `SiteHeader`, `SiteFooter`, `SiteNavOverlay`, theme + scroll chrome. `/bio` sits outside `(site)` so it has no site chrome.
-
-## Customization
-
-- **Site URL:** `EXPO_PUBLIC_SITE_URL` or `app.config.js`
-- **Colors & type:** `global.css` `@theme` + `constants/Colors.ts`
-- **Nav / footer:** `components/SiteHeader.tsx`, `components/SiteFooter.tsx`
+- Palette: `#E60000` crimson, `#000000`, `#FFFFFF`
+- Display: Anton (condensed caps); accents: UnifrakturCook (gothic), GreatVibes (script); body: Inter
+- Hard borders (`border-2`), zero radius, grain overlay on web (`ksm-grain`)
+- Prefer full-bleed heroes and red utility bars over card chrome
 
 ## Commands
 
 | Command | Action |
 |--------|--------|
-| `npm install` | Install dependencies |
-| `npm run content` | Rebuild `src/generated/*` |
+| `npm run content` | Rebuild JSON + RSS |
 | `npm run dev` | Expo web |
-| `npm start` | Expo CLI |
-| `npm run build` | Static web export → `dist/` |
+| `npm run build` | Export `dist/` |
 
 ## Guardrails
 
-- Prefer **minimal diffs** and `@/` imports from the project root.
-- Do **not** reintroduce Astro without an explicit request.
-- Changing content frontmatter shape requires updating `scripts/build-content.mjs` and `lib/content.ts` consumers.
-- Keep `expo-contact-sheet/` isolated (its own `package.json`).
+- Prefer minimal diffs and `@/` imports.
+- Do not add `/bio` to header/footer/nav.
+- Regenerating brand images: use Higgsfield `soul_2` with Soul id for **KSM**.

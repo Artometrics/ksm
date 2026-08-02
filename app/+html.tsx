@@ -1,9 +1,6 @@
 import { ScrollViewStyleReset } from "expo-router/html";
 import type { PropsWithChildren } from "react";
 
-/**
- * Root HTML shell for static web export.
- */
 export default function Root({ children }: PropsWithChildren) {
   return (
     <html lang="en">
@@ -16,76 +13,123 @@ export default function Root({ children }: PropsWithChildren) {
         />
         <meta
           name="description"
-          content="Hemingway — design conversations, magazine essays, and podcast interviews."
+          content="KSM — essays, interviews, and cultural signal. High contrast magazine."
         />
-        <meta property="og:site_name" content="Hemingway" />
+        <meta property="og:site_name" content="KSM" />
         <meta property="og:type" content="website" />
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="Hemingway Magazine"
+          title="KSM Magazine"
           href="/rss.xml"
         />
-        <meta name="theme-color" content="#FAFAFA" />
-        <meta name="color-scheme" content="light" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="color-scheme" content="dark" />
         <ScrollViewStyleReset />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,300;0,400;0,600;1,400&display=swap"
-          rel="stylesheet"
-        />
         <style
           dangerouslySetInnerHTML={{
             __html: `
+              @font-face {
+                font-family: "Anton";
+                src: url("/fonts/Anton-Regular.ttf") format("truetype");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+              }
+              @font-face {
+                font-family: "BebasNeue";
+                src: url("/fonts/BebasNeue-Regular.ttf") format("truetype");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+              }
+              @font-face {
+                font-family: "UnifrakturCook";
+                src: url("/fonts/UnifrakturCook-Bold.ttf") format("truetype");
+                font-weight: 700;
+                font-style: normal;
+                font-display: swap;
+              }
+              @font-face {
+                font-family: "GreatVibes";
+                src: url("/fonts/GreatVibes-Regular.ttf") format("truetype");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+              }
+              @font-face {
+                font-family: "Inter";
+                src: url("/fonts/Inter-Regular.otf") format("opentype");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+              }
+              @font-face {
+                font-family: "Inter";
+                src: url("/fonts/Inter-Bold.otf") format("opentype");
+                font-weight: 700;
+                font-style: normal;
+                font-display: swap;
+              }
               html, body, #root { min-height: 100%; }
               body {
                 margin: 0;
-                background: #FAFAFA;
+                background: #000000;
                 font-family: Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
-                color: #171717;
+                color: #FFFFFF;
               }
               html[data-theme="light"] body,
               html[data-theme="light"] #root {
-                background: #FAFAFA !important;
-                color: #171717 !important;
+                background: #FFFFFF !important;
+                color: #000000 !important;
               }
               html[data-theme="dark"] body,
               html[data-theme="dark"] #root {
-                background: #0A0A0A !important;
-                color: #FAFAFA !important;
+                background: #000000 !important;
+                color: #FFFFFF !important;
               }
               a { color: inherit; text-decoration: none; }
-              .hemingway-prose {
-                font-family: "STIX Two Text", Georgia, serif;
-                font-size: 1.125rem;
-                line-height: 1.75;
+              .ksm-grain {
+                pointer-events: none;
+                position: fixed;
+                inset: 0;
+                z-index: 60;
+                opacity: 0.07;
+                mix-blend-mode: overlay;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+              }
+              .ksm-prose {
+                font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
+                font-size: 1.05rem;
+                line-height: 1.7;
                 color: inherit;
               }
-              .hemingway-prose p { margin: 0 0 1rem; }
-              .hemingway-prose h2 {
-                font-weight: 300;
-                font-size: 1.75rem;
-                margin: 1.75rem 0 0.75rem;
-              }
-              .hemingway-prose h3 {
+              .ksm-prose p { margin: 0 0 1rem; }
+              .ksm-prose h2 {
+                font-family: Anton, Impact, sans-serif;
                 font-weight: 400;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+                font-size: 2rem;
+                margin: 1.75rem 0 0.75rem;
+                color: #E60000;
+              }
+              .ksm-prose h3 {
+                font-family: Anton, Impact, sans-serif;
+                font-weight: 400;
+                letter-spacing: 0.03em;
+                text-transform: uppercase;
                 font-size: 1.35rem;
                 margin: 1.4rem 0 0.6rem;
               }
-              .hemingway-prose a { color: #D4A017; text-decoration: underline; }
-              .hemingway-prose blockquote {
-                border-left: 2px solid #D4A017;
+              .ksm-prose a { color: #E60000; text-decoration: underline; }
+              .ksm-prose blockquote {
+                border-left: 3px solid #E60000;
                 margin: 1rem 0;
                 padding-left: 1rem;
                 font-style: italic;
-                opacity: 0.9;
               }
-              .hemingway-prose ul, .hemingway-prose ol {
+              .ksm-prose ul, .ksm-prose ol {
                 padding-left: 1.25rem;
                 margin: 0 0 1rem;
               }
@@ -103,15 +147,15 @@ export default function Root({ children }: PropsWithChildren) {
             __html: `
               (function () {
                 try {
-                  var saved = localStorage.getItem("hemingway-theme");
-                  var mode = "light";
-                  if (saved === "dark") mode = "dark";
+                  var saved = localStorage.getItem("ksm-theme");
+                  var mode = "dark";
+                  if (saved === "light") mode = "light";
                   else if (saved === "system") {
                     mode = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)
                       ? "dark" : "light";
-                  }
-                  var bg = mode === "dark" ? "#0A0A0A" : "#FAFAFA";
-                  var fg = mode === "dark" ? "#FAFAFA" : "#171717";
+                  } else if (saved === "dark") mode = "dark";
+                  var bg = mode === "dark" ? "#000000" : "#FFFFFF";
+                  var fg = mode === "dark" ? "#FFFFFF" : "#000000";
                   var root = document.documentElement;
                   root.setAttribute("data-theme", mode);
                   root.style.backgroundColor = bg;
@@ -125,7 +169,10 @@ export default function Root({ children }: PropsWithChildren) {
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <div class="ksm-grain" aria-hidden="true"></div>
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,8 +1,5 @@
 import { createElement, useEffect, useRef } from "react";
 
-/**
- * Web article body — inject HTML directly for proper typography & links.
- */
 export function ArticleBody({ html }: { html: string }) {
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -12,6 +9,6 @@ export function ArticleBody({ html }: { html: string }) {
 
   return createElement("div", {
     ref,
-    className: "hemingway-prose",
+    className: "ksm-prose",
   });
 }

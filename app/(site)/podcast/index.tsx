@@ -8,27 +8,28 @@ export default function PodcastIndex() {
   const episodes = getPodcastEpisodes();
 
   return (
-    <Wrapper className="gap-3 py-10">
+    <>
       <PageSeo
         title="Podcast"
         description="Interviews with design engineers and creative technologists."
         path="/podcast"
       />
-      <Text className="text-xs font-medium uppercase tracking-[1.8px] text-accent">
-        Listen
-      </Text>
-      <Text className="font-serif text-[40px] font-light tracking-tight text-fg">
-        Podcast
-      </Text>
-      <Text className="mb-2 max-w-[560px] font-sans text-[17px] leading-[26px] text-muted">
-        Long-form conversations with the people shaping digital products.
-      </Text>
-      <View className="mb-1 mt-2 h-px bg-border" />
-      <View>
+      <View className="border-b-2 border-border bg-accent py-10">
+        <Wrapper>
+          <Text className="font-[GreatVibes] text-4xl text-black">Listen</Text>
+          <Text className="font-[Anton] text-5xl uppercase tracking-[2px] text-black md:text-7xl">
+            Podcast
+          </Text>
+          <Text className="mt-3 max-w-[40ch] font-sans text-[15px] leading-6 text-black/75">
+            Long-form conversations with the people shaping digital products.
+          </Text>
+        </Wrapper>
+      </View>
+      <Wrapper className="gap-0 py-2">
         {episodes.map((ep) => (
           <PodcastCard key={ep.id} episode={ep} />
         ))}
-      </View>
-    </Wrapper>
+      </Wrapper>
+    </>
   );
 }

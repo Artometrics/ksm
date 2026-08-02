@@ -189,9 +189,9 @@ const rssItems = blog
 const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Hemingway Magazine</title>
+    <title>KSM Magazine</title>
     <link>${site}</link>
-    <description>Design conversations and magazine essays</description>
+    <description>Essays, interviews, and cultural signal</description>
 ${rssItems}
   </channel>
 </rss>

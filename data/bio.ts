@@ -1,7 +1,5 @@
 /**
- * Instagram / link-in-bio config.
- * Edit handles, socials, and CTAs here — the page is live at `/bio`
- * but intentionally omitted from site navigation.
+ * Instagram / link-in-bio config — live at `/bio`, omitted from nav.
  */
 
 export type BioHandle = {
@@ -22,40 +20,20 @@ export type BioCta = {
 };
 
 export const bio = {
-  brand: "Hemingway",
-  tagline: "Design conversations",
+  brand: "KSM",
+  tagline: "Essays · Interviews · Signal",
   handles: [
-    { label: "@hemingway", href: "https://instagram.com" },
-    { label: "@hemingway.mag", href: "https://instagram.com" },
-    { label: "@hemingway.pod", href: "https://instagram.com" },
-    { label: "@hemingway.studio", href: "https://instagram.com" },
+    { label: "@ksm", href: "https://instagram.com" },
+    { label: "@ksm.mag", href: "https://instagram.com" },
+    { label: "@ksm.pod", href: "https://instagram.com" },
+    { label: "@ksm.studio", href: "https://instagram.com" },
   ] satisfies BioHandle[],
   socials: [
-    {
-      id: "instagram",
-      label: "Instagram",
-      href: "https://instagram.com",
-    },
-    {
-      id: "x",
-      label: "X",
-      href: "https://x.com",
-    },
-    {
-      id: "tiktok",
-      label: "TikTok",
-      href: "https://tiktok.com",
-    },
-    {
-      id: "youtube",
-      label: "YouTube",
-      href: "https://youtube.com",
-    },
-    {
-      id: "linkedin",
-      label: "LinkedIn",
-      href: "https://linkedin.com",
-    },
+    { id: "instagram", label: "Instagram", href: "https://instagram.com" },
+    { id: "x", label: "X", href: "https://x.com" },
+    { id: "tiktok", label: "TikTok", href: "https://tiktok.com" },
+    { id: "youtube", label: "YouTube", href: "https://youtube.com" },
+    { id: "linkedin", label: "LinkedIn", href: "https://linkedin.com" },
   ] satisfies BioSocial[],
   ctas: [
     { label: "Read the magazine", href: "/blog" },

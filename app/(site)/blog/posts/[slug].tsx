@@ -26,11 +26,13 @@ export default function BlogPostScreen() {
   if (!post) {
     return (
       <Wrapper className="gap-3 py-10">
-        <Text className="font-serif text-[36px] font-light text-fg">
+        <Text className="font-[Anton] text-4xl uppercase text-fg">
           Post not found
         </Text>
         <Link href="/blog">
-          <Text className="text-accent">Back to magazine</Text>
+          <Text className="font-[Anton] uppercase tracking-[2px] text-accent">
+            Back to magazine
+          </Text>
         </Link>
       </Wrapper>
     );
@@ -52,45 +54,51 @@ export default function BlogPostScreen() {
         image={post.heroImage || undefined}
         type="article"
       />
+      {hero ? (
+        <View className="relative h-[48vh] w-full overflow-hidden border-b-2 border-border bg-black">
+          <Image
+            source={{ uri: hero }}
+            className="absolute inset-0 h-full w-full"
+            contentFit="cover"
+          />
+          <View className="absolute inset-0 bg-black/40" />
+        </View>
+      ) : null}
       <Wrapper variant="prose" className="gap-4 py-10">
         {tag ? (
-          <Text className="text-xs font-medium uppercase tracking-[1.8px] text-accent">
+          <Text className="font-[Anton] text-[12px] uppercase tracking-[2px] text-accent">
             {tag}
           </Text>
         ) : null}
-        <Text className="font-serif text-4xl font-light leading-tight text-fg">
+        <Text className="font-[Anton] text-4xl uppercase leading-[0.95] tracking-[1px] text-fg md:text-5xl">
           {post.title}
         </Text>
         <Text className="font-sans text-base leading-6 text-muted">
           {post.description}
         </Text>
-        <Text className="text-xs text-subtle">
+        <Text className="text-[11px] uppercase tracking-[1.4px] text-subtle">
           {author} · {formatDate(post.pubDate)}
           {post.isLocked ? " · Members" : ""}
         </Text>
-        {hero ? (
-          <Image
-            source={{ uri: hero }}
-            className="mt-2 aspect-[16/10] w-full"
-            contentFit="cover"
-            transition={200}
-            accessibilityLabel={post.title}
-          />
-        ) : null}
-        <View className="mt-4">
+        <View className="mt-4 h-1 w-16 bg-accent" />
+        <View className="mt-2">
           <ArticleBody html={post.body} />
         </View>
-        <View className="mt-10 flex-row flex-wrap justify-between gap-4 border-t border-border pt-6">
+        <View className="mt-10 flex-row flex-wrap justify-between gap-4 border-t-2 border-border pt-6">
           {adjacent.previous ? (
             <Link href={adjacent.previous.href as `/blog/posts/${string}`}>
-              <Text className="text-sm text-muted">← {adjacent.previous.title}</Text>
+              <Text className="font-[Anton] text-[12px] uppercase tracking-[1px] text-muted">
+                ← {adjacent.previous.title}
+              </Text>
             </Link>
           ) : (
             <View />
           )}
           {adjacent.next ? (
             <Link href={adjacent.next.href as `/blog/posts/${string}`}>
-              <Text className="text-sm text-muted">{adjacent.next.title} →</Text>
+              <Text className="font-[Anton] text-[12px] uppercase tracking-[1px] text-muted">
+                {adjacent.next.title} →
+              </Text>
             </Link>
           ) : null}
         </View>

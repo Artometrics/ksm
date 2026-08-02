@@ -13,31 +13,33 @@ export function ArticleBody({ html }: { html: string }) {
       source={{ html }}
       baseStyle={{
         color: colors.text,
-        fontFamily: fonts.serif,
-        fontSize: 18,
-        lineHeight: 30,
+        fontFamily: fonts.sans,
+        fontSize: 17,
+        lineHeight: 28,
       }}
       tagsStyles={{
         p: { marginBottom: 16 },
         h2: {
-          fontFamily: fonts.serif,
+          fontFamily: fonts.display,
           fontSize: 28,
-          fontWeight: "300",
+          letterSpacing: 1,
+          textTransform: "uppercase",
           marginTop: 28,
           marginBottom: 12,
-          color: colors.text,
+          color: colors.accent,
         },
         h3: {
-          fontFamily: fonts.serif,
+          fontFamily: fonts.display,
           fontSize: 22,
-          fontWeight: "400",
+          letterSpacing: 1,
+          textTransform: "uppercase",
           marginTop: 22,
           marginBottom: 10,
           color: colors.text,
         },
         a: { color: colors.accent },
         blockquote: {
-          borderLeftWidth: 2,
+          borderLeftWidth: 3,
           borderLeftColor: colors.accent,
           paddingLeft: 16,
           marginVertical: 16,

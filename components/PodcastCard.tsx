@@ -17,33 +17,35 @@ export function PodcastCard({ episode }: { episode: PodcastEpisode }) {
 
   return (
     <Link href={href} asChild>
-      <Pressable className="flex-row items-start gap-4 border-b border-border py-[18px]">
+      <Pressable className="flex-row items-stretch gap-0 border-b-2 border-border">
         {cover ? (
           <Image
             source={{ uri: cover }}
-            className="h-20 w-20"
+            className="h-[110px] w-[110px]"
             contentFit="cover"
             transition={200}
             accessibilityLabel={episode.title}
           />
-        ) : null}
-        <View className="flex-1 gap-1">
+        ) : (
+          <View className="h-[110px] w-[110px] bg-accent" />
+        )}
+        <View className="flex-1 justify-center gap-1 px-4 py-4">
           {episode.episodeNumber != null ? (
-            <Text className="text-[11px] font-medium uppercase tracking-[1.4px] text-accent">
-              Episode {episode.episodeNumber}
+            <Text className="font-[Anton] text-[11px] uppercase tracking-[2px] text-accent">
+              Ep {episode.episodeNumber}
               {episode.duration ? ` · ${episode.duration}` : ""}
             </Text>
           ) : null}
-          <Text className="font-serif text-xl font-light leading-[26px] text-fg">
+          <Text className="font-[Anton] text-xl uppercase leading-6 tracking-[1px] text-fg">
             {episode.title}
           </Text>
           <Text
-            className="font-sans text-[15px] leading-[22px] text-muted"
+            className="font-sans text-[14px] leading-[20px] text-muted"
             numberOfLines={2}
           >
             {episode.description}
           </Text>
-          <Text className="mt-0.5 text-xs text-subtle">
+          <Text className="text-[11px] uppercase tracking-[1.2px] text-subtle">
             {formatDate(episode.pubDate)}
           </Text>
         </View>

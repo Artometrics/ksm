@@ -28,7 +28,7 @@ type ThemeContextValue = {
 };
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
-const STORAGE_KEY = "hemingway-theme";
+const STORAGE_KEY = "ksm-theme";
 
 function systemMode(): ThemeMode {
   if (Platform.OS === "web" && typeof window !== "undefined") {
@@ -81,7 +81,7 @@ function applyDomTheme(mode: ThemeMode, colors: ThemeColors) {
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [preference, setPreferenceState] = useState<Preference>(
-    () => readStored() ?? "light",
+    () => readStored() ?? "dark",
   );
   const [system, setSystem] = useState<ThemeMode>(() => systemMode());
 
