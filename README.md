@@ -1,19 +1,14 @@
-# Hemingway
+# KSM
 
-Magazine + podcast site built with **Expo** + **Uniwind** (web and native from one codebase). Migrated from the Lexington Hemingway Astro theme; structure follows [Artometrics/artometrics-web](https://github.com/Artometrics/artometrics-web).
+Magazine + podcast site built with **Expo** + **Uniwind** — crimson / black / white zine aesthetic, KSM Soul imagery from Higgsfield.
 
 ## Tech stack
 
 - [Expo](https://expo.dev/) ~57 + [Expo Router](https://docs.expo.dev/router/introduction/)
-- React Native / React Native Web (static export via `expo export -p web`)
-- [Uniwind](https://uniwind.dev/) + Tailwind CSS v4 (`global.css`)
-- Markdown content under `src/content/` → JSON via `npm run content`
-- Netlify publishes `dist/` from the web export
-
-## Requirements
-
-- Node.js 20+
-- npm
+- React Native / React Native Web (`expo export -p web`)
+- [Uniwind](https://uniwind.dev/) + Tailwind CSS v4
+- Markdown → JSON via `npm run content`
+- Brand assets in `public/images/brand/` (KSM Soul generations)
 
 ## Commands
 
@@ -21,35 +16,20 @@ Magazine + podcast site built with **Expo** + **Uniwind** (web and native from o
 | :------ | :----- |
 | `npm install` | Install dependencies |
 | `npm run content` | Build JSON from `src/content/**` |
-| `npm run dev` / `npm run web` | Expo web dev server |
-| `npm start` | Expo CLI (web / iOS / Android) |
-| `npm run build` | Content build + `expo export -p web` → `./dist/` |
+| `npm run dev` / `npm run web` | Expo web |
+| `npm run build` | Static export → `./dist/` |
 
 ## Link in bio
 
-Unlisted Instagram bio page at **`/bio`** (not linked from nav). Edit handles, socials, and CTAs in `data/bio.ts`.
+Unlisted page at **`/bio`**. Edit `data/bio.ts`.
 
 ## Content
 
-| Collection | Path | Notes |
-|------------|------|--------|
-| Posts | `src/content/posts/` | Magazine essays → `/blog/posts/<id>` |
-| Podcast | `src/content/podcast/` | Episodes → `/podcast/interviews/<id>` |
-| Authors | `src/content/authors/` | Profiles → `/authors/<id>` |
-| Legal | `src/content/legal/` | → `/legal/<id>` |
+| Collection | Path |
+|------------|------|
+| Posts | `src/content/posts/` |
+| Podcast | `src/content/podcast/` |
+| Authors | `src/content/authors/` |
+| Legal | `src/content/legal/` |
 
-Run `npm run content` after editing markdown. Images under `src/images/` are copied to `public/images/` during the content build.
-
-## Expo contact sheet
-
-A Portra-style film contact sheet UI lives in [`expo-contact-sheet/`](./expo-contact-sheet/):
-
-```bash
-cd expo-contact-sheet
-npm install
-npm run web
-```
-
-## Links
-
-See [AGENTS.md](./AGENTS.md) for routing, schemas, and contributor guardrails.
+See [AGENTS.md](./AGENTS.md) for routing and guardrails.

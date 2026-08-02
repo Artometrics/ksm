@@ -1,9 +1,8 @@
-# Lexington Hemingway — Expo / Uniwind rules
+# KSM — Expo / Uniwind rules
 
-- **Imports:** Use the `@/` alias for the project root (e.g. `@/components/Wrapper`, `@/lib/content`). Match existing patterns.
-- **Stack:** This repo is **Expo + Expo Router + Uniwind**, not Astro. Routes live in `app/`; do not add `.astro` pages.
-- **Scope:** Keep changes minimal and localized. No drive-by refactors or unrelated files.
-- **Dependencies:** Do not add packages not requested; follow `package.json` / Artometrics-web patterns when extending.
-- **Content:** Markdown under `src/content/` — rebuild with `npm run content` (writes `src/generated/`).
-- **Chrome:** Site pages use `app/(site)/_layout.tsx` (`SiteHeader` / `SiteFooter`).
-- **Reference:** File layout mirrors Artometrics (`Artometrics/artometrics-web`): `app/`, `components/`, `lib/`, `global.css`, `metro.config.js` + `withUniwindConfig`.
+- **Imports:** Use `@/` from the project root.
+- **Stack:** Expo + Expo Router + Uniwind. Routes in `app/`.
+- **Visual system:** Crimson `#E60000` / black / white zine. Anton + UnifrakturCook + GreatVibes + Inter. Hard borders, zero radius, grain overlay.
+- **Brand imagery:** Prefer `public/images/brand/` (Higgsfield KSM Soul). Regenerating: `soul_2` + KSM `soul_id`.
+- **`/bio`:** Unlisted — never add to header/footer/nav.
+- **Scope:** Minimal diffs. Do not reintroduce Astro or gold/serif Hemingway tokens.
