@@ -13,7 +13,7 @@ export default function Root({ children }: PropsWithChildren) {
         />
         <meta
           name="description"
-          content="KSM — essays, interviews, and cultural signal. High contrast magazine."
+          content="KSM — independent magazine and creative platform. Essays, posters, signal."
         />
         <meta property="og:site_name" content="KSM" />
         <meta property="og:type" content="website" />
@@ -30,44 +30,51 @@ export default function Root({ children }: PropsWithChildren) {
           dangerouslySetInnerHTML={{
             __html: `
               @font-face {
+                font-family: "DMSans";
+                src: url("/fonts/DMSans-Regular.ttf") format("truetype");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+              }
+              @font-face {
+                font-family: "DMSans";
+                src: url("/fonts/DMSans-Medium.ttf") format("truetype");
+                font-weight: 500;
+                font-style: normal;
+                font-display: swap;
+              }
+              @font-face {
+                font-family: "DMSans";
+                src: url("/fonts/DMSans-Bold.ttf") format("truetype");
+                font-weight: 700;
+                font-style: normal;
+                font-display: swap;
+              }
+              @font-face {
+                font-family: "DMMono";
+                src: url("/fonts/DMMono-Regular.ttf") format("truetype");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+              }
+              @font-face {
+                font-family: "DMMono";
+                src: url("/fonts/DMMono-Medium.ttf") format("truetype");
+                font-weight: 500;
+                font-style: normal;
+                font-display: swap;
+              }
+              @font-face {
+                font-family: "Chomsky";
+                src: url("/fonts/Chomsky.otf") format("opentype");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+              }
+              @font-face {
                 font-family: "Anton";
                 src: url("/fonts/Anton-Regular.ttf") format("truetype");
                 font-weight: 400;
-                font-style: normal;
-                font-display: swap;
-              }
-              @font-face {
-                font-family: "BebasNeue";
-                src: url("/fonts/BebasNeue-Regular.ttf") format("truetype");
-                font-weight: 400;
-                font-style: normal;
-                font-display: swap;
-              }
-              @font-face {
-                font-family: "UnifrakturCook";
-                src: url("/fonts/UnifrakturCook-Bold.ttf") format("truetype");
-                font-weight: 700;
-                font-style: normal;
-                font-display: swap;
-              }
-              @font-face {
-                font-family: "GreatVibes";
-                src: url("/fonts/GreatVibes-Regular.ttf") format("truetype");
-                font-weight: 400;
-                font-style: normal;
-                font-display: swap;
-              }
-              @font-face {
-                font-family: "Inter";
-                src: url("/fonts/Inter-Regular.otf") format("opentype");
-                font-weight: 400;
-                font-style: normal;
-                font-display: swap;
-              }
-              @font-face {
-                font-family: "Inter";
-                src: url("/fonts/Inter-Bold.otf") format("opentype");
-                font-weight: 700;
                 font-style: normal;
                 font-display: swap;
               }
@@ -75,8 +82,9 @@ export default function Root({ children }: PropsWithChildren) {
               body {
                 margin: 0;
                 background: #000000;
-                font-family: Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
+                font-family: DMSans, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
                 color: #FFFFFF;
+                -webkit-font-smoothing: antialiased;
               }
               html[data-theme="light"] body,
               html[data-theme="light"] #root {
@@ -94,44 +102,65 @@ export default function Root({ children }: PropsWithChildren) {
                 position: fixed;
                 inset: 0;
                 z-index: 60;
-                opacity: 0.07;
+                opacity: 0.05;
                 mix-blend-mode: overlay;
                 background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
               }
               .ksm-prose {
-                font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
-                font-size: 1.05rem;
-                line-height: 1.7;
+                font-family: DMSans, Helvetica Neue, Helvetica, Arial, sans-serif;
+                font-size: 1.0625rem;
+                line-height: 1.65;
+                max-width: 600px;
                 color: inherit;
               }
               .ksm-prose p { margin: 0 0 1rem; }
               .ksm-prose h2 {
-                font-family: Anton, Impact, sans-serif;
-                font-weight: 400;
-                letter-spacing: 0.04em;
+                font-family: DMMono, ui-monospace, monospace;
+                font-weight: 500;
+                letter-spacing: -0.01em;
                 text-transform: uppercase;
-                font-size: 2rem;
+                font-size: 1.75rem;
                 margin: 1.75rem 0 0.75rem;
-                color: #E60000;
+                color: #C0392B;
               }
               .ksm-prose h3 {
-                font-family: Anton, Impact, sans-serif;
-                font-weight: 400;
-                letter-spacing: 0.03em;
+                font-family: DMMono, ui-monospace, monospace;
+                font-weight: 500;
+                letter-spacing: -0.01em;
                 text-transform: uppercase;
-                font-size: 1.35rem;
+                font-size: 1.25rem;
                 margin: 1.4rem 0 0.6rem;
               }
-              .ksm-prose a { color: #E60000; text-decoration: underline; }
+              .ksm-prose a { color: #D9251B; text-decoration: underline; }
               .ksm-prose blockquote {
-                border-left: 3px solid #E60000;
+                border-left: 2px solid #C0392B;
                 margin: 1rem 0;
-                padding-left: 1rem;
-                font-style: italic;
+                padding-left: 1.25rem;
+                font-family: DMMono, ui-monospace, monospace;
+                font-weight: 500;
+                font-style: normal;
               }
               .ksm-prose ul, .ksm-prose ol {
                 padding-left: 1.25rem;
                 margin: 0 0 1rem;
+              }
+              @keyframes ksm-fade-up {
+                from { opacity: 0; transform: translateY(12px); }
+                to { opacity: 1; transform: translateY(0); }
+              }
+              @keyframes ksm-rule-in {
+                from { transform: scaleX(0); }
+                to { transform: scaleX(1); }
+              }
+              .ksm-fade-up {
+                animation: ksm-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+              }
+              .ksm-fade-up-delay {
+                animation: ksm-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+              }
+              .ksm-rule-in {
+                transform-origin: left;
+                animation: ksm-rule-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
               }
               .lg\\:flex { display: none; }
               .lg\\:hidden { display: flex; }

@@ -16,10 +16,10 @@ export default function AuthorsIndex() {
         description="The writers and hosts behind Hemingway."
         path="/authors"
       />
-      <Text className="text-xs font-medium uppercase tracking-[1.8px] text-accent">
+      <Text className="font-[DMMono] text-[12px] uppercase tracking-[0.1em] text-accent">
         People
       </Text>
-      <Text className="font-serif text-[40px] font-light tracking-tight text-fg">
+      <Text className="font-[DMMono] text-4xl font-medium uppercase tracking-[-0.01em] text-fg">
         Authors
       </Text>
       <View className="mt-4 flex-row flex-wrap gap-6">

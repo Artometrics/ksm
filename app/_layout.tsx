@@ -12,12 +12,13 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
+    DMSans: require("../assets/fonts/DMSans-Regular.ttf"),
+    "DMSans Medium": require("../assets/fonts/DMSans-Medium.ttf"),
+    "DMSans Bold": require("../assets/fonts/DMSans-Bold.ttf"),
+    DMMono: require("../assets/fonts/DMMono-Regular.ttf"),
+    "DMMono Medium": require("../assets/fonts/DMMono-Medium.ttf"),
+    Chomsky: require("../assets/fonts/Chomsky.otf"),
     Anton: require("../assets/fonts/Anton-Regular.ttf"),
-    BebasNeue: require("../assets/fonts/BebasNeue-Regular.ttf"),
-    UnifrakturCook: require("../assets/fonts/UnifrakturCook-Bold.ttf"),
-    "GreatVibes": require("../assets/fonts/GreatVibes-Regular.ttf"),
-    Inter: require("../assets/fonts/Inter-Regular.otf"),
-    "Inter Bold": require("../assets/fonts/Inter-Bold.otf"),
   });
 
   useEffect(() => {

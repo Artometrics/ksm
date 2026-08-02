@@ -7,9 +7,11 @@ export default function SignupScreen() {
   return (
     <Wrapper variant="narrow" className="gap-4 py-10">
       <PageSeo title="Sign up" path="/signup" />
-      <Text className="font-serif text-4xl font-light text-fg">Sign up</Text>
+      <Text className="font-[DMMono] text-4xl font-medium uppercase tracking-[-0.01em] text-fg">
+        Sign up
+      </Text>
       <Text className="font-sans text-base text-muted">
-        Join Hemingway for member essays, transcripts, and early drops.
+        Join KSM for member essays, transcripts, and early drops.
       </Text>
       <View className="mt-4 gap-3">
         <TextInput

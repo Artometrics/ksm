@@ -7,10 +7,10 @@ import { useChrome } from "@/lib/chrome";
 import { useTheme } from "@/lib/theme";
 
 const NAV = [
-  { href: "/blog", label: "Magazine" },
+  { href: "/blog", label: "Blog" },
+  { href: "/posters", label: "Posters" },
   { href: "/podcast", label: "Podcast" },
   { href: "/about", label: "About" },
-  { href: "/pricing", label: "Membership" },
 ] as const;
 
 export function SiteHeader() {
@@ -18,24 +18,24 @@ export function SiteHeader() {
   const { colors } = useTheme();
 
   return (
-    <View className="border-b-2 border-border bg-header">
-      <Wrapper className="py-3">
+    <View className="border-b border-border bg-header">
+      <Wrapper className="py-4">
         <View className="flex-row items-center justify-between gap-4">
           <Logo />
-          <View className="hidden flex-row items-center gap-6 lg:flex">
+          <View className="hidden flex-row items-center gap-8 lg:flex">
             {NAV.map((item) => (
               <Link key={item.href} href={item.href} asChild>
                 <Pressable>
-                  <Text className="font-[Anton] text-[13px] uppercase tracking-[2px] text-fg">
+                  <Text className="font-[DMMono] text-[12px] uppercase tracking-[0.08em] text-fg">
                     {item.label}
                   </Text>
                 </Pressable>
               </Link>
             ))}
             <Link href="/login" asChild>
-              <Pressable className="bg-accent px-3 py-2">
-                <Text className="font-[Anton] text-[12px] uppercase tracking-[1.5px] text-white">
-                  Log in
+              <Pressable className="bg-accent px-4 py-2.5">
+                <Text className="font-[DMMono] text-[12px] font-medium uppercase tracking-[0.06em] text-white">
+                  Log in →
                 </Text>
               </Pressable>
             </Link>
@@ -53,20 +53,6 @@ export function SiteHeader() {
           </Pressable>
         </View>
       </Wrapper>
-      {/* Utility bar — magazine instrument strip */}
-      <View className="border-t border-border bg-bg">
-        <Wrapper className="flex-row flex-wrap items-center justify-between gap-2 py-1.5">
-          <Text className="text-[10px] font-bold uppercase tracking-[1.4px] text-subtle">
-            Issue · Online
-          </Text>
-          <Text className="text-[10px] font-bold uppercase tracking-[1.4px] text-accent">
-            Strong graphic content · No fluff
-          </Text>
-          <Text className="text-[10px] font-bold uppercase tracking-[1.4px] text-subtle">
-            Essays · Interviews · Signal
-          </Text>
-        </Wrapper>
-      </View>
     </View>
   );
 }

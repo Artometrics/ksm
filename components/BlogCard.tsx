@@ -13,7 +13,7 @@ export function BlogCard({
   variant = "row",
 }: {
   post: BlogPost;
-  variant?: "stack" | "row" | "cover";
+  variant?: "stack" | "row" | "cover" | "newsstand" | "latest";
 }) {
   const hero = assetUrl(post.heroImage);
   const author = post.author
@@ -25,7 +25,7 @@ export function BlogCard({
   if (variant === "cover") {
     return (
       <Link href={href} asChild>
-        <Pressable className="relative min-h-[420px] w-full overflow-hidden border-2 border-border bg-black">
+        <Pressable className="relative aspect-[16/9] w-full overflow-hidden bg-black">
           {hero ? (
             <Image
               source={{ uri: hero }}
@@ -34,17 +34,17 @@ export function BlogCard({
               transition={200}
             />
           ) : null}
-          <View className="absolute inset-0 bg-black/35" />
-          <View className="absolute inset-0 justify-end gap-2 p-5">
+          <View className="absolute inset-0 bg-black/40" />
+          <View className="absolute inset-0 justify-end gap-2 p-6">
             {tag ? (
-              <Text className="font-[Anton] text-[12px] uppercase tracking-[2px] text-accent">
+              <Text className="font-[DMMono] text-[12px] uppercase tracking-[0.08em] text-accent">
                 {tag}
               </Text>
             ) : null}
-            <Text className="font-[Anton] text-4xl uppercase leading-[0.95] tracking-[1px] text-white">
+            <Text className="font-[DMMono] text-3xl font-medium uppercase leading-[1.05] tracking-[-0.01em] text-white md:text-4xl">
               {post.title}
             </Text>
-            <Text className="text-[11px] uppercase tracking-[1.4px] text-white/70">
+            <Text className="font-[DMMono] text-[11px] uppercase tracking-[0.08em] text-white/60">
               {author} · {formatDate(post.pubDate)}
             </Text>
           </View>
@@ -53,32 +53,81 @@ export function BlogCard({
     );
   }
 
-  if (variant === "stack") {
+  if (variant === "newsstand") {
     return (
       <Link href={href} asChild>
-        <Pressable className="min-w-[260px] flex-1 gap-3 overflow-hidden border-2 border-border pb-0">
+        <Pressable className="relative aspect-[3/4] w-full overflow-hidden border border-[#222] bg-[#111]">
           {hero ? (
             <Image
               source={{ uri: hero }}
-              className="aspect-[4/5] w-full"
+              className="absolute inset-0 h-full w-full"
+              contentFit="cover"
+              transition={200}
+            />
+          ) : (
+            <View className="absolute inset-0 bg-accent-print" />
+          )}
+          <View className="absolute left-0 right-0 top-0 bg-black/75 px-2.5 py-2">
+            {tag ? (
+              <Text className="font-[DMMono] text-[10px] uppercase tracking-[0.08em] text-accent">
+                {tag}
+              </Text>
+            ) : null}
+            <Text
+              className="font-[DMMono] text-[13px] font-medium text-white"
+              numberOfLines={2}
+            >
+              {post.title}
+            </Text>
+          </View>
+        </Pressable>
+      </Link>
+    );
+  }
+
+  if (variant === "latest") {
+    return (
+      <Link href={href} asChild>
+        <Pressable className="border-b border-[#262626] py-4">
+          <Text className="font-sans text-[15px] font-medium leading-snug text-white">
+            {post.title}
+          </Text>
+          <Text className="mt-1 font-[DMMono] text-[11px] text-subtle">
+            {formatDate(post.pubDate)}
+          </Text>
+        </Pressable>
+      </Link>
+    );
+  }
+
+  if (variant === "stack") {
+    return (
+      <Link href={href} asChild>
+        <Pressable className="min-w-[240px] flex-1 gap-3">
+          {hero ? (
+            <Image
+              source={{ uri: hero }}
+              className="aspect-[4/3] w-full"
               contentFit="cover"
               transition={200}
               accessibilityLabel={post.title}
             />
           ) : (
-            <View className="aspect-[4/5] w-full bg-accent" />
+            <View className="aspect-[4/3] w-full bg-accent-print" />
           )}
-          <View className="gap-2 p-3">
+          <View className="gap-2">
             {tag ? (
-              <Text className="font-[Anton] text-[11px] uppercase tracking-[2px] text-accent">
-                {tag}
-              </Text>
+              <View className="self-start bg-accent-print px-2 py-0.5">
+                <Text className="font-[DMMono] text-[10px] uppercase tracking-[0.06em] text-white">
+                  {tag}
+                </Text>
+              </View>
             ) : null}
-            <Text className="font-[Anton] text-[22px] uppercase leading-6 tracking-[1px] text-fg">
+            <Text className="font-sans text-[17px] font-bold leading-snug text-fg">
               {post.title}
             </Text>
             <Text
-              className="font-sans text-[14px] leading-[20px] text-muted"
+              className="font-sans text-[14px] leading-5 text-subtle"
               numberOfLines={3}
             >
               {post.description}
@@ -91,36 +140,36 @@ export function BlogCard({
 
   return (
     <Link href={href} asChild>
-      <Pressable className="flex-row items-stretch gap-0 border-b-2 border-border">
-        <View className="flex-1 justify-center gap-1.5 py-5 pr-4">
+      <Pressable className="flex-row items-stretch gap-0 border-b border-border">
+        <View className="flex-1 justify-center gap-1.5 py-6 pr-4">
           {tag ? (
-            <Text className="font-[Anton] text-[11px] uppercase tracking-[2px] text-accent">
+            <Text className="font-[DMMono] text-[11px] uppercase tracking-[0.08em] text-accent">
               {tag}
             </Text>
           ) : null}
-          <Text className="font-[Anton] text-2xl uppercase leading-7 tracking-[1px] text-fg">
+          <Text className="font-[DMMono] text-2xl font-medium uppercase leading-7 tracking-[-0.01em] text-fg">
             {post.title}
           </Text>
           <Text
-            className="font-sans text-[14px] leading-[20px] text-muted"
+            className="font-sans text-[15px] leading-6 text-subtle"
             numberOfLines={2}
           >
             {post.description}
           </Text>
-          <Text className="mt-1 text-[11px] uppercase tracking-[1.2px] text-subtle">
-            {formatDate(post.pubDate)}
+          <Text className="mt-1 font-[DMMono] text-[11px] uppercase tracking-[0.06em] text-subtle">
+            {formatDate(post.pubDate)} · {author}
           </Text>
         </View>
         {hero ? (
           <Image
             source={{ uri: hero }}
-            className="h-[120px] w-[100px]"
+            className="h-[140px] w-[120px]"
             contentFit="cover"
             transition={200}
             accessibilityLabel={post.title}
           />
         ) : (
-          <View className="h-[120px] w-[100px] bg-accent" />
+          <View className="h-[140px] w-[120px] bg-accent-print" />
         )}
       </Pressable>
     </Link>

@@ -29,10 +29,10 @@ export default function PricingScreen() {
         description="Support Hemingway and unlock the full archive."
         path="/pricing"
       />
-      <Text className="text-xs font-medium uppercase tracking-[1.8px] text-accent">
+      <Text className="font-[DMMono] text-[12px] uppercase tracking-[0.1em] text-accent">
         Membership
       </Text>
-      <Text className="font-serif text-[40px] font-light tracking-tight text-fg">
+      <Text className="font-[DMMono] text-4xl font-medium uppercase tracking-[-0.01em] text-fg">
         Choose a plan
       </Text>
       <Text className="mb-4 max-w-[560px] font-sans text-[17px] leading-[26px] text-muted">

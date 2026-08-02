@@ -26,12 +26,12 @@ export default function BlogPostScreen() {
   if (!post) {
     return (
       <Wrapper className="gap-3 py-10">
-        <Text className="font-[Anton] text-4xl uppercase text-fg">
+        <Text className="font-[DMMono] text-3xl font-medium uppercase text-fg">
           Post not found
         </Text>
         <Link href="/blog">
-          <Text className="font-[Anton] uppercase tracking-[2px] text-accent">
-            Back to magazine
+          <Text className="font-[DMMono] uppercase tracking-[0.08em] text-accent">
+            Back to blog
           </Text>
         </Link>
       </Wrapper>
@@ -55,7 +55,7 @@ export default function BlogPostScreen() {
         type="article"
       />
       {hero ? (
-        <View className="relative h-[48vh] w-full overflow-hidden border-b-2 border-border bg-black">
+        <View className="relative h-[48vh] w-full overflow-hidden border-b border-border bg-black">
           <Image
             source={{ uri: hero }}
             className="absolute inset-0 h-full w-full"
@@ -66,28 +66,28 @@ export default function BlogPostScreen() {
       ) : null}
       <Wrapper variant="prose" className="gap-4 py-10">
         {tag ? (
-          <Text className="font-[Anton] text-[12px] uppercase tracking-[2px] text-accent">
+          <Text className="font-[DMMono] text-[12px] uppercase tracking-[0.08em] text-accent">
             {tag}
           </Text>
         ) : null}
-        <Text className="font-[Anton] text-4xl uppercase leading-[0.95] tracking-[1px] text-fg md:text-5xl">
+        <Text className="font-[DMMono] text-4xl font-medium uppercase leading-[1.05] tracking-[-0.01em] text-fg md:text-5xl">
           {post.title}
         </Text>
-        <Text className="font-sans text-base leading-6 text-muted">
+        <Text className="font-sans text-[19px] leading-7 text-subtle">
           {post.description}
         </Text>
-        <Text className="text-[11px] uppercase tracking-[1.4px] text-subtle">
+        <Text className="font-[DMMono] text-[11px] uppercase tracking-[0.08em] text-subtle">
           {author} · {formatDate(post.pubDate)}
           {post.isLocked ? " · Members" : ""}
         </Text>
-        <View className="mt-4 h-1 w-16 bg-accent" />
+        <View className="mt-4 h-0.5 w-[120px] bg-accent-print" />
         <View className="mt-2">
           <ArticleBody html={post.body} />
         </View>
-        <View className="mt-10 flex-row flex-wrap justify-between gap-4 border-t-2 border-border pt-6">
+        <View className="mt-10 flex-row flex-wrap justify-between gap-4 border-t border-border pt-6">
           {adjacent.previous ? (
             <Link href={adjacent.previous.href as `/blog/posts/${string}`}>
-              <Text className="font-[Anton] text-[12px] uppercase tracking-[1px] text-muted">
+              <Text className="font-[DMMono] text-[12px] uppercase tracking-[0.06em] text-muted">
                 ← {adjacent.previous.title}
               </Text>
             </Link>
@@ -96,7 +96,7 @@ export default function BlogPostScreen() {
           )}
           {adjacent.next ? (
             <Link href={adjacent.next.href as `/blog/posts/${string}`}>
-              <Text className="font-[Anton] text-[12px] uppercase tracking-[1px] text-muted">
+              <Text className="font-[DMMono] text-[12px] uppercase tracking-[0.06em] text-muted">
                 {adjacent.next.title} →
               </Text>
             </Link>
