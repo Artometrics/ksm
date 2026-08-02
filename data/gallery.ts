@@ -1,14 +1,16 @@
 /**
- * KSM Soul work gallery — generations from moodboard refs.
- * Browse at `/gallery`.
+ * KSM Soul work gallery — regenerated with soul_2 (KSM).
+ * Subject: 26-year-old man. Browse at `/gallery`.
  */
+
+export type GalleryAspect = "3/4" | "1/1" | "16/9" | "9/16";
 
 export type GalleryItem = {
   id: string;
   title: string;
   mood: string;
   src: string;
-  aspect: "3/4" | "1/1";
+  aspect: GalleryAspect;
   jobId: string;
 };
 
@@ -16,58 +18,42 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "bw-profile",
     title: "B&W Cover Portrait",
-    mood: "High-contrast monochrome hero look — grain, collar, hard side light, no text",
+    mood: "High-contrast monochrome hero — grain, collar, hard side light, no text",
     src: "/images/gallery/bw-profile.jpg",
     aspect: "3/4",
-    jobId: "eced077d-099f-4566-abb8-9cb0cc710643",
+    jobId: "c70ec123-f000-460a-b421-2c2b7c772eb5",
   },
   {
-    id: "bw-hero-clean",
-    title: "B&W Studio Stare",
-    mood: "Same cover energy, cropped clean of masthead",
-    src: "/images/gallery/bw-hero-clean.jpg",
+    id: "bw-cover-cropped",
+    title: "B&W Cover Crop",
+    mood: "Same cover stare, masthead cropped out for clean brand use",
+    src: "/images/gallery/bw-cover-cropped.jpg",
     aspect: "3/4",
-    jobId: "30062074-880f-49cb-b4c3-4adfb30aa3e1",
+    jobId: "b76e02b0-869b-4ba1-aa91-5666745053ea",
   },
   {
     id: "bw-concrete",
-    title: "B&W Concrete Wall",
-    mood: "Editorial close-up against rough wall, chiaroscuro",
+    title: "B&W Concrete Low Angle",
+    mood: "Chin up against rough wall — chiaroscuro, film grain",
     src: "/images/gallery/bw-concrete.jpg",
     aspect: "3/4",
-    jobId: "43a840de-72ce-41c2-ad6e-61cddac8b098",
+    jobId: "cc6bb95c-c1c3-4a6d-9c2b-06f2bc0ed87e",
   },
   {
-    id: "bw-lowangle",
-    title: "B&W Low Angle",
-    mood: "Chin up, hard right light, film grain",
-    src: "/images/gallery/bw-lowangle.jpg",
+    id: "turtleneck-studio",
+    title: "Turtleneck Studio",
+    mood: "Soft window light + hard shadow, black turtleneck mid-shot",
+    src: "/images/gallery/turtleneck-studio.jpg",
     aspect: "3/4",
-    jobId: "9383801a-15ec-4e12-8f82-42db3a50779b",
+    jobId: "2369c5b8-3930-40d2-9d59-15b86c764eb7",
   },
   {
-    id: "bw-eyes",
-    title: "B&W Eyes Crop",
-    mood: "Tight face fill, underground zine stare",
-    src: "/images/gallery/bw-eyes.jpg",
-    aspect: "1/1",
-    jobId: "d4ba038d-c8d0-41bc-a7db-db1d27192ea7",
-  },
-  {
-    id: "bw-square",
-    title: "B&W Square Noir",
-    mood: "Square crop, soft edge falloff, sharp eyes",
-    src: "/images/gallery/bw-square.jpg",
-    aspect: "1/1",
-    jobId: "8a4834c5-8235-4b21-81f2-c40a871ec973",
-  },
-  {
-    id: "magazine-cyan-orange",
-    title: "Cyan / Orange Cover",
-    mood: "Cold cyan studio light, scarlet gloves, knife + orange — Dazed-cover energy",
-    src: "/images/gallery/magazine-cyan-orange.jpg",
+    id: "magazine-crimson",
+    title: "Crimson Scarf Editorial",
+    mood: "Black coat, crimson accent, high-contrast studio grade",
+    src: "/images/gallery/magazine-crimson.jpg",
     aspect: "3/4",
-    jobId: "d08bdee3-6922-4626-b96e-d3d36673cda6",
+    jobId: "1572ecb9-1827-46a2-a4e4-86c199835c10",
   },
   {
     id: "double-exposure-lilies",
@@ -75,54 +61,76 @@ export const galleryItems: GalleryItem[] = [
     mood: "Double-exposure face wash in blood red with cream trumpet lilies",
     src: "/images/gallery/double-exposure-lilies.jpg",
     aspect: "3/4",
-    jobId: "684cbacc-3b94-485e-b8a4-3c7bcb086fb6",
-  },
-  {
-    id: "eyes-through-florals",
-    title: "Eyes Through Florals",
-    mood: "Punk collage — eyes peering through black botanical silhouette",
-    src: "/images/gallery/eyes-through-florals.jpg",
-    aspect: "1/1",
-    jobId: "2bdc4c4f-e0dd-46d3-b8d9-e3ae0e6fca4b",
-  },
-  {
-    id: "ophelia-roses",
-    title: "Ophelia Roses",
-    mood: "Floating in dark water with crimson roses, soft spotlight",
-    src: "/images/gallery/ophelia-roses.jpg",
-    aspect: "3/4",
-    jobId: "d624a034-4d76-4499-bede-d57c6342a7a8",
-  },
-  {
-    id: "blue-etching-eye-card",
-    title: "Blue Etching / Eye Card",
-    mood: "Duotone navy stipple portrait holding an orange card with a blue eye",
-    src: "/images/gallery/blue-etching-eye-card.jpg",
-    aspect: "3/4",
-    jobId: "6828db56-f115-4828-8716-4097cf86fe52",
-  },
-  {
-    id: "red-sun-city",
-    title: "Red Sun City",
-    mood: "Blue night street canyon under a saturated red sun",
-    src: "/images/gallery/red-sun-city.jpg",
-    aspect: "3/4",
-    jobId: "7c635bb3-9f94-45eb-b7d5-ddc5ae7a2161",
+    jobId: "f12ed7f3-be97-413d-bb8e-f6aca92a9866",
   },
   {
     id: "glitch-attention",
     title: "Glitch Attention",
-    mood: "Motion-blurred crimson typography smear over black, face emerging",
+    mood: "Motion-blurred crimson smear — face emerging from black",
     src: "/images/gallery/glitch-attention.jpg",
     aspect: "3/4",
-    jobId: "863002dc-c1db-4a40-a1c4-b1756803df63",
+    jobId: "c8503be4-258b-4fb3-9c59-6fedd729ecba",
+  },
+  {
+    id: "bw-square",
+    title: "B&W Square Noir",
+    mood: "Tight square face fill — soft falloff, sharp eyes",
+    src: "/images/gallery/bw-square.jpg",
+    aspect: "1/1",
+    jobId: "7d20a7e5-e03b-4ec3-b3c3-80f5987d47ce",
+  },
+  {
+    id: "bw-eyes",
+    title: "B&W Eyes Crop",
+    mood: "Extreme eye close-up — underground zine stare",
+    src: "/images/gallery/bw-eyes.jpg",
+    aspect: "1/1",
+    jobId: "d6306ea6-c144-4db4-ba77-ee772fd09c4e",
   },
   {
     id: "foliage-crimson",
     title: "Foliage Crimson",
-    mood: "Eyes through mossy green branches on flat crimson field",
+    mood: "Eyes through mossy branches on a flat crimson field",
     src: "/images/gallery/foliage-crimson.jpg",
     aspect: "1/1",
-    jobId: "30b7cba8-86cf-4d45-801b-8f2a99b7203e",
+    jobId: "6bf473ba-247d-4c87-a24e-63b7598777e5",
+  },
+  {
+    id: "eyes-strip-wide",
+    title: "Eyes Strip Wide",
+    mood: "16:9 cinematic eye band for signal strips and banners",
+    src: "/images/gallery/eyes-strip-wide.jpg",
+    aspect: "16/9",
+    jobId: "dde9cf1d-759e-43ea-b801-ff50bf323190",
+  },
+  {
+    id: "red-sun-city",
+    title: "Red Sun City",
+    mood: "Blue night street under a saturated red sun — environmental",
+    src: "/images/gallery/red-sun-city.jpg",
+    aspect: "16/9",
+    jobId: "78c22fa4-3bd8-4694-8432-ba76b9168fd8",
+  },
+  {
+    id: "story-vertical",
+    title: "Story Vertical",
+    mood: "9:16 vertical contact / story frame — dark coat, rim light",
+    src: "/images/gallery/story-vertical.jpg",
+    aspect: "9/16",
+    jobId: "1885203e-31be-4658-a848-12385f2cc273",
   },
 ];
+
+export function aspectRatioValue(aspect: GalleryAspect): number {
+  switch (aspect) {
+    case "1/1":
+      return 1;
+    case "16/9":
+      return 16 / 9;
+    case "9/16":
+      return 9 / 16;
+    case "3/4":
+    default:
+      return 3 / 4;
+  }
+}

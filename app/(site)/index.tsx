@@ -8,7 +8,7 @@ import { SunCrossMark } from "@/components/SunCrossMark";
 import { getHomeWork } from "@/data/work";
 
 const HERO = "/images/brand/hero-cover.jpg";
-const STRIP = "/images/brand/eyes-strip.png";
+const STRIP = "/images/brand/eyes-strip.jpg";
 
 export default function HomeScreen() {
   const { featured, grid, list } = getHomeWork();

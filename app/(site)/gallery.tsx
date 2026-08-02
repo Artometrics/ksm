@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import { Image } from "expo-image";
 import { Wrapper } from "@/components/Wrapper";
 import { PageSeo } from "@/components/PageSeo";
-import { galleryItems } from "@/data/gallery";
+import { aspectRatioValue, galleryItems } from "@/data/gallery";
 
 export default function GalleryScreen() {
   return (
@@ -42,7 +42,7 @@ export default function GalleryScreen() {
                 source={{ uri: item.src }}
                 className="w-full border-2 border-border"
                 style={{
-                  aspectRatio: item.aspect === "1/1" ? 1 : 3 / 4,
+                  aspectRatio: aspectRatioValue(item.aspect),
                   width: "100%",
                 }}
                 contentFit="cover"
