@@ -27,9 +27,9 @@ export default function LoginScreen() {
           secureTextEntry
           className="border border-border bg-bg-elevated px-4 py-3 font-sans text-base text-fg"
         />
-        <Pressable className="self-start bg-fg px-5 py-3">
-          <Text className="text-xs font-medium uppercase tracking-wide text-inverse">
-            Continue
+        <Pressable className="self-start bg-accent px-5 py-3">
+          <Text className="font-[DMMono] text-xs font-medium uppercase tracking-[0.06em] text-white">
+            Continue →
           </Text>
         </Pressable>
       </View>
