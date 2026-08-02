@@ -13,6 +13,7 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Instagram, Linkedin, Music2, Youtube } from "lucide-react-native";
 import { PageSeo } from "@/components/PageSeo";
+import { SunCrossMark } from "@/components/SunCrossMark";
 import { bio, type BioSocial } from "@/data/bio";
 import { assetUrl } from "@/lib/assets";
 import { getRecentEpisodes, getRecentPosts } from "@/lib/content";
@@ -119,11 +120,9 @@ export default function BioScreen() {
         >
           <View className="w-full px-5 pb-12 pt-8" style={{ maxWidth: 480 }}>
             <View className="items-center gap-3">
-              <Image
-                source={{ uri: HERO }}
-                className="mb-2 h-28 w-28 border-2 border-white"
-                contentFit="cover"
-              />
+              <View className="mb-2 h-28 w-28 items-center justify-center border-2 border-white bg-black">
+                <SunCrossMark size={72} />
+              </View>
               <Text className="font-[UnifrakturCook] text-5xl text-accent">
                 ksm
               </Text>

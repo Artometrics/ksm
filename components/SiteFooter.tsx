@@ -1,5 +1,6 @@
 import { Pressable, Text, View } from "react-native";
 import { Link } from "expo-router";
+import { Logo } from "@/components/Logo";
 import { Wrapper } from "@/components/Wrapper";
 
 const COLUMNS = [
@@ -75,9 +76,7 @@ export function SiteFooter() {
             ))}
           </View>
           <View className="mt-10 flex-row flex-wrap items-end justify-between gap-4 border-t border-white/20 pt-6">
-            <Text className="font-[UnifrakturCook] text-4xl text-accent">
-              ksm
-            </Text>
+            <Logo variant="gothic" markSize={40} />
             <Text className="text-[11px] uppercase tracking-[1.4px] text-white/40">
               © {new Date().getFullYear()} KSM · Essays · Interviews · Signal
             </Text>
