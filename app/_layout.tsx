@@ -1,0 +1,23 @@
+import "react-native-gesture-handler";
+import "@/global.css";
+import { Stack } from "expo-router";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
+export { ErrorBoundary } from "expo-router";
+
+export default function RootLayout() {
+  return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: { backgroundColor: "transparent" },
+          animation: "none",
+        }}
+      >
+        <Stack.Screen name="(site)" />
+        <Stack.Screen name="+not-found" />
+      </Stack>
+    </GestureHandlerRootView>
+  );
+}

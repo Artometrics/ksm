@@ -1,31 +1,40 @@
 # Hemingway
 
-![Theme preview](https://lexingtonthemes.com/OpenGraph/hemingway/twitter.png)
+Magazine + podcast site built with **Expo** + **Uniwind** (web and native from one codebase). Migrated from the Lexington Hemingway Astro theme; structure follows [Artometrics/artometrics-web](https://github.com/Artometrics/artometrics-web).
 
+## Tech stack
 
-## Links
-- **Theme specs:** https://lexingtonthemes.com/templates/hemingway  
-- **Documentation:** https://lexingtonthemes.com/documentation  
-- **Changelog:** https://lexingtonthemes.com/changelog/hemingway  
-- **Support:** https://lexingtonthemes.com/legal/support/  
-- **Get the bundle:** https://lexingtonthemes.com  
+- [Expo](https://expo.dev/) ~57 + [Expo Router](https://docs.expo.dev/router/introduction/)
+- React Native / React Native Web (static export via `expo export -p web`)
+- [Uniwind](https://uniwind.dev/) + Tailwind CSS v4 (`global.css`)
+- Markdown content under `src/content/` → JSON via `npm run content`
+- Netlify publishes `dist/` from the web export
 
 ## Requirements
-- Node.js 18 or 20 (LTS recommended)
+
+- Node.js 20+
 - npm
 
 ## Commands
 
-All commands are run from the root of the project, from a terminal:
+| Command | Action |
+| :------ | :----- |
+| `npm install` | Install dependencies |
+| `npm run content` | Build JSON from `src/content/**` |
+| `npm run dev` / `npm run web` | Expo web dev server |
+| `npm start` | Expo CLI (web / iOS / Android) |
+| `npm run build` | Content build + `expo export -p web` → `./dist/` |
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Install dependencies                             |
-| `npm run dev`          | Start local dev server                           |
-| `npm run build`        | Build production site to `./dist/`               |
-| `npm run preview`     | Preview the production build locally             |
-| `npm run astro ...`    | Run Astro CLI commands                           |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+## Content
+
+| Collection | Path | Notes |
+|------------|------|--------|
+| Posts | `src/content/posts/` | Magazine essays → `/blog/posts/<id>` |
+| Podcast | `src/content/podcast/` | Episodes → `/podcast/interviews/<id>` |
+| Authors | `src/content/authors/` | Profiles → `/authors/<id>` |
+| Legal | `src/content/legal/` | → `/legal/<id>` |
+
+Run `npm run content` after editing markdown. Images under `src/images/` are copied to `public/images/` during the content build.
 
 ## Expo contact sheet
 
@@ -36,3 +45,7 @@ cd expo-contact-sheet
 npm install
 npm run web
 ```
+
+## Links
+
+See [AGENTS.md](./AGENTS.md) for routing, schemas, and contributor guardrails.
