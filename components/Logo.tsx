@@ -6,21 +6,25 @@ export function Logo({
   className,
   variant = "display",
   markSize,
+  inverted = false,
 }: {
   className?: string;
   variant?: "display" | "gothic" | "mark";
   markSize?: number;
+  /** White wordmark for locked black chrome */
+  inverted?: boolean;
 }) {
   const size =
     markSize ??
     (variant === "gothic" ? 36 : variant === "mark" ? 22 : 28);
 
+  const wordmarkColor = inverted ? "text-white" : "text-fg";
   const textClass =
     variant === "gothic"
       ? "font-[UnifrakturCook] text-4xl text-accent"
       : variant === "mark"
-        ? "font-[Anton] text-sm uppercase tracking-[3px] text-fg"
-        : "font-[Anton] text-2xl uppercase tracking-[2px] text-fg";
+        ? `font-[Anton] text-sm uppercase tracking-[3px] ${wordmarkColor}`
+        : `font-[Anton] text-2xl uppercase tracking-[2px] ${wordmarkColor}`;
 
   return (
     <Link href="/" asChild>

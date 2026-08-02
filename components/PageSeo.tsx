@@ -14,7 +14,7 @@ export function PageSeo({
   title,
   description,
   path = "/",
-  image = "/images/brand/hero-cover.png",
+  image = "/images/brand/hero-cover.jpg",
   type = "website",
 }: Props) {
   useEffect(() => {

@@ -2,31 +2,27 @@ import { Pressable, Text, View } from "react-native";
 import { Image } from "expo-image";
 import { Link } from "expo-router";
 import { Wrapper } from "@/components/Wrapper";
-import { BlogCard } from "@/components/BlogCard";
-import { PodcastCard } from "@/components/PodcastCard";
+import { WorkCard } from "@/components/WorkCard";
 import { PageSeo } from "@/components/PageSeo";
 import { SunCrossMark } from "@/components/SunCrossMark";
-import { getRecentEpisodes, getRecentPosts } from "@/lib/content";
+import { getHomeWork } from "@/data/work";
 
-const HERO = "/images/brand/hero-cover.png";
+const HERO = "/images/brand/hero-cover.jpg";
 const STRIP = "/images/brand/eyes-strip.png";
 
 export default function HomeScreen() {
-  const posts = getRecentPosts(4);
-  const episodes = getRecentEpisodes(3);
-  const cover = posts[0];
-  const rest = posts.slice(1);
+  const { featured, grid, list } = getHomeWork();
 
   return (
     <>
       <PageSeo
         title="KSM"
-        description="Essays, interviews, and cultural signal — high contrast magazine."
+        description="KSM portfolio — brand, editorial, and identity work with an edge."
         path="/"
         image={HERO}
       />
 
-      {/* Full-bleed hero — brand + one headline + one line + CTA + image */}
+      {/* Full-bleed hero — same structure, portfolio copy */}
       <View className="relative min-h-[88vh] w-full overflow-hidden bg-black">
         <Image
           source={{ uri: HERO }}
@@ -42,25 +38,25 @@ export default function HomeScreen() {
               ksm
             </Text>
           </View>
-          <Text className="max-w-[18ch] font-[Anton] text-5xl uppercase leading-[0.92] tracking-[1px] text-white md:text-7xl">
+          <Text className="max-w-[16ch] font-[Anton] text-5xl uppercase leading-[0.92] tracking-[1px] text-white md:text-7xl">
             Killing boys of comfort
           </Text>
           <Text className="max-w-[36ch] font-sans text-[15px] leading-6 text-white/80">
-            Essays and interviews that cut — design, culture, and the people who
-            ship when it hurts.
+            Portfolio for brand systems, editorial stills, and identity work —
+            high contrast on purpose.
           </Text>
           <View className="mt-2 flex-row flex-wrap gap-3">
-            <Link href="/blog" asChild>
+            <Link href="/gallery" asChild>
               <Pressable className="bg-accent px-5 py-3">
                 <Text className="font-[Anton] text-[13px] uppercase tracking-[2px] text-white">
-                  Read the magazine
+                  View work
                 </Text>
               </Pressable>
             </Link>
-            <Link href="/podcast" asChild>
+            <Link href="/contact" asChild>
               <Pressable className="border-2 border-white px-5 py-3">
                 <Text className="font-[Anton] text-[13px] uppercase tracking-[2px] text-white">
-                  Listen
+                  Contact
                 </Text>
               </Pressable>
             </Link>
@@ -68,7 +64,7 @@ export default function HomeScreen() {
         </Wrapper>
       </View>
 
-      {/* Eyes strip band */}
+      {/* Signal strip */}
       <View className="relative h-[180px] w-full overflow-hidden border-y-2 border-border bg-accent md:h-[240px]">
         <Image
           source={{ uri: STRIP }}
@@ -77,23 +73,23 @@ export default function HomeScreen() {
         />
         <View className="absolute inset-0 items-center justify-center">
           <Text className="font-[Anton] text-4xl uppercase tracking-[6px] text-white md:text-6xl">
-            Soirée signal
+            Selected work
           </Text>
         </View>
       </View>
 
-      {/* Cover story + stack */}
+      {/* Featured + 3-up grid — same magazine structure */}
       <Wrapper className="gap-6 py-10">
         <View className="flex-row items-end justify-between gap-4">
           <View>
             <Text className="font-[GreatVibes] text-3xl text-accent">
-              Issue
+              Portfolio
             </Text>
             <Text className="font-[Anton] text-4xl uppercase tracking-[2px] text-fg">
-              From the magazine
+              From the work
             </Text>
           </View>
-          <Link href="/blog" asChild>
+          <Link href="/gallery" asChild>
             <Pressable>
               <Text className="font-[Anton] text-[12px] uppercase tracking-[2px] text-accent">
                 Archive →
@@ -102,36 +98,36 @@ export default function HomeScreen() {
           </Link>
         </View>
 
-        {cover ? <BlogCard post={cover} variant="cover" /> : null}
+        <WorkCard item={featured} variant="cover" />
 
         <View className="flex-row flex-wrap gap-4">
-          {rest.map((post) => (
-            <View key={post.slug} className="min-w-[260px] flex-1">
-              <BlogCard post={post} variant="stack" />
+          {grid.map((item) => (
+            <View key={item.id} className="min-w-[260px] flex-1">
+              <WorkCard item={item} variant="stack" />
             </View>
           ))}
         </View>
       </Wrapper>
 
-      {/* Podcast rail */}
+      {/* List rail — same interviews structure */}
       <View className="border-t-2 border-border bg-black py-10">
         <Wrapper className="gap-4">
           <View className="flex-row items-end justify-between">
             <Text className="font-[Anton] text-4xl uppercase tracking-[2px] text-white">
-              Interviews
+              More work
             </Text>
-            <Link href="/podcast" asChild>
+            <Link href="/gallery" asChild>
               <Pressable>
                 <Text className="font-[Anton] text-[12px] uppercase tracking-[2px] text-accent">
-                  All episodes →
+                  All pieces →
                 </Text>
               </Pressable>
             </Link>
           </View>
           <View className="border-2 border-white">
-            {episodes.map((ep) => (
-              <View key={ep.id} className="bg-black">
-                <PodcastCard episode={ep} />
+            {list.map((item) => (
+              <View key={item.id} className="bg-black">
+                <WorkCard item={item} variant="row" />
               </View>
             ))}
           </View>
