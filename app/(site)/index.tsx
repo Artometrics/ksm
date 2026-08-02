@@ -7,7 +7,7 @@ import { PodcastCard } from "@/components/PodcastCard";
 import { PageSeo } from "@/components/PageSeo";
 import { getRecentEpisodes, getRecentPosts } from "@/lib/content";
 
-const HERO = "/images/brand/hero-cover.png";
+const HERO = "/images/brand/hero-cover.jpg";
 const STRIP = "/images/brand/eyes-strip.png";
 
 export default function HomeScreen() {
