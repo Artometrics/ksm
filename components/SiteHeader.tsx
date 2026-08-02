@@ -9,6 +9,7 @@ import { useTheme } from "@/lib/theme";
 const NAV = [
   { href: "/blog", label: "Magazine" },
   { href: "/podcast", label: "Podcast" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
   { href: "/pricing", label: "Membership" },
 ] as const;

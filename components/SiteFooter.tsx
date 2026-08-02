@@ -8,6 +8,7 @@ const COLUMNS = [
     links: [
       ["/blog", "Magazine"],
       ["/podcast", "Podcast"],
+      ["/gallery", "Gallery"],
       ["/authors", "Authors"],
       ["/about", "About"],
     ],

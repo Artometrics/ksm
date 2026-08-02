@@ -6,6 +6,7 @@ import { useChrome } from "@/lib/chrome";
 const LINKS = [
   { href: "/blog", label: "Magazine" },
   { href: "/podcast", label: "Podcast" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/authors", label: "Authors" },
   { href: "/about", label: "About" },
   { href: "/pricing", label: "Membership" },
