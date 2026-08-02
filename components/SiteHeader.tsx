@@ -5,16 +5,13 @@ import { Wrapper } from "@/components/Wrapper";
 import { useChrome } from "@/lib/chrome";
 
 const NAV = [
-  { href: "/blog", label: "Magazine" },
-  { href: "/podcast", label: "Podcast" },
-  { href: "/gallery", label: "Gallery" },
+  { href: "/gallery", label: "Work" },
   { href: "/about", label: "About" },
-  { href: "/pricing", label: "Membership" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 /**
- * Locked black magazine chrome — matches the KSM hero header:
- * black bar, white Anton nav, crimson Log in, utility strip.
+ * Locked black magazine chrome — portfolio nav categories.
  */
 export function SiteHeader() {
   const { menuOpen, setMenuOpen } = useChrome();
@@ -40,10 +37,10 @@ export function SiteHeader() {
                 </Pressable>
               </Link>
             ))}
-            <Link href="/login" asChild>
+            <Link href="/contact" asChild>
               <Pressable className="bg-accent px-3 py-2">
                 <Text className="font-[Anton] text-[12px] uppercase tracking-[1.5px] text-white">
-                  Log in
+                  Hire me
                 </Text>
               </Pressable>
             </Link>
@@ -64,13 +61,13 @@ export function SiteHeader() {
       <View className="border-t border-white/25 bg-black">
         <Wrapper className="flex-row flex-wrap items-center justify-between gap-2 py-1.5">
           <Text className="text-[10px] font-bold uppercase tracking-[1.4px] text-white/70">
-            Issue · Online
+            Portfolio · Online
           </Text>
           <Text className="text-[10px] font-bold uppercase tracking-[1.4px] text-accent">
             Strong graphic content · No fluff
           </Text>
           <Text className="text-[10px] font-bold uppercase tracking-[1.4px] text-white/70">
-            Essays · Interviews · Signal
+            Brand · Editorial · Systems
           </Text>
         </Wrapper>
       </View>

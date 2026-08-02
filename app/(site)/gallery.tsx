@@ -8,26 +8,26 @@ export default function GalleryScreen() {
   return (
     <>
       <PageSeo
-        title="Gallery"
-        description="KSM Soul work — editorial generations from moodboard references."
+        title="Work"
+        description="KSM portfolio archive — brand, editorial, identity, and campaign stills."
         path="/gallery"
       />
       <View className="border-b-2 border-border bg-black py-10">
         <Wrapper>
-          <Text className="font-[GreatVibes] text-3xl text-accent">Work</Text>
+          <Text className="font-[GreatVibes] text-3xl text-accent">Archive</Text>
           <Text className="font-[Anton] text-5xl uppercase tracking-[2px] text-white md:text-7xl">
-            Gallery
+            Work
           </Text>
           <Text className="mt-3 max-w-[42ch] font-sans text-[15px] leading-6 text-white/70">
-            KSM Soul generations from your dropped references — keepers for
-            covers, posters, and signal.
+            Selected KSM pieces — brand systems, editorial stills, and identity
+            studies. Drop refs anytime to grow the set.
           </Text>
         </Wrapper>
       </View>
       <View className="border-b-2 border-border bg-accent px-0 py-2">
         <Wrapper>
           <Text className="font-[Anton] text-[11px] uppercase tracking-[2px] text-black">
-            {galleryItems.length} pieces · Soul V2 · Crimson / black / grain
+            {galleryItems.length} pieces · Brand · Editorial · Systems
           </Text>
         </Wrapper>
       </View>

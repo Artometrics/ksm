@@ -4,15 +4,11 @@ import { Wrapper } from "@/components/Wrapper";
 import { useChrome } from "@/lib/chrome";
 
 const LINKS = [
-  { href: "/blog", label: "Magazine" },
-  { href: "/podcast", label: "Podcast" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/authors", label: "Authors" },
+  { href: "/gallery", label: "Work" },
   { href: "/about", label: "About" },
-  { href: "/pricing", label: "Membership" },
   { href: "/contact", label: "Contact" },
-  { href: "/login", label: "Log in" },
-  { href: "/signup", label: "Sign up" },
+  { href: "/blog", label: "Writing" },
+  { href: "/podcast", label: "Audio" },
 ] as const;
 
 export function SiteNavOverlay() {

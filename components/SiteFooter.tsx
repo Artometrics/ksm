@@ -4,22 +4,20 @@ import { Wrapper } from "@/components/Wrapper";
 
 const COLUMNS = [
   {
-    title: "Read",
+    title: "Work",
     links: [
-      ["/blog", "Magazine"],
-      ["/podcast", "Podcast"],
-      ["/gallery", "Gallery"],
-      ["/authors", "Authors"],
+      ["/gallery", "Archive"],
       ["/about", "About"],
+      ["/contact", "Contact"],
     ],
   },
   {
-    title: "Join",
+    title: "Categories",
     links: [
-      ["/pricing", "Membership"],
-      ["/login", "Log in"],
-      ["/signup", "Sign up"],
-      ["/contact", "Contact"],
+      ["/gallery", "Brand"],
+      ["/gallery", "Editorial"],
+      ["/gallery", "Identity"],
+      ["/gallery", "Systems"],
     ],
   },
   {
@@ -28,7 +26,6 @@ const COLUMNS = [
       ["/legal/privacy", "Privacy"],
       ["/legal/terms", "Terms"],
       ["/legal/cookies", "Cookies"],
-      ["/legal/ethics-statement", "Ethics"],
     ],
   },
 ] as const;
@@ -40,16 +37,16 @@ export function SiteFooter() {
         <Wrapper className="flex-row flex-wrap items-end justify-between gap-6">
           <View className="min-w-[220px] flex-1 gap-2">
             <Text className="font-[GreatVibes] text-3xl text-black">
-              Issue online
+              Portfolio online
             </Text>
             <Text className="font-[Anton] text-5xl uppercase leading-[0.95] tracking-[2px] text-black">
               {"Let's make\nsomething\nloud."}
             </Text>
           </View>
-          <Link href="/signup" asChild>
+          <Link href="/contact" asChild>
             <Pressable className="border-2 border-black bg-black px-6 py-4">
               <Text className="font-[Anton] text-sm uppercase tracking-[2px] text-white">
-                Join →
+                Contact →
               </Text>
             </Pressable>
           </Link>
@@ -63,8 +60,8 @@ export function SiteFooter() {
                 <Text className="mb-1.5 font-[Anton] text-[12px] uppercase tracking-[2px] text-accent">
                   {col.title}
                 </Text>
-                {col.links.map(([href, label]) => (
-                  <Link key={href} href={href as `/blog`} asChild>
+                {col.links.map(([href, label], i) => (
+                  <Link key={`${href}-${label}-${i}`} href={href as `/gallery`} asChild>
                     <Pressable>
                       <Text className="py-0.5 text-[13px] uppercase tracking-wide text-white/75">
                         {label}
@@ -80,7 +77,7 @@ export function SiteFooter() {
               ksm
             </Text>
             <Text className="text-[11px] uppercase tracking-[1.4px] text-white/40">
-              © {new Date().getFullYear()} KSM · Essays · Interviews · Signal
+              © {new Date().getFullYear()} KSM · Brand · Editorial · Systems
             </Text>
           </View>
         </Wrapper>
