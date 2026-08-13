@@ -7,8 +7,8 @@ all-time Hot 100 artists.
 
 | Phase | Output | Status |
 |-------|--------|--------|
-| 1. Artist seed list | `data/artists_seed.csv` | **Done** — awaiting review |
-| 2. Charting singles | `data/charting_singles.csv` | Pending |
+| 1. Artist seed list | `data/artists_seed.csv` | **Done** |
+| 2. Charting singles | `data/charting_singles.csv` | **Done** — awaiting review |
 | 3. Genius writer credits | `data/song_credits.csv` | Pending |
 | 4. MusicBrainz cross-check | `data/credit_crosscheck.csv` | Pending |
 | 5. Analysis-ready tables | `data/songs_final.csv`, `data/artist_summary.csv` | Pending |
