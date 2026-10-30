@@ -1,6 +1,7 @@
 import { Text, View } from "react-native";
 import { Image } from "expo-image";
 import { Link, useLocalSearchParams } from "expo-router";
+import Head from "expo-router/head";
 import { Wrapper } from "@/components/Wrapper";
 import { ArticleBody } from "@/components/ArticleBody";
 import { PageSeo } from "@/components/PageSeo";
@@ -9,13 +10,13 @@ import {
   formatAuthorName,
   formatDate,
   getAdjacentPosts,
+  getAllBlogPosts,
   getBlogPost,
-  getBlogPosts,
 } from "@/lib/content";
 import { paramString } from "@/lib/params";
 
 export async function generateStaticParams() {
-  return getBlogPosts().map((post) => ({ slug: post.slug }));
+  return getAllBlogPosts().map((post) => ({ slug: post.slug }));
 }
 
 export default function BlogPostScreen() {
@@ -45,13 +46,24 @@ export default function BlogPostScreen() {
     : "Staff";
   const tag = post.tags?.[0];
 
+  const og = post.heroImage || `/images/og/${post.slug}.svg`;
+
   return (
     <>
+      <Head>
+        <title>{`${post.title} · Kyle McAuliffe`}</title>
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="description" content={post.description} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={`https://kylesmcauliffe.com${og}`} />
+      </Head>
       <PageSeo
         title={post.title}
         description={post.description}
         path={`/blog/posts/${post.slug}`}
-        image={post.heroImage || undefined}
+        image={og}
         type="article"
       />
       {hero ? (
@@ -65,6 +77,9 @@ export default function BlogPostScreen() {
         </View>
       ) : null}
       <Wrapper variant="prose" className="gap-4 py-10">
+        {post.draft ? (
+          <Text className="ksm-lede">Draft. Not published. Left off the journal index until review.</Text>
+        ) : null}
         {tag ? (
           <Text className="font-[Anton] text-[12px] uppercase tracking-[2px] text-accent">
             {tag}

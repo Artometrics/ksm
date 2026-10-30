@@ -218,5 +218,74 @@
     "isLocked": false,
     "body": "<blockquote>\n<p>&quot;This is a placeholder quote to grab attention.&quot; – Author Unknown</p>\n</blockquote>\n<p>Welcome to your placeholder blog post! This is where your engaging content will shine. Use this template as a foundation to create meaningful, value-driven posts for your audience.</p>\n<hr>\n<h2>Key Sections to Highlight</h2>\n<h3>1. <strong>Introduction</strong></h3>\n<p>Provide a compelling introduction here. Explain the problem, introduce the topic, or set the stage for what’s to come.</p>\n<p><strong>Example:</strong><br>&quot;In today’s fast-paced world, [insert topic] plays a crucial role in shaping our daily lives. Whether you’re a seasoned professional or just starting out, understanding this subject can unlock new opportunities.&quot;</p>\n<hr>\n<h3>2. <strong>Core Content</strong></h3>\n<h4><strong>Subheading Example</strong></h4>\n<p>Use subheadings to break up content and make it more readable. Each section should focus on a key point.</p>\n<ul>\n<li><strong>Bullet Points:</strong> Great for summarizing ideas or creating checklists.</li>\n<li><strong>Numbered Lists:</strong> Ideal for step-by-step guides or ranking items.</li>\n<li><strong>Inline Code Snippets:</strong> <code>code-example</code> for technical or actionable insights.</li>\n<li><strong>Emphasis Options:</strong><ul>\n<li><em>Italic text for subtle emphasis</em></li>\n<li><strong>Bold text for strong emphasis</strong></li>\n<li><code>Monospaced text for code or technical terms</code></li>\n</ul>\n</li>\n</ul>\n<hr>\n<h3>3. <strong>Visual Breaks</strong></h3>\n<p>Include images, diagrams, or even tables to enhance readability and engagement.</p>\n<p><img src=\"/thumbnails/placeholder.png\" alt=\"Placeholder Image\"><br><em>Caption: Add a relevant image to visually support your content.</em></p>\n<p><strong>Example Table:</strong></p>\n<table>\n<thead>\n<tr>\n<th>Feature</th>\n<th>Benefit</th>\n<th>Example Use Case</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Simplicity</td>\n<td>Easy to understand</td>\n<td>Onboarding new users</td>\n</tr>\n<tr>\n<td>Scalability</td>\n<td>Adapts to growing needs</td>\n<td>Expanding product features</td>\n</tr>\n<tr>\n<td>Accessibility</td>\n<td>Inclusive for all audiences</td>\n<td>Adding alt text to images</td>\n</tr>\n</tbody></table>\n<hr>\n<h3>4. <strong>Callout Boxes</strong></h3>\n<p>Use callouts to highlight important information:</p>\n<blockquote>\n<p><strong>Tip:</strong> Always test your content on multiple devices to ensure readability.</p>\n</blockquote>\n<blockquote>\n<p><strong>Reminder:</strong> Keep your writing concise and focused on the audience’s needs.</p>\n</blockquote>\n<hr>\n<h2>Placeholder Code Block</h2>\n<h4>HTML Example</h4>\n<pre><code class=\"language-html\">&lt;div class=&quot;takeaways&quot;&gt;\n  &lt;h2&gt;Actionable Takeaways&lt;/h2&gt;\n  &lt;ul&gt;\n    &lt;li&gt;Always start with the user’s needs.&lt;/li&gt;\n    &lt;li&gt;Break complex topics into digestible sections.&lt;/li&gt;\n    &lt;li&gt;Use visuals to support your message.&lt;/li&gt;\n    &lt;li&gt;End with a clear call to action.&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;\n</code></pre>\n<h4>CSS Example</h4>\n<pre><code class=\"language-css\">/* Typography*/\n--font-sans: &quot;Inter&quot;, sans-serif;\n--font-serif: &quot;Newsreader&quot;, serif;\n/* Colors */\n--color-black: #060709;\n--color-white: #f6f5f3;\n.takeaways {\n  background-color: #f9f9f9;\n  border: 1px solid #ddd;\n  padding: 20px;\n  border-radius: 8px;\n}\n</code></pre>\n<h4>JavaScript Example</h4>\n<pre><code class=\"language-javascript\">import { defineConfig } from &quot;astro/config&quot;;\nimport tailwindcss from &quot;@tailwindcss/vite&quot;;\nimport sitemap from &quot;@astrojs/sitemap&quot;;\nimport mdx from &quot;@astrojs/mdx&quot;;\n\n// https://astro.build/config\nexport default defineConfig({\n  vite: {\n    plugins: [tailwindcss()],\n  },\n  markdown: {\n    drafts: true,\n    shikiConfig: {\n      theme: &quot;css-variables&quot;,\n    },\n  },\n  shikiConfig: {\n    wrap: true,\n    skipInline: false,\n    drafts: true,\n  },\n  site: &quot;https://yourdomain.com&quot;,\n  integrations: [sitemap(), mdx()],\n});\n</code></pre>\n<h2>Actionable Takeaways</h2>\n<p>Wrap up your post with actionable takeaways. This helps readers leave with a clear understanding of the key points.</p>\n<p><strong>Example Takeaways:</strong></p>\n<ol>\n<li>Always start with the user’s needs.</li>\n<li>Break complex topics into digestible sections.</li>\n<li>Use visuals to support your message.</li>\n<li>End with a clear call to action.</li>\n</ol>\n<hr>\n<h2>Final Thoughts</h2>\n<p>This placeholder post is your starting point for creating impactful content. Add your unique insights, examples, and voice to make it truly yours.</p>\n<p><img src=\"/thumbnails/placeholder.png\" alt=\"Placeholder Image\"><br><em>Caption: Every great post deserves a memorable conclusion.</em></p>\n<blockquote>\n<p>&quot;End your posts with a lasting impression. This is your moment to connect with your audience.&quot; – Placeholder Author</p>\n</blockquote>\n<hr>\n<h3>Features Used:</h3>\n<ol>\n<li><strong>Headings</strong>: Structured hierarchy with <code>#</code>, <code>##</code>, and <code>###</code>.</li>\n<li><strong>Blockquotes</strong>: To emphasize quotes or tips.</li>\n<li><strong>Lists</strong>: Bulleted and numbered lists for clarity.</li>\n<li><strong>Images</strong>: Placeholder links with captions.</li>\n<li><strong>Tables</strong>: To organize data.</li>\n<li><strong>Inline Code</strong>: Highlight technical details.</li>\n<li><strong>Code Blocks</strong>: Provide technical examples.</li>\n<li><strong>Callouts</strong>: For tips and reminders.</li>\n</ol>\n<p>This placeholder post is adaptable for any topic. Just replace the placeholders with your content, and you’re good to go!</p>\n",
     "bodyFormat": "html"
+  },
+  {
+    "id": "fact-checking-cardinal-ep-7",
+    "title": "Fact-checking Cardinal Ep 7",
+    "slug": "fact-checking-cardinal-ep-7",
+    "pubDate": "2026-10-30T00:00:00.000Z",
+    "description": "What the Cardinal repo records about episode 7. Not an independent check of the history.",
+    "heroImage": "/images/og/fact-checking-cardinal-ep-7.svg",
+    "image": {
+      "url": "/images/og/fact-checking-cardinal-ep-7.svg",
+      "alt": "Draft title card for Fact-checking Cardinal Ep 7"
+    },
+    "tags": [
+      "Writing",
+      "Cardinal"
+    ],
+    "author": "kyle-mcauliffe",
+    "draft": true,
+    "isRecent": false,
+    "isPopular": false,
+    "isLocked": false,
+    "body": "<p>This note is a draft. It does not add a second fact-check. It points at the correction the Cardinal repository already recorded.</p>\n<p>The public episodes page lists episode 07 as &quot;The Road&quot;, dated 1969 to 2002. That page is <a href=\"https://cardinal-510519.web.app/episodes\">https://cardinal-510519.web.app/episodes</a>.</p>\n<p>Commit <code>8d26725</code> on 30 October 2026 is titled &quot;Correct Pong&#39;s tavern, Cohen-Boyer dates, and Swanson&#39;s exit.&quot; The commit message says the prototype went into Andy Capp&#39;s Tavern in Sunnyvale, the first Cohen-Boyer patent issued ten days before Bayh-Dole, and Swanson was let go by Kleiner &amp; Perkins. The only file in that commit is <code>site/corpus/rewrite/chapters/ep7-02-pong-patents.md</code>.</p>\n<p>Those three sentences are the commit message, not a claim checked again for this draft. The file name starts with <code>ep7</code>, which is why it is filed with episode 7 here.</p>\n<h2>Sources</h2>\n<ul>\n<li>Episodes index: <a href=\"https://cardinal-510519.web.app/episodes\">https://cardinal-510519.web.app/episodes</a></li>\n<li>Commit <code>8d26725</code>: <a href=\"https://github.com/kylesmcauliffe/cardinal/commit/8d267256882110f5f1d5313678ae593954c989f9\">https://github.com/kylesmcauliffe/cardinal/commit/8d267256882110f5f1d5313678ae593954c989f9</a></li>\n<li>Book README: <a href=\"https://github.com/kylesmcauliffe/cardinal/blob/main/README.md\">https://github.com/kylesmcauliffe/cardinal/blob/main/README.md</a></li>\n</ul>\n",
+    "bodyFormat": "html"
+  },
+  {
+    "id": "how-i-build-with-ai-agents",
+    "title": "How I build with AI agents",
+    "slug": "how-i-build-with-ai-agents",
+    "pubDate": "2026-10-30T00:00:00.000Z",
+    "description": "What the Dawn README and the 30 October 2026 hosting commit actually say.",
+    "heroImage": "/images/og/how-i-build-with-ai-agents.svg",
+    "image": {
+      "url": "/images/og/how-i-build-with-ai-agents.svg",
+      "alt": "Draft title card for How I build with AI agents"
+    },
+    "tags": [
+      "Apps",
+      "Dawn"
+    ],
+    "author": "kyle-mcauliffe",
+    "draft": true,
+    "isRecent": false,
+    "isPopular": false,
+    "isLocked": false,
+    "body": "<p>This note is a draft. It only repeats what is written in the Dawn repository.</p>\n<p>The Dawn README calls Dawn a pixel-art village of agents, plus a studio and model gateway for the Artometrics ecosystem. It names three agents you can tap: Trinity, Kali, and Nimbus. It says they can draft a send, spend, hire, or post, and that nothing leaves until you tap Approve.</p>\n<p>A commit on 30 October 2026, <code>0ff2c61</code>, says Dawn is served as a static Firebase export. The message says the village and Studio chat call Gemini through Firebase AI Logic in the browser, and that the old <code>/api/chat</code> handler stays under <code>src/lib/studio</code> for a possible later Cloud Function. Pull request #3 on Artometrics/dawn is the merge that brought that hosting change in (<code>fb33451</code>).</p>\n<p>The README also says the Map tab uses OpenStreetMap, quests are short goals, and an older studio UI is at <code>/studio</code>. Hosting is described as Firebase Hosting of the static export in <code>out/</code>.</p>\n<h2>Sources</h2>\n<ul>\n<li>README: <a href=\"https://github.com/Artometrics/dawn/blob/main/README.md\">https://github.com/Artometrics/dawn/blob/main/README.md</a></li>\n<li>Commit <code>0ff2c61</code>: <a href=\"https://github.com/Artometrics/dawn/commit/0ff2c61\">https://github.com/Artometrics/dawn/commit/0ff2c61</a></li>\n<li>Pull request #3: <a href=\"https://github.com/Artometrics/dawn/pull/3\">https://github.com/Artometrics/dawn/pull/3</a></li>\n<li>Hosted app checked on 30 October 2026: <a href=\"https://dawn-510519.web.app\">https://dawn-510519.web.app</a></li>\n</ul>\n",
+    "bodyFormat": "html"
+  },
+  {
+    "id": "pantheon-dev-log",
+    "title": "Pantheon dev log",
+    "slug": "pantheon-dev-log",
+    "pubDate": "2026-10-30T00:00:00.000Z",
+    "description": "Where the Pantheon report lives in the Artometrics repo and on the public site.",
+    "heroImage": "/images/og/pantheon-dev-log.svg",
+    "image": {
+      "url": "/images/og/pantheon-dev-log.svg",
+      "alt": "Draft title card for Pantheon dev log"
+    },
+    "tags": [
+      "Research",
+      "Pantheon"
+    ],
+    "author": "kyle-mcauliffe",
+    "draft": true,
+    "isRecent": false,
+    "isPopular": false,
+    "isLocked": false,
+    "body": "<p>This note is a draft. It is a pointer to the report, not a new dataset.</p>\n<p><code>articles/pantheon/README.md</code> in Artometrics/artometrics titles the piece &quot;Power, Art, and Science Dominate Global Memory&quot; and says the live page is <a href=\"https://artometrics.com/pantheon/\">https://artometrics.com/pantheon/</a>. The same README says the desk is humanities and that the piece uses MIT&#39;s Pantheon dataset. It states &quot;85,000+ biographies&quot;. The layout it lists is <code>_quarto.yml</code>, <code>pantheon.qmd</code>, <code>data/</code>, <code>charts/</code>, and <code>figures/</code>. The render command it prints is <code>quarto render</code> from <code>articles/pantheon</code>, then <code>npm run sync:article -- --slug pantheon</code>.</p>\n<p>The public URL <a href=\"https://artometrics.com/pantheon\">https://artometrics.com/pantheon</a> answered with that report&#39;s title on 30 October 2026. There is no separate Artometrics/pantheon repository. The article lives inside Artometrics/artometrics.</p>\n<h2>Sources</h2>\n<ul>\n<li>README: <a href=\"https://github.com/Artometrics/artometrics/blob/main/articles/pantheon/README.md\">https://github.com/Artometrics/artometrics/blob/main/articles/pantheon/README.md</a></li>\n<li>Live page: <a href=\"https://artometrics.com/pantheon\">https://artometrics.com/pantheon</a></li>\n</ul>\n",
+    "bodyFormat": "html"
   }
 ]

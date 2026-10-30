@@ -1,3 +1,4 @@
+import { hiddenBlogIds } from "@/data/hidden-listings";
 import blogData from "@/src/generated/blog.json";
 import podcastData from "@/src/generated/podcast.json";
 import authorsData from "@/src/generated/authors.json";
@@ -25,9 +26,19 @@ export function formatDate(iso: string | null) {
   });
 }
 
+const hiddenIds = new Set<string>(hiddenBlogIds);
+
+function isHiddenPlaceholder(post: BlogPost) {
+  return hiddenIds.has(post.id) || hiddenIds.has(post.slug);
+}
+
+export function getAllBlogPosts(): BlogPost[] {
+  return blogData as BlogPost[];
+}
+
 export function getBlogPosts(): BlogPost[] {
-  return (blogData as BlogPost[])
-    .filter((post) => !post.draft && post.pubDate)
+  return getAllBlogPosts()
+    .filter((post) => !post.draft && !isHiddenPlaceholder(post) && post.pubDate)
     .sort(
       (a, b) =>
         new Date(b.pubDate!).getTime() - new Date(a.pubDate!).getTime(),
@@ -36,7 +47,7 @@ export function getBlogPosts(): BlogPost[] {
 
 export function getBlogPost(slug: string | undefined): BlogPost | undefined {
   if (!slug) return undefined;
-  return getBlogPosts().find((p) => p.slug === slug || p.id === slug);
+  return getAllBlogPosts().find((p) => p.slug === slug || p.id === slug);
 }
 
 export function getPodcastEpisodes(): PodcastEpisode[] {

@@ -4,11 +4,12 @@ import { Wrapper } from "@/components/Wrapper";
 import { useChrome } from "@/lib/chrome";
 
 const LINKS = [
-  { href: "/gallery", label: "Work" },
+  { href: "/", label: "Projects" },
+  { href: "/#papers", label: "Papers" },
+  { href: "/blog", label: "Journal" },
+  { href: "/cv", label: "CV" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-  { href: "/blog", label: "Writing" },
-  { href: "/podcast", label: "Audio" },
+  { href: "/now", label: "Now" },
 ] as const;
 
 export function SiteNavOverlay() {
@@ -16,8 +17,8 @@ export function SiteNavOverlay() {
   if (!menuOpen) return null;
 
   return (
-    <View className="absolute inset-0 z-50 bg-black lg:hidden">
-      <Wrapper className="gap-0 pt-24">
+    <View className="ksm-menu">
+      <Wrapper className="gap-0 pt-6">
         {LINKS.map((item) => (
           <Link
             key={item.href}
@@ -25,16 +26,11 @@ export function SiteNavOverlay() {
             asChild
             onPress={() => setMenuOpen(false)}
           >
-            <Pressable className="border-b border-white/20 py-5">
-              <Text className="font-[Anton] text-4xl uppercase tracking-[2px] text-white">
-                {item.label}
-              </Text>
+            <Pressable className="ksm-menu-link">
+              <Text className="ksm-menu-label">{item.label}</Text>
             </Pressable>
           </Link>
         ))}
-        <Text className="mt-8 font-[GreatVibes] text-3xl text-accent">
-          ksm
-        </Text>
       </Wrapper>
     </View>
   );

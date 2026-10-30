@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Artometrics",
+    "line": "Independent data journalism on culture, place, history, persona, and power.",
+    "href": "https://artometrics.com",
+    "tags": [
+      "Research",
+      "Writing"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Games",
+    "line": "A public report on board-game ratings and popularity.",
+    "href": "https://artometrics.com/games",
+    "tags": [
+      "Research",
+      "Games"
+    ],
+    "kind": "paper"
+  },
+  {
+    "title": "Pantheon",
+    "line": "A report on occupations and cities in MIT's Pantheon biographies.",
+    "href": "https://artometrics.com/pantheon",
+    "tags": [
+      "Research"
+    ],
+    "kind": "paper"
+  },
+  {
+    "title": "Lab log",
+    "line": "How Artometrics is made, plus a dated log.",
+    "href": "https://artometrics.com/lab-log",
+    "tags": [
+      "Research"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Cardinal",
+    "line": "The Stanford corridor, as a book and a public reading room.",
+    "href": "https://cardinal-510519.web.app",
+    "tags": [
+      "Writing"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Dawn",
+    "line": "A pixel-art village of agents, plus a studio for the Artometrics tools.",
+    "href": "https://dawn-510519.web.app",
+    "tags": [
+      "Apps"
+    ],
+    "kind": "project"
+  }
+]

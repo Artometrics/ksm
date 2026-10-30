@@ -1,44 +1,37 @@
 import { Pressable, Text, View } from "react-native";
 import { Link } from "expo-router";
-import { Menu, X } from "lucide-react-native";
-import { Logo } from "@/components/Logo";
 import { Wrapper } from "@/components/Wrapper";
+import { DeskSearch } from "@/components/DeskSearch";
+import { StylePicker } from "@/components/StylePicker";
 import { useChrome } from "@/lib/chrome";
 
 const NAV = [
-  { href: "/gallery", label: "Work" },
+  { href: "/", label: "Projects" },
+  { href: "/#papers", label: "Papers" },
+  { href: "/blog", label: "Journal" },
+  { href: "/cv", label: "CV" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/now", label: "Now" },
 ] as const;
 
-/**
- * Locked black magazine chrome — portfolio nav categories.
- */
 export function SiteHeader() {
   const { menuOpen, setMenuOpen } = useChrome();
 
   return (
-    <View className="border-b-2 border-white bg-black">
-      <Wrapper className="py-3">
-        <View className="flex-row items-center justify-between gap-4">
-          <Logo inverted />
-          <View className="hidden flex-row items-center gap-6 lg:flex">
+    <View className="ksm-header">
+      <Wrapper className="gap-3 py-3">
+        <View className="flex-row flex-wrap items-center justify-between gap-3">
+          <Link href="/">
+            <Text className="ksm-wordmark">Kyle McAuliffe</Text>
+          </Link>
+          <View className="hidden flex-row flex-wrap items-center gap-4 lg:flex">
             {NAV.map((item) => (
               <Link key={item.href} href={item.href} asChild>
                 <Pressable>
-                  <Text className="font-[Anton] text-[13px] uppercase tracking-[2px] text-white">
-                    {item.label}
-                  </Text>
+                  <Text className="ksm-nav">{item.label}</Text>
                 </Pressable>
               </Link>
             ))}
-            <Link href="/contact" asChild>
-              <Pressable className="bg-accent px-3 py-2">
-                <Text className="font-[Anton] text-[12px] uppercase tracking-[1.5px] text-white">
-                  Hire me
-                </Text>
-              </Pressable>
-            </Link>
           </View>
           <Pressable
             onPress={() => setMenuOpen(!menuOpen)}
@@ -46,30 +39,14 @@ export function SiteHeader() {
             accessibilityLabel={menuOpen ? "Close menu" : "Open menu"}
             className="p-1 lg:hidden"
           >
-            {menuOpen ? (
-              <X size={22} color="#FFFFFF" />
-            ) : (
-              <Menu size={22} color="#FFFFFF" />
-            )}
+            <Text className="ksm-nav">{menuOpen ? "Close" : "Menu"}</Text>
           </Pressable>
         </View>
+        <View className="flex-row flex-wrap items-center gap-3">
+          <DeskSearch />
+          <StylePicker />
+        </View>
       </Wrapper>
-      <View className="border-t border-white/25 bg-black">
-        <Wrapper className="flex-row flex-wrap items-center justify-between gap-2 py-1.5">
-          <Text className="text-[10px] font-bold uppercase tracking-[1.4px] text-white/70">
-            Portfolio · Online
-          </Text>
-          <Text
-            className="text-[10px] font-bold uppercase tracking-[1.4px]"
-            style={{ color: "#FF5C54" }}
-          >
-            Strong graphic content · No fluff
-          </Text>
-          <Text className="text-[10px] font-bold uppercase tracking-[1.4px] text-white/70">
-            Brand · Editorial · Systems
-          </Text>
-        </Wrapper>
-      </View>
     </View>
   );
 }

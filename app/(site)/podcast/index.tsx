@@ -1,34 +1,22 @@
-import { Text, View } from "react-native";
+import { Text } from "react-native";
+import Head from "expo-router/head";
 import { Wrapper } from "@/components/Wrapper";
-import { PodcastCard } from "@/components/PodcastCard";
-import { PageSeo } from "@/components/PageSeo";
-import { getPodcastEpisodes } from "@/lib/content";
 
 export default function PodcastIndex() {
-  const episodes = getPodcastEpisodes();
-
   return (
     <>
-      <PageSeo
-        title="Podcast"
-        description="Interviews with design engineers and creative technologists."
-        path="/podcast"
-      />
-      <View className="border-b-2 border-border bg-accent py-10">
-        <Wrapper>
-          <Text className="font-[GreatVibes] text-4xl text-black">Listen</Text>
-          <Text className="font-[Anton] text-5xl uppercase tracking-[2px] text-black md:text-7xl">
-            Podcast
-          </Text>
-          <Text className="mt-3 max-w-[40ch] font-sans text-[15px] leading-6 text-black/75">
-            Long-form conversations with the people shaping digital products.
-          </Text>
-        </Wrapper>
-      </View>
-      <Wrapper className="gap-0 py-2">
-        {episodes.map((ep) => (
-          <PodcastCard key={ep.id} episode={ep} />
-        ))}
+      <Head>
+        <title>Audio · Kyle McAuliffe</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
+      <Wrapper className="gap-3 py-8">
+        <Text className="ksm-kicker">Audio</Text>
+        <Text accessibilityRole="header" className="ksm-headline">
+          No episodes are published here.
+        </Text>
+        <Text className="ksm-lede">
+          Placeholder episode files remain in the repo and are not listed.
+        </Text>
       </Wrapper>
     </>
   );

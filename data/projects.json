@@ -1,0 +1,68 @@
+[
+  {
+    "id": "artometrics",
+    "title": "Artometrics",
+    "line": "Independent data journalism on culture, place, history, persona, and power.",
+    "year": "2026",
+    "tags": ["Research", "Writing"],
+    "kind": "project",
+    "href": "https://artometrics.com",
+    "thumbnail": "/images/marks/research.svg",
+    "source": "https://github.com/Artometrics/artometrics/blob/main/README.md"
+  },
+  {
+    "id": "games",
+    "title": "Games",
+    "line": "A public report on board-game ratings and popularity.",
+    "year": "2026",
+    "tags": ["Research", "Games"],
+    "kind": "paper",
+    "href": "https://artometrics.com/games",
+    "thumbnail": "/images/marks/games.svg",
+    "source": "https://artometrics.com/games"
+  },
+  {
+    "id": "pantheon",
+    "title": "Pantheon",
+    "line": "A report on occupations and cities in MIT's Pantheon biographies.",
+    "year": "2026",
+    "tags": ["Research"],
+    "kind": "paper",
+    "href": "https://artometrics.com/pantheon",
+    "thumbnail": "/images/marks/research.svg",
+    "source": "https://github.com/Artometrics/artometrics/blob/main/articles/pantheon/README.md"
+  },
+  {
+    "id": "lab-log",
+    "title": "Lab log",
+    "line": "How Artometrics is made, plus a dated log.",
+    "year": "2026",
+    "tags": ["Research"],
+    "kind": "project",
+    "href": "https://artometrics.com/lab-log",
+    "thumbnail": "/images/marks/writing.svg",
+    "source": "https://github.com/Artometrics/artometrics/blob/ce457b2/app/(site)/lab-log.tsx"
+  },
+  {
+    "id": "cardinal",
+    "title": "Cardinal",
+    "line": "The Stanford corridor, as a book and a public reading room.",
+    "year": "2026",
+    "tags": ["Writing"],
+    "kind": "project",
+    "href": "https://cardinal-510519.web.app",
+    "thumbnail": "/images/marks/writing.svg",
+    "source": "https://github.com/kylesmcauliffe/cardinal/blob/main/README.md"
+  },
+  {
+    "id": "dawn",
+    "title": "Dawn",
+    "line": "A pixel-art village of agents, plus a studio for the Artometrics tools.",
+    "year": "2026",
+    "tags": ["Apps"],
+    "kind": "project",
+    "href": "https://dawn-510519.web.app",
+    "thumbnail": "/images/marks/apps.svg",
+    "source": "https://github.com/Artometrics/dawn/blob/main/README.md"
+  }
+]

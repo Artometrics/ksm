@@ -35,9 +35,16 @@ function SiteChrome() {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-bg" edges={["top"]}>
+    <SafeAreaView
+      className="ksm-page flex-1"
+      style={{ flex: 1, backgroundColor: "var(--paper)" }}
+      edges={["top"]}
+    >
       <StatusBar style={mode === "dark" ? "light" : "dark"} />
-      <View className="relative flex-1 bg-bg">
+      <View
+        className="ksm-page relative flex-1"
+        style={{ flex: 1, backgroundColor: "var(--paper)" }}
+      >
         <SiteHeader />
         <ScrollView
           ref={scrollRef}

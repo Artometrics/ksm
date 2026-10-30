@@ -1,145 +1,109 @@
-import { Pressable, Text, View } from "react-native";
-import { Image } from "expo-image";
+import { Text, View } from "react-native";
 import { Link } from "expo-router";
+import Head from "expo-router/head";
 import { Wrapper } from "@/components/Wrapper";
-import { WorkCard } from "@/components/WorkCard";
-import { PageSeo } from "@/components/PageSeo";
-import { SunCrossMark } from "@/components/SunCrossMark";
-import { HeroInkWash } from "@/components/hero/HeroInkWash";
-import { getHomeWork } from "@/data/work";
+import projects from "@/data/projects.json";
 
-const HERO = "/images/brand/hero-cover.jpg";
-const STRIP = "/images/brand/eyes-strip.jpg";
+const FILTERS = [
+  { id: "filter-all", label: "All" },
+  { id: "filter-research", label: "Research" },
+  { id: "filter-writing", label: "Writing" },
+  { id: "filter-games", label: "Games" },
+  { id: "filter-apps", label: "Apps" },
+  { id: "filter-art", label: "Art" },
+] as const;
 
 export default function HomeScreen() {
-  const { featured, grid, list } = getHomeWork();
+  const papers = projects.filter((item) => item.kind === "paper");
 
   return (
     <>
-      <PageSeo
-        title="KSM"
-        description="KSM portfolio. Brand, editorial, and identity work with an edge."
-        path="/"
-        image={HERO}
-      />
-
-      {/* Full-bleed hero — same structure, portfolio copy */}
-      <View className="relative min-h-[88vh] w-full overflow-hidden bg-black">
-        <HeroInkWash />
-        <View
-          pointerEvents="none"
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(115deg, rgba(7,7,7,0.72) 0%, rgba(7,7,7,0.28) 48%, rgba(7,7,7,0.45) 100%)",
-          }}
+      <Head>
+        <title>Kyle McAuliffe</title>
+        <meta
+          name="description"
+          content="Research, writing, and tools from Kyle McAuliffe."
         />
-        <Wrapper className="relative z-10 min-h-[88vh] justify-end gap-4 pb-12 pt-24">
-          <View className="flex-row items-center gap-3">
-            <SunCrossMark size={52} />
-            <Text className="font-[UnifrakturCook] text-5xl text-accent md:text-6xl">
-              ksm
-            </Text>
-          </View>
-          <Text
-            accessibilityRole="header"
-            className="max-w-[16ch] font-[Anton] text-5xl uppercase leading-[0.92] tracking-[1px] text-white md:text-7xl"
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
+      <Wrapper className="gap-8 py-8">
+        <View className="gap-3">
+          <Text className="ksm-kicker">Notebook</Text>
+          <Text accessibilityRole="header" className="ksm-headline">
+            Research, writing, and the tools around them.
+          </Text>
+          <Text className="ksm-lede">
+            Kyle McAuliffe. Artometrics is the public magazine. Cardinal is the
+            book. Dawn is the studio. Unpublished drafts stay off this page.
+          </Text>
+        </View>
+
+        <View className="gap-3" nativeID="projects">
+          <Text accessibilityRole="header" className="ksm-section">
+            Projects
+          </Text>
+          <View
+            className="ksm-filters"
+            style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}
           >
-            Killing boys of comfort
-          </Text>
-          <Text className="max-w-[36ch] font-sans text-[15px] leading-6 text-white/80">
-            Portfolio for brand systems, editorial stills, and identity work. High contrast on purpose.
-          </Text>
-          <View className="mt-2 flex-row flex-wrap gap-3">
-            <Link href="/gallery" asChild>
-              <Pressable className="bg-accent px-5 py-3">
-                <Text className="font-[Anton] text-[13px] uppercase tracking-[2px] text-white">
-                  View work
-                </Text>
-              </Pressable>
-            </Link>
-            <Link href="/contact" asChild>
-              <Pressable className="border-2 border-white px-5 py-3">
-                <Text className="font-[Anton] text-[13px] uppercase tracking-[2px] text-white">
-                  Contact
-                </Text>
-              </Pressable>
-            </Link>
-          </View>
-        </Wrapper>
-      </View>
-
-      {/* Signal strip */}
-      <View className="relative h-[180px] w-full overflow-hidden border-y-2 border-border bg-accent md:h-[240px]">
-        <Image
-          source={{ uri: STRIP }}
-          className="absolute inset-0 h-full w-full opacity-80"
-          contentFit="cover"
-          alt="Close crop of eyes behind the selected work title"
-          accessibilityLabel="Close crop of eyes behind the selected work title"
-        />
-        <View className="absolute inset-0 items-center justify-center">
-          <Text className="font-[Anton] text-4xl uppercase tracking-[6px] text-white md:text-6xl">
-            Selected work
-          </Text>
-        </View>
-      </View>
-
-      {/* Featured + 3-up grid — same magazine structure */}
-      <Wrapper className="gap-6 py-10">
-        <View className="flex-row items-end justify-between gap-4">
-          <View>
-            <Text className="font-[GreatVibes] text-3xl text-accent">
-              Portfolio
-            </Text>
-            <Text className="font-[Anton] text-4xl uppercase tracking-[2px] text-fg">
-              From the work
-            </Text>
-          </View>
-          <Link href="/gallery" asChild>
-            <Pressable>
-              <Text className="font-[Anton] text-[12px] uppercase tracking-[2px] text-accent">
-                Archive →
-              </Text>
-            </Pressable>
-          </Link>
-        </View>
-
-        <WorkCard item={featured} variant="cover" />
-
-        <View className="flex-row flex-wrap gap-4">
-          {grid.map((item) => (
-            <View key={item.id} className="min-w-[260px] flex-1">
-              <WorkCard item={item} variant="stack" />
-            </View>
-          ))}
-        </View>
-      </Wrapper>
-
-      {/* List rail — same interviews structure */}
-      <View className="border-t-2 border-border bg-black py-10">
-        <Wrapper className="gap-4">
-          <View className="flex-row items-end justify-between">
-            <Text className="font-[Anton] text-4xl uppercase tracking-[2px] text-white">
-              More work
-            </Text>
-            <Link href="/gallery" asChild>
-              <Pressable>
-                <Text className="font-[Anton] text-[12px] uppercase tracking-[2px] text-accent">
-                  All pieces →
-                </Text>
-              </Pressable>
-            </Link>
-          </View>
-          <View className="border-2 border-white">
-            {list.map((item) => (
-              <View key={item.id} className="bg-black">
-                <WorkCard item={item} variant="row" />
+            {FILTERS.map((filter, index) => (
+              <View key={filter.id} style={{ flexDirection: "row" }}>
+                <input
+                  type="radio"
+                  name="project-filter"
+                  id={filter.id}
+                  defaultChecked={index === 0}
+                />
+                <label htmlFor={filter.id}>{filter.label}</label>
               </View>
             ))}
           </View>
-        </Wrapper>
-      </View>
+          <View className="ksm-grid">
+            {projects.map((item) => (
+              <a
+                key={item.id}
+                className="ksm-card"
+                data-tags={item.tags.join(" ").toLowerCase()}
+                href={item.href}
+              >
+                <img src={item.thumbnail} alt="" width={48} height={48} />
+                <span className="ksm-card-year">{item.year}</span>
+                <span className="ksm-card-title">{item.title}</span>
+                <span className="ksm-card-line">{item.line}</span>
+                <span className="ksm-card-tags">{item.tags.join(" · ")}</span>
+              </a>
+            ))}
+          </View>
+          <Text className="ksm-empty-art">Nothing filed under Art yet.</Text>
+        </View>
+
+        <View className="gap-3" nativeID="papers">
+          <Text accessibilityRole="header" className="ksm-section">
+            Working papers
+          </Text>
+          {papers.map((item) => (
+            <a key={item.id} className="ksm-paper" href={item.href}>
+              <span className="ksm-card-title">{item.title}</span>
+              <span className="ksm-card-line">{item.line}</span>
+            </a>
+          ))}
+        </View>
+
+        <View className="flex-row flex-wrap gap-4">
+          <Link href="/about">
+            <Text className="ksm-nav">About</Text>
+          </Link>
+          <Link href="/cv">
+            <Text className="ksm-nav">CV</Text>
+          </Link>
+          <Link href="/now">
+            <Text className="ksm-nav">Now</Text>
+          </Link>
+          <Link href="/blog">
+            <Text className="ksm-nav">Journal</Text>
+          </Link>
+        </View>
+      </Wrapper>
     </>
   );
 }

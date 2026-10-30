@@ -66,22 +66,12 @@ function applyDomTheme(mode: ThemeMode, colors: ThemeColors) {
     /* older runtimes */
   }
   if (Platform.OS !== "web" || typeof document === "undefined") return;
-  const root = document.documentElement;
-  root.dataset.theme = mode;
-  root.style.setProperty("color-scheme", mode);
-  root.style.backgroundColor = colors.bg;
-  document.body.style.backgroundColor = colors.bg;
-  document.body.style.color = colors.text;
-  const appRoot = document.getElementById("root");
-  if (appRoot) {
-    appRoot.style.backgroundColor = colors.bg;
-    appRoot.style.color = colors.text;
-  }
+  document.documentElement.dataset.theme = mode;
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [preference, setPreferenceState] = useState<Preference>(
-    () => readStored() ?? "dark",
+    () => readStored() ?? "light",
   );
   const [system, setSystem] = useState<ThemeMode>(() => systemMode());
 
