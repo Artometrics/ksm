@@ -131,6 +131,7 @@ Lighthouse mobile, simulated throttling, local static export of `/`. INP is fiel
 | Paper Shaders | 51 | 100 | 10.5 s | 0.015 | 390 ms | 899271 |
 | ShaderGradient | 30 | 100 | 10.5 s | 0 | 148150 ms | 1096793 |
 | Static ink wash | 55 | 100 | 10.5 s | 0 | 260 ms | 811247 |
+| Shipped (wash, Cabinet Grotesk, palette) | 58 | 100 | 8.7 s | 0 | 330 ms | 811290 |
 
 Paper adds one async chunk of 85477 bytes gzip (about 85 KB). The main bundle did not grow by that full amount, so total JS is 76160 bytes gzip above baseline.
 
