@@ -10,6 +10,7 @@ const LINKS = [
   { href: "/blog", label: "Journal", icon: "book" },
   { href: "/about", label: "About", icon: "face" },
   { href: "/now", label: "Now", icon: "clock" },
+  { href: "/desk", label: "Desk", icon: "desk" },
 ] as const;
 
 function PixelIcon({ name }: { name: string }) {
@@ -45,6 +46,16 @@ function PixelIcon({ name }: { name: string }) {
         <rect x="3" y="2" width="10" height="12" fill="#2D3561" />
         <rect x="5" y="4" width="6" height="2" fill="#FFB961" />
         <rect x="5" y="8" width="6" height="1" fill="#F3826F" />
+      </svg>
+    );
+  }
+  if (name === "desk") {
+    return (
+      <svg {...common}>
+        <rect x="2" y="8" width="12" height="2" fill="#2D3561" />
+        <rect x="3" y="10" width="2" height="3" fill="#6BAA75" />
+        <rect x="11" y="10" width="2" height="3" fill="#6BAA75" />
+        <rect x="5" y="4" width="6" height="4" fill="#FFB961" />
       </svg>
     );
   }
