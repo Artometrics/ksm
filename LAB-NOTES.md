@@ -123,10 +123,26 @@ Both licenses allow copying into this repo if the license notice stays with the 
 
 ## Measurements
 
-Filled in after the Lighthouse runs. Baseline is `main` before this lab, mobile, local static export.
+Lighthouse mobile, simulated throttling, local static export of `/`. INP is field data, so TBT is the blocking-time number. Accessibility on every lab build includes the ticker contrast fix, image names, and the menu button role. The baseline score is `main` before those fixes.
 
 | Build | Perf | A11y | LCP | CLS | TBT | JS gzip |
 | --- | --- | --- | --- | --- | --- | --- |
-| Baseline main | 85 | 84 | 2.0 s | 0.016 | 500 ms | 823111 bytes |
+| Baseline main | 85 | 84 | 2.0 s | 0.016 | 500 ms | 823111 |
+| Paper Shaders | 51 | 100 | 10.5 s | 0.015 | 390 ms | 899271 |
+| ShaderGradient | 30 | 100 | 10.5 s | 0 | 148150 ms | 1096793 |
+| Static ink wash | 55 | 100 | 10.5 s | 0 | 260 ms | 811247 |
+| Shipped (wash, Cabinet Grotesk, palette) | 58 | 100 | 8.7 s | 0 | 330 ms | 811290 |
 
-INP is not in a lab Lighthouse run. TBT is the blocking-time number to compare.
+Paper adds one async chunk of 85477 bytes gzip (about 85 KB). The main bundle did not grow by that full amount, so total JS is 76160 bytes gzip above baseline.
+
+ShaderGradient, with `three@0.169.0`, adds one async chunk of 282922 bytes gzip (about 283 KB). Total JS is 273682 bytes gzip above baseline. `three@0.187` failed to compile the bundled shader (`cube_uv_reflection_fragment`). The plane draws, and it is the slow one: time to interactive was 232 s in the same run.
+
+The static wash is 11864 bytes gzip under baseline because the hero photograph left the page. FCP on the three lab heroes was about 2.9 s. LCP moved from 2.0 s to about 10.5 s on all three because the cover photo is no longer the largest paint. The headline then waits on Anton.
+
+## Recommendation
+
+Ship the static ink wash, Cabinet Grotesk, and the warm ink palette. Do not ship either WebGL hero.
+
+The wash is in the first HTML, so it is the page with JavaScript off and with reduced motion. It adds no script. Paper is the better animation: one MeshGradient, brand crimson, about 85 KB gzip, TBT near the baseline. Its canvas still holds the main thread often enough that the performance score stays in the 50s, next to the static page, so the motion is not worth the script. ShaderGradient is the one to leave: a dithered plane, a quarter megabyte of gzip, and a blocking time two orders of magnitude worse.
+
+The original black and white cover still wins LCP. This pick is the experiment that stays fast enough to put on the site.

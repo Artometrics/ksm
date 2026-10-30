@@ -11,8 +11,8 @@
   --color-accent-200: #ff8a8a;
   --color-accent-300: #ff5c5c;
   --color-accent-400: #ff2e2e;
-  --color-accent-500: #e60000;
-  --color-accent-600: #b80000;
+  --color-accent-500: #c41224;
+  --color-accent-600: #9e0e1e;
   --color-accent-700: #8a0000;
   --color-accent-800: #5c0000;
   --color-accent-900: #2e0000;
@@ -33,8 +33,8 @@
   --font-display: "Anton", Impact, Haettenschweiler, sans-serif;
   --font-gothic: "UnifrakturCook", "Times New Roman", serif;
   --font-script: "GreatVibes", "Brush Script MT", cursive;
-  --font-sans: "Inter", Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
-  --font-serif: "Inter", Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
+  --font-sans: "Cabinet Grotesk", Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
+  --font-serif: "Cabinet Grotesk", Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --radius-btn: 0px;
@@ -43,14 +43,14 @@
 @layer theme {
   :root {
     @variant light {
-      --color-bg: #ffffff;
-      --color-bg-elevated: #f4f4f4;
-      --color-fg: #000000;
-      --color-muted: #333333;
-      --color-subtle: #8a8a8a;
-      --color-border: #000000;
-      --color-accent: #e60000;
-      --color-accent-soft: #ffe5e5;
+      --color-bg: #f4efe6;
+      --color-bg-elevated: #e6ddd0;
+      --color-fg: #161311;
+      --color-muted: #3a342e;
+      --color-subtle: #8a8178;
+      --color-border: #161311;
+      --color-accent: #b10f24;
+      --color-accent-soft: #f3d7d4;
       --color-inverse: #ffffff;
       --color-header: #ffffff;
       --color-overlay: #ffffff;
@@ -58,14 +58,14 @@
     }
 
     @variant dark {
-      --color-bg: #000000;
-      --color-bg-elevated: #1a1a1a;
-      --color-fg: #ffffff;
-      --color-muted: #c8c8c8;
-      --color-subtle: #8a8a8a;
-      --color-border: #ffffff;
-      --color-accent: #e60000;
-      --color-accent-soft: #3a0000;
+      --color-bg: #100e0c;
+      --color-bg-elevated: #1c1916;
+      --color-fg: #f4efe6;
+      --color-muted: #c9bfb2;
+      --color-subtle: #8a8178;
+      --color-border: #f4efe6;
+      --color-accent: #c41224;
+      --color-accent-soft: #3a1214;
       --color-inverse: #000000;
       --color-header: #000000;
       --color-overlay: #1a1a1a;
