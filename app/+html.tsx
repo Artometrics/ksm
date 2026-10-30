@@ -11,6 +11,7 @@ export default function Root({ children }: PropsWithChildren) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
           content="KSM — essays, interviews, and cultural signal. High contrast magazine."
@@ -92,6 +93,16 @@ export default function Root({ children }: PropsWithChildren) {
                 color: #FFFFFF !important;
               }
               a { color: inherit; text-decoration: none; }
+              :focus-visible {
+                outline: 2px solid #ffffff;
+                outline-offset: 3px;
+              }
+              html[data-theme="light"] :focus-visible {
+                outline-color: #9e0e1e;
+              }
+              @media (prefers-reduced-motion: reduce) {
+                .ksm-hero-shader { display: none !important; }
+              }
               .ksm-grain {
                 pointer-events: none;
                 position: fixed;

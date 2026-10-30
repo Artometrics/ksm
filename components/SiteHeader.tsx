@@ -42,6 +42,7 @@ export function SiteHeader() {
           </View>
           <Pressable
             onPress={() => setMenuOpen(!menuOpen)}
+            accessibilityRole="button"
             accessibilityLabel={menuOpen ? "Close menu" : "Open menu"}
             className="p-1 lg:hidden"
           >
@@ -58,7 +59,10 @@ export function SiteHeader() {
           <Text className="text-[10px] font-bold uppercase tracking-[1.4px] text-white/70">
             Portfolio · Online
           </Text>
-          <Text className="text-[10px] font-bold uppercase tracking-[1.4px] text-accent">
+          <Text
+            className="text-[10px] font-bold uppercase tracking-[1.4px]"
+            style={{ color: "#FF5C54" }}
+          >
             Strong graphic content · No fluff
           </Text>
           <Text className="text-[10px] font-bold uppercase tracking-[1.4px] text-white/70">
