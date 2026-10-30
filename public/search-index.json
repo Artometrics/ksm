@@ -1,5 +1,95 @@
 [
   {
+    "title": "Desk",
+    "line": "Working project and doc links.",
+    "href": "/desk",
+    "tags": [
+      "Desk"
+    ],
+    "kind": "page"
+  },
+  {
+    "title": "Artometrics",
+    "line": "Public magazine.",
+    "href": "https://artometrics.com",
+    "tags": [
+      "Desk"
+    ],
+    "kind": "desk"
+  },
+  {
+    "title": "Dawn",
+    "line": "Village and studio.",
+    "href": "https://dawn-510519.web.app",
+    "tags": [
+      "Desk"
+    ],
+    "kind": "desk"
+  },
+  {
+    "title": "Dawn Atlas",
+    "line": "Atlas on the Dawn host.",
+    "href": "https://dawn-510519.web.app/atlas",
+    "tags": [
+      "Desk"
+    ],
+    "kind": "desk"
+  },
+  {
+    "title": "Pantheon",
+    "line": "Pantheon game host.",
+    "href": "https://pantheon-game-ksm.web.app",
+    "tags": [
+      "Desk"
+    ],
+    "kind": "desk"
+  },
+  {
+    "title": "KSM",
+    "line": "This site on Firebase Hosting.",
+    "href": "https://ksm-510519.web.app",
+    "tags": [
+      "Desk"
+    ],
+    "kind": "desk"
+  },
+  {
+    "title": "Nightlight",
+    "line": "Artometrics/nightlight repository.",
+    "href": "https://github.com/Artometrics/nightlight",
+    "tags": [
+      "Desk"
+    ],
+    "kind": "desk"
+  },
+  {
+    "title": "Cardinal",
+    "line": "kylesmcauliffe/cardinal repository.",
+    "href": "https://github.com/kylesmcauliffe/cardinal",
+    "tags": [
+      "Desk"
+    ],
+    "kind": "desk"
+  },
+  {
+    "title": "Project Work Plan",
+    "line": "Shared Google Doc.",
+    "href": "https://docs.google.com/document/d/1k6FCMAE3nt_kBN9OgBoRvZsUeKSqawxsr_Ltp7hi54Q/edit",
+    "tags": [
+      "Docs"
+    ],
+    "kind": "doc"
+  },
+  {
+    "title": "Nightlight tuning",
+    "line": "Shared Google Doc.",
+    "href": "https://docs.google.com/document/d/1FsuqVbE7mD52ejCdzJOcJpcdRv94jhBdcBSCYkkL3Xg/edit",
+    "tags": [
+      "Docs"
+    ],
+    "kind": "doc"
+  },
+  {
     "title": "Artometrics",
     "line": "Independent data journalism on culture, place, history, persona, and power.",
     "href": "https://artometrics.com",

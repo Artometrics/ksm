@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "id": "artometrics",
+      "title": "Artometrics",
+      "line": "Public magazine.",
+      "href": "https://artometrics.com"
+    },
+    {
+      "id": "dawn",
+      "title": "Dawn",
+      "line": "Village and studio.",
+      "href": "https://dawn-510519.web.app"
+    },
+    {
+      "id": "dawn-atlas",
+      "title": "Dawn Atlas",
+      "line": "Atlas on the Dawn host.",
+      "href": "https://dawn-510519.web.app/atlas"
+    },
+    {
+      "id": "pantheon",
+      "title": "Pantheon",
+      "line": "Pantheon game host.",
+      "href": "https://pantheon-game-ksm.web.app"
+    },
+    {
+      "id": "ksm",
+      "title": "KSM",
+      "line": "This site on Firebase Hosting.",
+      "href": "https://ksm-510519.web.app"
+    },
+    {
+      "id": "nightlight",
+      "title": "Nightlight",
+      "line": "Artometrics/nightlight repository.",
+      "href": "https://github.com/Artometrics/nightlight"
+    },
+    {
+      "id": "cardinal",
+      "title": "Cardinal",
+      "line": "kylesmcauliffe/cardinal repository.",
+      "href": "https://github.com/kylesmcauliffe/cardinal"
+    }
+  ],
+  "docs": [
+    {
+      "id": "work-plan",
+      "title": "Project Work Plan",
+      "line": "Shared Google Doc.",
+      "href": "https://docs.google.com/document/d/1k6FCMAE3nt_kBN9OgBoRvZsUeKSqawxsr_Ltp7hi54Q/edit"
+    },
+    {
+      "id": "nightlight-tuning",
+      "title": "Nightlight tuning",
+      "line": "Shared Google Doc.",
+      "href": "https://docs.google.com/document/d/1FsuqVbE7mD52ejCdzJOcJpcdRv94jhBdcBSCYkkL3Xg/edit"
+    }
+  ]
+}

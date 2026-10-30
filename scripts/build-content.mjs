@@ -203,7 +203,29 @@ writeFileSync(join(ROOT, "public/rss.xml"), rss);
 const projects = JSON.parse(
   readFileSync(join(ROOT, "data/projects.json"), "utf8"),
 );
+const desk = JSON.parse(readFileSync(join(ROOT, "data/desk.json"), "utf8"));
 const searchIndex = [
+  {
+    title: "Desk",
+    line: "Working project and doc links.",
+    href: "/desk",
+    tags: ["Desk"],
+    kind: "page",
+  },
+  ...desk.projects.map((item) => ({
+    title: item.title,
+    line: item.line,
+    href: item.href,
+    tags: ["Desk"],
+    kind: "desk",
+  })),
+  ...desk.docs.map((item) => ({
+    title: item.title,
+    line: item.line,
+    href: item.href,
+    tags: ["Docs"],
+    kind: "doc",
+  })),
   ...projects.map((item) => ({
     title: item.title,
     line: item.line,
