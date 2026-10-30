@@ -5,6 +5,8 @@ import { Wrapper } from "@/components/Wrapper";
 import { WorkCard } from "@/components/WorkCard";
 import { PageSeo } from "@/components/PageSeo";
 import { SunCrossMark } from "@/components/SunCrossMark";
+import { HeroInkWash } from "@/components/hero/HeroInkWash";
+import { PaperMeshIsland } from "@/components/hero/PaperMeshIsland";
 import { getHomeWork } from "@/data/work";
 
 const HERO = "/images/brand/hero-cover.jpg";
@@ -17,22 +19,23 @@ export default function HomeScreen() {
     <>
       <PageSeo
         title="KSM"
-        description="KSM portfolio — brand, editorial, and identity work with an edge."
+        description="KSM portfolio. Brand, editorial, and identity work with an edge."
         path="/"
         image={HERO}
       />
 
       {/* Full-bleed hero — same structure, portfolio copy */}
       <View className="relative min-h-[88vh] w-full overflow-hidden bg-black">
-        <Image
-          source={{ uri: HERO }}
-          className="absolute inset-0 h-full w-full"
-          contentFit="cover"
-          transition={250}
-          alt="Black and white portrait used as the KSM cover"
-          accessibilityLabel="Black and white portrait used as the KSM cover"
+        <HeroInkWash />
+        <PaperMeshIsland />
+        <View
+          pointerEvents="none"
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(115deg, rgba(7,7,7,0.78) 0%, rgba(7,7,7,0.45) 42%, rgba(7,7,7,0.22) 100%)",
+          }}
         />
-        <View className="absolute inset-0 bg-black/45" />
         <Wrapper className="relative z-10 min-h-[88vh] justify-end gap-4 pb-12 pt-24">
           <View className="flex-row items-center gap-3">
             <SunCrossMark size={52} />
@@ -74,9 +77,8 @@ export default function HomeScreen() {
           source={{ uri: STRIP }}
           className="absolute inset-0 h-full w-full opacity-80"
           contentFit="cover"
-          alt=""
-          accessibilityElementsHidden
-          importantForAccessibility="no"
+          alt="Close crop of eyes behind the selected work title"
+          accessibilityLabel="Close crop of eyes behind the selected work title"
         />
         <View className="absolute inset-0 items-center justify-center">
           <Text className="font-[Anton] text-4xl uppercase tracking-[6px] text-white md:text-6xl">
