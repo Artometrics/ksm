@@ -1,0 +1,12 @@
+Latin woff2 subsets of SIL Open Font License 1.1 faces.
+The license text is OFL.txt. Subsetting kept the glyphs and did not rename the families.
+
+Anton
+Copyright 2020 The Anton Project Authors (https://github.com/googlefonts/AntonFont.git)
+File: Anton-latin.woff2
+
+Great Vibes
+Copyright TypeSETit, Robert Leuschke, Viktoriya Grabowska, Viviana Monsalve, Eben Sorkin
+File: GreatVibes-latin.woff2
+
+UnifrakturCook is not subset. Its license reserves the font name, so the original file stays at UnifrakturCook-Bold.ttf.

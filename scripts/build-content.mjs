@@ -173,8 +173,9 @@ const site =
   process.env.EXPO_PUBLIC_SITE_URL ||
   process.env.PUBLIC_SITE_URL ||
   "https://kylesmcauliffe.com";
+const hiddenPostIds = new Set(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]);
 const rssItems = blog
-  .filter((p) => !p.draft && p.pubDate)
+  .filter((p) => !p.draft && p.pubDate && !hiddenPostIds.has(p.id))
   .sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
   .map(
     (p) => `    <item>
@@ -198,6 +199,32 @@ ${rssItems}
 `;
 mkdirSync(join(ROOT, "public"), { recursive: true });
 writeFileSync(join(ROOT, "public/rss.xml"), rss);
+
+const projects = JSON.parse(
+  readFileSync(join(ROOT, "data/projects.json"), "utf8"),
+);
+const searchIndex = [
+  ...projects.map((item) => ({
+    title: item.title,
+    line: item.line,
+    href: item.href,
+    tags: item.tags,
+    kind: item.kind,
+  })),
+  ...blog
+    .filter((p) => !p.draft && p.pubDate && !hiddenPostIds.has(p.id))
+    .map((p) => ({
+      title: p.title,
+      line: p.description,
+      href: `/blog/posts/${p.slug}`,
+      tags: p.tags,
+      kind: "journal",
+    })),
+];
+writeFileSync(
+  join(ROOT, "public/search-index.json"),
+  JSON.stringify(searchIndex, null, 2),
+);
 
 console.log(
   `Content built → src/generated/ (${blog.length} posts, ${podcast.length} podcast, ${authors.length} authors, ${legal.length} legal)`,

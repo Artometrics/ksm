@@ -66,7 +66,7 @@ const local = faces
   src: url("/fonts/cabinet-grotesk/${face.file}") format("woff2");
   font-weight: ${face.weight};
   font-style: ${face.style};
-  font-display: swap;
+  font-display: optional;
 }`,
   )
   .join("\n\n");

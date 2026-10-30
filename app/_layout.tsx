@@ -1,24 +1,16 @@
-import { useFonts } from "expo-font";
 import { useEffect } from "react";
+import { View } from "react-native";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import "react-native-gesture-handler";
 import "@/global.css";
+import { useBrandFonts } from "@/lib/useBrandFonts";
 
 export { ErrorBoundary } from "expo-router";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [loaded, error] = useFonts({
-    Anton: require("../assets/fonts/Anton-Regular.ttf"),
-    BebasNeue: require("../assets/fonts/BebasNeue-Regular.ttf"),
-    UnifrakturCook: require("../assets/fonts/UnifrakturCook-Bold.ttf"),
-    "GreatVibes": require("../assets/fonts/GreatVibes-Regular.ttf"),
-    Inter: require("../assets/fonts/Inter-Regular.otf"),
-    "Inter Bold": require("../assets/fonts/Inter-Bold.otf"),
-  });
+  const [loaded, error] = useBrandFonts();
 
   useEffect(() => {
     if (loaded || error) void SplashScreen.hideAsync();
@@ -27,11 +19,11 @@ export default function RootLayout() {
   if (!loaded && !error) return null;
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <Stack
         screenOptions={{
           headerShown: false,
-          contentStyle: { backgroundColor: "#000000" },
+          contentStyle: { backgroundColor: "#F6F1E7" },
           animation: "none",
         }}
       >
@@ -39,6 +31,6 @@ export default function RootLayout() {
         <Stack.Screen name="bio" />
         <Stack.Screen name="+not-found" />
       </Stack>
-    </GestureHandlerRootView>
+    </View>
   );
 }

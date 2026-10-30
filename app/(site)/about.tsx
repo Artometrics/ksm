@@ -1,43 +1,39 @@
 import { Text, View } from "react-native";
-import { Image } from "expo-image";
+import Head from "expo-router/head";
 import { Wrapper } from "@/components/Wrapper";
-import { PageSeo } from "@/components/PageSeo";
+
+const LINKS = [
+  ["Artometrics about page", "https://artometrics.com/about"],
+  ["Artometrics on GitHub", "https://github.com/Artometrics"],
+  ["Kyle McAuliffe on GitHub", "https://github.com/kylesmcauliffe"],
+] as const;
 
 export default function AboutScreen() {
   return (
     <>
-      <PageSeo
-        title="About"
-        description="KSM — brand, editorial, and identity portfolio. High contrast on purpose."
-        path="/about"
-      />
-      <View className="border-b-2 border-border bg-accent px-0 py-10">
-        <Wrapper>
-          <Text className="font-[GreatVibes] text-4xl text-black">About</Text>
-          <Text className="mt-2 max-w-[14ch] font-[Anton] text-5xl uppercase leading-[0.95] tracking-[1px] text-black md:text-7xl">
-            Insanity is comfort
-          </Text>
-        </Wrapper>
-      </View>
-      <Wrapper className="gap-6 py-10">
-        <View className="flex-row flex-wrap gap-6">
-          <Image
-            source={{ uri: "/images/gallery/bw-profile.jpg" }}
-            className="aspect-[3/4] w-full max-w-[360px] border-2 border-border"
-            contentFit="cover"
-          />
-          <View className="min-w-[260px] flex-1 gap-4">
-            <Text className="font-[Anton] text-3xl uppercase tracking-[1px] text-fg">
-              Brand systems, built loud.
-            </Text>
-            <Text className="font-sans text-base leading-7 text-muted">
-              KSM is a portfolio for brand, editorial, and identity work — covers,
-              campaigns, and character systems with zero comfort padding.
-            </Text>
-            <Text className="font-sans text-base leading-7 text-muted">
-              High contrast on purpose. If it looks loud, that is the point.
-            </Text>
-          </View>
+      <Head>
+        <title>About · Kyle McAuliffe</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
+      <Wrapper className="gap-4 py-8">
+        <Text className="ksm-kicker">About</Text>
+        <Text accessibilityRole="header" className="ksm-headline">
+          A short bio, and where to write.
+        </Text>
+        <Text className="ksm-lede">
+          The Artometrics about page says Kyle McAuliffe founded and edits that
+          magazine. Reports there pair a written argument with public datasets.
+          This site is the notebook that points at the public work.
+        </Text>
+        <Text className="ksm-lede">
+          No street address and no phone number are published here.
+        </Text>
+        <View className="gap-2">
+          {LINKS.map(([label, href]) => (
+            <a key={href} className="ksm-nav" href={href}>
+              {label}
+            </a>
+          ))}
         </View>
       </Wrapper>
     </>

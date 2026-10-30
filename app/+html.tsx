@@ -3,7 +3,7 @@ import type { PropsWithChildren } from "react";
 
 export default function Root({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
+    <html lang="en" data-style="notebook">
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +14,7 @@ export default function Root({ children }: PropsWithChildren) {
         <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
-          content="KSM — essays, interviews, and cultural signal. High contrast magazine."
+          content="Research, writing, and tools from Kyle McAuliffe."
         />
         <meta property="og:site_name" content="KSM" />
         <meta property="og:type" content="website" />
@@ -24,9 +24,8 @@ export default function Root({ children }: PropsWithChildren) {
           title="KSM Magazine"
           href="/rss.xml"
         />
-        <meta name="theme-color" content="#100E0C" />
-        <meta name="color-scheme" content="dark" />
-        <link rel="stylesheet" href="/fonts/cabinet-grotesk/faces.css" />
+        <meta name="theme-color" content="#F6F1E7" />
+        <meta name="color-scheme" content="light" />
         <link rel="icon" href="/images/brand/sun-cross.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/images/brand/sun-cross.png" />
@@ -34,54 +33,175 @@ export default function Root({ children }: PropsWithChildren) {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              @font-face {
-                font-family: "Anton";
-                src: url("/fonts/Anton-Regular.ttf") format("truetype");
-                font-weight: 400;
-                font-style: normal;
-                font-display: swap;
+              html[data-style="notebook"] {
+                --paper: #F6F1E7;
+                --ink: #2A241C;
+                --muted: #5C5348;
+                --rule: #D5CBBC;
+                --card: #FFFDF8;
+                --accent: #6B4A32;
+                --serif: Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+                --sans: Helvetica, Arial, sans-serif;
+              }
+              html[data-style="desk"] {
+                --paper: #FFFFFF;
+                --ink: #1C1C1C;
+                --muted: #4A4A4A;
+                --rule: #E2E2E2;
+                --card: #FAFAFA;
+                --accent: #1F4E79;
+                --serif: Georgia, "Times New Roman", serif;
+                --sans: Helvetica, Arial, sans-serif;
+              }
+              html[data-style="magazine"] {
+                --paper: #F4EFE4;
+                --ink: #161412;
+                --muted: #3E3832;
+                --rule: #161412;
+                --card: #FFFCF6;
+                --accent: #8E2F2F;
+                --serif: Georgia, "Iowan Old Style", Palatino, serif;
+                --sans: Helvetica, Arial, sans-serif;
+              }
+              body, .ksm-page, #root {
+                background: var(--paper);
+                color: var(--ink);
+              }
+              .ksm-header, .ksm-footer {
+                background: var(--paper);
+                color: var(--ink);
+                border-color: var(--rule);
+              }
+              .ksm-header { border-bottom: 1px solid var(--rule); }
+              .ksm-footer { border-top: 1px solid var(--rule); }
+              .ksm-wordmark, .ksm-headline, .ksm-section, .ksm-card-title {
+                font-family: var(--serif);
+                color: var(--ink);
+              }
+              .ksm-wordmark { font-size: 22px; }
+              .ksm-headline {
+                font-size: 40px;
+                line-height: 1.15;
+                max-width: 18ch;
+                margin: 0;
+              }
+              .ksm-section { font-size: 28px; margin: 0; }
+              .ksm-kicker, .ksm-nav, .ksm-fine, .ksm-lede, .ksm-card-line, .ksm-card-tags, .ksm-card-year {
+                font-family: var(--sans);
+                color: var(--ink);
+              }
+              .ksm-kicker { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+              .ksm-lede { font-size: 17px; line-height: 1.5; max-width: 62ch; color: var(--muted); margin: 0; }
+              .ksm-nav { font-size: 15px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+              .ksm-fine { font-size: 13px; color: var(--muted); }
+              .ksm-grid { display: flex; flex-wrap: wrap; gap: 16px; }
+              .ksm-card, .ksm-paper, .ksm-slot {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                width: 260px;
+                min-height: 180px;
+                padding: 14px;
+                background: var(--card);
+                color: var(--ink);
+                border: 1px solid var(--rule);
+                text-decoration: none;
+              }
+              .ksm-paper, .ksm-slot { width: 100%; max-width: 640px; min-height: 0; }
+              html[data-style="magazine"] .ksm-card,
+              html[data-style="magazine"] .ksm-paper,
+              html[data-style="magazine"] .ksm-header {
+                border-width: 2px;
+              }
+              html[data-style="desk"] .ksm-headline { font-weight: 500; }
+              .ksm-card-title { font-size: 22px; }
+              .ksm-card-line, .ksm-card-tags, .ksm-card-year { font-size: 14px; color: var(--muted); }
+              .ksm-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+              .ksm-filters input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+              .ksm-filters label {
+                display: inline-block;
+                border: 1px solid var(--rule);
+                color: var(--ink);
+                background: transparent;
+                padding: 6px 10px;
+                font-family: var(--sans);
+                font-size: 14px;
+                border-radius: 0;
+                cursor: pointer;
+              }
+              .ksm-filters input:focus-visible + label { outline: 2px solid var(--ink); outline-offset: 2px; }
+              .ksm-filters input:checked + label { background: var(--ink); color: var(--paper); }
+              html:has(#filter-research:checked) .ksm-card:not([data-tags~="research"]) { display: none; }
+              html:has(#filter-writing:checked) .ksm-card:not([data-tags~="writing"]) { display: none; }
+              html:has(#filter-games:checked) .ksm-card:not([data-tags~="games"]) { display: none; }
+              html:has(#filter-apps:checked) .ksm-card:not([data-tags~="apps"]) { display: none; }
+              html:has(#filter-art:checked) .ksm-card { display: none; }
+              .ksm-empty-art { display: none; font-family: var(--sans); color: var(--muted); }
+              html:has(#filter-art:checked) .ksm-empty-art { display: block; }
+              .ksm-menu {
+                position: absolute;
+                inset: 0;
+                z-index: 50;
+                background: var(--paper);
+                color: var(--ink);
+              }
+              .ksm-menu-link { border-bottom: 1px solid var(--rule); padding: 16px 0; }
+              .ksm-menu-label { font-family: var(--serif); font-size: 32px; color: var(--ink); }
+              a:focus-visible, button:focus-visible, input:focus-visible, label:focus-visible {
+                outline: 2px solid var(--ink);
+                outline-offset: 3px;
+              }
+              @media (prefers-reduced-motion: reduce) {
+                *, *::before, *::after {
+                  animation: none !important;
+                  transition: none !important;
+                }
               }
               @font-face {
-                font-family: "BebasNeue";
-                src: url("/fonts/BebasNeue-Regular.ttf") format("truetype");
+                font-family: "Anton Fallback";
+                src: local("Impact"), local("Arial Narrow"), local("Haettenschweiler");
+                size-adjust: 92%;
+                ascent-override: 118%;
+                descent-override: 33%;
+                line-gap-override: 0%;
+              }
+              @font-face {
+                font-family: "Anton";
+                src: url("/fonts/Anton-latin.woff2") format("woff2");
                 font-weight: 400;
                 font-style: normal;
-                font-display: swap;
+                font-display: optional;
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122;
               }
               @font-face {
                 font-family: "UnifrakturCook";
                 src: url("/fonts/UnifrakturCook-Bold.ttf") format("truetype");
                 font-weight: 700;
                 font-style: normal;
-                font-display: swap;
+                font-display: optional;
               }
               @font-face {
                 font-family: "GreatVibes";
-                src: url("/fonts/GreatVibes-Regular.ttf") format("truetype");
+                src: url("/fonts/GreatVibes-latin.woff2") format("woff2");
                 font-weight: 400;
                 font-style: normal;
-                font-display: swap;
+                font-display: optional;
               }
-              @font-face {
-                font-family: "Inter";
-                src: url("/fonts/Inter-Regular.otf") format("opentype");
-                font-weight: 400;
-                font-style: normal;
-                font-display: swap;
+              .font-\[Anton\] {
+                font-family: Anton, "Anton Fallback", Impact, sans-serif !important;
               }
-              @font-face {
-                font-family: "Inter";
-                src: url("/fonts/Inter-Bold.otf") format("opentype");
-                font-weight: 700;
-                font-style: normal;
-                font-display: swap;
+              .font-\[UnifrakturCook\] {
+                font-family: UnifrakturCook, "Times New Roman", serif !important;
+              }
+              .font-\[GreatVibes\] {
+                font-family: GreatVibes, "Palatino Linotype", Palatino, serif !important;
               }
               html, body, #root { min-height: 100%; }
               body {
                 margin: 0;
-background: #100E0C;
-                font-family: "Cabinet Grotesk", Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
-                color: #F4EFE6;
+                background: var(--paper);
+                font-family: var(--sans);
+                color: var(--ink);
               }
               html[data-theme="light"] body,
               html[data-theme="light"] #root {
@@ -162,30 +282,19 @@ background: #100E0C;
             __html: `
               (function () {
                 try {
-                  var saved = localStorage.getItem("ksm-theme");
-                  var mode = "dark";
-                  if (saved === "light") mode = "light";
-                  else if (saved === "system") {
-                    mode = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)
-                      ? "dark" : "light";
-                  } else if (saved === "dark") mode = "dark";
-                  var bg = mode === "dark" ? "#100E0C" : "#F4EFE6";
-                  var fg = mode === "dark" ? "#F4EFE6" : "#161311";
-                  var root = document.documentElement;
-                  root.setAttribute("data-theme", mode);
-                  root.style.backgroundColor = bg;
-                  document.addEventListener("DOMContentLoaded", function () {
-                    document.body.style.backgroundColor = bg;
-                    document.body.style.color = fg;
-                  });
-                } catch (e) {}
+                  var saved = localStorage.getItem("ksm-style");
+                  var next = "notebook";
+                  if (saved === "desk" || saved === "magazine" || saved === "notebook") next = saved;
+                  document.documentElement.setAttribute("data-style", next);
+                } catch (e) {
+                  document.documentElement.setAttribute("data-style", "notebook");
+                }
               })();
             `,
           }}
         />
       </head>
       <body>
-        <div class="ksm-grain" aria-hidden="true"></div>
         {children}
       </body>
     </html>
