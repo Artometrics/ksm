@@ -72,7 +72,7 @@ export function DeskSearch() {
         ref={inputRef}
         value={query}
         onChangeText={setQuery}
-        placeholder="Search projects, papers, tags"
+        placeholder="?"
         placeholderTextColor="#7A7166"
         accessibilityLabel="Search projects, papers, and tags"
         autoCapitalize="none"
@@ -91,6 +91,7 @@ export function DeskSearch() {
       />
       {query.trim().length > 0 && (
         <View
+          className="ksm-palette"
           style={{
             position: "absolute",
             top: "100%",
