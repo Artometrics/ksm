@@ -10,14 +10,13 @@
     "kind": "project"
   },
   {
-    "title": "Games",
-    "line": "A public report on board-game ratings and popularity.",
-    "href": "https://artometrics.com/games",
+    "title": "Cardinal",
+    "line": "The Stanford corridor, as a book and a public reading room.",
+    "href": "https://cardinal-510519.web.app",
     "tags": [
-      "Research",
-      "Games"
+      "Writing"
     ],
-    "kind": "paper"
+    "kind": "project"
   },
   {
     "title": "Pantheon",
@@ -29,20 +28,21 @@
     "kind": "paper"
   },
   {
+    "title": "Games",
+    "line": "A public report on board-game ratings and popularity.",
+    "href": "https://artometrics.com/games",
+    "tags": [
+      "Research",
+      "Games"
+    ],
+    "kind": "paper"
+  },
+  {
     "title": "Lab log",
     "line": "How Artometrics is made, plus a dated log.",
     "href": "https://artometrics.com/lab-log",
     "tags": [
       "Research"
-    ],
-    "kind": "project"
-  },
-  {
-    "title": "Cardinal",
-    "line": "The Stanford corridor, as a book and a public reading room.",
-    "href": "https://cardinal-510519.web.app",
-    "tags": [
-      "Writing"
     ],
     "kind": "project"
   },

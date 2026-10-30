@@ -2,6 +2,7 @@ import { Text, View } from "react-native";
 import { Link } from "expo-router";
 import Head from "expo-router/head";
 import { Wrapper } from "@/components/Wrapper";
+import { ProjectDeck } from "@/components/ProjectDeck";
 import projects from "@/data/projects.json";
 
 const FILTERS = [
@@ -27,8 +28,8 @@ export default function HomeScreen() {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <Wrapper className="gap-8 py-8">
-        <View className="gap-3">
-          <Text className="ksm-kicker">Notebook</Text>
+        <View className="ksm-copy gap-3">
+          <Text className="ksm-kicker ksm-type">Research, writing, and tools.</Text>
           <Text accessibilityRole="header" className="ksm-headline">
             Research, writing, and the tools around them.
           </Text>
@@ -58,22 +59,14 @@ export default function HomeScreen() {
               </View>
             ))}
           </View>
-          <View className="ksm-grid">
-            {projects.map((item) => (
-              <a
-                key={item.id}
-                className="ksm-card"
-                data-tags={item.tags.join(" ").toLowerCase()}
-                href={item.href}
-              >
-                <img src={item.thumbnail} alt="" width={48} height={48} />
-                <span className="ksm-card-year">{item.year}</span>
-                <span className="ksm-card-title">{item.title}</span>
-                <span className="ksm-card-line">{item.line}</span>
-                <span className="ksm-card-tags">{item.tags.join(" · ")}</span>
-              </a>
-            ))}
-          </View>
+          <ProjectDeck />
+          <aside className="ksm-journal-box">
+            <p className="ksm-stage">JOURNAL</p>
+            <p className="ksm-lede">
+              Draft notes stay in the pack until they are reviewed. The public index does not list them.
+            </p>
+            <a className="ksm-nav" href="/blog">Open journal</a>
+          </aside>
           <Text className="ksm-empty-art">Nothing filed under Art yet.</Text>
         </View>
 

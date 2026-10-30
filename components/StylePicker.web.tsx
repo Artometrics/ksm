@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { View } from "react-native";
 
 const STYLES = [
+  { id: "pixel", label: "Pixel" },
   { id: "notebook", label: "Notebook" },
   { id: "desk", label: "Desk" },
   { id: "magazine", label: "Magazine" },
@@ -11,16 +12,16 @@ type StyleId = (typeof STYLES)[number]["id"];
 const KEY = "ksm-style";
 
 function readStyle(): StyleId {
-  if (typeof document === "undefined") return "notebook";
+  if (typeof document === "undefined") return "pixel";
   const current = document.documentElement.getAttribute("data-style");
   if (current === "desk" || current === "magazine" || current === "notebook") {
     return current;
   }
-  return "notebook";
+  return "pixel";
 }
 
 export function StylePicker() {
-  const [active, setActive] = useState<StyleId>("notebook");
+  const [active, setActive] = useState<StyleId>("pixel");
 
   useEffect(() => {
     setActive(readStyle());
@@ -52,7 +53,7 @@ export function StylePicker() {
               borderStyle: "solid",
               borderColor: "var(--ink)",
               backgroundColor: on ? "var(--ink)" : "transparent",
-              color: on ? "var(--paper)" : "var(--ink)",
+              color: on ? "#F6F1E7" : "var(--ink)",
               padding: "4px 8px",
               borderRadius: 0,
               fontSize: 12,
