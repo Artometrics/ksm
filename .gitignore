@@ -11,5 +11,9 @@ dist/
 *.log
 web-build/
 
+# Fontshare ITF FFL: do not commit the font binaries. See public/fonts/cabinet-grotesk/README.md
+public/fonts/cabinet-grotesk/*.woff2
+public/fonts/cabinet-grotesk/faces.css
+
 # @generated expo-cli
 expo-env.d.ts

@@ -33,8 +33,8 @@
   --font-display: "Anton", Impact, Haettenschweiler, sans-serif;
   --font-gothic: "UnifrakturCook", "Times New Roman", serif;
   --font-script: "GreatVibes", "Brush Script MT", cursive;
-  --font-sans: "Inter", Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
-  --font-serif: "Inter", Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
+  --font-sans: "Cabinet Grotesk", Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
+  --font-serif: "Cabinet Grotesk", Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --radius-btn: 0px;

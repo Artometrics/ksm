@@ -8,13 +8,14 @@
     "content": "node scripts/build-content.mjs",
     "content:ensure": "node scripts/ensure-generated-content.mjs",
     "prestart": "npm run content:ensure",
-    "preweb": "npm run content:ensure",
+    "preweb": "npm run fonts && npm run content:ensure",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "dev": "expo start --web",
-    "build": "npm run content:ensure && expo export -p web",
+    "fonts": "node scripts/fetch-fontshare.mjs",
+    "build": "npm run fonts && npm run content:ensure && expo export -p web",
     "eas-build-post-install": "npm run content:ensure"
   },
   "engines": {

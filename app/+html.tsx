@@ -26,6 +26,7 @@ export default function Root({ children }: PropsWithChildren) {
         />
         <meta name="theme-color" content="#000000" />
         <meta name="color-scheme" content="dark" />
+        <link rel="stylesheet" href="/fonts/cabinet-grotesk/faces.css" />
         <link rel="icon" href="/images/brand/sun-cross.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/images/brand/sun-cross.png" />
@@ -79,7 +80,7 @@ export default function Root({ children }: PropsWithChildren) {
               body {
                 margin: 0;
                 background: #000000;
-                font-family: Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
+                font-family: "Cabinet Grotesk", Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
                 color: #FFFFFF;
               }
               html[data-theme="light"] body,
@@ -113,7 +114,7 @@ export default function Root({ children }: PropsWithChildren) {
                 background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
               }
               .ksm-prose {
-                font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
+                font-family: "Cabinet Grotesk", Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
                 font-size: 1.05rem;
                 line-height: 1.7;
                 color: inherit;

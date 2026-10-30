@@ -25,7 +25,7 @@ export const Fonts: BrandFonts = {
   display: "Anton",
   gothic: "UnifrakturCook",
   script: "GreatVibes",
-  sans: "Inter",
+  sans: "Cabinet Grotesk",
   mono: "ui-monospace, SFMono-Regular, Menlo, monospace",
 };
 
