@@ -21,6 +21,8 @@ export function WorkCard({
             className="absolute inset-0 h-full w-full"
             contentFit="cover"
             transition={200}
+            alt={item.title}
+            accessibilityLabel={item.title}
           />
           <View className="absolute inset-0 bg-black/35" />
           <View className="absolute inset-0 justify-end gap-2 p-5">

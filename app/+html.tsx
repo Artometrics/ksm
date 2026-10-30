@@ -11,6 +11,7 @@ export default function Root({ children }: PropsWithChildren) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
           content="KSM — essays, interviews, and cultural signal. High contrast magazine."
@@ -23,8 +24,9 @@ export default function Root({ children }: PropsWithChildren) {
           title="KSM Magazine"
           href="/rss.xml"
         />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#100E0C" />
         <meta name="color-scheme" content="dark" />
+        <link rel="stylesheet" href="/fonts/cabinet-grotesk/faces.css" />
         <link rel="icon" href="/images/brand/sun-cross.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/images/brand/sun-cross.png" />
@@ -77,21 +79,31 @@ export default function Root({ children }: PropsWithChildren) {
               html, body, #root { min-height: 100%; }
               body {
                 margin: 0;
-                background: #000000;
-                font-family: Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
-                color: #FFFFFF;
+background: #100E0C;
+                font-family: "Cabinet Grotesk", Inter, Helvetica Neue, Helvetica, Arial, system-ui, sans-serif;
+                color: #F4EFE6;
               }
               html[data-theme="light"] body,
               html[data-theme="light"] #root {
-                background: #FFFFFF !important;
-                color: #000000 !important;
+                background: #F4EFE6 !important;
+                color: #161311 !important;
               }
               html[data-theme="dark"] body,
               html[data-theme="dark"] #root {
-                background: #000000 !important;
-                color: #FFFFFF !important;
+                background: #100E0C !important;
+                color: #F4EFE6 !important;
               }
               a { color: inherit; text-decoration: none; }
+              :focus-visible {
+                outline: 2px solid #ffffff;
+                outline-offset: 3px;
+              }
+              html[data-theme="light"] :focus-visible {
+                outline-color: #9e0e1e;
+              }
+              @media (prefers-reduced-motion: reduce) {
+                .ksm-hero-shader { display: none !important; }
+              }
               .ksm-grain {
                 pointer-events: none;
                 position: fixed;
@@ -102,7 +114,7 @@ export default function Root({ children }: PropsWithChildren) {
                 background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
               }
               .ksm-prose {
-                font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
+                font-family: "Cabinet Grotesk", Inter, Helvetica Neue, Helvetica, Arial, sans-serif;
                 font-size: 1.05rem;
                 line-height: 1.7;
                 color: inherit;
@@ -115,7 +127,7 @@ export default function Root({ children }: PropsWithChildren) {
                 text-transform: uppercase;
                 font-size: 2rem;
                 margin: 1.75rem 0 0.75rem;
-                color: #E60000;
+                color: #B10F24;
               }
               .ksm-prose h3 {
                 font-family: Anton, Impact, sans-serif;
@@ -125,9 +137,9 @@ export default function Root({ children }: PropsWithChildren) {
                 font-size: 1.35rem;
                 margin: 1.4rem 0 0.6rem;
               }
-              .ksm-prose a { color: #E60000; text-decoration: underline; }
+              .ksm-prose a { color: #B10F24; text-decoration: underline; }
               .ksm-prose blockquote {
-                border-left: 3px solid #E60000;
+                border-left: 3px solid #B10F24;
                 margin: 1rem 0;
                 padding-left: 1rem;
                 font-style: italic;
@@ -157,8 +169,8 @@ export default function Root({ children }: PropsWithChildren) {
                     mode = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)
                       ? "dark" : "light";
                   } else if (saved === "dark") mode = "dark";
-                  var bg = mode === "dark" ? "#000000" : "#FFFFFF";
-                  var fg = mode === "dark" ? "#FFFFFF" : "#000000";
+                  var bg = mode === "dark" ? "#100E0C" : "#F4EFE6";
+                  var fg = mode === "dark" ? "#F4EFE6" : "#161311";
                   var root = document.documentElement;
                   root.setAttribute("data-theme", mode);
                   root.style.backgroundColor = bg;
