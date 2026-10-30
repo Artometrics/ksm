@@ -3,7 +3,7 @@ import type { PropsWithChildren } from "react";
 
 export default function Root({ children }: PropsWithChildren) {
   return (
-    <html lang="en" data-style="notebook">
+    <html lang="en" data-style="pixel">
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -24,8 +24,23 @@ export default function Root({ children }: PropsWithChildren) {
           title="KSM Magazine"
           href="/rss.xml"
         />
-        <meta name="theme-color" content="#F6F1E7" />
+        <meta name="theme-color" content="#2D3561" />
         <meta name="color-scheme" content="light" />
+        <link
+          rel="preload"
+          href="/fonts/VT323-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/PressStart2P-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link rel="stylesheet" href="/pixel.css" />
         <link rel="icon" href="/images/brand/sun-cross.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/images/brand/sun-cross.png" />
@@ -283,11 +298,14 @@ export default function Root({ children }: PropsWithChildren) {
               (function () {
                 try {
                   var saved = localStorage.getItem("ksm-style");
-                  var next = "notebook";
-                  if (saved === "desk" || saved === "magazine" || saved === "notebook") next = saved;
+                  var next = "pixel";
+                  if (saved === "desk" || saved === "magazine" || saved === "notebook" || saved === "pixel") next = saved;
                   document.documentElement.setAttribute("data-style", next);
+                  if (localStorage.getItem("ksm-crt") === "on") {
+                    document.documentElement.setAttribute("data-crt", "on");
+                  }
                 } catch (e) {
-                  document.documentElement.setAttribute("data-style", "notebook");
+                  document.documentElement.setAttribute("data-style", "pixel");
                 }
               })();
             `,
@@ -295,6 +313,15 @@ export default function Root({ children }: PropsWithChildren) {
         />
       </head>
       <body>
+        <div class="pixel-world" aria-hidden="true">
+          <div class="pixel-sky-shift"></div>
+          <div class="pixel-stars"></div>
+          <div class="pixel-clouds"></div>
+          <div class="pixel-sun"></div>
+          <div class="pixel-hills"></div>
+          <div class="pixel-halftone"></div>
+          <div class="pixel-grain"></div>
+        </div>
         {children}
       </body>
     </html>

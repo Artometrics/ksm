@@ -9,9 +9,11 @@ import {
   View,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { SiteHeader } from "@/components/SiteHeader";
+import { SiteSidebar } from "@/components/SiteSidebar";
 import { SiteFooter } from "@/components/SiteFooter";
-import { SiteNavOverlay } from "@/components/SiteNavOverlay";
+import { ViewTransitions } from "@/components/ViewTransitions";
+import { DeskSearch } from "@/components/DeskSearch";
+import { StylePicker } from "@/components/StylePicker";
 import { ChromeProvider, useChrome } from "@/lib/chrome";
 import { ThemeProvider, useTheme } from "@/lib/theme";
 
@@ -37,18 +39,21 @@ function SiteChrome() {
   return (
     <SafeAreaView
       className="ksm-page flex-1"
-      style={{ flex: 1, backgroundColor: "var(--paper)" }}
+      style={{ flex: 1, backgroundColor: "transparent" }}
       edges={["top"]}
     >
       <StatusBar style={mode === "dark" ? "light" : "dark"} />
-      <View
-        className="ksm-page relative flex-1"
-        style={{ flex: 1, backgroundColor: "var(--paper)" }}
-      >
-        <SiteHeader />
+      <View className="ksm-frame" style={{ flex: 1, flexDirection: "row", backgroundColor: "transparent" }}>
+        <SiteSidebar />
+        <View className="ksm-main" style={{ flex: 1 }}>
+        <View className="ksm-mobile-tools" style={{ padding: 12, gap: 8 }}>
+          <DeskSearch />
+          <StylePicker />
+        </View>
         <ScrollView
           ref={scrollRef}
           className="flex-1"
+          style={{ backgroundColor: "transparent" }}
           contentContainerClassName="grow pb-6"
           onScroll={onScroll}
           scrollEventThrottle={32}
@@ -57,8 +62,9 @@ function SiteChrome() {
           <Slot />
           <SiteFooter />
         </ScrollView>
-        <SiteNavOverlay />
+        </View>
       </View>
+      <ViewTransitions />
     </SafeAreaView>
   );
 }
