@@ -22,6 +22,7 @@ function SiteChrome() {
   const { setScrollY, setMenuOpen } = useChrome();
   const { mode } = useTheme();
   const scrollRef = useRef<ScrollView>(null);
+  const isHome = pathname === "/" || pathname === "/index";
 
   useEffect(() => {
     setMenuOpen(false);
@@ -46,10 +47,12 @@ function SiteChrome() {
       <View className="ksm-frame" style={{ flex: 1, flexDirection: "row", backgroundColor: "transparent" }}>
         <SiteSidebar />
         <View className="ksm-main" style={{ flex: 1 }}>
-        <View className="ksm-mobile-tools" style={{ padding: 12, gap: 8 }}>
-          <DeskSearch />
-          <StylePicker />
-        </View>
+        {!isHome ? (
+          <View className="ksm-mobile-tools" style={{ padding: 12, gap: 8 }}>
+            <DeskSearch />
+            <StylePicker />
+          </View>
+        ) : null}
         <ScrollView
           ref={scrollRef}
           className="flex-1"

@@ -1,17 +1,10 @@
 import { Pressable, Text, View } from "react-native";
-import { Link } from "expo-router";
+import { Link, usePathname } from "expo-router";
+import { NowPlayingBar } from "@/components/NowPlayingBar";
 import { DeskSearch } from "@/components/DeskSearch";
 import { StylePicker } from "@/components/StylePicker";
 import { CrtToggle } from "@/components/CrtToggle";
-
-const LINKS = [
-  { href: "/", label: "Home", icon: "home" },
-  { href: "/#projects", label: "Projects", icon: "flag" },
-  { href: "/blog", label: "Journal", icon: "book" },
-  { href: "/about", label: "About", icon: "face" },
-  { href: "/now", label: "Now", icon: "clock" },
-  { href: "/desk", label: "Desk", icon: "desk" },
-] as const;
+import { SITE_TABS, isTabActive } from "@/lib/nav";
 
 function PixelIcon({ name }: { name: string }) {
   const common = {
@@ -32,7 +25,7 @@ function PixelIcon({ name }: { name: string }) {
       </svg>
     );
   }
-  if (name === "flag") {
+  if (name === "projects") {
     return (
       <svg {...common}>
         <rect x="3" y="2" width="2" height="12" fill="#2D3561" />
@@ -40,7 +33,7 @@ function PixelIcon({ name }: { name: string }) {
       </svg>
     );
   }
-  if (name === "book") {
+  if (name === "journal") {
     return (
       <svg {...common}>
         <rect x="3" y="2" width="10" height="12" fill="#2D3561" />
@@ -49,17 +42,17 @@ function PixelIcon({ name }: { name: string }) {
       </svg>
     );
   }
-  if (name === "desk") {
+  if (name === "archive") {
     return (
       <svg {...common}>
-        <rect x="2" y="8" width="12" height="2" fill="#2D3561" />
-        <rect x="3" y="10" width="2" height="3" fill="#6BAA75" />
-        <rect x="11" y="10" width="2" height="3" fill="#6BAA75" />
-        <rect x="5" y="4" width="6" height="4" fill="#FFB961" />
+        <rect x="2" y="3" width="12" height="10" fill="#2D3561" />
+        <rect x="4" y="5" width="8" height="2" fill="#FFB961" />
+        <rect x="4" y="9" width="5" height="1" fill="#6BAA75" />
+        <rect x="2" y="2" width="12" height="2" fill="#C05C7E" />
       </svg>
     );
   }
-  if (name === "face") {
+  if (name === "about") {
     return (
       <svg {...common}>
         <rect x="4" y="3" width="8" height="8" fill="#FFB961" />
@@ -79,16 +72,32 @@ function PixelIcon({ name }: { name: string }) {
 }
 
 function Links({ tab }: { tab?: boolean }) {
+  const pathname = usePathname();
+
   return (
     <>
-      {LINKS.map((item) => (
-        <Link key={item.href} href={item.href} asChild>
-          <Pressable className={tab ? "ksm-tab" : "ksm-side-link"}>
-            <PixelIcon name={item.icon} />
-            <Text>{item.label}</Text>
-          </Pressable>
-        </Link>
-      ))}
+      {SITE_TABS.map((item) => {
+        const active = isTabActive(pathname, item.href);
+        const className = [
+          tab ? "ksm-tab" : "ksm-side-link",
+          tab && item.center ? "ksm-tab--home" : "",
+          active ? "is-active" : "",
+        ]
+          .filter(Boolean)
+          .join(" ");
+        return (
+          <Link key={item.href} href={item.href} asChild>
+            <Pressable
+              className={className}
+              accessibilityRole="link"
+              accessibilityState={{ selected: active }}
+            >
+              <PixelIcon name={item.icon} />
+              <Text>{item.label}</Text>
+            </Pressable>
+          </Link>
+        );
+      })}
     </>
   );
 }
@@ -107,7 +116,8 @@ export function SiteSidebar() {
           <CrtToggle />
         </View>
       </View>
-      <View className="ksm-tabs">
+      <NowPlayingBar />
+      <View className="ksm-tabs" accessibilityRole="tablist">
         <Links tab />
       </View>
     </>

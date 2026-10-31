@@ -206,6 +206,13 @@ const projects = JSON.parse(
 const desk = JSON.parse(readFileSync(join(ROOT, "data/desk.json"), "utf8"));
 const searchIndex = [
   {
+    title: "Archive",
+    line: "Searchable library of notes and on-site assets.",
+    href: "/archive",
+    tags: ["Archive"],
+    kind: "page",
+  },
+  {
     title: "Desk",
     line: "Working project and doc links.",
     href: "/desk",

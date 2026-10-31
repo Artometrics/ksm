@@ -6,12 +6,12 @@ import { StylePicker } from "@/components/StylePicker";
 import { useChrome } from "@/lib/chrome";
 
 const NAV = [
-  { href: "/", label: "Projects" },
-  { href: "/#papers", label: "Papers" },
-  { href: "/blog", label: "Journal" },
-  { href: "/cv", label: "CV" },
+  { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" },
-  { href: "/now", label: "Now" },
+  { href: "/", label: "Home" },
+  { href: "/blog", label: "Journal" },
+  { href: "/archive", label: "Archive" },
+  { href: "/cv", label: "CV" },
 ] as const;
 
 export function SiteHeader() {

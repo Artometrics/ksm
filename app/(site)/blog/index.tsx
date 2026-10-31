@@ -19,8 +19,8 @@ export default function BlogIndex() {
           Notes, when they are ready.
         </Text>
         <Text className="ksm-lede">
-          Drafts stay out of this list until they are reviewed. Placeholder
-          magazine files are not linked here.
+          Kyle's essays, thoughts, and commentary — reviewed drafts only.
+          Placeholder magazine files are not linked here.
         </Text>
         {posts.length === 0 ? (
           <Text className="ksm-lede">No published notes yet.</Text>
