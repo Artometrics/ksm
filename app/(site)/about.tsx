@@ -1,8 +1,9 @@
 import { Text, View } from "react-native";
 import Head from "expo-router/head";
 import { Link } from "expo-router";
-import { Wrapper } from "@/components/Wrapper";
+import { LifePhotosBlock } from "@/components/LifePhotosBlock";
 import { LatestUpdates } from "@/components/LatestUpdates";
+import { Wrapper } from "@/components/Wrapper";
 import projects from "@/data/projects.json";
 
 const LINKS = [
@@ -27,14 +28,16 @@ export default function AboutScreen() {
             Kyle McAuliffe
           </Text>
           <Text className="ksm-lede">
-            The Artometrics about page says Kyle McAuliffe founded and edits that
-            magazine. Reports there pair a written argument with public datasets.
-            This site is the notebook that points at the public work.
+            The Artometrics about page says Kyle McAuliffe founded and edits that magazine.
+            Reports there pair a written argument with public datasets. This site is the notebook
+            that points at the public work.
           </Text>
           <Text className="ksm-lede">
             No street address and no phone number are published here.
           </Text>
         </View>
+
+        <LifePhotosBlock />
 
         <View className="gap-3">
           <Text accessibilityRole="header" className="ksm-section">
