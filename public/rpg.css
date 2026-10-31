@@ -7,8 +7,27 @@ html[data-style="rpg"] {
 html[data-style="rpg"] body,
 html[data-style="rpg"] .ksm-page,
 html[data-style="rpg"] #root {
-  background: var(--paper);
+  background: #0a1028;
+  color: var(--ink);
   image-rendering: pixelated;
+}
+
+html[data-style="rpg"] body::before {
+  content: "";
+  position: fixed;
+  inset: 10px;
+  border: 4px double var(--rule);
+  pointer-events: none;
+  z-index: 0;
+  box-shadow: inset 0 0 0 2px #0a1028;
+}
+
+html[data-style="rpg"] .ksm-lede,
+html[data-style="rpg"] .ksm-card-line,
+html[data-style="rpg"] .ksm-fine,
+html[data-style="rpg"] .ksm-home-picked-line,
+html[data-style="rpg"] .ksm-home-more-line {
+  color: #dce8ff;
 }
 
 html[data-style="rpg"] .ksm-wordmark,
@@ -42,20 +61,8 @@ html[data-style="rpg"] .ksm-kicker {
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
 }
 
-html[data-style="rpg"] .ksm-lede,
-html[data-style="rpg"] .ksm-card-line,
-html[data-style="rpg"] .ksm-fine {
-  color: var(--muted);
-}
-
 html[data-style="rpg"] .ksm-header,
 html[data-style="rpg"] .ksm-footer {
-  background: var(--card);
-  border: 4px solid var(--rule);
-  box-shadow: inset 0 0 0 2px var(--paper), 4px 4px 0 rgba(0, 0, 0, 0.35);
-}
-
-html[data-style="rpg"] .ksm-header {
   border-bottom-width: 4px;
 }
 
@@ -158,4 +165,20 @@ html[data-style="rpg"] input:focus-visible,
 html[data-style="rpg"] label:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
+}
+
+html[data-style="rpg"] .ksm-home-cat {
+  border-radius: 0;
+  border: 3px solid var(--rule);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.45);
+}
+
+html[data-style="rpg"] .ksm-home-tall-tile,
+html[data-style="rpg"] .ksm-home-picked {
+  border-radius: 0;
+  border: 3px solid var(--rule);
+}
+
+html[data-style="rpg"] .ksm-home-more-grid {
+  grid-template-columns: 1fr;
 }

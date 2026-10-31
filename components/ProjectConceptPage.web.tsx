@@ -25,52 +25,80 @@ const blockStyle = {
 };
 
 export function ProjectConceptPage({ page }: { page: ProjectPage }) {
+  const heroUri = page.heroImage?.trim();
+  const inline = page.inlineImage?.src?.trim()
+    ? page.inlineImage
+    : undefined;
+
   return (
     <>
       <View
         className="relative w-full overflow-hidden"
-        style={{ borderBottomWidth: 2, borderColor: "var(--rule)", minHeight: 220 }}
+        style={{
+          borderBottomWidth: 2,
+          borderColor: "var(--rule)",
+          minHeight: heroUri ? 220 : 0,
+          backgroundColor: "var(--card)",
+        }}
       >
-        <Image
-          source={{ uri: page.heroImage }}
-          style={{ width: "100%", height: 280, maxHeight: "42vh" }}
-          contentFit="cover"
-          accessibilityLabel={`${page.title} concept art`}
-        />
+        {heroUri ? (
+          <Image
+            source={{ uri: heroUri }}
+            style={{ width: "100%", height: 280, maxHeight: "42vh" }}
+            contentFit="cover"
+            accessibilityLabel={`${page.title} concept art`}
+          />
+        ) : null}
         <View
           style={{
-            position: "absolute",
-            inset: 0,
-            backgroundColor: "rgba(0,0,0,0.35)",
+            position: heroUri ? "absolute" : "relative",
+            inset: heroUri ? 0 : undefined,
+            backgroundColor: heroUri ? "rgba(0,0,0,0.35)" : "transparent",
           }}
         />
         <View
           style={{
-            position: "absolute",
-            bottom: 0,
+            position: heroUri ? "absolute" : "relative",
+            bottom: heroUri ? 0 : undefined,
             left: 0,
             right: 0,
             padding: 20,
             maxWidth: 680,
           }}
         >
-          <Text className="ksm-kicker" style={{ color: "var(--paper)" }}>
+          <Text
+            className="ksm-kicker"
+            style={{ color: heroUri ? "var(--paper)" : "var(--accent)" }}
+          >
             Concept book
           </Text>
           <Text
             accessibilityRole="header"
             className="ksm-headline"
-            style={{ color: "var(--paper)", fontSize: 32, lineHeight: 1.05 }}
+            style={{
+              color: heroUri ? "var(--paper)" : "var(--ink)",
+              fontSize: 32,
+              lineHeight: 1.05,
+            }}
           >
             {page.title}
           </Text>
-          <Text className="ksm-lede" style={{ color: "var(--paper)", opacity: 0.92 }}>
+          <Text
+            className="ksm-lede"
+            style={{
+              color: heroUri ? "var(--paper)" : "var(--muted)",
+              opacity: heroUri ? 0.92 : 1,
+            }}
+          >
             {page.tagline}
           </Text>
         </View>
       </View>
 
-      <View className="ksm-copy gap-4 py-8" style={{ maxWidth: 680, alignSelf: "center", width: "100%", paddingHorizontal: 20 }}>
+      <View
+        className="ksm-copy gap-4 py-8"
+        style={{ maxWidth: 680, alignSelf: "center", width: "100%", paddingHorizontal: 20 }}
+      >
         <a href={page.primaryCta.href} style={ctaStyle} target="_blank" rel="noopener noreferrer">
           {page.primaryCta.label}
         </a>
@@ -83,19 +111,21 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
           ))}
         </View>
 
-        <figure style={{ marginVertical: 16 }}>
-          <Image
-            source={{ uri: page.inlineImage.src }}
-            style={{ width: "100%", height: 240, borderWidth: 1, borderColor: "var(--rule)" }}
-            contentFit="cover"
-            accessibilityLabel={page.inlineImage.alt}
-          />
-          {page.inlineImage.caption ? (
-            <Text className="ksm-fine" style={{ marginTop: 8 }}>
-              {page.inlineImage.caption}
-            </Text>
-          ) : null}
-        </figure>
+        {inline ? (
+          <figure style={{ marginVertical: 16 }}>
+            <Image
+              source={{ uri: inline.src }}
+              style={{ width: "100%", height: 240, borderWidth: 1, borderColor: "var(--rule)" }}
+              contentFit="cover"
+              accessibilityLabel={inline.alt}
+            />
+            {inline.caption ? (
+              <Text className="ksm-fine" style={{ marginTop: 8 }}>
+                {inline.caption}
+              </Text>
+            ) : null}
+          </figure>
+        ) : null}
 
         <Text accessibilityRole="header" className="ksm-section">
           What&apos;s built

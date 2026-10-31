@@ -14,8 +14,8 @@ export type ProjectPage = {
   status: string;
   primaryCta: { label: string; href: string };
   secondaryLinks: { label: string; href: string }[];
-  heroImage: string;
-  inlineImage: { src: string; alt: string; caption?: string };
+  heroImage?: string;
+  inlineImage?: { src: string; alt: string; caption?: string };
   gallery?: string[];
   excerpts: SourcedExcerpt[];
 };
@@ -182,6 +182,11 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
         href: "https://github.com/Artometrics/pantheon",
       },
     ],
+    heroImage: "/images/projects/pantheon/pantheon-hero.webp",
+    inlineImage: {
+      src: "/images/projects/pantheon/pantheon-inline-select.webp",
+      alt: "Watercolor of a character-select screen with legend tiles on notebook paper.",
+    },
     excerpts: [
       {
         date: "Oct 31, 2026",

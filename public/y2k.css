@@ -134,3 +134,30 @@ html[data-style="y2k"] label:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+html[data-style="y2k"] body::after {
+  content: "★ ✦ ★";
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  color: rgba(255, 110, 199, 0.45);
+  pointer-events: none;
+  z-index: 0;
+}
+
+html[data-style="y2k"] .ksm-home-cat {
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.7), 0 6px 16px rgba(107, 181, 255, 0.2);
+}
+
+html[data-style="y2k"] .ksm-home-tall-tile {
+  border-radius: 16px;
+  border: 2px solid rgba(180, 200, 255, 0.5);
+}
+
+html[data-style="y2k"] .ksm-home-picked {
+  border-radius: 22px;
+  border: 2px solid rgba(255, 110, 199, 0.35);
+}
