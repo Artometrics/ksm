@@ -146,8 +146,8 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
         </View>
 
         <View style={{ marginTop: 24, paddingTop: 16, borderTopWidth: 1, borderColor: "var(--rule)" }}>
-          <Link href="/">
-            <Text className="ksm-nav">← Back to projects</Text>
+          <Link href="/projects">
+            <Text className="ksm-nav">← All projects</Text>
           </Link>
         </View>
       </View>

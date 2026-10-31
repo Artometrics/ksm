@@ -1,0 +1,145 @@
+/* Futurism — dark slate, electric accent, grid lines, subtle glow */
+
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&display=swap");
+
+html[data-style="futurism"] {
+  color-scheme: dark;
+}
+
+html[data-style="futurism"] body {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+html[data-style="futurism"] .ksm-wordmark,
+html[data-style="futurism"] .ksm-headline,
+html[data-style="futurism"] .ksm-section,
+html[data-style="futurism"] .ksm-card-title {
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+html[data-style="futurism"] .ksm-headline {
+  max-width: none;
+  font-size: clamp(28px, 5vw, 38px);
+  text-shadow: 0 0 28px rgba(0, 229, 255, 0.12);
+}
+
+html[data-style="futurism"] .ksm-kicker {
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  font-size: 11px;
+}
+
+html[data-style="futurism"] .ksm-lede,
+html[data-style="futurism"] .ksm-card-line,
+html[data-style="futurism"] .ksm-fine {
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+html[data-style="futurism"] .ksm-header,
+html[data-style="futurism"] .ksm-footer {
+  background: rgba(26, 31, 38, 0.92);
+  border-color: var(--rule);
+  box-shadow: 0 1px 0 rgba(0, 229, 255, 0.08);
+}
+
+html[data-style="futurism"] .ksm-card,
+html[data-style="futurism"] .ksm-paper,
+html[data-style="futurism"] .ksm-slot {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 229, 255, 0.06),
+    0 0 0 1px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+html[data-style="futurism"] .ksm-card:hover,
+html[data-style="futurism"] .ksm-paper:hover {
+  border-color: rgba(0, 229, 255, 0.45);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 229, 255, 0.15),
+    0 0 20px rgba(0, 229, 255, 0.12);
+}
+
+html[data-style="futurism"] .ksm-nav {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+html[data-style="futurism"] .ksm-nav:hover {
+  text-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+}
+
+html[data-style="futurism"] .ksm-filters label {
+  border-color: var(--rule);
+  font-family: var(--sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+html[data-style="futurism"] .ksm-filters input:checked + label {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.2);
+}
+
+html[data-style="futurism"] .ksm-picker-btn {
+  font-family: var(--sans) !important;
+  border-color: var(--rule) !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 10px !important;
+  flex-shrink: 0;
+}
+
+html[data-style="futurism"] .ksm-picker-btn[aria-pressed="true"] {
+  border-color: var(--accent) !important;
+  background: rgba(0, 229, 255, 0.1) !important;
+  color: var(--accent) !important;
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.25);
+}
+
+html[data-style="futurism"] .ksm-prose {
+  font-family: var(--sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[data-style="futurism"] .ksm-prose h2 {
+  font-family: var(--sans);
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+html[data-style="futurism"] .ksm-prose a {
+  color: var(--accent);
+}
+
+html[data-style="futurism"] .ksm-prose blockquote {
+  border-left-color: var(--accent);
+}
+
+html[data-style="futurism"] a:focus-visible,
+html[data-style="futurism"] button:focus-visible,
+html[data-style="futurism"] input:focus-visible,
+html[data-style="futurism"] label:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--paper),
+    0 0 0 4px rgba(0, 229, 255, 0.55),
+    0 0 18px rgba(0, 229, 255, 0.2);
+}

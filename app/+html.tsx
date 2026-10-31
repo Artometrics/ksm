@@ -43,6 +43,11 @@ export default function Root({ children }: PropsWithChildren) {
         <link rel="stylesheet" href="/pixel.css" />
         <link rel="stylesheet" href="/newsprint.css" />
         <link rel="stylesheet" href="/neon.css" />
+        <link rel="stylesheet" href="/y2k.css" />
+        <link rel="stylesheet" href="/rpg.css" />
+        <link rel="stylesheet" href="/gothic.css" />
+        <link rel="stylesheet" href="/minimal.css" />
+        <link rel="stylesheet" href="/futurism.css" />
         <link rel="icon" href="/images/brand/sun-cross.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/images/brand/sun-cross.png" />
@@ -101,6 +106,75 @@ export default function Root({ children }: PropsWithChildren) {
                 --neon-magenta: #FF4FD8;
                 --serif: Georgia, "Iowan Old Style", Palatino, serif;
                 --sans: Helvetica, Arial, sans-serif;
+              }
+              html[data-style="y2k"] {
+                --paper: #EEF6FF;
+                --ink: #2A2A4A;
+                --muted: #4A4A6A;
+                --rule: #B8C8E8;
+                --card: #FFFFFF;
+                --accent: #FF6EC7;
+                --y2k-sky: #C8E4FF;
+                --serif: Comfortaa, "Segoe UI", sans-serif;
+                --sans: Comfortaa, "Segoe UI", sans-serif;
+              }
+              html[data-style="rpg"] {
+                --paper: #0F1A3A;
+                --ink: #E8ECFF;
+                --muted: #A8B8D8;
+                --rule: #5A7AB8;
+                --card: #1A2850;
+                --accent: #F8D878;
+                --serif: "Press Start 2P", "Courier New", monospace;
+                --sans: VT323, "Courier New", monospace;
+              }
+              html[data-style="gothic"] {
+                --paper: #100E0E;
+                --ink: #F2EBE4;
+                --muted: #C4B4AA;
+                --rule: #5C3040;
+                --card: #181416;
+                --accent: #8B2942;
+                --display: UnifrakturCook, Georgia, serif;
+                --serif: Georgia, "Times New Roman", serif;
+                --sans: Inter, Helvetica, Arial, sans-serif;
+              }
+              html[data-style="minimal"] {
+                --paper: #FFFFFF;
+                --ink: #111111;
+                --muted: #5C5C5C;
+                --rule: #E8E8E8;
+                --card: #FAFAFA;
+                --accent: #111111;
+                --serif: Inter, Helvetica, Arial, sans-serif;
+                --sans: Inter, Helvetica, Arial, sans-serif;
+              }
+              html[data-style="futurism"] {
+                --paper: #1A1F26;
+                --ink: #E8ECF0;
+                --muted: #9AA3AD;
+                --rule: #2D3540;
+                --card: #222830;
+                --accent: #00E5FF;
+                --serif: "Exo 2", Helvetica, Arial, sans-serif;
+                --sans: "Exo 2", Helvetica, Arial, sans-serif;
+              }
+              .ksm-picker {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                gap: 6px;
+                max-width: 100%;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+                padding-bottom: 2px;
+              }
+              .ksm-picker-btn {
+                flex-shrink: 0;
+                white-space: nowrap;
               }
               body, .ksm-page, #root {
                 background: var(--paper);
@@ -334,7 +408,12 @@ export default function Root({ children }: PropsWithChildren) {
                     saved === "notebook" ||
                     saved === "pixel" ||
                     saved === "newsprint" ||
-                    saved === "neon"
+                    saved === "neon" ||
+                    saved === "y2k" ||
+                    saved === "rpg" ||
+                    saved === "gothic" ||
+                    saved === "minimal" ||
+                    saved === "futurism"
                   ) {
                     next = saved;
                   }

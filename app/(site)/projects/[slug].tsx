@@ -4,56 +4,107 @@ import Head from "expo-router/head";
 import { Wrapper } from "@/components/Wrapper";
 import { PageSeo } from "@/components/PageSeo";
 import { ProjectConceptPage } from "@/components/ProjectConceptPage";
+import projectsJson from "@/data/projects.json";
 import {
   CONCEPT_PAGE_SLUGS,
   getConceptPage,
 } from "@/data/project-pages";
+import { getProjectById } from "@/lib/projects";
 import { paramString } from "@/lib/params";
 
 export async function generateStaticParams() {
-  return CONCEPT_PAGE_SLUGS.map((slug) => ({ slug }));
+  const concept = CONCEPT_PAGE_SLUGS.map((slug) => ({ slug }));
+  const rest = projectsJson
+    .filter((item) => !CONCEPT_PAGE_SLUGS.includes(item.id as (typeof CONCEPT_PAGE_SLUGS)[number]))
+    .map((item) => ({ slug: item.id }));
+  return [...concept, ...rest];
 }
 
-export default function ProjectConceptScreen() {
+function MinimalProjectDetail({
+  project,
+}: {
+  project: NonNullable<ReturnType<typeof getProjectById>>;
+}) {
+  return (
+    <>
+      <Head>
+        <title>{project.title} · Kyle McAuliffe</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
+      <Wrapper className="gap-4 py-8">
+        {project.cover ? (
+          <img
+            className="ksm-launcher-cover ksm-launcher-cover--hero"
+            src={project.cover}
+            alt=""
+          />
+        ) : null}
+        <Text className="ksm-kicker">{project.year}</Text>
+        <Text accessibilityRole="header" className="ksm-headline">
+          {project.title}
+        </Text>
+        <Text className="ksm-lede">{project.line}</Text>
+        <Text className="ksm-card-tags">{project.tags.join(" · ")}</Text>
+        <a className="ksm-nav" href={project.href} target="_blank" rel="noopener noreferrer">
+          Open live site
+        </a>
+        <a className="ksm-nav" href={project.source}>
+          Source note
+        </a>
+        <Link href="/archive">
+          <Text className="ksm-nav">Downloads in archive</Text>
+        </Link>
+        <Link href="/projects">
+          <Text className="ksm-nav">All projects</Text>
+        </Link>
+      </Wrapper>
+    </>
+  );
+}
+
+export default function ProjectDetailScreen() {
   const params = useLocalSearchParams<{ slug: string | string[] }>();
   const slug = paramString(params.slug);
-  const page = getConceptPage(slug);
+  const conceptPage = getConceptPage(slug);
+  const project = getProjectById(slug);
 
-  if (!page) {
+  if (conceptPage) {
     return (
       <>
         <Head>
-          <title>Project not found · Kyle McAuliffe</title>
+          <title>{`${conceptPage.title} · Kyle McAuliffe`}</title>
           <meta name="robots" content="noindex, nofollow" />
+          <meta name="description" content={conceptPage.tagline} />
         </Head>
-        <Wrapper className="gap-3 py-10">
-          <Text className="ksm-headline">Project not found</Text>
-          <Link href="/">
-            <Text className="ksm-nav">Back home</Text>
-          </Link>
-        </Wrapper>
+        <PageSeo
+          title={conceptPage.title}
+          description={conceptPage.tagline}
+          path={`/projects/${conceptPage.slug}`}
+          image={conceptPage.heroImage}
+        />
+        <View className="w-full">
+          <ProjectConceptPage page={conceptPage} />
+        </View>
       </>
     );
   }
 
-  const description = page.tagline;
+  if (project) {
+    return <MinimalProjectDetail project={project} />;
+  }
 
   return (
     <>
       <Head>
-        <title>{`${page.title} · Kyle McAuliffe`}</title>
+        <title>Project · Kyle McAuliffe</title>
         <meta name="robots" content="noindex, nofollow" />
-        <meta name="description" content={description} />
       </Head>
-      <PageSeo
-        title={page.title}
-        description={description}
-        path={`/projects/${page.slug}`}
-        image={page.heroImage}
-      />
-      <View className="w-full">
-        <ProjectConceptPage page={page} />
-      </View>
+      <Wrapper className="gap-4 py-8">
+        <Text className="ksm-headline">Project not found</Text>
+        <Link href="/projects">
+          <Text className="ksm-nav">Back to projects</Text>
+        </Link>
+      </Wrapper>
     </>
   );
 }
