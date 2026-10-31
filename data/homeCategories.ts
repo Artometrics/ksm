@@ -21,14 +21,14 @@ export const HOME_CATEGORIES: HomeCategory[] = [
     id: "books",
     label: "Books",
     href: "/projects/cardinal",
-    cover: "/images/projects/cardinal-hero.webp",
+    cover: "/images/projects/cardinal/cardinal-hero.webp",
     tone: "books",
   },
   {
     id: "magazine",
     label: "Magazine",
     href: "/projects/artometrics",
-    cover: "/images/projects/artometrics-hero.webp",
+    cover: "/images/projects/artometrics/artometrics-hero.webp",
     tone: "magazine",
   },
   {

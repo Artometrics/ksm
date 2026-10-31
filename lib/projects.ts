@@ -6,12 +6,12 @@ export type ProjectRecord = (typeof projectsJson)[number] & {
 
 /** Box-art paths that already exist under public/ — keyed by project id. */
 const COVER_BY_ID: Record<string, string> = {
-  artometrics: "/images/projects/artometrics-hero.webp",
-  cardinal: "/images/projects/cardinal-hero.webp",
+  artometrics: "/images/projects/artometrics/artometrics-hero.webp",
+  cardinal: "/images/projects/cardinal/cardinal-hero.webp",
   dawn: "/images/projects/dawn-hero.webp",
-  "lab-log": "/images/projects/artometrics-inline-covers.webp",
-  pantheon: "/images/projects/pantheon-hero.webp",
-  games: "/images/projects/pantheon-hero.webp",
+  "lab-log": "/images/projects/artometrics/artometrics-inline-covers.webp",
+  pantheon: "/images/projects/pantheon/pantheon-hero.webp",
+  games: "/images/marks/games.svg",
 };
 
 export const projects: ProjectRecord[] = projectsJson.map((item) => ({
