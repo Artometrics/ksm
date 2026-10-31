@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { SiteSidebar } from "@/components/SiteSidebar";
+import { MobileBottomChrome } from "@/components/MobileBottomChrome";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ViewTransitions } from "@/components/ViewTransitions";
 import { DeskSearch } from "@/components/DeskSearch";
@@ -44,15 +45,13 @@ function SiteChrome() {
       edges={["top"]}
     >
       <StatusBar style={mode === "dark" ? "light" : "dark"} />
-      <View className="ksm-frame" style={{ flex: 1, flexDirection: "row", backgroundColor: "transparent" }}>
+      <View className="ksm-frame" style={{ flex: 1, backgroundColor: "transparent" }}>
         <SiteSidebar />
-        <View className="ksm-main" style={{ flex: 1 }}>
-        {!isHome ? (
-          <View className="ksm-mobile-tools" style={{ padding: 12, gap: 8 }}>
-            <DeskSearch />
-            <StylePicker />
-          </View>
-        ) : null}
+        <View className="ksm-main" style={{ flex: 1, width: "100%", minWidth: 0 }}>
+        <View className="ksm-mobile-tools" style={{ padding: 12, gap: 8 }}>
+          {!isHome ? <DeskSearch /> : null}
+          <StylePicker />
+        </View>
         <ScrollView
           ref={scrollRef}
           className="flex-1"
@@ -67,6 +66,7 @@ function SiteChrome() {
         </ScrollView>
         </View>
       </View>
+      <MobileBottomChrome />
       <ViewTransitions />
     </SafeAreaView>
   );

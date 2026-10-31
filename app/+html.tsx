@@ -41,6 +41,8 @@ export default function Root({ children }: PropsWithChildren) {
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="/pixel.css" />
+        <link rel="stylesheet" href="/notebook.css" />
+        <link rel="stylesheet" href="/desk.css" />
         <link rel="stylesheet" href="/newsprint.css" />
         <link rel="stylesheet" href="/neon.css" />
         <link rel="stylesheet" href="/y2k.css" />
@@ -55,6 +57,52 @@ export default function Root({ children }: PropsWithChildren) {
         <style
           dangerouslySetInnerHTML={{
             __html: `
+              .ksm-frame { display: flex; flex-direction: column; flex: 1; width: 100%; min-height: 100%; }
+              @media (min-width: 1024px) { .ksm-frame { flex-direction: row; } }
+              .ksm-side {
+                display: none !important;
+                width: 0 !important;
+                max-width: 0 !important;
+                flex: 0 0 0 !important;
+                overflow: hidden !important;
+                padding: 0 !important;
+                margin: 0 !important;
+              }
+              @media (min-width: 1024px) {
+                .ksm-side {
+                  display: flex !important;
+                  width: 210px !important;
+                  max-width: 210px !important;
+                  flex: 0 0 210px !important;
+                  overflow: visible !important;
+                }
+                .ksm-mobile-chrome { display: none !important; }
+              }
+              .ksm-main { flex: 1; min-width: 0; width: 100%; max-width: 100%; }
+              .ksm-mobile-chrome {
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 40;
+                pointer-events: none;
+              }
+              .ksm-mobile-chrome > * { pointer-events: auto; }
+              @media (max-width: 1023px) {
+                .ksm-main { padding-bottom: calc(112px + env(safe-area-inset-bottom)); }
+              }
+              .ksm-home { display: flex; flex-direction: column; gap: 22px; min-width: 0; width: 100%; }
+              .ksm-home-cat-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+              }
+              .ksm-home-rail {
+                display: flex;
+                gap: 12px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+              }
               html[data-style="notebook"] {
                 --paper: #F6F1E7;
                 --ink: #2A241C;

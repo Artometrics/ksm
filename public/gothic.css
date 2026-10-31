@@ -155,3 +155,20 @@ html[data-style="gothic"] label:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
+
+html[data-style="gothic"] .ksm-home-section-title {
+  font-family: var(--display);
+  letter-spacing: 0.08em;
+}
+
+html[data-style="gothic"] .ksm-home-cat,
+html[data-style="gothic"] .ksm-home-tall-tile,
+html[data-style="gothic"] .ksm-home-picked {
+  border: 1px solid var(--rule);
+  box-shadow: inset 0 0 0 1px rgba(139, 41, 66, 0.25);
+}
+
+html[data-style="gothic"] .ksm-home-section-title::before {
+  content: "❧ ";
+  color: var(--accent);
+}

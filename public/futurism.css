@@ -143,3 +143,21 @@ html[data-style="futurism"] label:focus-visible {
     0 0 0 4px rgba(0, 229, 255, 0.55),
     0 0 18px rgba(0, 229, 255, 0.2);
 }
+
+html[data-style="futurism"] .ksm-home-cat,
+html[data-style="futurism"] .ksm-home-tall-tile,
+html[data-style="futurism"] .ksm-home-picked,
+html[data-style="futurism"] .ksm-home-more-card {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  border: 1px solid rgba(0, 229, 255, 0.25);
+}
+
+html[data-style="futurism"] .ksm-home-section-title::after {
+  content: " ]";
+  color: var(--accent);
+}
+
+html[data-style="futurism"] .ksm-home-section-title::before {
+  content: "[ ";
+  color: var(--accent);
+}
