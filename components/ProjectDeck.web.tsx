@@ -1,5 +1,6 @@
 import { useState } from "react";
 import projects from "@/data/projects.json";
+import { hasConceptPage } from "@/data/project-pages";
 
 const ICONS: Record<string, string> = {
   artometrics: "stairs",
@@ -62,8 +63,9 @@ export function ProjectDeck() {
             key={item.id}
             className="ksm-card"
             data-tags={item.tags.join(" ").toLowerCase()}
-            href={item.href}
+            href={hasConceptPage(item.id) ? `/projects/${item.id}` : item.href}
             onClick={(event) => {
+              if (hasConceptPage(item.id)) return;
               event.preventDefault();
               setOpenId(item.id);
             }}
@@ -101,6 +103,11 @@ export function ProjectDeck() {
             <h2 className="ksm-section">{open.title}</h2>
             <p className="ksm-lede">{open.line}</p>
             <p className="ksm-card-tags">{open.tags.join(" · ")} · {open.year}</p>
+            {hasConceptPage(open.id) ? (
+              <p>
+                <a className="ksm-nav" href={`/projects/${open.id}`}>Read the concept book</a>
+              </p>
+            ) : null}
             <p>
               <a className="ksm-nav" href={open.href}>Open the live page</a>
             </p>
