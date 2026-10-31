@@ -14,6 +14,7 @@ module.exports = ({ config }) => {
       ...(config.extra || {}),
       EXPO_PUBLIC_SITE_URL: siteUrl,
       PUBLIC_SITE_URL: siteUrl,
+      CSS_VERSION: process.env.EXPO_PUBLIC_CSS_VERSION,
     },
   };
 };

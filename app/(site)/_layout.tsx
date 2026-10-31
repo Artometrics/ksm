@@ -7,6 +7,7 @@ import {
   Platform,
   ScrollView,
   View,
+  type ViewStyle,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { SiteSidebar } from "@/components/SiteSidebar";
@@ -38,16 +39,38 @@ function SiteChrome() {
     setScrollY(e.nativeEvent.contentOffset.y);
   };
 
+  const pageStyle: ViewStyle = {
+    flex: 1,
+    backgroundColor: "transparent",
+    ...(Platform.OS === "web"
+      ? { minHeight: "100dvh", width: "100%", maxWidth: "100%" }
+      : {}),
+  };
+
+  const frameStyle: ViewStyle = {
+    flex: 1,
+    minHeight: 0,
+    width: "100%",
+    backgroundColor: "transparent",
+  };
+
+  const mainStyle: ViewStyle = {
+    flex: 1,
+    minHeight: 0,
+    width: "100%",
+    minWidth: 0,
+  };
+
   return (
     <SafeAreaView
       className="ksm-page flex-1"
-      style={{ flex: 1, backgroundColor: "transparent" }}
+      style={pageStyle}
       edges={["top"]}
     >
       <StatusBar style={mode === "dark" ? "light" : "dark"} />
-      <View className="ksm-frame" style={{ flex: 1, backgroundColor: "transparent" }}>
+      <View className="ksm-frame" style={frameStyle}>
         <SiteSidebar />
-        <View className="ksm-main" style={{ flex: 1, width: "100%", minWidth: 0 }}>
+        <View className="ksm-main" style={mainStyle}>
         <View className="ksm-mobile-tools" style={{ padding: 12, gap: 8 }}>
           {!isHome ? <DeskSearch /> : null}
           <StylePicker />
@@ -55,8 +78,9 @@ function SiteChrome() {
         <ScrollView
           ref={scrollRef}
           className="flex-1"
-          style={{ backgroundColor: "transparent" }}
+          style={{ flex: 1, minHeight: 0, backgroundColor: "transparent" }}
           contentContainerClassName="grow pb-6"
+          contentContainerStyle={Platform.OS === "web" ? { flexGrow: 1 } : undefined}
           onScroll={onScroll}
           scrollEventThrottle={32}
           keyboardShouldPersistTaps="handled"

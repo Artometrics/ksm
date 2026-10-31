@@ -53,3 +53,13 @@ html[data-style="desk"] .ksm-headline {
   letter-spacing: -0.03em;
   max-width: none;
 }
+
+@media (max-width: 1023px) {
+  html[data-style="desk"] .ksm-mobile-chrome {
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+  }
+}
