@@ -1,5 +1,8 @@
 import { ScrollViewStyleReset } from "expo-router/html";
 import type { PropsWithChildren } from "react";
+import { CSS_VERSION } from "@/constants/CssVersion";
+
+const css = (href: string) => `${href}?v=${encodeURIComponent(CSS_VERSION)}`;
 
 export default function Root({ children }: PropsWithChildren) {
   return (
@@ -40,16 +43,17 @@ export default function Root({ children }: PropsWithChildren) {
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        <link rel="stylesheet" href="/pixel.css" />
-        <link rel="stylesheet" href="/notebook.css" />
-        <link rel="stylesheet" href="/desk.css" />
-        <link rel="stylesheet" href="/newsprint.css" />
-        <link rel="stylesheet" href="/neon.css" />
-        <link rel="stylesheet" href="/y2k.css" />
-        <link rel="stylesheet" href="/rpg.css" />
-        <link rel="stylesheet" href="/gothic.css" />
-        <link rel="stylesheet" href="/minimal.css" />
-        <link rel="stylesheet" href="/futurism.css" />
+        <link rel="stylesheet" href={css("/layout.css")} />
+        <link rel="stylesheet" href={css("/pixel.css")} />
+        <link rel="stylesheet" href={css("/notebook.css")} />
+        <link rel="stylesheet" href={css("/desk.css")} />
+        <link rel="stylesheet" href={css("/newsprint.css")} />
+        <link rel="stylesheet" href={css("/neon.css")} />
+        <link rel="stylesheet" href={css("/y2k.css")} />
+        <link rel="stylesheet" href={css("/rpg.css")} />
+        <link rel="stylesheet" href={css("/gothic.css")} />
+        <link rel="stylesheet" href={css("/minimal.css")} />
+        <link rel="stylesheet" href={css("/futurism.css")} />
         <link rel="icon" href="/images/brand/sun-cross.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/images/brand/sun-cross.png" />

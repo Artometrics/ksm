@@ -30,7 +30,8 @@ function SideLinks() {
   );
 }
 
-export function SiteSidebar() {
+/** Desktop sidebar panel (hidden on mobile web via SiteSidebar.web.tsx). */
+export function SiteSidebarPanel() {
   return (
     <View className="ksm-side" accessibilityRole="none">
       <Text className="ksm-wordmark">KSM</Text>
@@ -44,4 +45,8 @@ export function SiteSidebar() {
       </View>
     </View>
   );
+}
+
+export function SiteSidebar() {
+  return <SiteSidebarPanel />;
 }
