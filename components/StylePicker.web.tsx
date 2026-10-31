@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { View } from "react-native";
 
 const STYLES = [
@@ -8,6 +8,11 @@ const STYLES = [
   { id: "magazine", label: "Magazine" },
   { id: "newsprint", label: "Newsprint" },
   { id: "neon", label: "Neon night" },
+  { id: "y2k", label: "Y2K" },
+  { id: "rpg", label: "Retro RPG" },
+  { id: "gothic", label: "Gothic" },
+  { id: "minimal", label: "Minimal" },
+  { id: "futurism", label: "Futurism" },
 ] as const;
 
 type StyleId = (typeof STYLES)[number]["id"];
@@ -24,10 +29,16 @@ function readStyle(): StyleId {
 
 export function StylePicker() {
   const [active, setActive] = useState<StyleId>("pixel");
+  const buttonRefs = useRef<Partial<Record<StyleId, HTMLButtonElement>>>({});
 
   useEffect(() => {
     setActive(readStyle());
   }, []);
+
+  useLayoutEffect(() => {
+    const node = buttonRefs.current[active];
+    node?.scrollIntoView({ behavior: "smooth", inline: "nearest", block: "nearest" });
+  }, [active]);
 
   const choose = (id: StyleId) => {
     setActive(id);
@@ -40,12 +51,15 @@ export function StylePicker() {
   };
 
   return (
-    <View className="ksm-picker" style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
+    <View className="ksm-picker">
       {STYLES.map((item) => {
         const on = active === item.id;
         return (
           <button
             key={item.id}
+            ref={(el) => {
+              if (el) buttonRefs.current[item.id] = el;
+            }}
             type="button"
             aria-pressed={on}
             onClick={() => choose(item.id)}
