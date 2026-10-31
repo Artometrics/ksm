@@ -1,5 +1,14 @@
 [
   {
+    "title": "Archive",
+    "line": "Searchable library of notes and on-site assets.",
+    "href": "/archive",
+    "tags": [
+      "Archive"
+    ],
+    "kind": "page"
+  },
+  {
     "title": "Desk",
     "line": "Working project and doc links.",
     "href": "/desk",

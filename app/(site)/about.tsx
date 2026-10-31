@@ -1,8 +1,10 @@
-import { Link } from "expo-router";
 import { Text, View } from "react-native";
+import Head from "expo-router/head";
+import { Link } from "expo-router";
 import { LifePhotosBlock } from "@/components/LifePhotosBlock";
-import { PageSeo } from "@/components/PageSeo";
+import { LatestUpdates } from "@/components/LatestUpdates";
 import { Wrapper } from "@/components/Wrapper";
+import projects from "@/data/projects.json";
 
 const LINKS = [
   ["Artometrics about page", "https://artometrics.com/about"],
@@ -10,61 +12,78 @@ const LINKS = [
   ["Kyle McAuliffe on GitHub", "https://github.com/kylesmcauliffe"],
 ] as const;
 
-export default function AboutPage() {
+export default function AboutScreen() {
+  const projectRows = projects.filter((item) => item.kind === "project");
+
   return (
     <>
-      <PageSeo
-        title="About · Kyle S. McAuliffe"
-        description="Writer, builder, and Artometrics founder. Notes on games, magazines, and the work in progress."
-        path="/about"
-      />
-      <Wrapper variant="narrow" className="gap-10 py-10">
-        <View className="gap-3">
-          <Text className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
-            About
+      <Head>
+        <title>About · Kyle McAuliffe</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
+      <Wrapper className="gap-8 py-8">
+        <View className="ksm-copy gap-3">
+          <Text className="ksm-kicker">About</Text>
+          <Text accessibilityRole="header" className="ksm-headline">
+            Kyle McAuliffe
           </Text>
-          <Text
-            accessibilityRole="header"
-            className="font-display text-[34px] leading-10 text-fg"
-          >
-            Kyle S. McAuliffe
+          <Text className="ksm-lede">
+            The Artometrics about page says Kyle McAuliffe founded and edits that magazine.
+            Reports there pair a written argument with public datasets. This site is the notebook
+            that points at the public work.
           </Text>
-          <Text className="font-sans text-[17px] leading-7 text-muted">
-            Writer and builder. I run Artometrics — games, magazines, and long-form work that
-            tries to make history and myth feel close. This site is the notebook that points at
-            the public work.
+          <Text className="ksm-lede">
+            No street address and no phone number are published here.
           </Text>
         </View>
 
         <LifePhotosBlock />
 
-        <View className="gap-4 border-t-2 border-border pt-8">
-          <Text className="font-sans text-[16px] leading-7 text-fg">
-            Day to day I ship Cardinal, Pantheon, Knightmare, Kore, Dawn, and the Artometrics
-            magazine — plus this personal site as a desk for notes and launches.
+        <View className="gap-3">
+          <Text accessibilityRole="header" className="ksm-section">
+            CV
           </Text>
-          <Text className="font-sans text-[16px] leading-7 text-fg">
-            Looking for the work? Start on{" "}
-            <Link href="/#projects" className="text-accent underline">
-              Projects
-            </Link>
-            , or read the{" "}
-            <Link href="/blog" className="text-accent underline">
-              Journal
-            </Link>
-            .
+          <Text className="ksm-lede">
+            A PDF can live at public/cv.pdf. No file is in the site yet.
           </Text>
-          <Text className="font-sans text-[15px] leading-7 text-muted">
-            No street address and no phone number are published here.
-          </Text>
-          <View className="gap-2 pt-2">
-            {LINKS.map(([label, href]) => (
-              <a key={href} className="font-sans text-[15px] text-fg underline underline-offset-2" href={href}>
-                {label}
-              </a>
-            ))}
-          </View>
+          <Link href="/cv">
+            <Text className="ksm-nav">Open CV page</Text>
+          </Link>
         </View>
+
+        <View className="gap-3">
+          <Text accessibilityRole="header" className="ksm-section">
+            Projects
+          </Text>
+          {projectRows.map((item) => (
+            <View key={item.id} className="ksm-slot gap-2">
+              <Text className="ksm-card-title">{item.title}</Text>
+              <Text className="ksm-card-line">{item.line}</Text>
+              <Link href={`/projects/${item.id}` as "/projects"}>
+                <Text className="ksm-nav">Project page</Text>
+              </Link>
+              <a className="ksm-nav" href={item.href}>
+                Live site
+              </a>
+            </View>
+          ))}
+        </View>
+
+        <View className="gap-2">
+          <Text accessibilityRole="header" className="ksm-section">
+            Contact and social
+          </Text>
+          {LINKS.map(([label, href]) => (
+            <a key={href} className="ksm-nav" href={href}>
+              {label}
+            </a>
+          ))}
+          <Text className="ksm-fine">
+            TODO: add email or other contact channels when they are published in this repo.
+          </Text>
+        </View>
+
+        <LatestUpdates limit={3} />
       </Wrapper>
     </>
   );
