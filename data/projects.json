@@ -64,5 +64,71 @@
     "href": "https://dawn-510519.web.app",
     "thumbnail": "/images/marks/apps.svg",
     "source": "https://github.com/Artometrics/dawn/blob/main/README.md"
+  },
+  {
+    "id": "nightlight",
+    "title": "Nightlight",
+    "line": "Flashlight horror: walk to the radio cabin with only your beam.",
+    "year": "2026",
+    "tags": ["Games"],
+    "kind": "project",
+    "href": "https://nightlight-510519.web.app",
+    "thumbnail": "/images/marks/games.svg",
+    "source": "https://github.com/Artometrics/nightlight/blob/main/README.md"
+  },
+  {
+    "id": "cardinal-quest",
+    "title": "Cardinal Quest",
+    "line": "Walk Stanford's map to unlock landmarks, history, and badges.",
+    "year": "2026",
+    "tags": ["Games"],
+    "kind": "project",
+    "href": "https://cardinal-quest-510519.web.app",
+    "thumbnail": "/images/marks/games.svg",
+    "source": "https://github.com/Artometrics/cardinal-quest/blob/main/README.md"
+  },
+  {
+    "id": "knightmare",
+    "title": "Knightmare",
+    "line": "Listen with your eyes — Tuning In from silence to clear speech.",
+    "year": "2026",
+    "tags": ["Games"],
+    "kind": "project",
+    "href": "https://cursor.com/codebase/artometrics/knightmare",
+    "thumbnail": "/images/marks/games.svg",
+    "source": "https://cursor.com/codebase/artometrics/knightmare"
+  },
+  {
+    "id": "questroad",
+    "title": "Questroad",
+    "line": "A Waze-style MMORPG adventure on the real map.",
+    "year": "2026",
+    "tags": ["Games"],
+    "kind": "project",
+    "href": "https://questroad-510519.web.app",
+    "thumbnail": "/images/marks/games.svg",
+    "source": "https://github.com/Artometrics/questroad/blob/main/README.md"
+  },
+  {
+    "id": "style-lab",
+    "title": "Style Lab",
+    "line": "A hosted playground for visual recipes and skins.",
+    "year": "2026",
+    "tags": ["Apps"],
+    "kind": "project",
+    "href": "https://stylelab-510519.web.app",
+    "thumbnail": "/images/marks/apps.svg",
+    "source": "https://stylelab-510519.web.app"
+  },
+  {
+    "id": "ksm",
+    "title": "KSM",
+    "line": "This studio notebook — projects, styles, and live links.",
+    "year": "2026",
+    "tags": ["Apps"],
+    "kind": "project",
+    "href": "https://ksm-510519.web.app",
+    "thumbnail": "/images/marks/apps.svg",
+    "source": "https://github.com/Artometrics/ksm"
   }
 ]
