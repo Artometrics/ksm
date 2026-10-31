@@ -6,6 +6,8 @@ const STYLES = [
   { id: "notebook", label: "Notebook" },
   { id: "desk", label: "Desk" },
   { id: "magazine", label: "Magazine" },
+  { id: "newsprint", label: "Newsprint" },
+  { id: "neon", label: "Neon night" },
 ] as const;
 
 type StyleId = (typeof STYLES)[number]["id"];
@@ -14,8 +16,8 @@ const KEY = "ksm-style";
 function readStyle(): StyleId {
   if (typeof document === "undefined") return "pixel";
   const current = document.documentElement.getAttribute("data-style");
-  if (current === "desk" || current === "magazine" || current === "notebook") {
-    return current;
+  if (STYLES.some((item) => item.id === current)) {
+    return current as StyleId;
   }
   return "pixel";
 }

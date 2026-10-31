@@ -1,0 +1,97 @@
+/* Newsprint — warm cream paper, black ink, column rules, stamp accents */
+
+html[data-style="newsprint"] body {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(to right, transparent calc(50% - 0.5px), var(--rule) calc(50% - 0.5px), var(--rule) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 28px;
+}
+
+html[data-style="newsprint"] .ksm-header {
+  border-bottom-width: 3px;
+  border-bottom-style: double;
+}
+
+html[data-style="newsprint"] .ksm-footer {
+  border-top-width: 3px;
+  border-top-style: double;
+}
+
+html[data-style="newsprint"] .ksm-kicker {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 2px solid var(--ink);
+  letter-spacing: 0.14em;
+  color: var(--ink);
+  background: var(--card);
+  box-shadow: 3px 3px 0 var(--rule);
+}
+
+html[data-style="newsprint"] .ksm-headline {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 12px;
+}
+
+html[data-style="newsprint"] .ksm-section {
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  border-left: 4px solid var(--ink);
+  padding-left: 12px;
+}
+
+html[data-style="newsprint"] .ksm-card,
+html[data-style="newsprint"] .ksm-paper {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--rule);
+  box-shadow: inset 0 0 0 1px var(--paper);
+  position: relative;
+}
+
+html[data-style="newsprint"] .ksm-card::before,
+html[data-style="newsprint"] .ksm-paper::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed var(--rule);
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+html[data-style="newsprint"] .ksm-card:hover {
+  border-color: var(--ink);
+  background: var(--card);
+}
+
+html[data-style="newsprint"] .ksm-picker-btn {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+}
+
+html[data-style="newsprint"] .ksm-filters input:checked + label {
+  border-width: 2px;
+  box-shadow: 2px 2px 0 var(--rule);
+}
+
+html[data-style="newsprint"] a:focus-visible,
+html[data-style="newsprint"] button:focus-visible,
+html[data-style="newsprint"] input:focus-visible,
+html[data-style="newsprint"] label:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+html[data-style="newsprint"] .ksm-prose h2 {
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.35rem;
+}
+
+html[data-style="newsprint"] .ksm-prose a {
+  color: var(--accent);
+}

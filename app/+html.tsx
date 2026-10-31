@@ -41,6 +41,8 @@ export default function Root({ children }: PropsWithChildren) {
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="/pixel.css" />
+        <link rel="stylesheet" href="/newsprint.css" />
+        <link rel="stylesheet" href="/neon.css" />
         <link rel="icon" href="/images/brand/sun-cross.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/images/brand/sun-cross.png" />
@@ -75,6 +77,28 @@ export default function Root({ children }: PropsWithChildren) {
                 --rule: #161412;
                 --card: #FFFCF6;
                 --accent: #8E2F2F;
+                --serif: Georgia, "Iowan Old Style", Palatino, serif;
+                --sans: Helvetica, Arial, sans-serif;
+              }
+              html[data-style="newsprint"] {
+                --paper: #F2EBDD;
+                --ink: #12110F;
+                --muted: #4A443C;
+                --rule: #C9BFB0;
+                --card: #FAF6EE;
+                --accent: #5C4A32;
+                --serif: "Times New Roman", Times, Georgia, serif;
+                --sans: Helvetica, Arial, sans-serif;
+              }
+              html[data-style="neon"] {
+                --paper: #1A1816;
+                --ink: #EDE6DC;
+                --muted: #A89F94;
+                --rule: #3D3834;
+                --card: #242120;
+                --accent: #38E8FF;
+                --neon-cyan: #38E8FF;
+                --neon-magenta: #FF4FD8;
                 --serif: Georgia, "Iowan Old Style", Palatino, serif;
                 --sans: Helvetica, Arial, sans-serif;
               }
@@ -129,6 +153,11 @@ export default function Root({ children }: PropsWithChildren) {
                 border-width: 2px;
               }
               html[data-style="desk"] .ksm-headline { font-weight: 500; }
+              html[data-style="newsprint"] .ksm-card,
+              html[data-style="newsprint"] .ksm-paper {
+                border-width: 2px;
+              }
+              html[data-style="neon"] .ksm-kicker { color: var(--neon-cyan); }
               .ksm-card-title { font-size: 22px; }
               .ksm-card-line, .ksm-card-tags, .ksm-card-year { font-size: 14px; color: var(--muted); }
               .ksm-filters { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -299,7 +328,16 @@ export default function Root({ children }: PropsWithChildren) {
                 try {
                   var saved = localStorage.getItem("ksm-style");
                   var next = "pixel";
-                  if (saved === "desk" || saved === "magazine" || saved === "notebook" || saved === "pixel") next = saved;
+                  if (
+                    saved === "desk" ||
+                    saved === "magazine" ||
+                    saved === "notebook" ||
+                    saved === "pixel" ||
+                    saved === "newsprint" ||
+                    saved === "neon"
+                  ) {
+                    next = saved;
+                  }
                   document.documentElement.setAttribute("data-style", next);
                   if (localStorage.getItem("ksm-crt") === "on") {
                     document.documentElement.setAttribute("data-crt", "on");
