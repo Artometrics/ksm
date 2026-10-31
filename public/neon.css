@@ -1,0 +1,125 @@
+/* Neon night — charcoal ground, cyan/magenta accents, soft glow */
+
+html[data-style="neon"] {
+  color-scheme: dark;
+}
+
+html[data-style="neon"] body,
+html[data-style="neon"] .ksm-page,
+html[data-style="neon"] #root {
+  background: var(--paper);
+}
+
+html[data-style="neon"] .ksm-kicker {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 12px rgba(56, 232, 255, 0.35);
+}
+
+html[data-style="neon"] .ksm-headline {
+  color: var(--ink);
+  text-shadow: 0 0 24px rgba(255, 120, 220, 0.12);
+}
+
+html[data-style="neon"] .ksm-section {
+  color: var(--neon-magenta);
+  letter-spacing: 0.04em;
+}
+
+html[data-style="neon"] .ksm-lede,
+html[data-style="neon"] .ksm-card-line,
+html[data-style="neon"] .ksm-fine {
+  color: var(--muted);
+}
+
+html[data-style="neon"] .ksm-card,
+html[data-style="neon"] .ksm-paper,
+html[data-style="neon"] .ksm-slot {
+  background: var(--card);
+  border-color: var(--rule);
+  box-shadow: 0 0 0 1px rgba(56, 232, 255, 0.08);
+}
+
+html[data-style="neon"] .ksm-card:hover,
+html[data-style="neon"] .ksm-paper:hover {
+  border-color: rgba(255, 79, 216, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(255, 79, 216, 0.25),
+    0 0 18px rgba(56, 232, 255, 0.12);
+}
+
+html[data-style="neon"] .ksm-header,
+html[data-style="neon"] .ksm-footer {
+  background: var(--paper);
+  border-color: var(--rule);
+}
+
+html[data-style="neon"] .ksm-nav {
+  color: var(--neon-cyan);
+  text-decoration-color: rgba(56, 232, 255, 0.45);
+}
+
+html[data-style="neon"] .ksm-nav:hover {
+  text-shadow: 0 0 10px rgba(56, 232, 255, 0.35);
+}
+
+html[data-style="neon"] .ksm-filters input:checked + label {
+  background: transparent;
+  color: var(--neon-magenta);
+  border-color: var(--neon-magenta);
+  box-shadow:
+    0 0 0 1px rgba(255, 79, 216, 0.35),
+    0 0 14px rgba(255, 79, 216, 0.2);
+}
+
+html[data-style="neon"] .ksm-filters input:focus-visible + label {
+  box-shadow:
+    0 0 0 2px var(--paper),
+    0 0 0 4px rgba(56, 232, 255, 0.55),
+    0 0 16px rgba(56, 232, 255, 0.25);
+}
+
+html[data-style="neon"] .ksm-picker-btn {
+  border-color: var(--rule);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+html[data-style="neon"] .ksm-picker-btn[aria-pressed="true"] {
+  border-color: var(--neon-cyan);
+  background: rgba(56, 232, 255, 0.12) !important;
+  color: var(--neon-cyan) !important;
+  box-shadow:
+    0 0 0 1px rgba(56, 232, 255, 0.4),
+    0 0 14px rgba(56, 232, 255, 0.25);
+}
+
+html[data-style="neon"] .ksm-picker-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--paper),
+    0 0 0 4px rgba(255, 79, 216, 0.65),
+    0 0 18px rgba(255, 79, 216, 0.3);
+}
+
+html[data-style="neon"] a:focus-visible,
+html[data-style="neon"] button:focus-visible,
+html[data-style="neon"] input:focus-visible,
+html[data-style="neon"] label:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--paper),
+    0 0 0 4px rgba(56, 232, 255, 0.55),
+    0 0 16px rgba(56, 232, 255, 0.22);
+}
+
+html[data-style="neon"] .ksm-prose h2 {
+  color: var(--neon-magenta);
+  text-shadow: 0 0 20px rgba(255, 79, 216, 0.2);
+}
+
+html[data-style="neon"] .ksm-prose a {
+  color: var(--neon-cyan);
+}
+
+html[data-style="neon"] .ksm-prose blockquote {
+  border-left-color: var(--neon-cyan);
+}
