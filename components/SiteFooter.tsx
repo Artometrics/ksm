@@ -3,11 +3,13 @@ import { Link } from "expo-router";
 import { Wrapper } from "@/components/Wrapper";
 
 const LINKS = [
-  ["/", "Projects"],
+  ["/projects", "Projects"],
+  ["/", "Home"],
   ["/blog", "Journal"],
-  ["/cv", "CV"],
+  ["/archive", "Archive"],
   ["/about", "About"],
-  ["/now", "Now"],
+  ["/cv", "CV"],
+  ["/desk", "Desk"],
   ["/legal/privacy", "Privacy"],
 ] as const;
 
