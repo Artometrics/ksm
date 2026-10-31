@@ -24,13 +24,13 @@
   {
     "id": "pantheon",
     "title": "Pantheon",
-    "line": "A report on occupations and cities in MIT's Pantheon biographies.",
+    "line": "A historical 3D fighter you can play in the browser.",
     "year": "2026",
-    "tags": ["Research"],
-    "kind": "paper",
-    "href": "https://artometrics.com/pantheon",
-    "thumbnail": "/images/marks/research.svg",
-    "source": "https://github.com/Artometrics/artometrics/blob/main/articles/pantheon/README.md"
+    "tags": ["Games"],
+    "kind": "project",
+    "href": "https://pantheon-game-ksm.web.app",
+    "thumbnail": "/images/marks/games.svg",
+    "source": "https://github.com/Artometrics/pantheon/blob/main/README.md"
   },
   {
     "id": "games",
