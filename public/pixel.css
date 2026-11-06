@@ -16,6 +16,8 @@
 
 html[data-style="pixel"] {
   --paper: transparent;
+  /* Solid label on ink buttons. --paper is transparent so the landscape shows through. */
+  --cta-label: #fff6e8;
   --ink: #1c2348;
   --muted: #2d3561;
   --rule: #2d3561;

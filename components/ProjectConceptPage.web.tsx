@@ -7,7 +7,7 @@ const ctaStyle = {
   display: "inline-block" as const,
   padding: "14px 22px",
   backgroundColor: "var(--ink)",
-  color: "var(--paper)",
+  color: "var(--cta-label, var(--paper))",
   textDecoration: "none" as const,
   fontFamily: "var(--sans)",
   fontSize: 15,
@@ -68,7 +68,7 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
         >
           <Text
             className="ksm-kicker"
-            style={{ color: heroUri ? "var(--paper)" : "var(--accent)" }}
+            style={{ color: heroUri ? "#F6F1E7" : "var(--accent)" }}
           >
             Concept book
           </Text>
@@ -76,9 +76,8 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
             accessibilityRole="header"
             className="ksm-headline"
             style={{
-              color: heroUri ? "var(--paper)" : "var(--ink)",
+              color: heroUri ? "#F6F1E7" : "var(--ink)",
               fontSize: 32,
-              lineHeight: 1.05,
             }}
           >
             {page.title}
@@ -86,7 +85,7 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
           <Text
             className="ksm-lede"
             style={{
-              color: heroUri ? "var(--paper)" : "var(--muted)",
+              color: heroUri ? "#F6F1E7" : "var(--muted)",
               opacity: heroUri ? 0.92 : 1,
             }}
           >
