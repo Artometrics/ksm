@@ -156,8 +156,21 @@ html[data-style="gothic"] label:focus-visible {
   outline-offset: 3px;
 }
 
-html[data-style="gothic"] .ksm-home-section-title {
+html[data-style="gothic"] .ksm-side,
+html[data-style="gothic"] .ksm-utility {
+  background: var(--card);
+  color: var(--ink);
+}
+html[data-style="gothic"] .ksm-home-section-title,
+html[data-style="gothic"] .ksm-utility-title,
+html[data-style="gothic"] .ksm-play-title,
+html[data-style="gothic"] .ksm-shelf-title,
+html[data-style="gothic"] .ksm-home-picked-title {
   font-family: var(--display);
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+html[data-style="gothic"] .ksm-home-section-title {
   letter-spacing: 0.08em;
 }
 

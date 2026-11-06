@@ -2,6 +2,7 @@ import { Text, View } from "react-native";
 import { Image } from "expo-image";
 import { Link } from "expo-router";
 import type { ProjectPage } from "@/data/project-pages";
+import { isPublicLaunchUrl } from "@/lib/projects";
 
 const ctaStyle = {
   display: "inline-block" as const,
@@ -98,9 +99,13 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
         className="ksm-copy gap-4 py-8"
         style={{ maxWidth: 680, alignSelf: "center", width: "100%", paddingHorizontal: 20 }}
       >
-        <a href={page.primaryCta.href} style={ctaStyle} target="_blank" rel="noopener noreferrer">
-          {page.primaryCta.label}
-        </a>
+        {isPublicLaunchUrl(page.primaryCta.href) ? (
+          <a href={page.primaryCta.href} style={ctaStyle} target="_blank" rel="noopener noreferrer">
+            {page.primaryCta.label}
+          </a>
+        ) : (
+          <p className="ksm-lede">No public play link yet. This build is not hosted.</p>
+        )}
 
         <View className="ksm-prose gap-3">
           {page.overview.map((paragraph) => (

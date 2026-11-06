@@ -1,9 +1,17 @@
 import { useEffect } from "react";
 import { View } from "react-native";
-import { Stack } from "expo-router";
+import { DefaultTheme, Stack, ThemeProvider } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import "@/global.css";
 import { useBrandFonts } from "@/lib/useBrandFonts";
+
+const navTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: "transparent",
+  },
+};
 
 export { ErrorBoundary } from "expo-router";
 
@@ -19,18 +27,20 @@ export default function RootLayout() {
   if (!loaded && !error) return null;
 
   return (
-    <View style={{ flex: 1 }}>
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: { backgroundColor: "#F6F1E7" },
-          animation: "none",
-        }}
-      >
-        <Stack.Screen name="(site)" />
-        <Stack.Screen name="bio" />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </View>
+    <ThemeProvider value={navTheme}>
+      <View style={{ flex: 1, backgroundColor: "transparent" }}>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            contentStyle: { backgroundColor: "transparent" },
+            animation: "none",
+          }}
+        >
+          <Stack.Screen name="(site)" />
+          <Stack.Screen name="bio" />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+      </View>
+    </ThemeProvider>
   );
 }

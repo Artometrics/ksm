@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { RasterImage } from "@/components/RasterImage";
 import { hasConceptPage } from "@/data/project-pages";
-import { projects as enriched } from "@/lib/projects";
+import { projects as enriched, publicLaunchHref } from "@/lib/projects";
 
 export function ProjectDeck() {
   const [openId, setOpenId] = useState<string | null>(null);
@@ -21,15 +22,7 @@ export function ProjectDeck() {
               setOpenId(item.id);
             }}
           >
-            <img
-              className="ksm-project-cover"
-              src={item.cover ?? item.thumbnail}
-              alt=""
-              width={260}
-              height={160}
-              loading="lazy"
-              decoding="async"
-            />
+            <RasterImage src={item.cover} className="ksm-project-cover" />
             <span className="ksm-card-year">{item.year}</span>
             <span className="ksm-card-title">{item.title}</span>
             <span className="ksm-card-line">{item.line}</span>
@@ -59,11 +52,15 @@ export function ProjectDeck() {
                 </a>
               </p>
             ) : null}
-            <p>
-              <a className="ksm-nav" href={open.href}>
-                Open the live page
-              </a>
-            </p>
+            {publicLaunchHref(open) ? (
+              <p>
+                <a className="ksm-nav" href={publicLaunchHref(open) ?? open.href}>
+                  Open the live page
+                </a>
+              </p>
+            ) : (
+              <p className="ksm-lede">No public play link yet.</p>
+            )}
             <p>
               <a className="ksm-nav" href={open.source}>
                 Source note

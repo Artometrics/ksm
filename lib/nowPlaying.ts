@@ -1,4 +1,11 @@
-import { getProjectById, projects, type ProjectRecord } from "@/lib/projects";
+import {
+  getProjectById,
+  isDisplayArt,
+  projectDetailPath,
+  projects,
+  publicLaunchHref,
+  type ProjectRecord,
+} from "@/lib/projects";
 
 export type NowPlaying = {
   id: string;
@@ -26,8 +33,8 @@ export function projectToNowPlaying(project: ProjectRecord): NowPlaying {
     id: project.id,
     title: project.title,
     line: project.line,
-    cover: project.cover ?? project.thumbnail,
-    href: project.href,
+    cover: isDisplayArt(project.cover) ? project.cover : "",
+    href: publicLaunchHref(project) ?? projectDetailPath(project.id),
   };
 }
 

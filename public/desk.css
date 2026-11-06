@@ -24,7 +24,7 @@ html[data-style="desk"] .ksm-home-search input {
 
 html[data-style="desk"] .ksm-home-cat {
   border-radius: 10px;
-  min-height: 88px;
+  min-height: 120px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 

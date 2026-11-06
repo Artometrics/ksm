@@ -75,9 +75,9 @@ export default function Root({ children }: PropsWithChildren) {
               @media (min-width: 1024px) {
                 .ksm-side {
                   display: flex !important;
-                  width: 210px !important;
-                  max-width: 210px !important;
-                  flex: 0 0 210px !important;
+                  width: 256px !important;
+                  max-width: 256px !important;
+                  flex: 0 0 256px !important;
                   overflow: visible !important;
                 }
                 .ksm-mobile-chrome { display: none !important; }
@@ -99,7 +99,13 @@ export default function Root({ children }: PropsWithChildren) {
               .ksm-home-cat-grid {
                 display: grid;
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 10px;
+                gap: 12px;
+              }
+              @media (min-width: 720px) {
+                .ksm-home-cat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+              }
+              @media (min-width: 1180px) {
+                .ksm-home-cat-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
               }
               .ksm-home-rail {
                 display: flex;
@@ -258,7 +264,7 @@ export default function Root({ children }: PropsWithChildren) {
               .ksm-kicker { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
               .ksm-lede { font-size: 17px; line-height: 1.5; max-width: 62ch; color: var(--muted); margin: 0; }
               .ksm-nav { font-size: 15px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
-              .ksm-fine { font-size: 13px; color: var(--muted); }
+              .ksm-fine { font-size: 16px; color: var(--muted); }
               .ksm-grid { display: flex; flex-wrap: wrap; gap: 16px; }
               .ksm-card, .ksm-paper, .ksm-slot {
                 display: flex;
@@ -373,8 +379,8 @@ export default function Root({ children }: PropsWithChildren) {
                 font-family: var(--sans);
                 color: var(--ink);
               }
-              html[data-theme="light"] body,
-              html[data-theme="light"] #root {
+              html[data-theme="light"]:not([data-style]) body,
+              html[data-theme="light"]:not([data-style]) #root {
                 background: #F4EFE6 !important;
                 color: #161311 !important;
               }

@@ -45,7 +45,7 @@ html[data-style="notebook"] .ksm-home-cat-grid {
 
 html[data-style="notebook"] .ksm-home-cat {
   border-radius: 4px;
-  min-height: 104px;
+  min-height: 120px;
   transform: rotate(var(--nb-rot, 0deg));
 }
 

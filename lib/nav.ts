@@ -16,6 +16,20 @@ export const SITE_TABS: SiteTab[] = [
   { href: "/archive", label: "Archive", icon: "archive" },
 ];
 
+export function sectionLabel(pathname: string) {
+  if (pathname === "/" || pathname === "/index") return "Home";
+  const tab = SITE_TABS.find(
+    (item) => item.href !== "/" && isTabActive(pathname, item.href),
+  );
+  if (tab) return tab.label;
+  if (pathname.startsWith("/cv")) return "CV";
+  if (pathname.startsWith("/gallery")) return "Gallery";
+  if (pathname.startsWith("/desk")) return "Desk";
+  if (pathname.startsWith("/legal")) return "Legal";
+  if (pathname.startsWith("/now")) return "Now";
+  return "KSM";
+}
+
 export function isTabActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/" || pathname === "/index";
   if (href === "/blog") {
