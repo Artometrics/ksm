@@ -13,7 +13,7 @@ export default function HomeScreen() {
         />
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <Wrapper className="ksm-home-wrap py-4">
+      <Wrapper variant="bleed" className="ksm-home-wrap">
         <HomeLauncher />
       </Wrapper>
     </>

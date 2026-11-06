@@ -1,12 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { HOME_CATEGORIES } from "@/data/homeCategories";
 import { NOW_UPDATES } from "@/data/now";
+import { RasterImage } from "@/components/RasterImage";
 import { getBlogPosts } from "@/lib/content";
-import {
-  getLaunchProjects,
-  projectDetailPath,
-  projects,
-} from "@/lib/projects";
+import { useLaunchQuery } from "@/lib/launchQuery";
 import {
   getFeaturedProject,
   launchLabelFor,
@@ -15,57 +12,101 @@ import {
   writeNowPlaying,
   projectToNowPlaying,
 } from "@/lib/nowPlaying";
+import {
+  isOnPlayShelf,
+  projectDetailPath,
+  projects,
+  publicLaunchHref,
+  type ProjectRecord,
+} from "@/lib/projects";
 
 function matchesQuery(text: string, query: string) {
   if (!query.trim()) return true;
   return text.toLowerCase().includes(query.trim().toLowerCase());
 }
 
-function onLaunchProject(project: ReturnType<typeof getLaunchProjects>[number]) {
-  rememberProjectLaunch(project);
-}
-
-function TallTile({
-  title,
-  subtitle,
-  cover,
-  href,
-  external,
-  launchProject,
-  badge,
-}: {
-  title: string;
-  subtitle: string;
-  cover: string;
-  href: string;
-  external?: boolean;
-  launchProject?: ReturnType<typeof getLaunchProjects>[number];
-  badge?: string;
-}) {
-  const linkProps = external
-    ? { target: "_blank" as const, rel: "noopener noreferrer" }
-    : {};
+function PlayCard({ project }: { project: ProjectRecord }) {
+  const href = publicLaunchHref(project);
+  if (!href) return null;
+  const label = launchLabelFor(project.tags);
+  const launch = () => rememberProjectLaunch(project);
 
   return (
-    <a
-      className="ksm-home-tall-tile"
-      href={href}
-      {...linkProps}
-      onClick={() => {
-        if (launchProject) onLaunchProject(launchProject);
-      }}
-    >
-      <img className="ksm-home-tall-cover" src={cover} alt="" loading="lazy" />
-      <span className="ksm-home-tall-shade" aria-hidden="true" />
-      {badge ? <span className="ksm-home-tile-badge">{badge}</span> : null}
-      <span className="ksm-home-tall-title">{title}</span>
-      <span className="ksm-home-tall-sub">{subtitle}</span>
-    </a>
+    <article className="ksm-play-card">
+      <a
+        className="ksm-play-media"
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${label} ${project.title}`}
+        onClick={launch}
+      >
+        <RasterImage src={project.cover} className="ksm-play-art" />
+      </a>
+      <div className="ksm-play-body">
+        <h3 className="ksm-play-title">{project.title}</h3>
+        <p className="ksm-play-line">{project.line}</p>
+        <div className="ksm-play-actions">
+          <a
+            className="ksm-home-play-btn"
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={launch}
+          >
+            {label}
+          </a>
+          <a className="ksm-nav" href={projectDetailPath(project.id)}>
+            Full story
+          </a>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function ShelfCard({ project }: { project: ProjectRecord }) {
+  const href = publicLaunchHref(project);
+  const missingPlayLink =
+    project.tags.includes("Games") && href == null;
+
+  return (
+    <article className="ksm-shelf-card">
+      {href ? (
+        <a
+          className="ksm-shelf-launch"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => {
+            if (project.kind === "project") rememberProjectLaunch(project);
+          }}
+        >
+          <RasterImage src={project.cover} className="ksm-shelf-art" />
+          <span className="ksm-shelf-title">{project.title}</span>
+          <span className="ksm-shelf-line">{project.line}</span>
+        </a>
+      ) : (
+        <a className="ksm-shelf-launch" href={projectDetailPath(project.id)}>
+          <RasterImage src={project.cover} className="ksm-shelf-art" />
+          <span className="ksm-shelf-title">{project.title}</span>
+          <span className="ksm-shelf-line">{project.line}</span>
+        </a>
+      )}
+      {missingPlayLink ? (
+        <p className="ksm-shelf-note">
+          No public play link yet. The prototype is not hosted.
+        </p>
+      ) : null}
+      <a className="ksm-nav ksm-shelf-story" href={projectDetailPath(project.id)}>
+        Full story
+      </a>
+    </article>
   );
 }
 
 export function HomeLauncher() {
-  const [query, setQuery] = useState("");
+  const { query, setQuery } = useLaunchQuery();
 
   useEffect(() => {
     if (!readNowPlaying()) {
@@ -73,10 +114,9 @@ export function HomeLauncher() {
     }
   }, []);
 
-  const launchProjects = getLaunchProjects();
   const featured = getFeaturedProject();
+  const featuredHref = publicLaunchHref(featured);
   const journalPosts = getBlogPosts().slice(0, 8);
-  const moreItems = projects.filter((p) => p.id !== featured.id);
 
   const filteredCategories = useMemo(
     () =>
@@ -88,15 +128,22 @@ export function HomeLauncher() {
 
   const playNow = useMemo(
     () =>
-      launchProjects.filter((p) =>
-        matchesQuery(`${p.title} ${p.line} ${p.tags.join(" ")}`, query),
+      projects.filter(
+        (project) =>
+          isOnPlayShelf(project) &&
+          matchesQuery(
+            `${project.title} ${project.line} ${project.tags.join(" ")}`,
+            query,
+          ),
       ),
-    [launchProjects, query],
+    [query],
   );
 
   const updates = useMemo(
     () =>
-      NOW_UPDATES.filter((u) => matchesQuery(`${u.text} ${u.date}`, query)),
+      NOW_UPDATES.filter((item) =>
+        matchesQuery(`${item.text} ${item.date}`, query),
+      ),
     [query],
   );
 
@@ -110,25 +157,40 @@ export function HomeLauncher() {
 
   const moreGrid = useMemo(
     () =>
-      moreItems.filter((p) =>
-        matchesQuery(`${p.title} ${p.line} ${p.tags.join(" ")}`, query),
+      projects.filter(
+        (project) =>
+          project.id !== featured.id &&
+          !isOnPlayShelf(project) &&
+          matchesQuery(
+            `${project.title} ${project.line} ${project.tags.join(" ")}`,
+            query,
+          ),
       ),
-    [moreItems, query],
+    [featured.id, query],
   );
 
-  const showFeatured = matchesQuery(
-    `${featured.title} ${featured.line}`,
-    query,
-  );
+  const showFeatured =
+    Boolean(featuredHref) &&
+    matchesQuery(`${featured.title} ${featured.line}`, query);
+
+  const nothingMatches =
+    Boolean(query) &&
+    !filteredCategories.length &&
+    !showFeatured &&
+    !playNow.length &&
+    !updates.length &&
+    !readRow.length &&
+    !moreGrid.length;
 
   return (
     <div className="ksm-home">
-      <label className="ksm-home-search">
+      <h1 className="ksm-home-title">Home</h1>
+      <label className="ksm-home-search ksm-home-search--page">
         <span className="visually-hidden">Search projects and posts</span>
         <input
           type="search"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(event) => setQuery(event.target.value)}
           placeholder="What do you want to launch?"
           enterKeyHint="search"
         />
@@ -141,37 +203,47 @@ export function HomeLauncher() {
             {filteredCategories.map((cat) => (
               <a
                 key={cat.id}
-                className={`ksm-home-cat ksm-home-cat--${cat.tone}`}
+                className={[
+                  "ksm-home-cat",
+                  `ksm-home-cat--${cat.tone}`,
+                  cat.cover ? "" : "ksm-home-cat--text",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
                 href={cat.href}
               >
                 <span className="ksm-home-cat-label">{cat.label}</span>
-                <img
-                  className="ksm-home-cat-art"
-                  src={cat.cover}
-                  alt=""
-                  loading="lazy"
-                />
+                <RasterImage src={cat.cover} className="ksm-home-cat-art" />
               </a>
             ))}
           </div>
         </section>
       ) : null}
 
-      {showFeatured ? (
+      {showFeatured && featuredHref ? (
         <section className="ksm-home-section">
           <h2 className="ksm-home-section-title">Picked for you</h2>
           <article className="ksm-home-picked">
+            <a
+              className="ksm-home-picked-media"
+              href={featuredHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${launchLabelFor(featured.tags)} ${featured.title}`}
+              onClick={() => rememberProjectLaunch(featured)}
+            >
+              <RasterImage src={featured.cover} className="ksm-home-picked-art" />
+            </a>
             <div className="ksm-home-picked-copy">
-              <p className="ksm-kicker">Featured</p>
               <h3 className="ksm-home-picked-title">{featured.title}</h3>
               <p className="ksm-home-picked-line">{featured.line}</p>
               <div className="ksm-home-picked-actions">
                 <a
                   className="ksm-home-play-btn"
-                  href={featured.href}
+                  href={featuredHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => onLaunchProject(featured)}
+                  onClick={() => rememberProjectLaunch(featured)}
                 >
                   {launchLabelFor(featured.tags)}
                 </a>
@@ -180,11 +252,6 @@ export function HomeLauncher() {
                 </a>
               </div>
             </div>
-            <img
-              className="ksm-home-picked-art"
-              src={featured.cover ?? featured.thumbnail}
-              alt=""
-            />
           </article>
         </section>
       ) : null}
@@ -192,18 +259,9 @@ export function HomeLauncher() {
       {playNow.length > 0 ? (
         <section className="ksm-home-section">
           <h2 className="ksm-home-section-title">Play now</h2>
-          <div className="ksm-home-rail">
+          <div className="ksm-home-play-grid">
             {playNow.map((project) => (
-              <TallTile
-                key={project.id}
-                title={project.title}
-                subtitle={project.tags.join(" · ")}
-                cover={project.cover ?? project.thumbnail}
-                href={project.href}
-                external
-                launchProject={project}
-                badge={launchLabelFor(project.tags)}
-              />
+              <PlayCard key={project.id} project={project} />
             ))}
           </div>
         </section>
@@ -212,37 +270,49 @@ export function HomeLauncher() {
       {updates.length > 0 ? (
         <section className="ksm-home-section">
           <h2 className="ksm-home-section-title">Latest updates</h2>
-          <div className="ksm-home-rail">
+          <ul className="ksm-home-updates">
             {updates.map((item) => (
-              <TallTile
-                key={item.href}
-                title={item.date}
-                subtitle={item.text}
-                cover="/images/thumbnails/placeholder.png"
-                href={item.href}
-                external
-                badge="Update"
-              />
+              <li key={item.href} className="ksm-home-update">
+                <time dateTime={item.date}>{item.date}</time>
+                <p>{item.text}</p>
+                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  Open the note
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
       ) : null}
 
       {readRow.length > 0 ? (
         <section className="ksm-home-section">
           <h2 className="ksm-home-section-title">Read</h2>
-          <div className="ksm-home-rail">
+          <ul className="ksm-home-read">
             {readRow.map((post) => (
-              <TallTile
-                key={post.slug}
-                title={post.title}
-                subtitle={post.description ?? "Journal"}
-                cover={post.heroImage ?? post.image?.url ?? "/images/thumbnails/placeholder.png"}
-                href={`/blog/posts/${post.slug}`}
-                badge="Essay"
-              />
+              <li key={post.slug}>
+                <a href={`/blog/posts/${post.slug}`}>
+                  <RasterImage
+                    src={post.heroImage ?? post.image?.url}
+                    className="ksm-home-read-art"
+                  />
+                  <span className="ksm-home-read-title">{post.title}</span>
+                  {post.description ? (
+                    <span className="ksm-home-read-line">{post.description}</span>
+                  ) : null}
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
+        </section>
+      ) : !query ? (
+        <section className="ksm-home-section">
+          <h2 className="ksm-home-section-title">Read</h2>
+          <p className="ksm-home-empty">
+            No published notes yet.{" "}
+            <a className="ksm-nav" href="/blog">
+              Open the journal
+            </a>
+          </p>
         </section>
       ) : null}
 
@@ -251,40 +321,13 @@ export function HomeLauncher() {
           <h2 className="ksm-home-section-title">More for you</h2>
           <div className="ksm-home-more-grid">
             {moreGrid.map((item) => (
-              <div key={item.id} className="ksm-home-more-card">
-                <a
-                  className="ksm-home-more-launch"
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    if (item.kind === "project") rememberProjectLaunch(item);
-                  }}
-                >
-                  <img
-                    src={item.cover ?? item.thumbnail}
-                    alt=""
-                    className="ksm-home-more-art"
-                  />
-                  <span className="ksm-home-more-title">{item.title}</span>
-                  <span className="ksm-home-more-line">{item.line}</span>
-                </a>
-                <a className="ksm-nav ksm-home-more-link" href={projectDetailPath(item.id)}>
-                  Story
-                </a>
-              </div>
+              <ShelfCard key={item.id} project={item} />
             ))}
           </div>
         </section>
       ) : null}
 
-      {query &&
-      !filteredCategories.length &&
-      !showFeatured &&
-      !playNow.length &&
-      !updates.length &&
-      !readRow.length &&
-      !moreGrid.length ? (
+      {nothingMatches ? (
         <p className="ksm-lede">No matches for &ldquo;{query}&rdquo;.</p>
       ) : null}
     </div>

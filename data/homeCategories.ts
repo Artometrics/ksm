@@ -1,10 +1,11 @@
-/** Home dashboard browse categories (Spotify-style grid). */
+/** Home dashboard browse categories. */
 
 export type HomeCategory = {
   id: string;
   label: string;
   href: string;
-  cover: string;
+  /** Omitted when the shelf has no picture of its own. */
+  cover?: string;
   /** Maps to `.ksm-home-cat--{tone}` theme-safe tints */
   tone: "games" | "books" | "magazine" | "apps" | "art" | "archive";
 };
@@ -14,7 +15,7 @@ export const HOME_CATEGORIES: HomeCategory[] = [
     id: "games",
     label: "Games",
     href: "/projects",
-    cover: "/images/marks/games.svg",
+    cover: "/images/projects/pantheon/pantheon-hero.webp",
     tone: "games",
   },
   {
@@ -35,21 +36,19 @@ export const HOME_CATEGORIES: HomeCategory[] = [
     id: "apps",
     label: "Apps",
     href: "/projects/dawn",
-    cover: "/images/projects/dawn-hero.webp",
+    cover: "/images/projects/dawn/dawn-hero.webp",
     tone: "apps",
   },
   {
     id: "art",
     label: "Music / Art",
     href: "/gallery",
-    cover: "/images/gallery/double-exposure-lilies.jpg",
     tone: "art",
   },
   {
     id: "archive",
     label: "Archive",
     href: "/archive",
-    cover: "/images/marks/writing.svg",
     tone: "archive",
   },
 ];

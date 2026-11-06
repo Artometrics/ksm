@@ -16,7 +16,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ViewTransitions } from "@/components/ViewTransitions";
 import { DeskSearch } from "@/components/DeskSearch";
 import { StylePicker } from "@/components/StylePicker";
+import { DesktopUtility } from "@/components/DesktopUtility";
 import { ChromeProvider, useChrome } from "@/lib/chrome";
+import { LaunchQueryProvider } from "@/lib/launchQuery";
 import { ThemeProvider, useTheme } from "@/lib/theme";
 
 function SiteChrome() {
@@ -75,6 +77,7 @@ function SiteChrome() {
           {!isHome ? <DeskSearch /> : null}
           <StylePicker />
         </View>
+        <DesktopUtility />
         <ScrollView
           ref={scrollRef}
           className="flex-1"
@@ -100,9 +103,11 @@ export default function SiteLayout() {
   return (
     <SafeAreaProvider>
       <ThemeProvider>
-        <ChromeProvider>
-          <SiteChrome />
-        </ChromeProvider>
+        <LaunchQueryProvider>
+          <ChromeProvider>
+            <SiteChrome />
+          </ChromeProvider>
+        </LaunchQueryProvider>
       </ThemeProvider>
     </SafeAreaProvider>
   );

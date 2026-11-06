@@ -4,6 +4,7 @@ import {
   readNowPlaying,
   type NowPlaying,
 } from "@/lib/nowPlaying";
+import { isDisplayArt, isPublicLaunchUrl } from "@/lib/projects";
 
 export function NowPlayingBar() {
   const [entry, setEntry] = useState<NowPlaying | null>(null);
@@ -21,9 +22,13 @@ export function NowPlayingBar() {
 
   if (!entry) return null;
 
+  const external = isPublicLaunchUrl(entry.href);
+
   return (
     <div className="ksm-now-playing" role="region" aria-label="Now playing">
-      <img className="ksm-now-playing-art" src={entry.cover} alt="" />
+      {isDisplayArt(entry.cover) ? (
+        <img className="ksm-now-playing-art" src={entry.cover} alt="" />
+      ) : null}
       <div className="ksm-now-playing-copy">
         <span className="ksm-now-playing-label">Now playing</span>
         <span className="ksm-now-playing-title">{entry.title}</span>
@@ -31,10 +36,11 @@ export function NowPlayingBar() {
       <a
         className="ksm-now-playing-open"
         href={entry.href}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(external
+          ? { target: "_blank" as const, rel: "noopener noreferrer" }
+          : {})}
       >
-        Open
+        {external ? "Open" : "Story"}
       </a>
     </div>
   );

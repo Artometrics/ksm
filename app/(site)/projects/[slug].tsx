@@ -9,7 +9,7 @@ import {
   CONCEPT_PAGE_SLUGS,
   getConceptPage,
 } from "@/data/project-pages";
-import { getProjectById } from "@/lib/projects";
+import { getProjectById, isDisplayArt, isPublicLaunchUrl } from "@/lib/projects";
 import { paramString } from "@/lib/params";
 
 export async function generateStaticParams() {
@@ -32,7 +32,7 @@ function MinimalProjectDetail({
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <Wrapper className="gap-4 py-8">
-        {project.cover ? (
+        {isDisplayArt(project.cover) ? (
           <img
             className="ksm-launcher-cover ksm-launcher-cover--hero"
             src={project.cover}
@@ -45,9 +45,13 @@ function MinimalProjectDetail({
         </Text>
         <Text className="ksm-lede">{project.line}</Text>
         <Text className="ksm-card-tags">{project.tags.join(" · ")}</Text>
-        <a className="ksm-nav" href={project.href} target="_blank" rel="noopener noreferrer">
-          Open live site
-        </a>
+        {isPublicLaunchUrl(project.href) ? (
+          <a className="ksm-nav" href={project.href} target="_blank" rel="noopener noreferrer">
+            Open live site
+          </a>
+        ) : (
+          <Text className="ksm-lede">No public link for this project yet.</Text>
+        )}
         <a className="ksm-nav" href={project.source}>
           Source note
         </a>

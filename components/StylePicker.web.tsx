@@ -70,9 +70,7 @@ export function StylePicker() {
               borderColor: "var(--ink)",
               backgroundColor: on ? "var(--ink)" : "transparent",
               color: on ? "#F6F1E7" : "var(--ink)",
-              padding: "4px 8px",
               borderRadius: 0,
-              fontSize: 12,
               fontFamily: "var(--sans)",
               cursor: "pointer",
             }}
