@@ -45,21 +45,18 @@ function PlayCard({ project }: { project: ProjectRecord }) {
       </a>
       <div className="ksm-play-body">
         <h3 className="ksm-play-title">{project.title}</h3>
-        <p className="ksm-play-line">{project.line}</p>
-        <div className="ksm-play-actions">
-          <a
-            className="ksm-home-play-btn"
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={launch}
-          >
-            {label}
-          </a>
-          <a className="ksm-nav" href={projectDetailPath(project.id)}>
-            Full story
-          </a>
-        </div>
+        <a
+          className="ksm-home-play-btn"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={launch}
+        >
+          {label}
+        </a>
+        <a className="ksm-nav ksm-play-story" href={projectDetailPath(project.id)}>
+          Story
+        </a>
       </div>
     </article>
   );
