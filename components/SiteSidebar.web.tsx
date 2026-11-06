@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SiteSidebarPanel } from "@/components/SiteSidebar";
+import { SiteSidebarPanel } from "@/components/SiteSidebarPanel";
 
 export function SiteSidebar() {
   const [desktop, setDesktop] = useState(false);
