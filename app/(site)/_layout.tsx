@@ -27,6 +27,11 @@ function SiteChrome() {
   const { mode } = useTheme();
   const scrollRef = useRef<ScrollView>(null);
   const isHome = pathname === "/" || pathname === "/index";
+  const organizedChrome =
+    pathname === "/about" ||
+    pathname === "/blog" ||
+    pathname.startsWith("/blog/") ||
+    pathname === "/now";
 
   useEffect(() => {
     setMenuOpen(false);
@@ -73,8 +78,15 @@ function SiteChrome() {
       <View className="ksm-frame" style={frameStyle}>
         <SiteSidebar />
         <View className="ksm-main" style={mainStyle}>
-        <View className="ksm-mobile-tools" style={{ padding: 12, gap: 8 }}>
-          {!isHome ? <DeskSearch /> : null}
+        <View
+          className={["ksm-mobile-tools", organizedChrome ? "ksm-organized-chrome" : ""]
+            .filter(Boolean)
+            .join(" ")}
+          style={{ padding: 12, gap: 8 }}
+        >
+          {!isHome ? (
+            <DeskSearch placeholder={organizedChrome ? "Search projects" : "?"} />
+          ) : null}
           <StylePicker />
         </View>
         <DesktopUtility />

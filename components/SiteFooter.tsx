@@ -25,7 +25,7 @@ export function SiteFooter() {
           ))}
         </View>
         <Text className="ksm-fine">
-          © {new Date().getFullYear()} Kyle McAuliffe. Placeholder magazine files stay in the repo and off this index.
+          © {new Date().getFullYear()} Kyle McAuliffe.
         </Text>
       </Wrapper>
     </View>
