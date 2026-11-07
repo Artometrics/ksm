@@ -1,6 +1,6 @@
 import { Link } from "expo-router";
 import Head from "expo-router/head";
-import { NOW_STATUS, NOW_UPDATES } from "@/data/now";
+import { NOW_UPDATES } from "@/data/now";
 
 export default function NowScreen() {
   return (
@@ -11,9 +11,11 @@ export default function NowScreen() {
       </Head>
       <div className="ksm-page-sheet ksm-now">
         <header>
-          <h1 className="ksm-headline">What the public repos show lately.</h1>
+          <h1 className="ksm-headline ksm-sheet-title">Now</h1>
+          <h2 className="ksm-headline">October notes</h2>
           <p className="ksm-lede">
-            Dates below are commit dates, not a diary. {NOW_STATUS}
+            Three notes from public commits that month. Not a diary, and not a
+            status for every project.
           </p>
           <p className="ksm-about-jump">
             <Link href="/blog">Journal drafts</Link>

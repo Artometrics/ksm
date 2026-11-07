@@ -19,14 +19,14 @@ export default function BlogIndex() {
       </Head>
       <div className="ksm-page-sheet ksm-journal">
         <header className="ksm-journal-head">
-          <h1 className="ksm-headline">Notes, when they are ready.</h1>
+          <h1 className="ksm-headline ksm-sheet-title">Journal</h1>
+          <h2 className="ksm-headline">Notes, when they are ready.</h2>
           <p className="ksm-lede">
-            Kyle&apos;s essays, thoughts, and commentary — reviewed drafts only.
-            Placeholder magazine files are not linked here.
+            Writing from the projects, published when a note is ready.
           </p>
           <p className="ksm-about-jump">
-            <a href="#drafts">Drafts in the repo</a>
-            <Link href="/now">Dated repo notes</Link>
+            <a href="#drafts">Drafts</a>
+            <Link href="/now">October notes</Link>
             <Link href="/about">About</Link>
           </p>
         </header>
@@ -50,11 +50,9 @@ export default function BlogIndex() {
 
         <section aria-labelledby="drafts">
           <h2 id="drafts" className="ksm-section">
-            Drafts in the repo
+            Drafts
           </h2>
-          <p className="ksm-lede">
-            These three notes are marked draft. Opening one does not publish it.
-          </p>
+          <p className="ksm-lede">Still drafts. Not the published journal.</p>
           <div className="ksm-journal-drafts">
             {drafts.map((post) => (
               <article key={post.slug} className="ksm-note">

@@ -1,7 +1,6 @@
 import Head from "expo-router/head";
 import { Link } from "expo-router";
 import { ABOUT_PORTRAIT, LIFE_GALLERY } from "@/data/lifePhotos";
-import { NOW_STATUS } from "@/data/now";
 import {
   getProjectById,
   isDisplayArt,
@@ -43,13 +42,13 @@ export default function AboutScreen() {
             alt={ABOUT_PORTRAIT.alt}
           />
           <div className="ksm-about-intro-copy">
-            <h1 className="ksm-headline">Kyle McAuliffe</h1>
+            <h1 className="ksm-headline ksm-sheet-title">About</h1>
+            <h2 className="ksm-headline">Kyle McAuliffe</h2>
             <p className="ksm-lede">
-              The Artometrics about page says Kyle McAuliffe founded and edits that magazine.
-              Reports there pair a written argument with public datasets. This site is the notebook
-              that points at the public work.
+              Kyle McAuliffe founded and edits Artometrics. The magazine pairs a written
+              argument with public datasets. This site is the notebook for that work and the
+              other public projects.
             </p>
-            <p className="ksm-lede">No street address and no phone number are published here.</p>
             <p className="ksm-about-jump">
               <a href="#work">Work on file</a>
               <a href="#record">Record</a>
@@ -76,9 +75,7 @@ export default function AboutScreen() {
           <h2 id="about-work" className="ksm-section">
             Work on file
           </h2>
-          <p className="ksm-lede">
-            {NOW_STATUS} Each row uses the project record in this repo.
-          </p>
+          <p className="ksm-lede">What each public project is for.</p>
           {GROUPS.map((group) => (
             <div key={group.label} className="ksm-about-group">
               <h3 className="ksm-about-group-title">{group.label}</h3>
@@ -121,17 +118,17 @@ export default function AboutScreen() {
           <div className="ksm-about-record-grid">
             <article className="ksm-note">
               <h3>CV</h3>
-              <p>A PDF can live at public/cv.pdf. No file is in the site yet.</p>
+              <p>The CV lists the projects recorded on this site.</p>
               <Link href="/cv">Open the CV page</Link>
             </article>
             <article className="ksm-note">
               <h3>Journal</h3>
-              <p>Reviewed notes only. Three drafts are in the repo and labeled as drafts.</p>
+              <p>Published notes, and drafts that are still drafts.</p>
               <Link href="/blog">Open the journal</Link>
             </article>
             <article className="ksm-note">
               <h3>Now</h3>
-              <p>Commit dates from the public repos, not a diary.</p>
+              <p>Dated notes from Cardinal, Dawn, and Artometrics.</p>
               <Link href="/now">Open the dated notes</Link>
             </article>
           </div>
@@ -148,9 +145,6 @@ export default function AboutScreen() {
               </li>
             ))}
           </ul>
-          <p className="ksm-fine">
-            TODO: add email or other contact channels when they are published in this repo.
-          </p>
         </section>
       </div>
     </>
