@@ -1,7 +1,6 @@
-import { Text, View } from "react-native";
+import { Link } from "expo-router";
 import Head from "expo-router/head";
-import { Wrapper } from "@/components/Wrapper";
-import { NOW_UPDATES } from "@/data/now";
+import { NOW_STATUS, NOW_UPDATES } from "@/data/now";
 
 export default function NowScreen() {
   return (
@@ -10,27 +9,30 @@ export default function NowScreen() {
         <title>Now · Kyle McAuliffe</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <Wrapper className="gap-4 py-8">
-        <Text className="ksm-kicker">Now</Text>
-        <Text accessibilityRole="header" className="ksm-headline">
-          What the public repos show lately.
-        </Text>
-        <Text className="ksm-lede">
-          Dates below are commit dates, not a diary. This route stays available; the
-          Home tab also surfaces a short status blurb and latest updates.
-        </Text>
-        <View className="gap-4">
+      <div className="ksm-page-sheet ksm-now">
+        <header>
+          <h1 className="ksm-headline">What the public repos show lately.</h1>
+          <p className="ksm-lede">
+            Dates below are commit dates, not a diary. {NOW_STATUS}
+          </p>
+          <p className="ksm-about-jump">
+            <Link href="/blog">Journal drafts</Link>
+            <Link href="/projects">Projects</Link>
+            <Link href="/about">About</Link>
+          </p>
+        </header>
+        <ol className="ksm-now-list">
           {NOW_UPDATES.map((item) => (
-            <View key={item.href} className="gap-1">
-              <Text className="ksm-card-year">{item.date}</Text>
-              <Text className="ksm-lede">{item.text}</Text>
-              <a className="ksm-nav" href={item.href}>
-                Source commit
-              </a>
-            </View>
+            <li key={item.href} className="ksm-note">
+              <p className="ksm-note-meta">
+                <time dateTime={item.date}>{item.date}</time>
+              </p>
+              <p>{item.text}</p>
+              <a href={item.href}>Open the source commit</a>
+            </li>
           ))}
-        </View>
-      </Wrapper>
+        </ol>
+      </div>
     </>
   );
 }

@@ -1,11 +1,15 @@
-import { Text, View } from "react-native";
 import { Link } from "expo-router";
 import Head from "expo-router/head";
-import { Wrapper } from "@/components/Wrapper";
-import { getBlogPosts } from "@/lib/content";
+import { formatDate, getAllBlogPosts, getBlogPosts } from "@/lib/content";
 
 export default function BlogIndex() {
-  const posts = getBlogPosts();
+  const published = getBlogPosts();
+  const drafts = getAllBlogPosts()
+    .filter((post) => post.draft && post.pubDate)
+    .sort(
+      (a, b) =>
+        new Date(b.pubDate!).getTime() - new Date(a.pubDate!).getTime(),
+    );
 
   return (
     <>
@@ -13,25 +17,62 @@ export default function BlogIndex() {
         <title>Journal · Kyle McAuliffe</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <Wrapper className="gap-4 py-8">
-        <Text className="ksm-kicker">Journal</Text>
-        <Text accessibilityRole="header" className="ksm-headline">
-          Notes, when they are ready.
-        </Text>
-        <Text className="ksm-lede">
-          Kyle's essays, thoughts, and commentary — reviewed drafts only.
-          Placeholder magazine files are not linked here.
-        </Text>
-        {posts.length === 0 ? (
-          <Text className="ksm-lede">No published notes yet.</Text>
-        ) : (
-          posts.map((post) => (
-            <Link key={post.slug} href={`/blog/posts/${post.slug}` as "/blog"}>
-              <Text className="ksm-card-title">{post.title}</Text>
-            </Link>
-          ))
-        )}
-      </Wrapper>
+      <div className="ksm-page-sheet ksm-journal">
+        <header className="ksm-journal-head">
+          <h1 className="ksm-headline">Notes, when they are ready.</h1>
+          <p className="ksm-lede">
+            Kyle&apos;s essays, thoughts, and commentary — reviewed drafts only.
+            Placeholder magazine files are not linked here.
+          </p>
+          <p className="ksm-about-jump">
+            <a href="#drafts">Drafts in the repo</a>
+            <Link href="/now">Dated repo notes</Link>
+            <Link href="/about">About</Link>
+          </p>
+        </header>
+
+        <section aria-labelledby="journal-published">
+          <h2 id="journal-published" className="ksm-section">
+            Published
+          </h2>
+          {published.length === 0 ? (
+            <p className="ksm-lede">No published notes yet.</p>
+          ) : (
+            <ul className="ksm-journal-list">
+              {published.map((post) => (
+                <li key={post.slug}>
+                  <Link href={`/blog/posts/${post.slug}` as "/blog"}>{post.title}</Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+
+        <section aria-labelledby="drafts">
+          <h2 id="drafts" className="ksm-section">
+            Drafts in the repo
+          </h2>
+          <p className="ksm-lede">
+            These three notes are marked draft. Opening one does not publish it.
+          </p>
+          <div className="ksm-journal-drafts">
+            {drafts.map((post) => (
+              <article key={post.slug} className="ksm-note">
+                <p className="ksm-note-meta">
+                  Draft
+                  {post.pubDate ? ` · ${formatDate(post.pubDate)}` : ""}
+                  {post.tags?.length ? ` · ${post.tags.join(" · ")}` : ""}
+                </p>
+                <h3>
+                  <Link href={`/blog/posts/${post.slug}` as "/blog"}>{post.title}</Link>
+                </h3>
+                {post.description ? <p>{post.description}</p> : null}
+                <Link href={`/blog/posts/${post.slug}` as "/blog"}>Read the draft</Link>
+              </article>
+            ))}
+          </div>
+        </section>
+      </div>
     </>
   );
 }
