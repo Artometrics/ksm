@@ -1,3 +1,3 @@
-export function DeskSearch() {
+export function DeskSearch(_props?: { placeholder?: string }) {
   return null;
 }

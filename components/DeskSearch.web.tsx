@@ -9,7 +9,7 @@ type Row = {
   kind: string;
 };
 
-export function DeskSearch() {
+export function DeskSearch({ placeholder = "?" }: { placeholder?: string }) {
   const inputRef = useRef<TextInput>(null);
   const [query, setQuery] = useState("");
   const [rows, setRows] = useState<Row[]>([]);
@@ -72,7 +72,7 @@ export function DeskSearch() {
         ref={inputRef}
         value={query}
         onChangeText={setQuery}
-        placeholder="?"
+        placeholder={placeholder}
         placeholderTextColor="#7A7166"
         accessibilityLabel="Search projects, papers, and tags"
         autoCapitalize="none"
