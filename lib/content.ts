@@ -19,11 +19,15 @@ export function formatAuthorName(slug: string) {
 
 export function formatDate(iso: string | null) {
   if (!iso) return "";
-  return new Date(iso).toLocaleDateString("en-US", {
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return "";
+  // Content dates are midnight UTC calendar days. Local zones must not shift the day.
+  return new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
-  });
+    timeZone: "UTC",
+  }).format(date);
 }
 
 const hiddenIds = new Set<string>(hiddenBlogIds);
