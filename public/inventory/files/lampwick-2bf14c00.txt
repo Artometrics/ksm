@@ -1,0 +1,10 @@
+KSM Inventory
+Lampwick
+
+Websites and live apps · Game · live
+
+3D flashlight horror game, exported from Godot to the browser
+
+https://lampwick-510519.web.app
+
+Hosted on this site. Not a private Drive link.

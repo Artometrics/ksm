@@ -7,6 +7,7 @@ const LINKS = [
   ["/", "Home"],
   ["/blog", "Journal"],
   ["/archive", "Archive"],
+  ["/inventory", "Inventory"],
   ["/about", "About"],
   ["/cv", "CV"],
   ["/desk", "Desk"],

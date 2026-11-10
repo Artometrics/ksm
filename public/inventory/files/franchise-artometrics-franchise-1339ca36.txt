@@ -1,0 +1,10 @@
+KSM Inventory
+Franchise (Artometrics/franchise)
+
+Repos · Repo · draft
+
+Data analysis of 107 media franchises by lifetime revenue. R / Quarto / TidyTuesday 2019-07-02
+
+https://github.com/Artometrics/franchise
+
+Hosted on this site. Not a private Drive link.

@@ -27,6 +27,7 @@ export function sectionLabel(pathname: string) {
   if (pathname.startsWith("/desk")) return "Desk";
   if (pathname.startsWith("/legal")) return "Legal";
   if (pathname.startsWith("/now")) return "Now";
+  if (pathname.startsWith("/inventory")) return "Inventory";
   return "KSM";
 }
 

@@ -119,12 +119,12 @@
   },
   {
     "title": "Pantheon",
-    "line": "A report on occupations and cities in MIT's Pantheon biographies.",
-    "href": "https://artometrics.com/pantheon",
+    "line": "A historical 3D fighter you can play in the browser.",
+    "href": "https://pantheon-game-ksm.web.app",
     "tags": [
-      "Research"
+      "Games"
     ],
-    "kind": "paper"
+    "kind": "project"
   },
   {
     "title": "Games",
@@ -149,6 +149,60 @@
     "title": "Dawn",
     "line": "A pixel-art village of agents, plus a studio for the Artometrics tools.",
     "href": "https://dawn-510519.web.app",
+    "tags": [
+      "Apps"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Nightlight",
+    "line": "Flashlight horror: walk to the radio cabin with only your beam.",
+    "href": "https://nightlight-510519.web.app",
+    "tags": [
+      "Games"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Cardinal Quest",
+    "line": "Walk Stanford's map to unlock landmarks, history, and badges.",
+    "href": "https://cardinal-quest-510519.web.app",
+    "tags": [
+      "Games"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Knightmare",
+    "line": "Listen with your eyes — Tuning In from silence to clear speech.",
+    "href": "https://cursor.com/codebase/artometrics/knightmare",
+    "tags": [
+      "Games"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Questroad",
+    "line": "A Waze-style MMORPG adventure on the real map.",
+    "href": "https://questroad-510519.web.app",
+    "tags": [
+      "Games"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Style Lab",
+    "line": "A hosted playground for visual recipes and skins.",
+    "href": "https://stylelab-510519.web.app",
+    "tags": [
+      "Apps"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "KSM",
+    "line": "This studio notebook — projects, styles, and live links.",
+    "href": "https://ksm-510519.web.app",
     "tags": [
       "Apps"
     ],

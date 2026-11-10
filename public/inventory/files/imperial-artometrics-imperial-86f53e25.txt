@@ -1,0 +1,10 @@
+KSM Inventory
+Imperial (Artometrics/imperial)
+
+Repos · Repo · draft
+
+Data analysis of 6 empires across 4,000 years of GDP, real wages, and centralization. R / Quarto / Maddison Project 2023
+
+https://github.com/Artometrics/imperial
+
+Hosted on this site. Not a private Drive link.

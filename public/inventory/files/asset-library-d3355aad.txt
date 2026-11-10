@@ -1,0 +1,10 @@
+KSM Inventory
+Asset Library
+
+Projects · Project · draft
+
+Catalog of reusable Artometrics-owned assets (metadata only)
+
+https://github.com/Artometrics/asset-library
+
+Hosted on this site. Not a private Drive link.

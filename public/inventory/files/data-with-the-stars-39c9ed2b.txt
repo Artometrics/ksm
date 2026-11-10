@@ -1,0 +1,10 @@
+KSM Inventory
+Data with the Stars
+
+Projects · Product · live
+
+DWTS (Dancing with the Stars) fan analytics site and database, with stories, quizzes, and downloadable sources
+
+https://dwts-510519.web.app
+
+Hosted on this site. Not a private Drive link.

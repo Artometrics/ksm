@@ -1,0 +1,10 @@
+KSM Inventory
+Lampwick
+
+Projects · Game · live
+
+3D flashlight horror game in Godot, playable in the browser
+
+https://lampwick-510519.web.app
+
+Hosted on this site. Not a private Drive link.

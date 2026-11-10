@@ -1,0 +1,10 @@
+KSM Inventory
+Caesar (Artometrics/caesar)
+
+Repos · Repo · draft
+
+Psychonomics No. 001 — Julius Caesar. Leadership Trait Analysis, Roman GDP per capita, and patronage network. Quarto report published at artometrics.com
+
+https://github.com/Artometrics/caesar
+
+Hosted on this site. Not a private Drive link.
