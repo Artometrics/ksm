@@ -4,6 +4,14 @@ export type ArchiveChild = {
   title: string;
   category: string;
   date: string;
+  download?: string;
+  downloadName?: string;
+};
+
+export type ArchiveFile = {
+  name: string;
+  download: string;
+  downloadName: string;
 };
 
 export type ArchiveItem = {
@@ -21,6 +29,7 @@ export type ArchiveItem = {
   thumb: string;
   download: string;
   downloadName: string;
+  files?: ArchiveFile[];
 };
 
 export type ArchiveProject = {

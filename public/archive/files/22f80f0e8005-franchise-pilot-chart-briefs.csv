@@ -1,0 +1,11 @@
+order,reader_question,chart,required_data,guardrail
+1,Where does the money sit?,Revenue mix bars,Frozen 2026 stream-level rows; reconcile remainder,Published figures only; do not merge live web estimates
+2,Does the mix vary within the leaders?,"Stacked dollars, top 12",Same scope for all streams; direct labels,Top total and top component may overlap
+3,Who relies most on cinema?,Share vs total scatter,Box-office numerator and row denominator,"MCU is meaningful counterexample, not universal law"
+4,How much is missing a breakdown?,Coverage bars,Total minus itemized revenue,Negative remainders flag rounding/schema errors
+5,Do region patterns survive like-for-like coverage?,Paired cohort estimates,"Matched country assignments, same 82 rows",Origin != owner nationality; no national industry claim
+6,What changed at the source?,Revision waterfall,2019/2026 crosswalk and match notes,"Separate additions, source corrections and real spending"
+7,Who owns the rows?,Owner concentration sensitivity,First-holder versus shared-owner rules,No double-counted rights; parent attribution not company income
+8,Does debut format predict the mix?,Distribution/small multiples,2026 original-medium mapping; n per class,"If only 2019 labels exist, show as distinct baseline"
+9,How sequel-heavy is the theater top ten?,Year-by-year shares,"Same worldwide/domestic scope, coding decisions, date cutoff",Full 2025 vs partial 2026 not direct trend
+10,How does this differ from a company’s accounts?,Separate annual segment panel,"Disney FY2024 primary table, eliminations",Never put annual company revenue on lifetime retail-spend axis

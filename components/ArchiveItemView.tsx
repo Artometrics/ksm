@@ -35,6 +35,25 @@ export function ArchiveItemView({ item }: { item: ArchiveItem }) {
         Download
       </a>
       <Text className="ksm-shelves-note">Hosted on this site. Not a private Drive link.</Text>
+      {item.files && item.files.length ? (
+        <View className="ksm-shelf">
+          <View className="ksm-shelf-head">
+            <Text className="ksm-shelf-name">More files</Text>
+            <Text className="ksm-shelf-count">{item.files.length}</Text>
+          </View>
+          {item.files.map((file) => (
+            <a
+              key={file.download}
+              className="ksm-rolled ksm-rolled-file"
+              href={file.download}
+              download={file.downloadName}
+            >
+              <Text className="ksm-shelf-kind">File</Text>
+              <Text className="ksm-shelf-piece">{file.name}</Text>
+            </a>
+          ))}
+        </View>
+      ) : null}
 
       <View className="ksm-shelves-links">
         {project ? (
@@ -71,7 +90,14 @@ export function ArchiveItemView({ item }: { item: ArchiveItem }) {
           {item.children.slice(0, shown).map((child, index) => (
             <View key={`${child.title}-${index}`} className="ksm-rolled">
               <Text className="ksm-shelf-kind">{categoryLabel(child.category)}</Text>
-              <Text className="ksm-shelf-piece">{child.title}</Text>
+              <View className="ksm-rolled-body">
+                <Text className="ksm-shelf-piece">{child.title}</Text>
+                {child.download ? (
+                  <a className="ksm-shelf-dl" href={child.download} download={child.downloadName}>
+                    Download
+                  </a>
+                ) : null}
+              </View>
             </View>
           ))}
           {shown < item.children.length ? (
