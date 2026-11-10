@@ -1,0 +1,28 @@
+KSM Archive
+Live browser audit — reviewed qualifications — 2026-11-06
+
+Category: Report
+Project: KSM
+Status: test
+Date: 2026-11-07
+
+15 loose files from KSM, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- KSM About desktop — DRAFT iteration 1 (art, 2026-11-07)
+- KSM About mobile — DRAFT iteration 1 (art, 2026-11-07)
+- KSM Journal desktop — DRAFT iteration 1 (art, 2026-11-07)
+- KSM Now desktop — DRAFT iteration 1 (art, 2026-11-07)
+- KSM archive — CONCEPT ONLY not built (art, 2026-11-07)
+- ksm about desktop DRAFT iteration 2 (art, 2026-11-07)
+- ksm about mobile DRAFT iteration 2 (art, 2026-11-07)
+- ksm archive desktop LIVE 2026 11 06 (art, 2026-11-07)
+- ksm home desktop LIVE 2026 11 06 (art, 2026-11-07)
+- ksm home mobile LIVE 2026 11 06 (art, 2026-11-07)
+- ksm journal desktop DRAFT iteration 2 (art, 2026-11-07)
+- ksm journal mobile DRAFT iteration 2 (art, 2026-11-07)
+- ksm now desktop DRAFT iteration 2 (art, 2026-11-07)
+- ksm now mobile DRAFT iteration 2 (art, 2026-11-07)
+- ksm play now mobile LIVE 2026 11 06 (art, 2026-11-07)
+
+Hosted on KSM. Private Drive links are not included.

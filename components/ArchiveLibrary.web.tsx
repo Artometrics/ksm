@@ -1,177 +1,106 @@
 import { useMemo, useState } from "react";
-import {
-  ARCHIVE_ITEMS,
-  ARCHIVE_KIND_FILTERS,
-  getProjectArchives,
-  type ArchiveItem,
-} from "@/data/archive";
+import { Link } from "expo-router";
+import { getArchiveItems, getArchiveMeta, getArchiveProjects, type ArchiveItem } from "@/lib/archive";
 
-function downloadAsset(href: string) {
-  const anchor = document.createElement("a");
-  anchor.href = href;
-  anchor.download = href.split("/").pop() ?? "download";
-  anchor.rel = "noopener";
-  document.body.appendChild(anchor);
-  anchor.click();
-  anchor.remove();
-}
-
-function bulkDownload(assets: { href: string }[]) {
-  assets.forEach((asset, index) => {
-    window.setTimeout(() => downloadAsset(asset.href), index * 320);
-  });
-}
-
-function matchesQuery(item: ArchiveItem, query: string) {
-  if (!query.trim()) return true;
-  const q = query.trim().toLowerCase();
-  const hay = [
-    item.title,
-    item.line,
-    item.kind,
-    item.projectId ?? "",
-    ...item.tags,
-  ]
-    .join(" ")
-    .toLowerCase();
-  return hay.includes(q);
-}
+const LEAD_SHELVES = [
+  "Cardinal",
+  "Artometrics",
+  "Artometrics / Franchise",
+  "Artometrics / Anime",
+  "West Side",
+  "KSM",
+  "Pantheon",
+  "Dawn",
+];
 
 export function ArchiveLibrary() {
+  const meta = getArchiveMeta();
+  const items = getArchiveItems();
+  const projects = getArchiveProjects();
   const [query, setQuery] = useState("");
-  const [kind, setKind] = useState<(typeof ARCHIVE_KIND_FILTERS)[number]["id"]>("all");
-  const projectBundles = useMemo(() => getProjectArchives(), []);
+  const needle = query.trim().toLowerCase();
 
-  const filtered = useMemo(() => {
-    return ARCHIVE_ITEMS.filter((item) => {
-      if (kind !== "all" && item.kind !== kind) return false;
-      return matchesQuery(item, query);
-    }).sort((a, b) => b.addedAt.localeCompare(a.addedAt));
-  }, [kind, query]);
+  const shelves = useMemo(() => {
+    return projects
+      .map((project) => ({
+        project,
+        items: items.filter((item) => {
+          if (item.projectId !== project.id) return false;
+          if (!needle) return true;
+          return [item.title, item.summary, item.category, item.projectTitle, project.title]
+            .join(" ")
+            .toLowerCase()
+            .includes(needle);
+        }),
+      }))
+      .filter((shelf) => shelf.items.length > 0)
+      .sort((a, b) => {
+        const aLead = LEAD_SHELVES.indexOf(a.project.title);
+        const bLead = LEAD_SHELVES.indexOf(b.project.title);
+        if (aLead >= 0 && bLead >= 0) return aLead - bLead;
+        if (aLead >= 0) return -1;
+        if (bLead >= 0) return 1;
+        if (a.project.title === "Not filed yet") return 1;
+        if (b.project.title === "Not filed yet") return -1;
+        return b.items.length - a.items.length || a.project.title.localeCompare(b.project.title);
+      });
+  }, [items, needle, projects]);
 
   return (
-    <div className="ksm-archive">
-      <p className="ksm-lede">
-        Notes, files, and on-site assets. Working links and shared docs live on the{" "}
-        <a className="ksm-nav" href="/desk">
-          desk
-        </a>
-        .
+    <div className="ksm-shelves">
+      <h1 className="ksm-shelves-title">Archive</h1>
+      <p className="ksm-shelves-intro">
+        {meta.itemPages.toLocaleString()} pieces on {meta.projectPages} shelves.{" "}
+        {meta.rolledFiles.toLocaleString()} loose files stay with their parent.
       </p>
+      <input
+        className="ksm-shelves-search"
+        type="search"
+        value={query}
+        onChange={(event) => setQuery(event.target.value)}
+        placeholder="Search the shelves"
+        aria-label="Search the shelves"
+      />
 
-      <div className="ksm-archive-toolbar">
-        <label className="ksm-archive-search">
-          <span className="ksm-kicker">Search</span>
-          <input
-            type="search"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Title, tag, project…"
-            aria-label="Search archive"
-          />
-        </label>
-        <div className="ksm-filters" role="group" aria-label="Filter by kind">
-          {ARCHIVE_KIND_FILTERS.map((filter) => (
-            <button
-              key={filter.id}
-              type="button"
-              className={kind === filter.id ? "ksm-filter-btn is-active" : "ksm-filter-btn"}
-              aria-pressed={kind === filter.id}
-              onClick={() => setKind(filter.id)}
-            >
-              {filter.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <section className="ksm-archive-section">
-        <h2 className="ksm-section">Index</h2>
-        {filtered.length === 0 ? (
-          <p className="ksm-lede">No entries match this search.</p>
-        ) : (
-          <ul className="ksm-archive-list">
-            {filtered.map((item) => (
-              <li key={item.id} className="ksm-archive-row">
-                <div className="ksm-archive-row-main">
-                  <span className="ksm-kicker">{item.kind}</span>
-                  <span className="ksm-card-title">{item.title}</span>
-                  <span className="ksm-card-line">{item.line}</span>
-                  <span className="ksm-card-tags">
-                    {item.addedAt}
-                    {item.projectId ? ` · ${item.projectId}` : ""}
-                    {item.tags.length ? ` · ${item.tags.join(" · ")}` : ""}
-                  </span>
-                </div>
-                <div className="ksm-archive-row-actions">
-                  {item.href ? (
-                    <a className="ksm-nav" href={item.href}>
-                      Open note
-                    </a>
-                  ) : null}
-                  {item.assets?.map((asset) => (
-                    <button
-                      key={asset.id}
-                      type="button"
-                      className="ksm-pixel-btn"
-                      onClick={() => downloadAsset(asset.href)}
-                    >
-                      {asset.title}
-                    </button>
-                  ))}
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
-
-      <section className="ksm-archive-section">
-        <h2 className="ksm-section">By project</h2>
-        <div className="ksm-grid">
-          {projectBundles.map((bundle) => (
-            <article key={bundle.projectId} className="ksm-card ksm-archive-project">
-              <span className="ksm-kicker">Project</span>
-              <h3 className="ksm-card-title">{bundle.title}</h3>
-              <p className="ksm-card-line">{bundle.line}</p>
-              <p>
-                <a className="ksm-nav" href={`/projects/${bundle.slug}`}>
-                  Project page
-                </a>
-              </p>
-              {bundle.assets.length === 0 ? (
-                <p className="ksm-lede">No downloadable assets filed here yet.</p>
-              ) : (
-                <>
-                  <ul className="ksm-archive-asset-list">
-                    {bundle.assets.map((asset) => (
-                      <li key={asset.id}>
-                        <button
-                          type="button"
-                          className="ksm-nav"
-                          style={{ background: "none", border: "none", padding: 0, cursor: "pointer" }}
-                          onClick={() => downloadAsset(asset.href)}
-                        >
-                          {asset.title}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                  {bundle.assets.length > 1 ? (
-                    <button
-                      type="button"
-                      className="ksm-pixel-btn"
-                      onClick={() => bulkDownload(bundle.assets)}
-                    >
-                      Download all ({bundle.assets.length})
-                    </button>
-                  ) : null}
-                </>
-              )}
-            </article>
-          ))}
-        </div>
-      </section>
+      {shelves.length === 0 ? (
+        <p className="ksm-shelves-intro">Nothing on the shelves matches that.</p>
+      ) : (
+        shelves.map(({ project, items: pieces }) => (
+          <section key={project.id} className="ksm-shelf" aria-labelledby={`shelf-${project.id}`}>
+            <div className="ksm-shelf-head">
+              <h2 id={`shelf-${project.id}`} className="ksm-shelf-name">
+                <Link href={{ pathname: "/archive/projects/[slug]", params: { slug: project.id } }}>
+                  {project.title}
+                </Link>
+              </h2>
+              <span className="ksm-shelf-count">{pieces.length}</span>
+            </div>
+            <ul className="ksm-shelf-rows">
+              {pieces.map((item) => (
+                <ShelfRow key={item.id} item={item} />
+              ))}
+            </ul>
+          </section>
+        ))
+      )}
     </div>
+  );
+}
+
+function ShelfRow({ item }: { item: ArchiveItem }) {
+  return (
+    <li className="ksm-shelf-row">
+      <Link
+        href={{ pathname: "/archive/items/[slug]", params: { slug: item.id } }}
+        className="ksm-shelf-link"
+      >
+        <img src={item.thumb} alt="" />
+        <span className="ksm-shelf-kind">{item.category}</span>
+        <span className="ksm-shelf-piece">{item.title}</span>
+      </Link>
+      <a className="ksm-shelf-dl" href={item.download} download={item.downloadName}>
+        Download
+      </a>
+    </li>
   );
 }

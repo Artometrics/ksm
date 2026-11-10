@@ -1,0 +1,10 @@
+KSM Archive
+Artometrics / Godot
+
+Artometrics / Godot holds the pieces filed under that name. Loose files live with their parent.
+
+Pieces:
+- GDD: Patchwork (Godot-based game creator) + Patchwork Peaks (plan)
+- Artometrics / Godot working files (other)
+
+Hosted on KSM. Private Drive links are not included.

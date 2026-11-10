@@ -1,0 +1,13 @@
+KSM Archive
+Cardinal
+
+Category: Build
+Project: Cardinal
+Status: approved
+Date: 2026-11-09
+
+A public repository. The shelf card is hosted here, and the source stays on GitHub.
+
+Public page: https://github.com/kylesmcauliffe/cardinal
+
+Hosted on KSM. Private Drive links are not included.

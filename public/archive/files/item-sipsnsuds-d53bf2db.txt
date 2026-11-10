@@ -1,0 +1,13 @@
+KSM Archive
+Sipsnsuds
+
+Category: Build
+Project: Artometrics
+Status: approved
+Date: 2026-10-03
+
+A public repository. The shelf card is hosted here, and the source stays on GitHub.
+
+Public page: https://github.com/Artometrics/sipsnsuds
+
+Hosted on KSM. Private Drive links are not included.

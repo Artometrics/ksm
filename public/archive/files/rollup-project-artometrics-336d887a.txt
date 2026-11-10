@@ -1,0 +1,43 @@
+KSM Archive
+Artometrics working files
+
+Category: Other
+Project: Artometrics
+Status: draft
+Date: 2026-11-09
+
+30 loose files from Artometrics, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- 10 Artometrics Magazine (art, 2026-10-23)
+- 3D (art, 2026-11-02)
+- Agency & Artist Incubator (art, 2026-10-11)
+- Argon Runs – Oct 23 (art, 2026-10-23)
+- Art (art, 2026-11-02)
+- Article Projects (art, 2026-11-09)
+- Artometrics (art)
+- Artometrics Godot Experiment (art)
+- Artometrics Growth Research (art)
+- Artometrics Master Datasets (Oct 2026) (art)
+- Operations (art, 2026-10-11)
+- Padres (art, 2026-10-11)
+- Readmitted (art, 2026-10-12)
+- Round 3 (Oct 23) (art, 2026-10-23)
+- Artometrics (build, 2026-11-08)
+- Artometrics All Article Art (build, 2026-11-09)
+- Artometrics Article Workshop (build, 2026-11-08)
+- Artometrics Banner Status (build, 2026-11-07)
+- Artometrics Banner Style Review (build, 2026-11-07)
+- Artometrics Data (build, 2026-11-06)
+- Artometrics Documentary Motion (build, 2026-11-08)
+- Artometrics Engagement (build, 2026-11-08)
+- Artometrics Godot (build, 2026-11-06)
+- Artometrics Home Redesign (build, 2026-11-08)
+- Artometrics Logo Fix (build, 2026-11-08)
+- Artometrics Reference (build, 2026-11-08)
+- Artometrics Deploy (other, 2026-11-09)
+- Artometrics Production Index (other, 2026-11-06)
+- Source Path Map 103 (other, 2026-11-09)
+- Ten Chart Plans (other, 2026-11-08)
+
+Hosted on KSM. Private Drive links are not included.

@@ -9,6 +9,7 @@ import {
   CONCEPT_PAGE_SLUGS,
   getConceptPage,
 } from "@/data/project-pages";
+import { archivePathForSiteProject } from "@/lib/archive";
 import { getProjectById, isDisplayArt, isPublicLaunchUrl } from "@/lib/projects";
 import { paramString } from "@/lib/params";
 
@@ -55,8 +56,8 @@ function MinimalProjectDetail({
         <a className="ksm-nav" href={project.source}>
           Source note
         </a>
-        <Link href="/archive">
-          <Text className="ksm-nav">Downloads in archive</Text>
+        <Link href={(archivePathForSiteProject(project.id) ?? "/archive") as "/archive"}>
+          <Text className="ksm-nav">Files in the archive</Text>
         </Link>
         <Link href="/projects">
           <Text className="ksm-nav">All projects</Text>

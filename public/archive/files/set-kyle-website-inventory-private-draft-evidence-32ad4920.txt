@@ -1,0 +1,25 @@
+KSM Archive
+Kyle website inventory — private draft evidence
+
+Category: Art
+Project: Dawn
+Status: draft
+Date: 2026-11-07
+
+12 loose files from Dawn, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- dawn bench desktop FINAL REVIEW PR15 4391cb8 NOT LIVE (art, 2026-11-07)
+- dawn bench mobile FINAL REVIEW PR15 4391cb8 NOT LIVE (art, 2026-11-07)
+- dawn habits mobile FINAL REVIEW PR15 4391cb8 NOT LIVE (art, 2026-11-07)
+- dawn map view desktop LIVE 2026 11 06 (art, 2026-11-07)
+- Dawn mobile navigation — CONCEPT ONLY not built (art, 2026-11-07)
+- dawn stuck mobile FINAL REVIEW PR15 4391cb8 NOT LIVE (art, 2026-11-07)
+- dawn village desktop DRAFT PR15 255a828 (art, 2026-11-07)
+- dawn village desktop FINAL REVIEW PR15 4391cb8 NOT LIVE (art, 2026-11-07)
+- dawn village desktop LIVE 2026 11 06 (art, 2026-11-07)
+- dawn village mobile DRAFT PR15 255a828 (art, 2026-11-07)
+- dawn village mobile FINAL REVIEW PR15 4391cb8 NOT LIVE (art, 2026-11-07)
+- dawn village mobile LIVE 2026 11 06 (art, 2026-11-07)
+
+Hosted on KSM. Private Drive links are not included.

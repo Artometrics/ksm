@@ -1,0 +1,40 @@
+KSM Archive
+Cardinal working files
+
+Category: Other
+Project: Cardinal
+Status: draft
+Date: 2026-11-09
+
+27 loose files from Cardinal, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- SENTENCE COVERAGE.tsv (art, 2026-11-07)
+- Coverage Notes.Tsv (art, 2026-11-07)
+- Cardinal App (Campus Audio Tour) (audio, 2026-10-20)
+- Cardinal (build, 2026-11-06)
+- Cardinal Animatic (build, 2026-11-08)
+- Cardinal Audio Release (build, 2026-11-07)
+- Cardinal Production Planning (build, 2026-11-07)
+- Cardinal Repo (build, 2026-11-06)
+- Cardinal Source Research (build, 2026-11-09)
+- Cardinal Visual Style Sample (build, 2026-11-07)
+- Cardinal Drafts (draft)
+- Cardinal Deploy (other, 2026-11-06)
+- 00 - Master Intelligence & Research Synthesis (other, 2026-10-05)
+- Batch 2 (other, 2026-10-20)
+- Cardinal (other, 2026-10-25)
+- Cardinal Graphic Novel (other, 2026-10-20)
+- Cardinal Podcast (other, 2026-10-18)
+- Cardinal Research (other)
+- Elon Musk Walter Isaacson.epub (other, 2026-11-06)
+- Free Archives (other, 2026-10-14)
+- Hoover Kenneth Whyte.epub (other, 2026-11-06)
+- Hubris Maximus Faiz Siddiqui.epub (other, 2026-11-06)
+- Newspapers (CDNC) (other, 2026-10-14)
+- Troublemakers Leslie Berlin.epub (other, 2026-11-06)
+- Who Killed Jane Stanford Richard White.epub (other, 2026-11-06)
+- Cardinal Source Evidence (test)
+- Ep4 — The Boy and the Farm (test, 2026-10-31)
+
+Hosted on KSM. Private Drive links are not included.

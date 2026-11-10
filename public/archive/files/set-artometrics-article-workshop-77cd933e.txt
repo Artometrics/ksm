@@ -1,0 +1,19 @@
+KSM Archive
+Artometrics Article Workshop
+
+Category: Build
+Project: Artometrics
+Status: draft
+Date: 2026-11-08
+
+6 loose files from Artometrics, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- Chart Reveal (video, 2026-11-08)
+- Chart Theme Pairs (build, 2026-11-08)
+- Clearline Pilot Corrected (build, 2026-11-08)
+- Workshop First Pass (build, 2026-11-08)
+- Workshop Locked16 Updated (build, 2026-11-08)
+- Workshop R Clearline Pilot (build, 2026-11-08)
+
+Hosted on KSM. Private Drive links are not included.

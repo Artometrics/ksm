@@ -1,0 +1,9 @@
+KSM Archive
+Vault
+
+Vault holds the pieces filed under that name. Loose files live with their parent.
+
+Pieces:
+- Vault (build)
+
+Hosted on KSM. Private Drive links are not included.

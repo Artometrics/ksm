@@ -1,0 +1,14 @@
+KSM Archive
+Artometrics Games
+
+Category: Build
+Project: Artometrics
+Status: draft
+Date: 2026-10-25
+
+A build from Artometrics, filed here as a shelf card.
+
+Rolled into this piece:
+- Artometrics Godot.Tar (build, 2026-10-25)
+
+Hosted on KSM. Private Drive links are not included.

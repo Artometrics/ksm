@@ -1,0 +1,22 @@
+KSM Archive
+Bagel working files
+
+Category: Other
+Project: Bagel
+Status: draft
+Date: 2026-11-08
+
+9 loose files from Bagel, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- Cart interaction tests (art, 2026-11-08)
+- Bagel (other, 2026-11-08)
+- Bagel Deploy (other, 2026-11-08)
+- Bagel (other)
+- Build Prep Manifest (other, 2026-11-08)
+- Build Prep Products 12 (other, 2026-11-08)
+- Build Prep Route Matrix (other, 2026-11-08)
+- Inventory (other, 2026-11-08)
+- Screenshots (test, 2026-11-08)
+
+Hosted on KSM. Private Drive links are not included.

@@ -1,0 +1,12 @@
+KSM Archive
+Grimoire
+
+Grimoire holds the pieces filed under that name. Loose files live with their parent.
+
+Pieces:
+- Grimoire (build)
+- README (other)
+- Index (other)
+- Grimoire working files (other)
+
+Hosted on KSM. Private Drive links are not included.

@@ -1,0 +1,32 @@
+KSM Archive
+KSM working files
+
+Category: Other
+Project: KSM
+Status: draft
+Date: 2026-11-10
+
+19 loose files from KSM, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- KSM site photo log thumbs (art)
+- Ksm (build, 2026-11-06)
+- Ksm Archive (build, 2026-11-10)
+- Ksm Art (build, 2026-11-06)
+- Ksm Astro (build, 2026-11-06)
+- Ksm Blog (build, 2026-11-06)
+- Ksm Deploy (build, 2026-11-08)
+- Ksm Dossiers (build, 2026-11-06)
+- Ksm Feedback (build, 2026-11-06)
+- Ksm Photos (build, 2026-11-06)
+- Ksm Shots (build, 2026-11-06)
+- Ksm Site (build, 2026-11-06)
+- Kyle website inventory — private draft evidence (draft)
+- Personal Blog Drafts (draft)
+- Personal Blog Drafts (copy) (draft)
+- Blog (other, 2026-10-21)
+- KSM (other)
+- Saved from Chrome (other)
+- Grokbot (other)
+
+Hosted on KSM. Private Drive links are not included.

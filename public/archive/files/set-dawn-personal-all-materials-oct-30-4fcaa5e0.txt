@@ -1,0 +1,18 @@
+KSM Archive
+DAWN (personal) - all materials (Oct 30)
+
+Category: Build
+Project: Dawn
+Status: draft
+Date: 2026-10-30
+
+5 loose files from Dawn, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- Dawn Dep.Tar (build, 2026-10-30)
+- Dawn Game Repo Snapshot Kylesmcauliffe (build, 2026-10-30)
+- DAWN Plan page1 (art, 2026-10-30)
+- DAWN Plan source (build, 2026-10-30)
+- Dawn Repo Snapshot (build, 2026-10-30)
+
+Hosted on KSM. Private Drive links are not included.

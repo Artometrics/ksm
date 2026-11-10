@@ -1,0 +1,11 @@
+KSM Archive
+MP8 / Music
+
+MP8 / Music holds the pieces filed under that name. Loose files live with their parent.
+
+Pieces:
+- Mp8 (build)
+- MP8 Master Playbook & Audio Vault Guide (plan)
+- MP8 / Music working files (other)
+
+Hosted on KSM. Private Drive links are not included.

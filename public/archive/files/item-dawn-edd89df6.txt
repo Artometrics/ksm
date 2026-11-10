@@ -1,0 +1,13 @@
+KSM Archive
+Dawn
+
+Category: Build
+Project: Dawn
+Status: approved
+Date: 2026-11-09
+
+A public repository. The shelf card is hosted here, and the source stays on GitHub.
+
+Public page: https://github.com/Artometrics/dawn
+
+Hosted on KSM. Private Drive links are not included.
