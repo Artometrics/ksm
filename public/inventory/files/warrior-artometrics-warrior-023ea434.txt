@@ -1,0 +1,10 @@
+KSM Inventory
+Warrior (Artometrics/warrior)
+
+Repos · Repo · draft
+
+Data analysis of the Golden State Warriors franchise — win percentage, three-point revolution, and historical season context. An Artometrics report
+
+https://github.com/Artometrics/warrior
+
+Hosted on this site. Not a private Drive link.

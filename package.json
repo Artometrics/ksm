@@ -3,7 +3,7 @@
   "main": "expo-router/entry",
   "version": "0.0.1",
   "private": true,
-  "description": "KSM — Expo + Uniwind magazine (crimson zine)",
+  "description": "KSM \u2014 Expo + Uniwind magazine (crimson zine)",
   "scripts": {
     "content": "node scripts/build-content.mjs",
     "content:ensure": "node scripts/ensure-generated-content.mjs",
@@ -16,8 +16,9 @@
     "dev": "expo start --web",
     "fonts": "node scripts/fetch-fontshare.mjs",
     "archive:check": "node scripts/check-archive-catalog.mjs",
-    "build": "node scripts/check-archive-catalog.mjs && node scripts/write-css-version.mjs && npm run fonts && npm run content:ensure && expo export -p web",
-    "eas-build-post-install": "npm run content:ensure"
+    "build": "node scripts/check-archive-catalog.mjs && node scripts/check-inventory-catalog.mjs && node scripts/write-css-version.mjs && npm run fonts && npm run content:ensure && expo export -p web",
+    "eas-build-post-install": "npm run content:ensure",
+    "inventory:check": "node scripts/check-inventory-catalog.mjs"
   },
   "engines": {
     "node": ">=20.0.0"

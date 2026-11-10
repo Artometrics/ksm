@@ -4,7 +4,7 @@
  * or items that are missing a hosted thumbnail and download.
  */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname, extname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -36,6 +36,8 @@ const banned = [
   /api[_-]?key/i,
 ];
 
+const textExts = new Set([".txt", ".svg", ".md", ".csv", ".json", ".html", ".htm", ".css", ".xml", ".tsv", ".vtt"]);
+
 let failed = false;
 function fail(message) {
   failed = true;
@@ -46,6 +48,19 @@ function scanText(text, where) {
   for (const pattern of banned) {
     if (pattern.test(text)) fail(`${where} matched ${pattern}`);
   }
+}
+
+function isTextAsset(filePath) {
+  return textExts.has(extname(filePath).toLowerCase());
+}
+
+function scanAsset(filePath, where) {
+  if (!existsSync(filePath)) {
+    fail(`Missing file ${where}`);
+    return;
+  }
+  if (!isTextAsset(filePath)) return;
+  scanText(readFileSync(filePath, "utf8"), where);
 }
 
 scanText(JSON.stringify(catalog), "catalog");
@@ -87,38 +102,51 @@ function checkUrl(href, where) {
   if (!allowed || deny.some((part) => host.includes(part))) fail(`Disallowed public URL in ${where}: ${href}`);
 }
 
+function publicPath(href, where, kind) {
+  const prefix = kind === "thumb" ? "/archive/thumbs/" : "/archive/files/";
+  if (!href?.startsWith(prefix)) {
+    fail(`${where} is missing a hosted ${kind}.`);
+    return null;
+  }
+  return join(ROOT, "public", href.replace(/^\//, ""));
+}
+
 for (const item of items) {
   if (!projectIds.has(item.projectId)) fail(`Item ${item.id} has no project.`);
   if (item.articleId && !itemIds.has(item.articleId)) fail(`Item ${item.id} has a missing article.`);
   if (!item.summary || !item.title || !item.category) fail(`Item ${item.id} is missing title, summary, or category.`);
-  if (!item.thumb?.startsWith("/archive/thumbs/") || !item.download?.startsWith("/archive/files/")) {
-    fail(`Item ${item.id} is missing a hosted thumb or download.`);
-  }
-  const thumbPath = join(ROOT, "public", item.thumb);
-  const filePath = join(ROOT, "public", item.download.replace(/^\//, ""));
-  if (!existsSync(thumbPath)) fail(`Missing thumbnail ${item.thumb}`);
-  if (!existsSync(filePath)) fail(`Missing download ${item.download}`);
-  else scanText(readFileSync(filePath, "utf8"), item.download);
+  const thumbPath = publicPath(item.thumb, item.id, "thumb");
+  const filePath = publicPath(item.download, item.id, "file");
+  if (thumbPath) scanAsset(thumbPath, item.thumb);
+  if (filePath) scanAsset(filePath, item.download);
   if (item.publicUrl) checkUrl(item.publicUrl, item.id);
-  scanText(readFileSync(thumbPath, "utf8"), item.thumb);
+  for (const file of item.files || []) {
+    const extraPath = publicPath(file.download, `${item.id} file ${file.name}`, "file");
+    if (extraPath) scanAsset(extraPath, file.download);
+  }
+  for (const child of item.children || []) {
+    if (child.download) {
+      const childPath = publicPath(child.download, `${item.id} child ${child.title}`, "file");
+      if (childPath) scanAsset(childPath, child.download);
+    }
+  }
 }
 
 for (const project of projects) {
-  const thumbPath = join(ROOT, "public", project.thumb);
-  const filePath = join(ROOT, "public", project.download.replace(/^\//, ""));
-  if (!existsSync(thumbPath) || !existsSync(filePath)) fail(`Project ${project.id} is missing hosted files.`);
-  else {
-    scanText(readFileSync(filePath, "utf8"), project.download);
-    scanText(readFileSync(thumbPath, "utf8"), project.thumb);
-  }
+  const thumbPath = publicPath(project.thumb, project.id, "thumb");
+  const filePath = publicPath(project.download, project.id, "file");
+  if (thumbPath) scanAsset(thumbPath, project.thumb);
+  if (filePath) scanAsset(filePath, project.download);
 }
 
 const hosted = readdirSync(join(ROOT, "public/archive/files")).length;
 if (hosted < items.length) fail("Not enough hosted download files.");
-const thumbBytes = statSync(join(ROOT, "public", items[0].thumb)).size;
+const thumbBytes = statSync(join(ROOT, "public", items[0].thumb.replace(/^\//, ""))).size;
 if (thumbBytes < 200) fail("Thumbnail looks empty.");
 
 if (failed) process.exit(1);
+const realThumbs = items.filter((item) => item.thumb.endsWith(".webp")).length;
+const realFiles = items.filter((item) => !item.download.endsWith(".txt")).length;
 console.log(
-  `Archive catalog ok: ${meta.included} included, ${meta.itemPages} item pages, ${meta.rolledFiles} files rolled into parents.`,
+  `Archive catalog ok: ${meta.included} included, ${meta.itemPages} item pages, ${meta.rolledFiles} files rolled into parents, ${realThumbs} real thumbs, ${realFiles} real primary downloads.`,
 );

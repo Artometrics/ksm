@@ -1,0 +1,10 @@
+KSM Inventory
+Codex (kylesmcauliffe/codex)
+
+Repos · Writing · draft
+
+Public TypeScript repo named Codex; likely related to the McAuliffe Codex, but the description is empty so the purpose is unverified
+
+https://github.com/kylesmcauliffe/codex
+
+Hosted on this site. Not a private Drive link.

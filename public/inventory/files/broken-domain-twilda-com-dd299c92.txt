@@ -1,0 +1,10 @@
+KSM Inventory
+Broken domain: twilda.com
+
+Needs review · TLS / DNS · dormant
+
+twilda.com fails TLS with a certificate hostname mismatch; DNS is still stale
+
+https://twilda.com
+
+Hosted on this site. Not a private Drive link.

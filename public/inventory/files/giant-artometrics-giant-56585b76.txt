@@ -1,0 +1,10 @@
+KSM Inventory
+Giant (Artometrics/giant)
+
+Repos · Repo · draft
+
+SF Giants franchise analysis — 141 seasons of wins, attendance, and dynasty economics. Artometrics data report
+
+https://github.com/Artometrics/giant
+
+Hosted on this site. Not a private Drive link.

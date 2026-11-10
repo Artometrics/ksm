@@ -1,0 +1,387 @@
+/* Studio shelves. Scoped so theme skins do not restyle the archive. */
+
+.ksm-shelves,
+html[data-style] #root .ksm-shelves,
+html[data-style="pixel"] #root .ksm-shelves {
+  background: #f6f1e7 !important;
+  background-color: #f6f1e7 !important;
+  color: #1a1612;
+  font-family: Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+  padding: 12px 8px 64px;
+  min-height: 60vh;
+}
+
+.ksm-shelves-title,
+html[data-style] .ksm-shelves .ksm-shelves-title {
+  font-family: Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", serif !important;
+  font-weight: 500;
+  font-size: clamp(64px, 9vw, 104px);
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  color: #1a1612 !important;
+  max-width: none !important;
+  margin: 0 0 12px;
+  text-transform: none;
+}
+
+.ksm-shelves-title--piece,
+html[data-style] .ksm-shelves .ksm-shelves-title--piece {
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.02;
+  max-width: 18ch;
+}
+
+.ksm-shelves-intro,
+html[data-style] .ksm-shelves .ksm-shelves-intro {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif !important;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #3c342c !important;
+  max-width: 42rem;
+  margin: 0 0 28px;
+}
+
+.ksm-shelves-search {
+  display: block;
+  width: min(100%, 28rem);
+  margin: 0 0 36px;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid #1a1612;
+  border-radius: 0;
+  background: transparent;
+  color: #1a1612;
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-size: 18px;
+  min-height: 44px;
+}
+
+.ksm-shelves-search:focus-visible,
+.ksm-shelf-row a:focus-visible,
+.ksm-shelves-download:focus-visible {
+  outline: 2px solid #b10f24;
+  outline-offset: 3px;
+}
+
+.ksm-shelf {
+  border-top: 1px solid #1a1612;
+  padding: 22px 0 8px;
+}
+
+.ksm-shelf-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 10px;
+}
+
+.ksm-shelf-name,
+html[data-style] .ksm-shelves .ksm-shelf-name {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif !important;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #1a1612 !important;
+  margin: 0;
+  max-width: none !important;
+  text-transform: none;
+}
+
+.ksm-shelf-count {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #6d645c;
+  font-variant-numeric: tabular-nums;
+}
+
+.ksm-shelf-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 18px;
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 40px;
+}
+
+@media (min-width: 800px) {
+  .ksm-shelf-rows {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ksm-shelf-name a,
+html[data-style="pixel"] #root .ksm-shelf-name,
+html[data-style="pixel"] #root .ksm-shelf-name a {
+  color: #1a1612 !important;
+  font-family: Georgia, "Iowan Old Style", Palatino, serif !important;
+  font-size: 32px !important;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  line-height: 1.1;
+}
+
+.ksm-shelf-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  border-bottom: 1px solid rgba(26, 22, 18, 0.12);
+}
+
+.ksm-shelf-link,
+html[data-style="pixel"] #root a.ksm-shelf-link {
+  flex: 1 1 auto;
+  width: auto;
+  display: grid;
+  grid-template-columns: 44px 6.6rem minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+  min-height: 44px;
+  padding: 6px 0;
+  color: #1a1612 !important;
+  text-decoration: none;
+  font-family: Georgia, "Iowan Old Style", Palatino, serif !important;
+}
+
+.ksm-shelf-link img,
+.ksm-shelves-thumb {
+  width: 44px;
+  height: 32px;
+  object-fit: cover;
+  display: block;
+  background: #efe6d6;
+  border: 1px solid rgba(26, 22, 18, 0.2);
+}
+
+.ksm-shelf-kind {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b10f24;
+}
+
+.ksm-shelf-piece,
+html[data-style] .ksm-shelves .ksm-shelf-piece {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif !important;
+  font-size: 17px;
+  line-height: 1.25;
+  color: #1a1612 !important;
+  overflow-wrap: anywhere;
+}
+
+.ksm-shelf-dl {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a1612;
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.ksm-shelf-link:hover .ksm-shelf-piece,
+.ksm-shelf-dl:hover {
+  color: #b10f24;
+}
+
+.ksm-shelves-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 720px) {
+  .ksm-shelves-detail {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+
+.ksm-shelves-detail img {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid rgba(26, 22, 18, 0.25);
+  background: #efe6d6;
+  display: block;
+}
+
+.ksm-shelves-kicker {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #b10f24;
+  margin: 0 0 8px;
+}
+
+.ksm-shelves-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid #1a1612;
+  background: #1a1612;
+  color: #f6f1e7;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.ksm-shelves-download:hover {
+  background: #b10f24;
+  border-color: #b10f24;
+  color: #fff;
+}
+
+.ksm-shelves-note,
+.ksm-shelves-meta {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #3c342c;
+  margin: 12px 0 0;
+}
+
+.ksm-shelves a.ksm-shelves-textlink {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  color: #1a1612;
+  font-size: 17px;
+}
+
+.ksm-shelves-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.ksm-rolled {
+  display: grid;
+  grid-template-columns: 6.6rem minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(26, 22, 18, 0.12);
+}
+
+@media (max-width: 640px) {
+  .ksm-shelf-link {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+  .ksm-shelf-kind,
+  .ksm-shelf-piece {
+    grid-column: 2;
+  }
+}
+
+/* Inventory filters and title-only rows */
+.ksm-shelves-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.ksm-shelves-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 8px;
+  width: 100%;
+}
+
+.ksm-shelves-filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid #1a1612;
+  background: transparent;
+  color: #1a1612;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.ksm-shelves-filter.is-on,
+.ksm-shelves-filter[aria-pressed="true"] {
+  background: #1a1612;
+  color: #f6f1e7;
+}
+
+.ksm-shelves-filter:focus-visible {
+  outline: 2px solid #b10f24;
+  outline-offset: 3px;
+}
+
+.ksm-shelf-status {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6d645c;
+}
+
+.ksm-shelf-row.is-title-only .ksm-shelf-link {
+  cursor: default;
+}
+
+.ksm-shelves-summary {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #3c342c;
+  max-width: 42rem;
+  margin: 0 0 16px;
+}
+
+.ksm-shelves-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a1612;
+}
+
+.ksm-shelves-select select {
+  min-height: 44px;
+  min-width: 12rem;
+  padding: 0 12px;
+  border: 1px solid #1a1612;
+  border-radius: 0;
+  background: #f6f1e7;
+  color: #1a1612;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 500;
+}

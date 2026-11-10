@@ -1,0 +1,10 @@
+KSM Inventory
+Scam Shield (Artometrics/scam-shield)
+
+Repos · Repo · draft
+
+Scam Shield prototype: rental scam checker + ID-theft recovery plan
+
+https://github.com/Artometrics/scam-shield
+
+Hosted on this site. Not a private Drive link.

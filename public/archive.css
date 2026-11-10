@@ -292,3 +292,21 @@ html[data-style] .ksm-shelves .ksm-shelf-piece {
     grid-column: 2;
   }
 }
+
+.ksm-rolled-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  min-width: 0;
+}
+
+.ksm-rolled-file {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ksm-rolled-file:hover .ksm-shelf-piece {
+  color: #b10f24;
+}

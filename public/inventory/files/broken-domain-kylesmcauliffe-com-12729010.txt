@@ -1,0 +1,10 @@
+KSM Inventory
+Broken domain: kylesmcauliffe.com
+
+Needs review · TLS / DNS · dormant
+
+kylesmcauliffe.com fails TLS with a certificate hostname mismatch
+
+https://kylesmcauliffe.com
+
+Hosted on this site. Not a private Drive link.

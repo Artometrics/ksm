@@ -1,0 +1,10 @@
+KSM Inventory
+Anime (Artometrics/anime)
+
+Repos · Repo · draft
+
+Data analysis of 13,631 anime titles spanning 1917–2019. R / Quarto / MyAnimeList TidyTuesday dataset
+
+https://github.com/Artometrics/anime
+
+Hosted on this site. Not a private Drive link.

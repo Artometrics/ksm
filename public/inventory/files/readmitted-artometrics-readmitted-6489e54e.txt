@@ -1,0 +1,10 @@
+KSM Inventory
+Readmitted (Artometrics/readmitted)
+
+Repos · Repo · draft
+
+Data analysis of U.S. hospital readmissions under CMS HRRP. R / Quarto / CMS Provider Data Catalog
+
+https://github.com/Artometrics/readmitted
+
+Hosted on this site. Not a private Drive link.

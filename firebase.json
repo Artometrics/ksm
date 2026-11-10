@@ -35,6 +35,24 @@
         ]
       },
       {
+        "source": "/inventory",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow"
+          }
+        ]
+      },
+      {
+        "source": "/inventory/**",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow"
+          }
+        ]
+      },
+      {
         "source": "**/*.@(jpg|jpeg|gif|png|webp|svg|woff|woff2|ttf)",
         "headers": [
           {
@@ -43,6 +61,7 @@
           }
         ]
       }
-    ]
+    ],
+    "site": "ksm-510519"
   }
 }

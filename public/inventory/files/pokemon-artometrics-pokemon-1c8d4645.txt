@@ -1,0 +1,10 @@
+KSM Inventory
+Pokemon (Artometrics/pokemon)
+
+Repos · Repo · draft
+
+Data analysis of 1,028 Pokémon across nine generations — base stat identity by type, generation power creep, and physical size as design signal. Built with R/Quarto for Artometrics
+
+https://github.com/Artometrics/pokemon
+
+Hosted on this site. Not a private Drive link.

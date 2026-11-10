@@ -1,0 +1,10 @@
+KSM Inventory
+Duplicate: Artometrics/bagel and kylesmcauliffe/bagel
+
+Needs review · Duplicate · dormant
+
+Two Bagel repos, one in the org and one on the personal account
+
+https://github.com/Artometrics/bagel
+
+Hosted on this site. Not a private Drive link.
