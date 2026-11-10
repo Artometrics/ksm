@@ -1,0 +1,11 @@
+KSM Archive
+Asset Library
+
+Asset Library holds the pieces filed under that name. Loose files live with their parent.
+
+Pieces:
+- Asset Library Manifest (data)
+- README — Asset Library (other)
+- Asset Library working files (other)
+
+Hosted on KSM. Private Drive links are not included.

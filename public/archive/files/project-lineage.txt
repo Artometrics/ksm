@@ -1,0 +1,19 @@
+KSM Archive
+Lineage
+
+Lineage holds the pieces filed under that name. Loose files live with their parent.
+
+Pieces:
+- Lineage (build)
+- Lineage — Cannae Research Doc v0.1 (draft)
+- Lineage — Chapter List & Openers v0.1 (draft)
+- Lineage (Great Captains epic) (other)
+- Lineage — Austerlitz (1805) Battle Research (other)
+- Lineage — Cannae Web Prototype Brief v0.1 (plan)
+- Lineage — Roadmap to a Console-Grade Unreal Build (plan)
+- Games (lineage-waterloo bundle) (build)
+- Lineage Workspace (build)
+- Lineage Games (other)
+- Lineage working files (other)
+
+Hosted on KSM. Private Drive links are not included.

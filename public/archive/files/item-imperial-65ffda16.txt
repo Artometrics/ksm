@@ -1,0 +1,13 @@
+KSM Archive
+Imperial
+
+Category: Build
+Project: Artometrics
+Status: approved
+Date: 2026-05-06
+
+A public repository. The shelf card is hosted here, and the source stays on GitHub.
+
+Public page: https://github.com/Artometrics/imperial
+
+Hosted on KSM. Private Drive links are not included.

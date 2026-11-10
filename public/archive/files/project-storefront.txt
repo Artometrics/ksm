@@ -1,0 +1,9 @@
+KSM Archive
+Storefront
+
+Storefront holds the pieces filed under that name. Loose files live with their parent.
+
+Pieces:
+- Storefront (build)
+
+Hosted on KSM. Private Drive links are not included.

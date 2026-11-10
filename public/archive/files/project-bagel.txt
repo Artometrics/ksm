@@ -1,0 +1,27 @@
+KSM Archive
+Bagel
+
+Apparel for dogs, filed with the seriousness the brief deserves.
+
+Pieces:
+- Bagel (build)
+- Bagel (build)
+- Bagel (build)
+- _import bagel Full aliases (data)
+- _import bagel Pagination (data)
+- Import Bagel Aliases (data)
+- Import Bagel Inventory V2 (data)
+- Import Bagel Inventory V2b (data)
+- Import Bagel Queue V2 (data)
+- Import Unique Templates (data)
+- Bagel Collection Scoped Product Aliases Full Crawl (24431) (data)
+- bagel pagination URLs (985) (data)
+- bagel screenshot queue - all live HTML (1662) (data)
+- bagel — The Foggy Dog URL inventory (data)
+- build prep README (other)
+- Unique Page Audit (report)
+- Unique Page Audit (report)
+- Bagel Workspace (build)
+- Bagel working files (other)
+
+Hosted on KSM. Private Drive links are not included.

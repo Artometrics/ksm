@@ -1,0 +1,13 @@
+KSM Archive
+Codex
+
+Category: Build
+Project: Uncategorized
+Status: approved
+Date: 2026-08-02
+
+A public repository. The shelf card is hosted here, and the source stays on GitHub.
+
+Public page: https://github.com/kylesmcauliffe/codex
+
+Hosted on KSM. Private Drive links are not included.

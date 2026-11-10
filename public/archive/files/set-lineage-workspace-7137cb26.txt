@@ -1,0 +1,14 @@
+KSM Archive
+Lineage Workspace
+
+Category: Build
+Project: Lineage
+Status: draft
+Date: 2026-11-06
+
+A build from Lineage, filed here as a shelf card.
+
+Rolled into this piece:
+- Lineage Waterloo (build, 2026-11-06)
+
+Hosted on KSM. Private Drive links are not included.

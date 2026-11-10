@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img">
+  <rect width="800" height="500" fill="#fff6e8"/>
+  <rect x="18" y="18" width="764" height="464" fill="none" stroke="#2d3561" stroke-width="8"/>
+  <rect x="34" y="34" width="732" height="56" fill="#ffb961"/>
+  <text x="52" y="70" font-family="Courier New, monospace" font-size="22" letter-spacing="2" fill="#1c2348">OTHER</text>
+  <text x="48" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill="#1c2348">Clements2025</text><text x="48" y="210" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill="#1c2348">AnimeInPRC JAMS</text>
+  <rect x="48" y="400" width="36" height="36" fill="#b10f24"/>
+  <text x="100" y="426" font-family="Courier New, monospace" font-size="20" fill="#2d3561">Artometrics / Anime</text>
+</svg>

@@ -1,0 +1,15 @@
+KSM Archive
+Knightmare working files
+
+Category: Other
+Project: Knightmare
+Status: draft
+Date: 2026-11-10
+
+2 loose files from Knightmare, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- Knightmare Deploy (other, 2026-11-10)
+- Knightmare — HUD wireframes v0.1 (other, 2026-10-29)
+
+Hosted on KSM. Private Drive links are not included.

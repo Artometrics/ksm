@@ -17,6 +17,24 @@
         ]
       },
       {
+        "source": "/archive",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow"
+          }
+        ]
+      },
+      {
+        "source": "/archive/**",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow"
+          }
+        ]
+      },
+      {
         "source": "**/*.@(jpg|jpeg|gif|png|webp|svg|woff|woff2|ttf)",
         "headers": [
           {

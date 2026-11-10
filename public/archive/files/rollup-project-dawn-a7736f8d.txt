@@ -1,0 +1,24 @@
+KSM Archive
+Dawn working files
+
+Category: Other
+Project: Dawn
+Status: draft
+Date: 2026-11-09
+
+11 loose files from Dawn, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- Dawn (build, 2026-11-06)
+- Dawn Integration Plan (build, 2026-11-08)
+- Dawn Integration Research (build, 2026-11-08)
+- Dawn Refs (build, 2026-11-09)
+- Dawn Transcripts (build, 2026-11-06)
+- Dawn Dep (other, 2026-11-06)
+- Dawn Deploy (other, 2026-11-09)
+- DAWN (personal) - all materials (Oct 30) (other)
+- DAWN Plan (other, 2026-10-30)
+- Dawn References (other, 2026-10-30)
+- Dawn Finishing Creative Work (other, 2026-10-30)
+
+Hosted on KSM. Private Drive links are not included.

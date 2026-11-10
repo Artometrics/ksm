@@ -1,0 +1,25 @@
+KSM Archive
+Asset Library working files
+
+Category: Other
+Project: Asset Library
+Status: draft
+Date: 2026-10-31
+
+12 loose files from Asset Library, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- Art Illustrations (art, 2026-10-31)
+- Photos (art, 2026-10-31)
+- Sounds SFX Music (audio, 2026-10-31)
+- 3D Models (other, 2026-10-31)
+- 8bit 16bit Sprites Tilesets (other, 2026-10-31)
+- Asset Library (other)
+- Fonts (other, 2026-10-31)
+- Icons (other, 2026-10-31)
+- Portraits (other, 2026-10-31)
+- Textures (other, 2026-10-31)
+- UI Kits (other, 2026-10-31)
+- Video Clips (video, 2026-10-31)
+
+Hosted on KSM. Private Drive links are not included.

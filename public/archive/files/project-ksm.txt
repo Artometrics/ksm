@@ -1,0 +1,23 @@
+KSM Archive
+KSM
+
+This notebook: mockups, logs, and the shelves under the site.
+
+Pieces:
+- KSM Cover Art & Song Notes (art)
+- Archive (Existing Page) (build)
+- Projects (build)
+- KSM site (live) (build)
+- Kylesmcauliffe.Com (build)
+- KSM site photo log (data)
+- KSM Draft: The California Hyper Artist (draft)
+- KSM: 20 Website Styles (other)
+- Notes: Domains, videos and updates (Oct 21, 2026) (other)
+- To do: Port kylesmcauliffe.com (other)
+- KSM Project Index (plan)
+- Grok vs Gemini: API head-to-head (Oct 22–23, 2026) (report)
+- Live browser audit — reviewed qualifications — 2026-11-06 (report)
+- KSM Workspace (build)
+- KSM working files (other)
+
+Hosted on KSM. Private Drive links are not included.

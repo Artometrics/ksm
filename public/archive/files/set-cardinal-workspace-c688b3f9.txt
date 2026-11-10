@@ -1,0 +1,15 @@
+KSM Archive
+Cardinal Workspace
+
+Category: Build
+Project: Cardinal
+Status: draft
+Date: 2026-11-06
+
+2 loose files from Cardinal, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- Cardinal Texts (build, 2026-11-06)
+- Cardinal V11 (build, 2026-11-06)
+
+Hosted on KSM. Private Drive links are not included.

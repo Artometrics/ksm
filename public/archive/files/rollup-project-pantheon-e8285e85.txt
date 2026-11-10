@@ -1,0 +1,37 @@
+KSM Archive
+Pantheon working files
+
+Category: Other
+Project: Pantheon
+Status: draft
+Date: 2026-11-10
+
+24 loose files from Pantheon, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- AnimationLibrary Godot Standard.gltf (art, 2026-11-06)
+- Darwin (art, 2026-11-06)
+- Darwin Rigged (art, 2026-10-25)
+- Einstein (art, 2026-11-06)
+- Einstein Rigged (art, 2026-10-25)
+- Joan Rigged Procedural (art, 2026-10-25)
+- Newton (art, 2026-11-06)
+- Newton Animations (art, 2026-11-06)
+- Newton Animations (art, 2026-11-06)
+- Newton Rigged (art, 2026-11-06)
+- Newton Rigged (art, 2026-11-06)
+- Newton Textured (art, 2026-11-06)
+- Running (art, 2026-11-06)
+- Walking (art, 2026-11-06)
+- Pantheon (build, 2026-11-10)
+- Pantheon Assets (build, 2026-11-06)
+- Pantheon Data (build, 2026-11-06)
+- Pantheon Design Research (build, 2026-11-10)
+- Pantheon Deploy (other, 2026-11-10)
+- Pantheon (other)
+- Newton Animations.Fbx (other, 2026-11-06)
+- Pantheon.Tar.Gz.Part01 (other, 2026-10-25)
+- Pantheon.Tar.Gz.Part02 (other, 2026-10-25)
+- Pantheon.Tar.Gz.Part03 (other, 2026-10-25)
+
+Hosted on KSM. Private Drive links are not included.

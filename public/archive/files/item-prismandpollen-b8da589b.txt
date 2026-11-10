@@ -1,0 +1,13 @@
+KSM Archive
+Prismandpollen
+
+Category: Build
+Project: Prism & Pollen
+Status: approved
+Date: 2026-11-08
+
+A public repository. The shelf card is hosted here, and the source stays on GitHub.
+
+Public page: https://github.com/Artometrics/prismandpollen
+
+Hosted on KSM. Private Drive links are not included.

@@ -1,0 +1,35 @@
+KSM Archive
+Uncategorized Workspace
+
+Category: Build
+Project: Uncategorized
+Status: draft
+Date: 2026-11-07
+
+22 loose files from Uncategorized, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- A101 (build, 2026-11-06)
+- Am Upgrade 1023 (build, 2026-11-06)
+- Amain Noindex (build, 2026-11-06)
+- Cardv11 (build, 2026-11-06)
+- Data Masters (build, 2026-11-06)
+- Dm All (build, 2026-11-06)
+- Fr Ai (build, 2026-11-06)
+- Fr Audio (build, 2026-11-06)
+- Fr Blue (build, 2026-11-06)
+- Ghostdog Download (build, 2026-11-07)
+- Handbook (report, 2026-11-06)
+- Mag Src (build, 2026-11-06)
+- Magazine Pdfs.Tar (build, 2026-11-06)
+- Markup Sample Review (build, 2026-11-06)
+- Nano Banana Test (art, 2026-11-06)
+- optD (build, 2026-11-06)
+- Other Guys Sample 5m54s 6m15s (audio, 2026-11-07)
+- Other Guys Sample 5m54s 6m15s (video, 2026-11-07)
+- Qa Short Tile (art, 2026-11-06)
+- V11 (build, 2026-11-06)
+- Video Kit (build, 2026-11-06)
+- yt ybZ4PsqIswk (video, 2026-11-07)
+
+Hosted on KSM. Private Drive links are not included.

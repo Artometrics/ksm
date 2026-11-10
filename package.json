@@ -15,7 +15,8 @@
     "web": "expo start --web",
     "dev": "expo start --web",
     "fonts": "node scripts/fetch-fontshare.mjs",
-    "build": "node scripts/write-css-version.mjs && npm run fonts && npm run content:ensure && expo export -p web",
+    "archive:check": "node scripts/check-archive-catalog.mjs",
+    "build": "node scripts/check-archive-catalog.mjs && node scripts/write-css-version.mjs && npm run fonts && npm run content:ensure && expo export -p web",
     "eas-build-post-install": "npm run content:ensure"
   },
   "engines": {

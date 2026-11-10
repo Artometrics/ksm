@@ -1,0 +1,16 @@
+KSM Archive
+West Side V3
+
+Category: Build
+Project: West Side
+Status: draft
+Date: 2026-11-06
+
+3 loose files from West Side, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- westside frames F01 F42 (build, 2026-11-06)
+- Westside Waffle Animated V3 (video, 2026-11-06)
+- Westside Waffle Storyboard V2 (storyboard, 2026-11-06)
+
+Hosted on KSM. Private Drive links are not included.

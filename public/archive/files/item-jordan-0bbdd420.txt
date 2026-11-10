@@ -1,0 +1,18 @@
+KSM Archive
+Jordan
+
+Category: Other
+Project: Cardinal
+Status: draft
+Date: 2026-11-06
+
+5 loose files from Cardinal, kept with their parent instead of scattered.
+
+Rolled into this piece:
+- Cardinal Ep01 run21 review (build, 2026-11-08)
+- Cardinal Ep01 run22 review (build, 2026-11-08)
+- Run15 Bundle (build, 2026-11-07)
+- Run9 Extracts (build, 2026-11-07)
+- Run9 Text Extracts (build, 2026-11-07)
+
+Hosted on KSM. Private Drive links are not included.

@@ -1,0 +1,13 @@
+KSM Archive
+Artometrics
+
+Category: Build
+Project: Artometrics
+Status: approved
+Date: 2026-08-06
+
+A public repository. The shelf card is hosted here, and the source stays on GitHub.
+
+Public page: https://github.com/kylesmcauliffe/artometrics
+
+Hosted on KSM. Private Drive links are not included.
