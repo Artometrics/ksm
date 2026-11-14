@@ -49,6 +49,10 @@ export function getBlogPosts(): BlogPost[] {
     );
 }
 
+export function getLabReports(): BlogPost[] {
+  return getBlogPosts().filter((post) => post.tags?.includes("Lab reports"));
+}
+
 export function getBlogPost(slug: string | undefined): BlogPost | undefined {
   if (!slug) return undefined;
   return getAllBlogPosts().find((p) => p.slug === slug || p.id === slug);

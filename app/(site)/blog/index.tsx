@@ -25,6 +25,7 @@ export default function BlogIndex() {
             Writing from the projects, published when a note is ready.
           </p>
           <p className="ksm-about-jump">
+            <Link href="/blog/lab-reports">Lab reports</Link>
             <a href="#drafts">Drafts</a>
             <Link href="/now">October notes</Link>
             <Link href="/about">About</Link>

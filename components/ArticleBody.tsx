@@ -47,6 +47,16 @@ export function ArticleBody({ html }: { html: string }) {
           fontStyle: "italic",
         },
         li: { marginBottom: 6 },
+        img: {
+          maxWidth: "100%",
+          height: "auto",
+          marginTop: 8,
+          marginBottom: 12,
+        },
+        pre: {
+          whiteSpace: "pre-wrap",
+          wordBreak: "break-word",
+        },
       }}
     />
   );

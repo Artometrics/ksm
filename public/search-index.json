@@ -207,5 +207,295 @@
       "Apps"
     ],
     "kind": "project"
+  },
+  {
+    "title": "Aftercare",
+    "line": "An on-device almanac: a tarot table, numerology, and a map of favorites. Marked to open from a Dawn profile.",
+    "href": "/blog/posts/lab-aftercare",
+    "tags": [
+      "Lab reports",
+      "Merged"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Ashmere",
+    "line": "A Godot 4 top-down choose-your-own-adventure, two hosting sites, one repo. Source bundle not opened.",
+    "href": "/blog/posts/lab-ashmere",
+    "tags": [
+      "Lab reports",
+      "Games"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Cardinal Quest",
+    "line": "A Stanford map game: walk to campus landmarks, unlock history cards, and take a daily hunt.",
+    "href": "/blog/posts/lab-cardinal-quest",
+    "tags": [
+      "Lab reports",
+      "Games"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Carrie",
+    "line": "Three sites in one repo: a book oracle, pet certificates, and a hub. Pets toward Bagel, books toward Dawn.",
+    "href": "/blog/posts/lab-carrie",
+    "tags": [
+      "Lab reports",
+      "Merged"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "CRM",
+    "line": "A private Artometrics desk for people, companies, a five-stage pipeline, and a today view.",
+    "href": "/blog/posts/lab-crm",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Fernbound",
+    "line": "A Godot web shell on Firebase. The archive README says fold it into Dawn. The pack was not opened.",
+    "href": "/blog/posts/lab-fernbound",
+    "tags": [
+      "Lab reports",
+      "Merged"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Godot game page",
+    "line": "Part of artometrics.com rebuilt in Godot 4.7: a home page and two articles with 2D and 3D charts.",
+    "href": "/blog/posts/lab-godot-game-page",
+    "tags": [
+      "Lab reports",
+      "Games"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Godot test",
+    "line": "A scratch Godot project: a blue rectangle, the label Hello Kyle, then quit.",
+    "href": "/blog/posts/lab-godot-test",
+    "tags": [
+      "Lab reports",
+      "Games"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Knightmare",
+    "line": "A Three.js greybox of four rooms, built to prove one mechanic: Tuning In.",
+    "href": "/blog/posts/lab-knightmare",
+    "tags": [
+      "Lab reports",
+      "Games"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "KSM dashboard",
+    "line": "A private noindex link board, plus a generated public skeleton. Retired because this site already covers it.",
+    "href": "/blog/posts/lab-ksm-dashboard",
+    "tags": [
+      "Lab reports",
+      "Sites"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Lampwick",
+    "line": "A short first-person horror game in Godot 4.7, playable start to finish. Two sites, one repo.",
+    "href": "/blog/posts/lab-lampwick",
+    "tags": [
+      "Lab reports",
+      "Games"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Lineage",
+    "line": "A browser battle sim. Austerlitz and Waterloo play. The archive says merge it into Pantheon.",
+    "href": "/blog/posts/lab-lineage",
+    "tags": [
+      "Lab reports",
+      "Merged"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Loom",
+    "line": "A YouTube studio board: script, narration notes, captions, and a title package. It does not download YouTube.",
+    "href": "/blog/posts/lab-loom",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Magazine mockup",
+    "line": "An Artometrics magazine front end archived on November 13. The live magazine stayed.",
+    "href": "/blog/posts/lab-magazine-mockup",
+    "tags": [
+      "Lab reports",
+      "Sites"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Mia Maps",
+    "line": "SF rental intelligence: Python scrapers, a hosted dashboard, and an Expo shortlist. Archived November 13, 2026.",
+    "href": "/blog/posts/lab-mia-maps",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Mint",
+    "line": "A private generator for images, short video, a gallery, a cost log, and social cards.",
+    "href": "/blog/posts/lab-mint",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Newsletter",
+    "line": "The studio letter: signup, double opt-in, a markdown draft, batched send, and an archive.",
+    "href": "/blog/posts/lab-newsletter",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Nightlight",
+    "line": "A flashlight horror walk to a radio desk. Three.js, ten commits, retired November 13.",
+    "href": "/blog/posts/lab-nightlight",
+    "tags": [
+      "Lab reports",
+      "Games"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Priority",
+    "line": "A static priority command center: local tasks, a top-three list, and a markdown export.",
+    "href": "/blog/posts/lab-priority",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Questroad",
+    "line": "A GPS quest RPG on a real map, with a downtown San Francisco demo. Standalone site retired.",
+    "href": "/blog/posts/lab-questroad",
+    "tags": [
+      "Lab reports",
+      "Games"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Relay",
+    "line": "One Expo desk for shows, a social queue, and a releases shelf.",
+    "href": "/blog/posts/lab-relay",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Skins",
+    "line": "Three magazine skins, fourteen style directions, and a switcher over sample issues.",
+    "href": "/blog/posts/lab-skins",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Spider Mom Rooftops",
+    "line": "Run, jump, and web-swing an eight-roof San Francisco level. Three.js, two commits.",
+    "href": "/blog/posts/lab-spider-mom",
+    "tags": [
+      "Lab reports",
+      "Games"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Storefront",
+    "line": "Artometrics digital counter meant to replace Gumroad: pay once, then a timed download.",
+    "href": "/blog/posts/lab-storefront",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Style Lab",
+    "line": "A gallery for choosing the Artometrics visual system: type, charts, maps, and saved picks.",
+    "href": "/blog/posts/lab-style-lab",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Style Recipes",
+    "line": "A style board of palettes, fonts, textures, and layouts. Not a food app.",
+    "href": "/blog/posts/lab-style-recipes",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Vault",
+    "line": "A mobile-first PWA with a research shelf and a photograph shelf, on Next.js and Firebase.",
+    "href": "/blog/posts/lab-vault",
+    "tags": [
+      "Lab reports",
+      "Desks"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Voltspire",
+    "line": "A retro-futurist first-person maintenance shooter in Godot 4.7. One hall, three enemy types.",
+    "href": "/blog/posts/lab-voltspire",
+    "tags": [
+      "Lab reports",
+      "Games"
+    ],
+    "kind": "journal"
+  },
+  {
+    "title": "Webfall",
+    "line": "No source tree was in the archive. The only saved page is an HTTP 404 from webfall.web.app.",
+    "href": "/blog/posts/lab-webfall",
+    "tags": [
+      "Lab reports",
+      "Sites"
+    ],
+    "kind": "journal"
   }
 ]

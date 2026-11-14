@@ -4,6 +4,208 @@
     <title>KSM Magazine</title>
     <link>https://kylesmcauliffe.com</link>
     <description>Essays, interviews, and cultural signal</description>
-
+    <item>
+      <title><![CDATA[Mia Maps]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-mia-maps/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-mia-maps/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:28:00 GMT</pubDate>
+      <description><![CDATA[SF rental intelligence: Python scrapers, a hosted dashboard, and an Expo shortlist. Archived November 13, 2026.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[CRM]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-crm/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-crm/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:27:00 GMT</pubDate>
+      <description><![CDATA[A private Artometrics desk for people, companies, a five-stage pipeline, and a today view.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Vault]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-vault/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-vault/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:26:00 GMT</pubDate>
+      <description><![CDATA[A mobile-first PWA with a research shelf and a photograph shelf, on Next.js and Firebase.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Storefront]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-storefront/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-storefront/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:25:00 GMT</pubDate>
+      <description><![CDATA[Artometrics digital counter meant to replace Gumroad: pay once, then a timed download.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Style Lab]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-style-lab/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-style-lab/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:24:00 GMT</pubDate>
+      <description><![CDATA[A gallery for choosing the Artometrics visual system: type, charts, maps, and saved picks.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Loom]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-loom/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-loom/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:23:00 GMT</pubDate>
+      <description><![CDATA[A YouTube studio board: script, narration notes, captions, and a title package. It does not download YouTube.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Newsletter]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-newsletter/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-newsletter/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:22:00 GMT</pubDate>
+      <description><![CDATA[The studio letter: signup, double opt-in, a markdown draft, batched send, and an archive.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Relay]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-relay/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-relay/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:21:00 GMT</pubDate>
+      <description><![CDATA[One Expo desk for shows, a social queue, and a releases shelf.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Priority]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-priority/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-priority/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:20:00 GMT</pubDate>
+      <description><![CDATA[A static priority command center: local tasks, a top-three list, and a markdown export.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Style Recipes]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-style-recipes/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-style-recipes/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:19:00 GMT</pubDate>
+      <description><![CDATA[A style board of palettes, fonts, textures, and layouts. Not a food app.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Mint]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-mint/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-mint/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:18:00 GMT</pubDate>
+      <description><![CDATA[A private generator for images, short video, a gallery, a cost log, and social cards.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Skins]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-skins/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-skins/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:17:00 GMT</pubDate>
+      <description><![CDATA[Three magazine skins, fourteen style directions, and a switcher over sample issues.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[KSM dashboard]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-ksm-dashboard/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-ksm-dashboard/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:16:00 GMT</pubDate>
+      <description><![CDATA[A private noindex link board, plus a generated public skeleton. Retired because this site already covers it.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Magazine mockup]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-magazine-mockup/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-magazine-mockup/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:15:00 GMT</pubDate>
+      <description><![CDATA[An Artometrics magazine front end archived on November 13. The live magazine stayed.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Webfall]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-webfall/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-webfall/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:14:00 GMT</pubDate>
+      <description><![CDATA[No source tree was in the archive. The only saved page is an HTTP 404 from webfall.web.app.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Nightlight]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-nightlight/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-nightlight/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:13:00 GMT</pubDate>
+      <description><![CDATA[A flashlight horror walk to a radio desk. Three.js, ten commits, retired November 13.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Ashmere]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-ashmere/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-ashmere/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:12:00 GMT</pubDate>
+      <description><![CDATA[A Godot 4 top-down choose-your-own-adventure, two hosting sites, one repo. Source bundle not opened.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Lampwick]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-lampwick/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-lampwick/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:11:00 GMT</pubDate>
+      <description><![CDATA[A short first-person horror game in Godot 4.7, playable start to finish. Two sites, one repo.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Voltspire]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-voltspire/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-voltspire/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:10:00 GMT</pubDate>
+      <description><![CDATA[A retro-futurist first-person maintenance shooter in Godot 4.7. One hall, three enemy types.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Knightmare]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-knightmare/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-knightmare/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:09:00 GMT</pubDate>
+      <description><![CDATA[A Three.js greybox of four rooms, built to prove one mechanic: Tuning In.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Godot game page]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-godot-game-page/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-godot-game-page/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:08:00 GMT</pubDate>
+      <description><![CDATA[Part of artometrics.com rebuilt in Godot 4.7: a home page and two articles with 2D and 3D charts.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Questroad]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-questroad/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-questroad/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:07:00 GMT</pubDate>
+      <description><![CDATA[A GPS quest RPG on a real map, with a downtown San Francisco demo. Standalone site retired.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Spider Mom Rooftops]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-spider-mom/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-spider-mom/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:06:00 GMT</pubDate>
+      <description><![CDATA[Run, jump, and web-swing an eight-roof San Francisco level. Three.js, two commits.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Cardinal Quest]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-cardinal-quest/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-cardinal-quest/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:05:00 GMT</pubDate>
+      <description><![CDATA[A Stanford map game: walk to campus landmarks, unlock history cards, and take a daily hunt.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Godot test]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-godot-test/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-godot-test/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:04:00 GMT</pubDate>
+      <description><![CDATA[A scratch Godot project: a blue rectangle, the label Hello Kyle, then quit.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Lineage]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-lineage/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-lineage/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:03:00 GMT</pubDate>
+      <description><![CDATA[A browser battle sim. Austerlitz and Waterloo play. The archive says merge it into Pantheon.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Fernbound]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-fernbound/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-fernbound/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:02:00 GMT</pubDate>
+      <description><![CDATA[A Godot web shell on Firebase. The archive README says fold it into Dawn. The pack was not opened.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Aftercare]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-aftercare/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-aftercare/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:01:00 GMT</pubDate>
+      <description><![CDATA[An on-device almanac: a tarot table, numerology, and a map of favorites. Marked to open from a Dawn profile.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Carrie]]></title>
+      <link>https://kylesmcauliffe.com/blog/posts/lab-carrie/</link>
+      <guid>https://kylesmcauliffe.com/blog/posts/lab-carrie/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:00:00 GMT</pubDate>
+      <description><![CDATA[Three sites in one repo: a book oracle, pet certificates, and a hub. Pets toward Bagel, books toward Dawn.]]></description>
+    </item>
   </channel>
 </rss>
