@@ -207,5 +207,194 @@
       "Apps"
     ],
     "kind": "project"
+  },
+  {
+    "title": "Lab reports",
+    "line": "Records of retired and archived side projects.",
+    "href": "/lab",
+    "tags": [
+      "Lab"
+    ],
+    "kind": "page"
+  },
+  {
+    "title": "Aftercare",
+    "line": "Astrology, tarot, and a journal, as an Expo app, a Netlify web app, and an Astro site. The plan was a Dawn profile.",
+    "href": "/lab/aftercare",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Carrie",
+    "line": "Carrie's suite: PageMatch for books, PawCert for pets, and a portal. Books were filed for Dawn. Pets were filed for Bagel. The repo was still up.",
+    "href": "/lab/carrie",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "CRM",
+    "line": "A private contacts and deal board for Artometrics. The plan was to fold it into Dawn and keep the Firebase project.",
+    "href": "/lab/crm",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Fernbound",
+    "line": "A canvas game meant to become a Dawn hunt for nearby spirits. No GitHub repo. The box tree is the source.",
+    "href": "/lab/fernbound",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "KSM dashboard",
+    "line": "A stub host with placeholder text and a local git history of three commits. This site already covered it.",
+    "href": "/lab/ksm-dashboard",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Lineage",
+    "line": "A browser battle for Cannae, Austerlitz, and Waterloo. The archive says merge it into Pantheon and keep the repo.",
+    "href": "/lab/lineage",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Loom",
+    "line": "A YouTube cut board: script, captions, and a transcriber. It does not download YouTube. The host was deleted after the zip.",
+    "href": "/lab/loom",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Magazine mockup",
+    "line": "An Artometrics magazine front end on its own host. The mockup was retired. artometrics.com stayed.",
+    "href": "/lab/magazine-mockup",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Mia Maps",
+    "line": "A Craigslist rental hunter for Mia. The hourly scrape was still running when the archive was packed.",
+    "href": "/lab/mia-maps",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Mint",
+    "line": "A private image and short-video generator. The voice note called it MIT. No GitHub repo was found.",
+    "href": "/lab/mint",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Newsletter",
+    "line": "The Artometrics letter: consent, a markdown composer, and batch send. The host was deleted. The note says the box source was kept for Dawn.",
+    "href": "/lab/newsletter",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Priority",
+    "line": "The Priority site: a small Rainfall Health command center. Static files, no Firestore, deleted with the Rainfall removal.",
+    "href": "/lab/priority",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Recipes",
+    "line": "Style Recipes, a style board. The archive note says it was already inside Dawn, and that it is not a food site.",
+    "href": "/lab/recipes",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Relay",
+    "line": "One Expo desk for a podcast host, a social queue, and a releases shelf. Archived as a whole product. The host was deleted.",
+    "href": "/lab/relay",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Skins",
+    "line": "A magazine skins and style board. The live title was Artometrics, magazine skins and style board. No GitHub repo.",
+    "href": "/lab/skins",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Nightlight and the other small games",
+    "line": "Nightlight, Questroad, Cardinal Quest, Knightmare, and the Godot toys. Archived 13 Nov 2026, then the repos and hosts were deleted.",
+    "href": "/lab/small-games",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Storefront",
+    "line": "A pay-once counter for Artometrics editions, meant to stand in for Gumroad. The Firebase project was deleted after the zip.",
+    "href": "/lab/storefront",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Style Lab",
+    "line": "A gallery for picking an Artometrics look, with favorites stored in the browser. The host was deleted after a Firestore dump of three user docs.",
+    "href": "/lab/style-lab",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Vault",
+    "line": "A research shelf and a photo shelf. Heavier than the CRM, and left as a later Dawn library or an archive.",
+    "href": "/lab/vault",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
+  },
+  {
+    "title": "Webfall",
+    "line": "A Rainfall Health URL that was already Site Not Found. No repo in Artometrics or kylesmcauliffe. The archive is a 404 mirror.",
+    "href": "/lab/webfall",
+    "tags": [
+      "Lab report"
+    ],
+    "kind": "lab"
   }
 ]

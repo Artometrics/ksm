@@ -31,6 +31,8 @@ function SiteChrome() {
     pathname === "/about" ||
     pathname === "/blog" ||
     pathname.startsWith("/blog/") ||
+    pathname === "/lab" ||
+    pathname.startsWith("/lab/") ||
     pathname === "/now";
 
   useEffect(() => {

@@ -1488,6 +1488,7 @@ html[data-style="pixel"] .ksm-card {
 .ksm-about-life-grid,
 .ksm-about-record-grid,
 .ksm-journal-drafts,
+.ksm-lab-list,
 .ksm-now-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -1499,7 +1500,8 @@ html[data-style="pixel"] .ksm-card {
 @media (min-width: 800px) {
   .ksm-about-life-grid,
   .ksm-about-record-grid,
-  .ksm-journal-drafts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ksm-journal-drafts,
+  .ksm-lab-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 .ksm-about-figure {
   margin: 0;

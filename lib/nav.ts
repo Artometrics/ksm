@@ -3,7 +3,9 @@
 export type SiteTab = {
   href: string;
   label: string;
-  icon: "projects" | "about" | "home" | "journal" | "archive";
+  icon: "projects" | "about" | "home" | "journal" | "archive" | "lab";
+  /** Shorter label for the mobile tab */
+  short?: string;
   /** Center tab in the mobile bar */
   center?: boolean;
 };
@@ -13,6 +15,7 @@ export const SITE_TABS: SiteTab[] = [
   { href: "/about", label: "About", icon: "about" },
   { href: "/", label: "Home", icon: "home", center: true },
   { href: "/blog", label: "Journal", icon: "journal" },
+  { href: "/lab", label: "Lab reports", short: "Lab", icon: "lab" },
   { href: "/archive", label: "Archive", icon: "archive" },
 ];
 
@@ -44,6 +47,9 @@ export function isTabActive(pathname: string, href: string) {
   }
   if (href === "/archive") {
     return pathname === "/archive" || pathname.startsWith("/archive/");
+  }
+  if (href === "/lab") {
+    return pathname === "/lab" || pathname.startsWith("/lab/");
   }
   return pathname === href || pathname.startsWith(`${href}/`);
 }

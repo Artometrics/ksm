@@ -25,7 +25,7 @@ export function MobileTabBar() {
               accessibilityState={{ selected: active }}
             >
               <NavPixelIcon name={item.icon} />
-              <Text>{item.label}</Text>
+              <Text>{item.short ?? item.label}</Text>
             </Pressable>
           </Link>
         );
