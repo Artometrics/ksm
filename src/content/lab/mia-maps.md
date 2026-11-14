@@ -27,7 +27,7 @@ The zip leaves out env vars, including applicant details. Offline, the `public/`
 
 ## What I learned
 
-The part that outlived the idea was the clock. At archive time the hourly workflow was still live, still using Actions minutes, a Firebase CI token, and email. The note I kept says to disable that workflow before retiring the host. Nothing in that pass was deleted.
+The part that outlived the idea was the clock. At archive time the hourly workflow was still live, still using Actions minutes, a Firebase CI token, and email. The note I kept says to disable that workflow before retiring the host. After a verified Drive backup, the Mia Maps GitHub repo and its Hosting project were subsequently deleted: the repo at 8:21 PM PT on 13 Nov 2026, and deletion of the mia-rentals-510519 Firebase project was requested at 8:21-8:22 PM PT.
 
 ## Where it went
 
