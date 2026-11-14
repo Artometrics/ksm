@@ -1,10 +1,12 @@
 import { hiddenBlogIds } from "@/data/hidden-listings";
 import blogData from "@/src/generated/blog.json";
+import labData from "@/src/generated/lab.json";
 import podcastData from "@/src/generated/podcast.json";
 import authorsData from "@/src/generated/authors.json";
 import legalData from "@/src/generated/legal.json";
 
 export type BlogPost = (typeof blogData)[number];
+export type LabReport = (typeof labData)[number];
 export type PodcastEpisode = (typeof podcastData)[number];
 export type Author = (typeof authorsData)[number];
 export type LegalPage = (typeof legalData)[number];
@@ -47,6 +49,15 @@ export function getBlogPosts(): BlogPost[] {
       (a, b) =>
         new Date(b.pubDate!).getTime() - new Date(a.pubDate!).getTime(),
     );
+}
+
+export function getLabReports(): LabReport[] {
+  return [...(labData as LabReport[])].sort((a, b) => a.order - b.order);
+}
+
+export function getLabReport(slug: string | undefined): LabReport | undefined {
+  if (!slug) return undefined;
+  return (labData as LabReport[]).find((report) => report.slug === slug);
 }
 
 export function getBlogPost(slug: string | undefined): BlogPost | undefined {

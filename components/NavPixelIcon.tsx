@@ -38,6 +38,16 @@ export function NavPixelIcon({ name }: IconProps) {
       </svg>
     );
   }
+  if (name === "lab") {
+    return (
+      <svg {...common}>
+        <rect x="6" y="1" width="4" height="2" fill="#2D3561" />
+        <rect x="4" y="3" width="8" height="9" fill="#FFB961" />
+        <rect x="5" y="7" width="6" height="2" fill="#C05C7E" />
+        <rect x="3" y="12" width="10" height="2" fill="#2D3561" />
+      </svg>
+    );
+  }
   if (name === "archive") {
     return (
       <svg {...common}>

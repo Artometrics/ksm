@@ -155,16 +155,38 @@ const legal = listFiles(join(CONTENT, "legal"), [".md"]).map((file) => {
   };
 });
 
+const lab = listFiles(join(CONTENT, "lab")).map((file) => {
+  const raw = readFileSync(file, "utf8");
+  const { data, content } = matter(raw);
+  const id = basename(file, extname(file));
+  const slug = data.slug ?? id;
+  return {
+    id,
+    title: data.title,
+    slug,
+    order: Number.isFinite(data.order) ? data.order : 0,
+    pubDate: data.pubDate ? new Date(data.pubDate).toISOString() : null,
+    description: data.description ?? "",
+    tags: Array.isArray(data.tags) ? data.tags : [],
+    author: data.author ?? null,
+    disposition: data.disposition ?? "",
+    body: marked.parse(content.trim(), { async: false }),
+    bodyFormat: "html",
+  };
+});
+
 writeFileSync(join(OUT, "blog.json"), JSON.stringify(blog, null, 2));
 writeFileSync(join(OUT, "podcast.json"), JSON.stringify(podcast, null, 2));
 writeFileSync(join(OUT, "authors.json"), JSON.stringify(authors, null, 2));
 writeFileSync(join(OUT, "legal.json"), JSON.stringify(legal, null, 2));
+writeFileSync(join(OUT, "lab.json"), JSON.stringify(lab, null, 2));
 
 const index = {
   blog: blog.length,
   podcast: podcast.length,
   authors: authors.length,
   legal: legal.length,
+  lab: lab.length,
   generatedAt: new Date().toISOString(),
 };
 writeFileSync(join(OUT, "index.json"), JSON.stringify(index, null, 2));
@@ -249,6 +271,20 @@ const searchIndex = [
       tags: p.tags,
       kind: "journal",
     })),
+  {
+    title: "Lab reports",
+    line: "Records of retired and archived side projects.",
+    href: "/lab",
+    tags: ["Lab"],
+    kind: "page",
+  },
+  ...lab.map((p) => ({
+    title: p.title,
+    line: p.description,
+    href: `/lab/${p.slug}`,
+    tags: p.tags,
+    kind: "lab",
+  })),
 ];
 writeFileSync(
   join(ROOT, "public/search-index.json"),
@@ -256,5 +292,5 @@ writeFileSync(
 );
 
 console.log(
-  `Content built → src/generated/ (${blog.length} posts, ${podcast.length} podcast, ${authors.length} authors, ${legal.length} legal)`,
+  `Content built → src/generated/ (${blog.length} posts, ${lab.length} lab reports, ${podcast.length} podcast, ${authors.length} authors, ${legal.length} legal)`,
 );

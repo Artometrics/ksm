@@ -47,6 +47,28 @@ if (missing.length) {
   process.exit(1);
 }
 
+const labPath = join(ROOT, "src/generated/lab.json");
+if (!existsSync(labPath)) {
+  console.error("[ensure-content] missing src/generated/lab.json after content build");
+  process.exit(1);
+}
+const labReports = JSON.parse(readFileSync(labPath, "utf8"));
+const labDir = join(ROOT, "src/content/lab");
+const labSlugs = existsSync(labDir)
+  ? readdirSync(labDir)
+      .filter((f) => extname(f) === ".md" || extname(f) === ".mdx")
+      .map((f) => basename(f, extname(f)))
+  : [];
+const labIds = new Set(labReports.map((report) => report.id));
+const missingLab = labSlugs.filter((slug) => !labIds.has(slug));
+if (missingLab.length) {
+  console.error(
+    "[ensure-content] markdown lab reports missing from lab.json:",
+    missingLab.join(", "),
+  );
+  process.exit(1);
+}
+
 console.log(
-  `[ensure-content] ok — ${posts.length} posts in blog.json (matched ${mdSlugs.length} markdown files)`,
+  `[ensure-content] ok — ${posts.length} posts in blog.json (matched ${mdSlugs.length} markdown files), ${labReports.length} lab reports`,
 );
