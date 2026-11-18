@@ -23,7 +23,7 @@ export const HOME_CATEGORIES: HomeCategory[] = [
     id: "books",
     label: "Books",
     href: "/projects/cardinal",
-    cover: "/images/projects/cardinal/banner.jpg",
+    cover: "/images/collectibles/books-still-life.jpg",
     icon: "books",
     tone: "books",
   },

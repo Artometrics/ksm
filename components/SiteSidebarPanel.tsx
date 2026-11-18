@@ -3,6 +3,7 @@ import { Link, usePathname } from "expo-router";
 import { DeskSearch } from "@/components/DeskSearch";
 import { NavIcon } from "@/components/NavIcon";
 import { SITE_TABS, isTabActive } from "@/lib/nav";
+import { CollectionRail } from "@/components/CollectionRail";
 
 function SideLinks() {
   const pathname = usePathname();
@@ -36,6 +37,7 @@ export function SiteSidebarPanel() {
       <View className="ksm-side-links">
         <SideLinks />
       </View>
+      <CollectionRail variant="sidebar" />
       <View className="ksm-side-foot">
         <DeskSearch placeholder="Search" />
       </View>

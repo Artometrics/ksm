@@ -16,6 +16,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { ViewTransitions } from "@/components/ViewTransitions";
 import { DeskSearch } from "@/components/DeskSearch";
 import { DesktopUtility } from "@/components/DesktopUtility";
+import { CollectionRail } from "@/components/CollectionRail";
 import { ChromeProvider, useChrome } from "@/lib/chrome";
 import { LaunchQueryProvider } from "@/lib/launchQuery";
 import { ThemeProvider, useTheme } from "@/lib/theme";
@@ -90,6 +91,7 @@ function SiteChrome() {
           ) : null}
         </View>
         <DesktopUtility />
+        <CollectionRail variant="mobile" />
         <ScrollView
           ref={scrollRef}
           className="flex-1"

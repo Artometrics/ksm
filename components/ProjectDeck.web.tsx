@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { RasterImage } from "@/components/RasterImage";
 import { hasConceptPage } from "@/data/project-pages";
+import { COLLECTION } from "@/data/collection";
 import { projects as enriched, publicLaunchHref } from "@/lib/projects";
+
+const ART = Object.fromEntries(COLLECTION.map((item) => [item.id, item]));
 
 export function ProjectDeck() {
   const [openId, setOpenId] = useState<string | null>(null);
@@ -13,7 +16,7 @@ export function ProjectDeck() {
         {enriched.map((item) => (
           <a
             key={item.id}
-            className="ksm-card ksm-project-card"
+            className="ksm-card ksm-project-card ksm-collectible"
             data-tags={item.tags.join(" ").toLowerCase()}
             href={hasConceptPage(item.id) ? `/projects/${item.id}` : item.href}
             onClick={(event) => {
@@ -22,11 +25,24 @@ export function ProjectDeck() {
               setOpenId(item.id);
             }}
           >
-            <RasterImage src={item.cover} className="ksm-project-cover" />
-            <span className="ksm-card-year">{item.year}</span>
-            <span className="ksm-card-title">{item.title}</span>
-            <span className="ksm-card-line">{item.line}</span>
-            <span className="ksm-card-tags">{item.tags.join(" · ")}</span>
+            <span className="ksm-collectible-plate">
+              <RasterImage
+                src={ART[item.id]?.art ?? item.cover}
+                className="ksm-collectible-art"
+              />
+              {ART[item.id]?.shot && ART[item.id].shot !== ART[item.id].art ? (
+                <RasterImage src={ART[item.id].shot} className="ksm-collectible-shot" />
+              ) : null}
+            </span>
+            <span className="ksm-collectible-body">
+              <span className="ksm-card-year">{item.year}</span>
+              <span className="ksm-card-title">{item.title}</span>
+              <span className="ksm-card-line">{item.line}</span>
+              <span className="ksm-card-tags">{item.tags.join(" · ")}</span>
+              {ART[item.id]?.credit ? (
+                <span className="ksm-collectible-credit">{ART[item.id].credit}</span>
+              ) : null}
+            </span>
           </a>
         ))}
       </div>
