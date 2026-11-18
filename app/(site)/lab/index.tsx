@@ -1,6 +1,7 @@
 import { Link } from "expo-router";
 import Head from "expo-router/head";
 import { getLabReports } from "@/lib/content";
+import { labCoverSrc } from "@/lib/labMedia";
 
 export default function LabIndex() {
   const reports = getLabReports();
@@ -15,32 +16,32 @@ export default function LabIndex() {
           content="Records of retired and archived side projects."
         />
       </Head>
-      <div className="ksm-page-sheet ksm-journal">
+      <div className="ksm-page-sheet ksm-has-tickets">
         <header className="ksm-journal-head">
-          <h1 className="ksm-headline ksm-sheet-title">Lab reports</h1>
-          <h2 className="ksm-headline">What got built, and where it went.</h2>
-          <p className="ksm-lede">
-            A record of side projects that were retired, archived, or folded
-            into Dawn, Bagel, or Pantheon. Each note uses the repo, where one
-            still exists, and the 13 Nov 2026 Drive archive index.
-          </p>
+          <h1 className="ksm-headline ksm-sheet-title">Lab</h1>
+          <p className="ksm-lede">Retired and folded work, on file.</p>
         </header>
         <section aria-labelledby="lab-reports">
           <h2 id="lab-reports" className="ksm-section">
             Reports
           </h2>
-          <div className="ksm-lab-list">
+          <div className="ksm-ticket-grid ksm-ticket-grid--3">
             {reports.map((report) => (
-              <article key={report.slug} className="ksm-note">
-                <p className="ksm-note-meta">
-                  {report.disposition ? report.disposition : "Lab report"}
-                </p>
-                <h3>
-                  <Link href={`/lab/${report.slug}` as "/lab"}>{report.title}</Link>
-                </h3>
-                {report.description ? <p>{report.description}</p> : null}
-                <Link href={`/lab/${report.slug}` as "/lab"}>Read the report</Link>
-              </article>
+              <Link
+                key={report.slug}
+                href={`/lab/${report.slug}` as "/lab"}
+                className="ksm-ticket"
+              >
+                <span className="ksm-ticket-plate">
+                  <img src={labCoverSrc(report.slug)} alt="" />
+                </span>
+                <span className="ksm-ticket-body">
+                  <span className="ksm-card-year">
+                    {report.disposition || "Lab report"}
+                  </span>
+                  <span className="ksm-card-title">{report.title}</span>
+                </span>
+              </Link>
             ))}
           </div>
         </section>

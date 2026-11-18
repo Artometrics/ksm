@@ -1575,3 +1575,217 @@ html[data-theme="dark"] .ksm-menu-label,
 html[data-theme="dark"] .ksm-wordmark--masthead {
   color: #111111 !important;
 }
+
+
+/* Unified exhibition tickets */
+.ksm-page-sheet.ksm-has-tickets {
+  max-width: 72rem;
+}
+
+.ksm-ticket-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+}
+
+@media (min-width: 640px) {
+  .ksm-ticket-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1100px) {
+  .ksm-ticket-grid.ksm-ticket-grid--3 { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.ksm-ticket {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  background: #fff;
+  color: #111;
+  text-decoration: none !important;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  position: relative;
+  margin: 0 2px;
+  animation: ksm-rise 0.45s ease both;
+}
+
+.ksm-ticket-plate {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #1a1410;
+}
+
+.ksm-ticket-plate img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: contrast(1.05) saturate(1.06);
+}
+
+.ksm-ticket-plate--contain {
+  background: #f4f1ea;
+}
+
+.ksm-ticket-plate--contain img {
+  object-fit: contain;
+  filter: none;
+}
+
+.ksm-journal .ksm-carousel-slide img {
+  object-fit: contain;
+  object-position: center;
+  background: #111;
+}
+
+.ksm-ticket-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px 14px;
+  border-top: 1px dashed #111;
+  background: #fff;
+}
+
+.ksm-ticket-body::before,
+.ksm-ticket-body::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  width: 14px;
+  height: 14px;
+  background: var(--page, #f4f1ea);
+  border: 1px solid #111;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ksm-ticket-body::before { left: -8px; }
+.ksm-ticket-body::after { right: -8px; }
+
+.ksm-ticket--paper {
+  max-width: 28rem;
+}
+
+.ksm-ticket--paper .ksm-ticket-body {
+  border-top: 0;
+  padding-top: 16px;
+}
+
+.ksm-ticket--paper .ksm-ticket-body::before,
+.ksm-ticket--paper .ksm-ticket-body::after {
+  display: none;
+}
+
+.ksm-ticket-hero {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  margin: 0 0 1.25rem;
+  background: #1a1410;
+}
+
+.ksm-journal .ksm-carousel {
+  margin: 0 0 1.5rem;
+}
+
+.ksm-adjacent {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule, #111);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.95rem;
+}
+
+.ksm-about-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 720px) {
+  .ksm-about-intro {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+.ksm-about-portrait {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+}
+
+.ksm-about-life-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .ksm-about-life-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.ksm-about-figure {
+  margin: 0;
+  background: #fff;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+}
+
+.ksm-about-figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.ksm-about-figure figcaption {
+  padding: 8px 12px 12px;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+html[data-theme="dark"] .ksm-ticket,
+html[data-theme="dark"] .ksm-ticket-body,
+html[data-theme="dark"] .ksm-about-figure,
+html[data-theme="dark"] .ksm-about-portrait,
+html[data-theme="dark"] .ksm-ticket-hero {
+  background: #111111 !important;
+  color: #f4f1ea !important;
+  border-color: #f4f1ea !important;
+  box-shadow: 3px 3px 0 #000 !important;
+}
+
+html[data-theme="dark"] .ksm-ticket-body {
+  border-top-color: #f4f1ea !important;
+}
+
+html[data-theme="dark"] .ksm-ticket-body::before,
+html[data-theme="dark"] .ksm-ticket-body::after {
+  background: #111111;
+  border-color: #f4f1ea;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ksm-ticket { animation: none !important; }
+}

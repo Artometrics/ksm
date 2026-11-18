@@ -45,9 +45,8 @@ export default function AboutScreen() {
             <h1 className="ksm-headline ksm-sheet-title">About</h1>
             <h2 className="ksm-headline">Kyle McAuliffe</h2>
             <p className="ksm-lede">
-              Kyle McAuliffe founded and edits Artometrics. The magazine pairs a written
-              argument with public datasets. This site is the notebook for that work and the
-              other public projects.
+              Founder and editor of Artometrics. This site is the notebook for that work
+              and the other public projects.
             </p>
             <p className="ksm-about-jump">
               <a href="#work">Work on file</a>
@@ -75,7 +74,6 @@ export default function AboutScreen() {
           <h2 id="about-work" className="ksm-section">
             Work on file
           </h2>
-          <p className="ksm-lede">What each public project is for.</p>
           {GROUPS.map((group) => (
             <div key={group.label} className="ksm-about-group">
               <h3 className="ksm-about-group-title">{group.label}</h3>

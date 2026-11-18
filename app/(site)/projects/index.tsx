@@ -30,11 +30,10 @@ export default function ProjectsScreen() {
         <View className="ksm-copy gap-3">
           <Text className="ksm-kicker ksm-type">Projects</Text>
           <Text accessibilityRole="header" className="ksm-headline">
-            Research, writing, and the tools around them.
+            Public work on file.
           </Text>
           <Text className="ksm-lede">
-            Artometrics is the public magazine. Cardinal is the book. Dawn is the
-            studio. Unpublished drafts stay off this index.
+            Artometrics, Cardinal, Dawn, and the rest of the public work.
           </Text>
         </View>
 
@@ -61,9 +60,12 @@ export default function ProjectsScreen() {
             Working papers
           </Text>
           {papers.map((item) => (
-            <a key={item.id} className="ksm-paper" href={item.href}>
-              <span className="ksm-card-title">{item.title}</span>
-              <span className="ksm-card-line">{item.line}</span>
+            <a key={item.id} className="ksm-ticket ksm-ticket--paper" href={item.href}>
+              <span className="ksm-ticket-body">
+                <span className="ksm-card-year">Working paper</span>
+                <span className="ksm-card-title">{item.title}</span>
+                <span className="ksm-card-line">{item.line}</span>
+              </span>
             </a>
           ))}
         </View>
