@@ -26,8 +26,11 @@ const COVER_BY_ID: Record<string, string> = {
 };
 
 /**
- * Direct hosts that answered HTTP 200.
+ * Direct hosts that answered HTTP 200 (re-checked Nov 17, 2026 PT).
  * Knightmare's Origin URL (cursor.com/codebase/...) returns 403 and is omitted.
+ * Nightlight, Cardinal Quest, Questroad and Style Lab hosts return 404 since the
+ * Nov 13 hosting cleanup, so they show without a launch button until redeployed.
+ * Cardinal (401, password-locked reading room) stays listed by design.
  */
 const PUBLIC_LAUNCH_URLS = new Set([
   "https://artometrics.com",
@@ -36,10 +39,15 @@ const PUBLIC_LAUNCH_URLS = new Set([
   "https://cardinal-510519.web.app",
   "https://pantheon-game-ksm.web.app",
   "https://dawn-510519.web.app",
-  "https://nightlight-510519.web.app",
-  "https://cardinal-quest-510519.web.app",
-  "https://questroad-510519.web.app",
-  "https://stylelab-510519.web.app",
+  "https://dawn-510519.web.app/fernbound",
+  "https://gotha.artometrics.com",
+  "https://academy.artometrics.com",
+  "https://glossary.artometrics.com",
+  "https://dwts-510519.web.app",
+  "https://ballpark-510519.web.app",
+  "https://storm-toss.vercel.app",
+  "https://hum-to-suno.vercel.app",
+  "https://twilda.com",
   "https://ksm-510519.web.app",
 ]);
 
