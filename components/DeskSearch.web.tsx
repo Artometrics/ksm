@@ -9,7 +9,7 @@ type Row = {
   kind: string;
 };
 
-export function DeskSearch({ placeholder = "?" }: { placeholder?: string }) {
+export function DeskSearch({ placeholder = "Search" }: { placeholder?: string }) {
   const inputRef = useRef<TextInput>(null);
   const [query, setQuery] = useState("");
   const [rows, setRows] = useState<Row[]>([]);

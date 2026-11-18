@@ -332,20 +332,7 @@ body,
   image-rendering: auto;
 }
 
-/* Hide painted category decorations; keep typographic tiles. */
-.ksm-home-cat {
-  background: #ffffff !important;
-  border: 1px solid var(--rule);
-  box-shadow: var(--shadow);
-  color: var(--ink);
-  min-height: 88px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.ksm-home-cat-art {
-  display: none !important;
-}
+/* Category tiles are restyled in the chrome polish block at the end of this file. */
 
 .ksm-home-cat--games,
 .ksm-home-cat--books,
@@ -543,4 +530,303 @@ button,
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+
+/* ---------- Chrome polish: tiles, chips, tab bar, now playing ---------- */
+
+.ksm-home {
+  gap: 28px;
+  padding: 8px 16px 24px;
+  max-width: 1100px;
+}
+
+.ksm-home-cat-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+@media (min-width: 720px) {
+  .ksm-home-cat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+@media (min-width: 1180px) {
+  .ksm-home-cat-grid { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+}
+
+.ksm-home-cat,
+.ksm-home-cat--games,
+.ksm-home-cat--books,
+.ksm-home-cat--magazine,
+.ksm-home-cat--apps,
+.ksm-home-cat--art,
+.ksm-home-cat--archive,
+.ksm-home-cat--text {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  background: #ffffff !important;
+  color: #111111 !important;
+  border: 1px solid #111111 !important;
+  box-shadow: 4px 4px 0 #111111 !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+}
+
+.ksm-home-cat-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background: #f4f4f4;
+  border-bottom: 1px solid #111111;
+  color: #111111;
+}
+
+.ksm-home-cat-art {
+  display: block !important;
+  position: static !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  transform: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  background: #f4f4f4 !important;
+}
+
+.ksm-home-cat-label {
+  display: block;
+  position: static !important;
+  z-index: auto;
+  max-width: none !important;
+  margin: 0;
+  padding: 10px 8px;
+  text-align: center;
+  font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #111111 !important;
+}
+
+/* Featured / picked — keep the screenshot, even spacing */
+.ksm-home-picked {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  background: #fff;
+  overflow: hidden;
+}
+@media (min-width: 800px) {
+  .ksm-home-picked { grid-template-columns: 1.2fr 1fr; }
+}
+.ksm-home-picked-media { display: block; background: #f4f4f4; }
+.ksm-home-picked-art {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top center;
+}
+.ksm-home-picked-copy { padding: 16px 18px 20px; }
+
+/* Project filter chips */
+.ksm-filters {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  gap: 8px !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 2px 0 10px;
+  margin: 0 0 8px;
+}
+.ksm-filters::-webkit-scrollbar { display: none; }
+
+.ksm-filter-chip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  cursor: pointer;
+}
+
+.ksm-filter-chip input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.ksm-filter-chip span,
+.ksm-filters label,
+html body .ksm-filters label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid #111111;
+  border-radius: 999px !important;
+  background: #ffffff;
+  color: #111111;
+  font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+  font-size: 12px !important;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+.ksm-filter-chip:has(input:checked) span,
+.ksm-filters input:checked + span,
+.ksm-filters input:checked + label {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.ksm-filters:has(#filter-research:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="research"]),
+.ksm-filters:has(#filter-writing:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="writing"]),
+.ksm-filters:has(#filter-games:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="games"]),
+.ksm-filters:has(#filter-apps:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="apps"]),
+.ksm-filters:has(#filter-art:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="art"]) {
+  display: none !important;
+}
+
+.ksm-empty-art { display: none; }
+.ksm-filters:has(#filter-art:checked) ~ .ksm-empty-art {
+  display: block;
+  font-family: "Source Serif 4", Georgia, serif;
+  padding: 8px 0 16px;
+}
+
+/* Five equal-width tab blocks */
+@media (max-width: 1023px) {
+  .ksm-tabs {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: stretch !important;
+    gap: 0 !important;
+    padding: 0 0 env(safe-area-inset-bottom, 0px) !important;
+    background: #ffffff !important;
+    border-top: 1px solid #111111 !important;
+    box-shadow: none !important;
+  }
+  .ksm-tab,
+  .ksm-tab--home {
+    position: relative !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    height: 56px !important;
+    margin: 0 !important;
+    padding: 8px 2px 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    border: 0 !important;
+    border-right: 1px solid #111111 !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+  .ksm-tab:last-child { border-right: 0 !important; }
+  .ksm-tab svg,
+  .ksm-tab--home svg {
+    width: 18px !important;
+    height: 18px !important;
+    flex-shrink: 0;
+    filter: none !important;
+    transform: none !important;
+    stroke: currentColor;
+  }
+  .ksm-tab--home::before { display: none !important; content: none !important; }
+  .ksm-tab.is-active,
+  .ksm-tab--home.is-active {
+    background: #111111 !important;
+    color: #ffffff !important;
+    font-weight: 500 !important;
+  }
+  .ksm-tab Text,
+  .ksm-tab div,
+  .ksm-tab span {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ksm-now-playing {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    min-height: 40px !important;
+    padding: 8px 16px !important;
+    background: #ffffff !important;
+    border-top: 1px solid #111111 !important;
+    border-bottom: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    text-decoration: none !important;
+    color: #111111 !important;
+  }
+  .ksm-now-playing-open {
+    margin-left: auto;
+    flex-shrink: 0;
+    padding: 0 !important;
+    min-height: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #111111 !important;
+    font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .ksm-main {
+    padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* Search fields should never look like a lone question mark */
+.ksm-search input,
+.ksm-home-search input,
+.ksm-utility-search input {
+  font-family: "DM Mono", ui-monospace, Menlo, monospace;
+  font-size: 13px;
+  border-radius: 0 !important;
 }

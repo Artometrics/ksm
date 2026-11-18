@@ -4,9 +4,9 @@ export type HomeCategory = {
   id: string;
   label: string;
   href: string;
-  /** Omitted when the shelf has no picture of its own. */
+  /** Live-site screenshot, when we have one. */
   cover?: string;
-  /** Maps to `.ksm-home-cat--{tone}` theme-safe tints */
+  icon: "games" | "books" | "magazine" | "apps" | "art" | "archive";
   tone: "games" | "books" | "magazine" | "apps" | "art" | "archive";
 };
 
@@ -15,40 +15,46 @@ export const HOME_CATEGORIES: HomeCategory[] = [
     id: "games",
     label: "Games",
     href: "/projects",
-    cover: "/images/projects/pantheon/pantheon-hero.webp",
+    cover: "/images/projects/hoops/banner.jpg",
+    icon: "games",
     tone: "games",
   },
   {
     id: "books",
     label: "Books",
     href: "/projects/cardinal",
-    cover: "/images/projects/cardinal/cardinal-hero.webp",
+    cover: "/images/projects/cardinal/banner.jpg",
+    icon: "books",
     tone: "books",
   },
   {
     id: "magazine",
     label: "Magazine",
     href: "/projects/artometrics",
-    cover: "/images/projects/artometrics/artometrics-hero.webp",
+    cover: "/images/projects/artometrics/banner.jpg",
+    icon: "magazine",
     tone: "magazine",
   },
   {
     id: "apps",
     label: "Apps",
     href: "/projects/dawn",
-    cover: "/images/projects/dawn/dawn-hero.webp",
+    cover: "/images/projects/dawn/banner.jpg",
+    icon: "apps",
     tone: "apps",
   },
   {
     id: "art",
-    label: "Music / Art",
+    label: "Art",
     href: "/gallery",
+    icon: "art",
     tone: "art",
   },
   {
     id: "archive",
     label: "Archive",
     href: "/archive",
+    icon: "archive",
     tone: "archive",
   },
 ];

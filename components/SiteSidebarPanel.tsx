@@ -37,7 +37,7 @@ export function SiteSidebarPanel() {
         <SideLinks />
       </View>
       <View className="ksm-side-foot">
-        <DeskSearch />
+        <DeskSearch placeholder="Search" />
       </View>
     </View>
   );

@@ -25,20 +25,19 @@ export function NowPlayingBar() {
   const external = isPublicLaunchUrl(entry.href);
 
   return (
-    <div className="ksm-now-playing" role="region" aria-label="Now playing">
+    <a
+      className="ksm-now-playing"
+      href={entry.href}
+      aria-label={`Now playing: ${entry.title}`}
+      {...(external
+        ? { target: "_blank" as const, rel: "noopener noreferrer" }
+        : {})}
+    >
       <div className="ksm-now-playing-copy">
         <span className="ksm-now-playing-label">Now playing</span>
         <span className="ksm-now-playing-title">{entry.title}</span>
       </div>
-      <a
-        className="ksm-now-playing-open"
-        href={entry.href}
-        {...(external
-          ? { target: "_blank" as const, rel: "noopener noreferrer" }
-          : {})}
-      >
-        {external ? "Open" : "Story"}
-      </a>
-    </div>
+      <span className="ksm-now-playing-open">Open</span>
+    </a>
   );
 }

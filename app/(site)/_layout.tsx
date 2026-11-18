@@ -86,7 +86,7 @@ function SiteChrome() {
           style={{ padding: 12, gap: 8 }}
         >
           {!isHome ? (
-            <DeskSearch placeholder={organizedChrome ? "Search projects" : "?"} />
+            <DeskSearch placeholder="Search" />
           ) : null}
         </View>
         <DesktopUtility />

@@ -1,5 +1,14 @@
 import { useEffect, useMemo } from "react";
-import { HOME_CATEGORIES } from "@/data/homeCategories";
+import {
+  AppWindow,
+  Archive,
+  BookOpen,
+  Gamepad2,
+  Music,
+  Newspaper,
+  type LucideIcon,
+} from "lucide-react-native";
+import { HOME_CATEGORIES, type HomeCategory } from "@/data/homeCategories";
 import { NOW_UPDATES } from "@/data/now";
 import { RasterImage } from "@/components/RasterImage";
 import { getBlogPosts } from "@/lib/content";
@@ -19,6 +28,32 @@ import {
   publicLaunchHref,
   type ProjectRecord,
 } from "@/lib/projects";
+
+
+const CAT_ICONS: Record<HomeCategory["icon"], LucideIcon> = {
+  games: Gamepad2,
+  books: BookOpen,
+  magazine: Newspaper,
+  apps: AppWindow,
+  art: Music,
+  archive: Archive,
+};
+
+function CategoryTile({ cat }: { cat: HomeCategory }) {
+  const Icon = CAT_ICONS[cat.icon];
+  return (
+    <a className="ksm-home-cat" href={cat.href}>
+      <span className="ksm-home-cat-media">
+        {cat.cover ? (
+          <RasterImage src={cat.cover} className="ksm-home-cat-art" />
+        ) : (
+          <Icon size={28} color="currentColor" strokeWidth={1.6} />
+        )}
+      </span>
+      <span className="ksm-home-cat-label">{cat.label}</span>
+    </a>
+  );
+}
 
 function matchesQuery(text: string, query: string) {
   if (!query.trim()) return true;
@@ -198,20 +233,7 @@ export function HomeLauncher() {
           <h2 className="ksm-home-section-title">Browse all</h2>
           <div className="ksm-home-cat-grid">
             {filteredCategories.map((cat) => (
-              <a
-                key={cat.id}
-                className={[
-                  "ksm-home-cat",
-                  `ksm-home-cat--${cat.tone}`,
-                  cat.cover ? "" : "ksm-home-cat--text",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-                href={cat.href}
-              >
-                <span className="ksm-home-cat-label">{cat.label}</span>
-                <RasterImage src={cat.cover} className="ksm-home-cat-art" />
-              </a>
+              <CategoryTile key={cat.id} cat={cat} />
             ))}
           </div>
         </section>

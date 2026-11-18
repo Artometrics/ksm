@@ -39,22 +39,19 @@ export default function ProjectsScreen() {
         </View>
 
         <View className="gap-3">
-          <View
-            className="ksm-filters"
-            style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}
-          >
+          <div className="ksm-filters" role="radiogroup" aria-label="Filter projects">
             {FILTERS.map((filter, index) => (
-              <View key={filter.id} style={{ flexDirection: "row" }}>
+              <label key={filter.id} className="ksm-filter-chip" htmlFor={filter.id}>
                 <input
                   type="radio"
                   name="project-filter"
                   id={filter.id}
                   defaultChecked={index === 0}
                 />
-                <label htmlFor={filter.id}>{filter.label}</label>
-              </View>
+                <span>{filter.label}</span>
+              </label>
             ))}
-          </View>
+          </div>
           <ProjectDeck />
           <Text className="ksm-empty-art">Nothing filed under Art yet.</Text>
         </View>

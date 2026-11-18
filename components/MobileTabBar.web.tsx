@@ -1,6 +1,6 @@
 import { Pressable, Text, View } from "react-native";
 import { Link, usePathname } from "expo-router";
-import { SITE_TABS, isTabActive } from "@/lib/nav";
+import { MOBILE_TABS, isTabActive } from "@/lib/nav";
 import { NavIcon } from "@/components/NavIcon";
 
 export function MobileTabBar() {
@@ -8,13 +8,9 @@ export function MobileTabBar() {
 
   return (
     <View className="ksm-tabs" accessibilityRole="tablist">
-      {SITE_TABS.map((item) => {
+      {MOBILE_TABS.map((item) => {
         const active = isTabActive(pathname, item.href);
-        const className = [
-          "ksm-tab",
-          item.center ? "ksm-tab--home" : "",
-          active ? "is-active" : "",
-        ]
+        const className = ["ksm-tab", active ? "is-active" : ""]
           .filter(Boolean)
           .join(" ");
         return (
@@ -24,7 +20,7 @@ export function MobileTabBar() {
               accessibilityRole="link"
               accessibilityState={{ selected: active }}
             >
-              <NavIcon name={item.icon} />
+              <NavIcon name={item.icon} size={18} />
               <Text>{item.short ?? item.label}</Text>
             </Pressable>
           </Link>
