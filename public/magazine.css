@@ -1,0 +1,151 @@
+/* Magazine — cream stock, serif display, thick rules, editorial measure */
+
+html[data-style="magazine"] {
+  color-scheme: light;
+}
+
+html[data-style="magazine"] body,
+html[data-style="magazine"] .ksm-page,
+html[data-style="magazine"] #root {
+  background: var(--paper);
+}
+
+html[data-style="magazine"] .ksm-wordmark,
+html[data-style="magazine"] .ksm-headline,
+html[data-style="magazine"] .ksm-section,
+html[data-style="magazine"] .ksm-card-title,
+html[data-style="magazine"] .ksm-utility-title,
+html[data-style="magazine"] .ksm-article-title {
+  font-family: var(--serif);
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+html[data-style="magazine"] .ksm-wordmark {
+  font-weight: 700;
+  font-size: 22px;
+  font-style: italic;
+}
+
+html[data-style="magazine"] .ksm-headline,
+html[data-style="magazine"] .ksm-article-title {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.15;
+  max-width: 22ch;
+  color: var(--ink);
+}
+
+html[data-style="magazine"] .ksm-section,
+html[data-style="magazine"] .ksm-card-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+html[data-style="magazine"] .ksm-kicker {
+  font-family: var(--sans);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+html[data-style="magazine"] .ksm-lede,
+html[data-style="magazine"] .ksm-card-line,
+html[data-style="magazine"] .ksm-fine {
+  font-family: var(--serif);
+  color: var(--muted);
+}
+
+html[data-style="magazine"] .ksm-header,
+html[data-style="magazine"] .ksm-footer,
+html[data-style="magazine"] .ksm-utility {
+  border-color: var(--rule);
+  background: var(--paper);
+}
+
+html[data-style="magazine"] .ksm-header,
+html[data-style="magazine"] .ksm-utility {
+  border-bottom-width: 2px;
+}
+
+html[data-style="magazine"] .ksm-footer {
+  border-top-width: 2px;
+}
+
+html[data-style="magazine"] .ksm-card,
+html[data-style="magazine"] .ksm-paper,
+html[data-style="magazine"] .ksm-slot {
+  border: 2px solid var(--rule);
+  box-shadow: none;
+  border-radius: 0;
+  background: var(--card);
+}
+
+html[data-style="magazine"] .ksm-card:hover,
+html[data-style="magazine"] .ksm-paper:hover {
+  background: var(--paper);
+}
+
+html[data-style="magazine"] .ksm-nav {
+  font-family: var(--sans);
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+html[data-style="magazine"] .ksm-nav:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+html[data-style="magazine"] .ksm-picker-btn {
+  border-radius: 0 !important;
+  font-family: var(--sans) !important;
+  font-weight: 600 !important;
+}
+
+html[data-style="magazine"] .ksm-picker-btn[aria-pressed="true"] {
+  background: var(--ink) !important;
+  color: var(--paper) !important;
+}
+
+html[data-style="magazine"] .ksm-prose {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  max-width: 68ch;
+}
+
+html[data-style="magazine"] .ksm-prose h2,
+html[data-style="magazine"] .ksm-prose h3 {
+  font-family: var(--serif);
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+html[data-style="magazine"] .ksm-prose a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+html[data-style="magazine"] .ksm-prose blockquote {
+  border-left-width: 2px;
+  border-left-color: var(--ink);
+  font-style: italic;
+}
+
+html[data-style="magazine"] .ksm-prose figcaption {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+html[data-style="magazine"] a:focus-visible,
+html[data-style="magazine"] button:focus-visible,
+html[data-style="magazine"] input:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}

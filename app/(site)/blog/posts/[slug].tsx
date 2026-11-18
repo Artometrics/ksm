@@ -67,13 +67,13 @@ export default function BlogPostScreen() {
         type="article"
       />
       {hero ? (
-        <View className="relative h-[48vh] w-full overflow-hidden border-b-2 border-border bg-black">
+        <View className="ksm-article-hero">
           <Image
             source={{ uri: hero }}
-            className="absolute inset-0 h-full w-full"
-            contentFit="cover"
+            className="ksm-article-hero-img"
+            contentFit="contain"
+            accessibilityLabel={typeof post.image === "object" && post.image?.alt ? String(post.image.alt) : post.title}
           />
-          <View className="absolute inset-0 bg-black/40" />
         </View>
       ) : null}
       <Wrapper variant="prose" className="gap-4 py-10">
