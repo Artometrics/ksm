@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import { Image } from "expo-image";
 import { Link } from "expo-router";
 import type { ProjectPage } from "@/data/project-pages";
-import { isPublicLaunchUrl } from "@/lib/projects";
+import { isPublicLaunchUrl, isRetiredPublicUrl } from "@/lib/projects";
 
 const ctaStyle = {
   display: "inline-block" as const,
@@ -157,7 +157,7 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
               <Text className="ksm-fine" style={{ marginBottom: 8 }}>
                 Source:{" "}
               </Text>
-              {excerpt.sourceHref ? (
+              {excerpt.sourceHref && !isRetiredPublicUrl(excerpt.sourceHref) ? (
                 <a className="ksm-nav" href={excerpt.sourceHref} target="_blank" rel="noopener noreferrer">
                   {excerpt.source}
                 </a>
@@ -172,7 +172,7 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
         </View>
 
         <View className="flex-row flex-wrap gap-3" style={{ marginTop: 8 }}>
-          {page.secondaryLinks.map((link) => (
+          {page.secondaryLinks.filter((link) => !isRetiredPublicUrl(link.href)).map((link) => (
             <a key={link.href} className="ksm-nav" href={link.href} target="_blank" rel="noopener noreferrer">
               {link.label}
             </a>

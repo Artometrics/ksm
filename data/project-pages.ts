@@ -63,11 +63,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
     secondaryLinks: [
       {
         label: "Source repo (GitHub)",
-        href: "https://github.com/kylesmcauliffe/cardinal",
-      },
-      {
-        label: "Cardinal Quest (campus map game)",
-        href: "https://cardinal-quest-510519.web.app",
+        href: "https://github.com/Artometrics/cardinal",
       },
     ],
     heroImage: "/images/projects/cardinal/cardinal-hero.webp",
@@ -93,7 +89,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       {
         date: "~Oct 21, 2026",
         source: "cardinal repo deploy (PR #12)",
-        sourceHref: "https://github.com/kylesmcauliffe/cardinal",
+        sourceHref: "https://github.com/Artometrics/cardinal",
         text: "Reading room deployed from kylesmcauliffe/cardinal; audio players show coming soon (audio not uploaded yet).",
       },
       {
@@ -306,10 +302,10 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
     overview: [
       "Nightlight is a walk to the radio cabin with only your beam for company. Turn the phone sideways, hold focus to tighten the light, and open the door when you find it — nothing finishes just because you stood nearby.",
       "The path remembers gravel and wood underfoot; the stairs can flicker once; pines hide the warm window until you crest the last ridge. It is quiet on purpose.",
-      "What you can play today is the live noindex build. Design tables for flashlight, movement, and cabin beats sit in Drive for the next polish pass.",
+      "The playable host is gone (nightlight-510519.web.app has returned 404 since the Nov 13, 2026 hosting cleanup). Design tables for flashlight, movement, and cabin beats sit in Drive for a later polish pass.",
     ],
     builtSoFar: [
-      "Live noindex prototype at nightlight-510519.web.app.",
+      "Was a noindex prototype at nightlight-510519.web.app; that host returns 404 since the Nov 13, 2026 hosting cleanup.",
       "Flashlight range/focus hold; rim glow on lit objects; hold-to-open cabin door; hand-lettered prompts.",
       "Footsteps (gravel/wood) via Web Audio; rain; stair flicker once per run; window reveal with pines.",
       "Character swap / custom .glb; run button.",
@@ -317,17 +313,12 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       "Recent polish: handrail, top-step flicker (PRs #2 and #4, Oct 31).",
     ],
     status:
-      "Private pre-launch (noindex). Playable. Continues small interactable polish in work sessions.",
+      "The public host was retired in the Nov 13, 2026 hosting cleanup (404). The GitHub source repo is also gone. This page is a record of the work, not a play link.",
     primaryCta: {
       label: "Play Nightlight",
       href: "https://nightlight-510519.web.app",
     },
-    secondaryLinks: [
-      {
-        label: "Source repo (GitHub)",
-        href: "https://github.com/Artometrics/nightlight",
-      },
-    ],
+    secondaryLinks: [],
     heroImage: "/images/projects/nightlight/nightlight-hero.webp",
     inlineImage: {
       src: "/images/projects/nightlight/nightlight-inline-beam.webp",
@@ -336,8 +327,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
     excerpts: [
       {
         date: "Oct 31, 2026",
-        source: "nightlight repo (PRs #2, #4)",
-        sourceHref: "https://github.com/Artometrics/nightlight",
+        source: "nightlight repo (PRs #2, #4; repo no longer on GitHub)",
         text: "Handrail polish merged; top-step flicker merged.",
       },
       {
@@ -371,10 +361,10 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
     overview: [
       "Cardinal Quest puts Stanford in your pocket as a walkable map. Allow location, find a landmark, and unlock a history card — fourteen stops from the Quad to the Dish, with XP and badges that stay on your phone.",
       "It is the friendly twin of the Cardinal book: the same corridor, learned with your feet. Dawn's Atlas even borrows the walker's path for a campus day.",
-      "What you can play today is the v0 noindex build, including spoken bridge lines built only from cited land facts. Founders' Walk and Ohlone narration options are drafted for the next audio pass.",
+      "The playable host is gone (cardinal-quest-510519.web.app has returned 404 since the Nov 13, 2026 hosting cleanup). Founders' Walk and Ohlone narration options were drafted for a later audio pass.",
     ],
     builtSoFar: [
-      "Live at cardinal-quest-510519.web.app.",
+      "Was live at cardinal-quest-510519.web.app; that host returns 404 since the Nov 13, 2026 hosting cleanup.",
       "OpenStreetMap / OpenFreeMap map.",
       "14 landmarks: Main Quad, MemChu, Hoover Tower, Oval, Mausoleum, Angel of Grief, Cantor, Rodin Garden, Green Library, Encina, White Plaza, Frost, Stadium, the Dish.",
       "Tap marker or GPS unlock within 60 m; XP bar; badge grid; progress on device.",
@@ -383,16 +373,12 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       "Narration outlines for Founders' Walk and Ohlone history options (Drive).",
     ],
     status:
-      "v0 playable, noindex, top games priority. Next: audio tour clips from Cardinal, walking routes, quizzes.",
+      "The public host was retired in the Nov 13, 2026 hosting cleanup (404). The GitHub source repo is also gone. This page is a record of the work, not a play link. Next ideas (audio tour clips from Cardinal, walking routes, quizzes) remain notes only.",
     primaryCta: {
       label: "Play Cardinal Quest",
       href: "https://cardinal-quest-510519.web.app",
     },
     secondaryLinks: [
-      {
-        label: "Source repo (GitHub)",
-        href: "https://github.com/Artometrics/cardinal-quest",
-      },
       {
         label: "Cardinal reading room",
         href: "https://cardinal-510519.web.app",
@@ -406,8 +392,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
     excerpts: [
       {
         date: "Oct 31, 2026",
-        source: "cardinal-quest PR #2 (bridge lines)",
-        sourceHref: "https://github.com/Artometrics/cardinal-quest",
+        source: "cardinal-quest PR #2 (bridge lines; repo no longer on GitHub)",
         text: "One Piece of Land walk bridge lines merged; cited land facts only.",
       },
       {
@@ -441,7 +426,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
     overview: [
       "Knightmare is a game about listening with your eyes. A boy walks castle to castle in near-silence, holding focus on a speaker's face until their words climb a ladder from nothing to clear speech. The world may be lying; only sight shows the glitch.",
       "The living prototype is a three.js greybox of the prologue's first rooms: a long servants' dormitory, drifting steam as a waypoint, and a cook who turns face-on so you can learn Tuning In. There is no score and no voice track yet — sight is the whole mechanic.",
-      "What you can open today is the Origin codebase and the design sketch. Rooms beyond the kitchen are sketched; Origin PRs wait for Kyle. Placeholder dialogue is not canon.",
+      "The Cursor Origin project was deleted on Nov 17, 2026. A private GitHub archive (origin-archive-knightmare) exists for Kyle, but it is not a public play host or a public repo, so this page does not link it. The design sketch below still opens. Placeholder dialogue is not canon.",
     ],
     builtSoFar: [
       "Origin prototype greybox of prologue rooms 1–2 (servants' dormitory → kitchen cook tutorial).",
@@ -452,7 +437,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       "Work sessions: rooms 3–4 courtyard/steward briefs written; Origin PRs #1 and #2 await Kyle merge.",
     ],
     status:
-      "Active prototype. Not on a public play host yet. Greybox only; lines not canon.",
+      "The public Origin project is gone (deleted Nov 17, 2026). There is no public play host. This page is a record of the greybox prototype; lines were not canon.",
     primaryCta: {
       label: "Open the prototype on Origin",
       href: "https://cursor.com/codebase/artometrics/knightmare",
@@ -486,7 +471,6 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       {
         date: "2026",
         source: "knightmare README (Origin)",
-        sourceHref: "https://cursor.com/codebase/artometrics/knightmare",
         text: "Tuning In prototype with rooms 1–2; no public Firebase play URL.",
       },
       {
@@ -504,26 +488,21 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
     tagline: "A Waze-style MMORPG map game on the real road.",
     overview: [
       "Questroad turns the road itself into an RPG layer: a Waze-shaped map where walking and driving are the adventure.",
-      "What you can open today is the v0 noindex play host. The page stays humble about systems still waiting on auth and deploy polish.",
+      "The playable host is gone (questroad-510519.web.app has returned 404 since the Nov 13, 2026 hosting cleanup). Auth and deploy polish never shipped.",
     ],
     builtSoFar: [
-      "Live noindex at questroad-510519.web.app.",
-      "Private Artometrics/questroad repo.",
+      "Was live (noindex) at questroad-510519.web.app; that host returns 404 since the Nov 13, 2026 hosting cleanup.",
+      "The Artometrics/questroad GitHub repo is also gone.",
       "Listed v0 playable / top priority in Games Index (Oct 25).",
       "Oct 25 inventory: needs deploy workflow; Firestore/auth go-ahead flagged.",
     ],
     status:
-      "v0 playable prototype. Keep claims limited to what the live host confirms.",
+      "The public host was retired in the Nov 13, 2026 hosting cleanup (404). The GitHub source repo is also gone. This page is a record of the work, not a play link.",
     primaryCta: {
       label: "Play Questroad",
       href: "https://questroad-510519.web.app",
     },
-    secondaryLinks: [
-      {
-        label: "Source repo (GitHub)",
-        href: "https://github.com/Artometrics/questroad",
-      },
-    ],
+    secondaryLinks: [],
     heroImage: "/images/projects/questroad/questroad-hero.webp",
     inlineImage: {
       src: "/images/projects/questroad/questroad-hero.webp",
@@ -553,14 +532,14 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       "A hosted playground for visual recipes beside magazine skins and KSM themes.",
     overview: [
       "Style Lab is where looks get tried on: a hosted playground for visual recipes that sit beside the magazine skins and the KSM style picker.",
-      "What you can open today is the live Style Lab host at stylelab-510519.web.app. Treat the page as an invitation to look and remix, not a claim of a finished product catalog.",
+      "The Style Lab host at stylelab-510519.web.app returns 404 since the Nov 13, 2026 hosting cleanup, so there is nothing to open right now. Treat the page as a record of the idea, not a finished product catalog.",
     ],
     builtSoFar: [
-      "Hosting live at stylelab-510519.web.app (among nine -510519 sites live ~Oct 21).",
+      "Was hosted at stylelab-510519.web.app (among nine -510519 sites live ~Oct 21); 404 since the Nov 13, 2026 cleanup.",
       "Adjacent work: KSM multi-style picker; Artometrics issue skins; design-recipes board interest (Oct 27 profile).",
     ],
     status:
-      "Live host; page stays honest — emphasize what visitors can open, not invented features.",
+      "The public host was retired in the Nov 13, 2026 hosting cleanup (404). This page is a record of the idea, not a live playground.",
     primaryCta: {
       label: "Open Style Lab",
       href: "https://stylelab-510519.web.app",

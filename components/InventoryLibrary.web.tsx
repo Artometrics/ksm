@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "expo-router";
+import { liveCatalogUrl } from "@/lib/projects";
 import {
   formatStatus,
   getInventoryItems,
@@ -184,8 +185,8 @@ function ShelfRow({ item }: { item: InventoryItem }) {
           {body}
         </Link>
       )}
-      {item.publicUrl ? (
-        <a className="ksm-shelf-dl" href={item.publicUrl} target="_blank" rel="noopener noreferrer">
+      {liveCatalogUrl(item.publicUrl) ? (
+        <a className="ksm-shelf-dl" href={liveCatalogUrl(item.publicUrl) ?? undefined} target="_blank" rel="noopener noreferrer">
           Open
         </a>
       ) : item.download ? (

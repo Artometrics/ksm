@@ -26,8 +26,10 @@ const COVER_BY_ID: Record<string, string> = {
 };
 
 /**
- * Direct hosts that answered HTTP 200.
- * Knightmare's Origin URL (cursor.com/codebase/...) returns 403 and is omitted.
+ * Direct hosts that answered HTTP 200 (re-checked Nov 17, 2026 PT).
+ * Retired / 404 hosts are listed in RETIRED_PUBLIC_HOSTS and never get a launch button.
+ * Cardinal (401, password-locked reading room) stays listed by design.
+ * Knightmare's deleted Origin URL and private archive are omitted (no public host).
  */
 const PUBLIC_LAUNCH_URLS = new Set([
   "https://artometrics.com",
@@ -36,12 +38,47 @@ const PUBLIC_LAUNCH_URLS = new Set([
   "https://cardinal-510519.web.app",
   "https://pantheon-game-ksm.web.app",
   "https://dawn-510519.web.app",
-  "https://nightlight-510519.web.app",
-  "https://cardinal-quest-510519.web.app",
-  "https://questroad-510519.web.app",
-  "https://stylelab-510519.web.app",
+  "https://dawn-510519.web.app/fernbound",
+  "https://gotha.artometrics.com",
+  "https://academy.artometrics.com",
+  "https://glossary.artometrics.com",
+  "https://dwts-510519.web.app",
+  "https://ballpark-510519.web.app",
+  "https://osv-510519.web.app",
+  "https://storm-toss.vercel.app",
+  "https://hum-to-suno.vercel.app",
+  "https://twilda.com",
+  "https://interntoimpact-510519.web.app",
   "https://ksm-510519.web.app",
 ]);
+
+/** Hosts that no longer exist (404/403) or were deleted. Used to hide catalog links. */
+const RETIRED_PUBLIC_HOSTS = new Set([
+  "nightlight-510519.web.app",
+  "cardinal-quest-510519.web.app",
+  "questroad-510519.web.app",
+  "questroad-510519-fcdbd.web.app",
+  "stylelab-510519.web.app",
+  "knightmare-ksm.web.app",
+]);
+
+export function isRetiredPublicUrl(href: string | null | undefined): boolean {
+  if (!href) return false;
+  try {
+    const host = new URL(href).host.replace(/^www\./, "");
+    if (RETIRED_PUBLIC_HOSTS.has(host)) return true;
+    // Deleted Origin project paths only
+    if (host === "cursor.com" && href.includes("/codebase/artometrics/knightmare")) return true;
+  } catch {
+    return false;
+  }
+  return false;
+}
+
+export function liveCatalogUrl(href: string | null | undefined): string | null {
+  if (!href || isRetiredPublicUrl(href)) return null;
+  return href;
+}
 
 export function isPublicLaunchUrl(href: string | null | undefined): href is string {
   if (!href) return false;
