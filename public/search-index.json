@@ -246,7 +246,7 @@
   },
   {
     "title": "Fernbound",
-    "line": "A canvas game meant to become a Dawn hunt for nearby spirits. No GitHub repo. The box tree is the source.",
+    "line": "A Godot wildkin-binding game with no source repo. It was folded into Dawn, then retired on 17 November 2026.",
     "href": "/lab/fernbound",
     "tags": [
       "Lab report"

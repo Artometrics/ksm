@@ -1405,7 +1405,11 @@ html[data-style="pixel"] .ksm-card {
 }
 .ksm-sheet-title { margin: 0 0 4px; }
 @media (min-width: 1024px) {
+  /* Desktop utility already names the section (Lab reports, Journal, About).
+     Hide those duplicate page titles, but keep the title of a single report or essay. */
   .ksm-sheet-title { display: none; }
+  .ksm-article-title,
+  .ksm-journal-head .ksm-article-title { display: block; }
 }
 .ksm-about-intro {
   display: flex;
@@ -1635,4 +1639,57 @@ html[data-style="pixel"] .ksm-note h3 {
   font-family: VT323, "Courier New", monospace;
   font-size: 26px;
   font-weight: 400;
+}
+
+/* Article media and long URLs should not blow out the column on a phone. */
+.ksm-prose {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.ksm-prose img,
+.ksm-prose video,
+.ksm-prose iframe,
+.ksm-article-hero img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.ksm-prose table,
+.ksm-prose pre,
+.ksm-prose code {
+  max-width: 100%;
+}
+.ksm-prose pre,
+.ksm-prose table {
+  overflow-x: auto;
+}
+.ksm-prose figure {
+  margin: 1.25rem 0;
+  max-width: 100%;
+}
+.ksm-prose figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.ksm-article-hero {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--card);
+  border-bottom: 2px solid var(--rule);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.ksm-article-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 1200 / 630;
+  object-fit: contain;
+  background: var(--card);
 }
