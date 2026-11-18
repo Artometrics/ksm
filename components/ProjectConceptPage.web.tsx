@@ -57,16 +57,29 @@ function EssayView({ essay }: { essay: ProjectEssay }) {
         ) : null}
       </header>
 
-      <ImageCarousel slides={essay.gallery} />
+      {essay.gallery?.length ? <ImageCarousel slides={essay.gallery} /> : null}
 
       {essay.sections.map((section) => (
         <section key={section.title} className="ksm-essay-section">
           <h2 className="ksm-section">{section.title}</h2>
-          {section.paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 48)} className="ksm-essay-p">
+          {section.gallery?.length ? <ImageCarousel slides={section.gallery} /> : null}
+          {section.paragraphs.map((paragraph, i) => (
+            <p key={`${section.title}-${i}`} className="ksm-essay-p">
               {paragraph}
             </p>
           ))}
+          {section.books?.length ? (
+            <ol className="ksm-book-series">
+              {section.books.map((book) => (
+                <li key={book.title}>
+                  <strong>
+                    {book.volume ? `${book.volume} — ${book.title}` : book.title}
+                  </strong>
+                  {book.hook ? <span className="ksm-book-hook">{book.hook}</span> : null}
+                </li>
+              ))}
+            </ol>
+          ) : null}
         </section>
       ))}
 
