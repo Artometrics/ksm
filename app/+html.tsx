@@ -47,6 +47,7 @@ export default function Root({ children }: PropsWithChildren) {
         <link rel="stylesheet" href={css("/pixel.css")} />
         <link rel="stylesheet" href={css("/notebook.css")} />
         <link rel="stylesheet" href={css("/desk.css")} />
+        <link rel="stylesheet" href={css("/magazine.css")} />
         <link rel="stylesheet" href={css("/newsprint.css")} />
         <link rel="stylesheet" href={css("/neon.css")} />
         <link rel="stylesheet" href={css("/y2k.css")} />
@@ -414,6 +415,14 @@ export default function Root({ children }: PropsWithChildren) {
                 font-size: 1.05rem;
                 line-height: 1.7;
                 color: inherit;
+                max-width: 100%;
+                overflow-wrap: anywhere;
+                word-break: break-word;
+              }
+              .ksm-prose img, .ksm-prose video, .ksm-article-hero img {
+                display: block;
+                max-width: 100%;
+                height: auto;
               }
               .ksm-prose p { margin: 0 0 1rem; }
               .ksm-prose h2 {

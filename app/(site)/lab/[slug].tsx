@@ -52,7 +52,7 @@ export default function LabReportScreen() {
             {report.pubDate ? ` · ${formatDate(report.pubDate)}` : ""}
             {` · ${author}`}
           </p>
-          <h1 className="ksm-headline ksm-sheet-title">{report.title}</h1>
+          <h1 className="ksm-headline ksm-sheet-title ksm-article-title">{report.title}</h1>
           {report.description ? <p className="ksm-lede">{report.description}</p> : null}
         </header>
         <ArticleBody html={report.body} />
