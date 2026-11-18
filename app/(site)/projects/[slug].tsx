@@ -26,6 +26,17 @@ function MinimalProjectDetail({
 }: {
   project: NonNullable<ReturnType<typeof getProjectById>>;
 }) {
+  const live = isPublicLaunchUrl(project.href) ? project.href : null;
+  const internal = project.href?.startsWith("/") ? project.href : null;
+  const archiveHref = (archivePathForSiteProject(project.id) ?? "/archive") as "/archive";
+  const links: { label: string; href: string }[] = [];
+  if (live) links.push({ label: "Live site", href: live });
+  if (internal) links.push({ label: "Lab report", href: internal });
+  if (project.source && project.source !== live && project.source !== internal) {
+    links.push({ label: "Source", href: project.source });
+  }
+  links.push({ label: "Files in the archive", href: archiveHref });
+
   return (
     <>
       <Head>
@@ -35,30 +46,45 @@ function MinimalProjectDetail({
       <Wrapper className="gap-4 py-8">
         {isDisplayArt(project.cover) ? (
           <img
-            className="ksm-launcher-cover ksm-launcher-cover--hero"
+            className="ksm-banner"
             src={project.cover}
-            alt=""
+            alt={`Screenshot of ${project.title}`}
           />
         ) : null}
         <Text className="ksm-kicker">{project.year}</Text>
-        <Text accessibilityRole="header" className="ksm-headline">
+        <Text accessibilityRole="header" className="ksm-headline ksm-article-title">
           {project.title}
         </Text>
         <Text className="ksm-lede">{project.line}</Text>
         <Text className="ksm-card-tags">{project.tags.join(" · ")}</Text>
-        {isPublicLaunchUrl(project.href) ? (
-          <a className="ksm-nav" href={project.href} target="_blank" rel="noopener noreferrer">
+        {live ? (
+          <a className="ksm-nav" href={live} target="_blank" rel="noopener noreferrer">
             Open live site
           </a>
+        ) : internal ? (
+          <Link href={internal as "/lab/fernbound"}>
+            <Text className="ksm-nav">Read the lab report</Text>
+          </Link>
         ) : (
           <Text className="ksm-lede">No public link for this project yet.</Text>
         )}
-        <a className="ksm-nav" href={project.source}>
-          Source note
-        </a>
-        <Link href={(archivePathForSiteProject(project.id) ?? "/archive") as "/archive"}>
-          <Text className="ksm-nav">Files in the archive</Text>
-        </Link>
+        <div className="ksm-files">
+          <h2 className="ksm-section">Files and links</h2>
+          <ul>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  {...(/^[a-z]+:/i.test(link.href)
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
         <Link href="/projects">
           <Text className="ksm-nav">All projects</Text>
         </Link>

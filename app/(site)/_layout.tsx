@@ -15,7 +15,6 @@ import { MobileBottomChrome } from "@/components/MobileBottomChrome";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ViewTransitions } from "@/components/ViewTransitions";
 import { DeskSearch } from "@/components/DeskSearch";
-import { StylePicker } from "@/components/StylePicker";
 import { DesktopUtility } from "@/components/DesktopUtility";
 import { ChromeProvider, useChrome } from "@/lib/chrome";
 import { LaunchQueryProvider } from "@/lib/launchQuery";
@@ -89,7 +88,6 @@ function SiteChrome() {
           {!isHome ? (
             <DeskSearch placeholder={organizedChrome ? "Search projects" : "?"} />
           ) : null}
-          <StylePicker />
         </View>
         <DesktopUtility />
         <ScrollView

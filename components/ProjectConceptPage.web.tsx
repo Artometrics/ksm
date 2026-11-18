@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import { Image } from "expo-image";
 import { Link } from "expo-router";
 import type { ProjectPage } from "@/data/project-pages";
-import { isPublicLaunchUrl, isRetiredPublicUrl } from "@/lib/projects";
+import { isPublicLaunchUrl } from "@/lib/projects";
 
 const ctaStyle = {
   display: "inline-block" as const,
@@ -10,10 +10,13 @@ const ctaStyle = {
   backgroundColor: "var(--ink)",
   color: "var(--cta-label, var(--paper))",
   textDecoration: "none" as const,
-  fontFamily: "var(--sans)",
-  fontSize: 15,
-  fontWeight: 600,
-  border: "2px solid var(--rule)",
+  fontFamily: "var(--mono)",
+  fontSize: 13,
+  fontWeight: 500,
+  letterSpacing: "0.08em",
+  textTransform: "uppercase" as const,
+  border: "1px solid var(--rule)",
+  boxShadow: "4px 4px 0 #111",
   marginTop: 8,
   marginBottom: 8,
 };
@@ -21,77 +24,49 @@ const ctaStyle = {
 const blockStyle = {
   border: "1px solid var(--rule)",
   backgroundColor: "var(--card)",
+  boxShadow: "4px 4px 0 #111",
   padding: 16,
   marginBottom: 12,
 };
 
 export function ProjectConceptPage({ page }: { page: ProjectPage }) {
   const heroUri = page.heroImage?.trim();
-  const inline = page.inlineImage?.src?.trim()
-    ? page.inlineImage
-    : undefined;
+  const inline = page.inlineImage?.src?.trim() ? page.inlineImage : undefined;
+  const links = [
+    isPublicLaunchUrl(page.primaryCta.href)
+      ? { label: page.primaryCta.label, href: page.primaryCta.href }
+      : null,
+    ...page.secondaryLinks,
+  ].filter(Boolean) as { label: string; href: string }[];
 
   return (
     <>
       <View
         className="relative w-full overflow-hidden"
         style={{
-          borderBottomWidth: 2,
+          borderBottomWidth: 1,
           borderColor: "var(--rule)",
-          minHeight: heroUri ? 220 : 0,
-          backgroundColor: "var(--card)",
+          backgroundColor: "#f4f4f4",
         }}
       >
         {heroUri ? (
           <Image
             source={{ uri: heroUri }}
-            style={{ width: "100%", height: 280, maxHeight: "42vh" }}
-            contentFit="cover"
-            accessibilityLabel={`${page.title} concept art`}
+            style={{ width: "100%", aspectRatio: 16 / 9, backgroundColor: "#f4f4f4" }}
+            contentFit="contain"
+            accessibilityLabel={`Screenshot of ${page.title}`}
           />
         ) : null}
-        <View
-          style={{
-            position: heroUri ? "absolute" : "relative",
-            inset: heroUri ? 0 : undefined,
-            backgroundColor: heroUri ? "rgba(0,0,0,0.35)" : "transparent",
-          }}
-        />
-        <View
-          style={{
-            position: heroUri ? "absolute" : "relative",
-            bottom: heroUri ? 0 : undefined,
-            left: 0,
-            right: 0,
-            padding: 20,
-            maxWidth: 680,
-          }}
-        >
-          <Text
-            className="ksm-kicker"
-            style={{ color: heroUri ? "#F6F1E7" : "var(--accent)" }}
-          >
-            Concept book
-          </Text>
+        <View style={{ padding: 20, maxWidth: 680 }}>
+          <Text className="ksm-kicker">Project</Text>
           <Text
             accessibilityRole="header"
-            className="ksm-headline"
-            style={{
-              color: heroUri ? "#F6F1E7" : "var(--ink)",
-              fontSize: 32,
-            }}
+            className="ksm-headline ksm-article-title"
+            style={{ fontSize: 32 }}
           >
             {page.title}
           </Text>
-          <Text
-            className="ksm-lede"
-            style={{
-              color: heroUri ? "#F6F1E7" : "var(--muted)",
-              opacity: heroUri ? 0.92 : 1,
-            }}
-          >
-            {page.tagline}
-          </Text>
+          <Text className="ksm-lede">{page.tagline}</Text>
         </View>
       </View>
 
@@ -119,8 +94,14 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
           <figure style={{ marginVertical: 16 }}>
             <Image
               source={{ uri: inline.src }}
-              style={{ width: "100%", height: 240, borderWidth: 1, borderColor: "var(--rule)" }}
-              contentFit="cover"
+              style={{
+                width: "100%",
+                aspectRatio: 16 / 9,
+                borderWidth: 1,
+                borderColor: "var(--rule)",
+                backgroundColor: "#f4f4f4",
+              }}
+              contentFit="contain"
               accessibilityLabel={inline.alt}
             />
             {inline.caption ? (
@@ -129,6 +110,21 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
               </Text>
             ) : null}
           </figure>
+        ) : null}
+
+        {links.length ? (
+          <div className="ksm-files">
+            <h2 className="ksm-section">Files and links</h2>
+            <ul>
+              {links.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         ) : null}
 
         <Text accessibilityRole="header" className="ksm-section">
@@ -154,10 +150,7 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
           {page.excerpts.map((excerpt) => (
             <View key={`${excerpt.date}-${excerpt.source}`} style={blockStyle}>
               <Text className="ksm-kicker">{excerpt.date}</Text>
-              <Text className="ksm-fine" style={{ marginBottom: 8 }}>
-                Source:{" "}
-              </Text>
-              {excerpt.sourceHref && !isRetiredPublicUrl(excerpt.sourceHref) ? (
+              {excerpt.sourceHref ? (
                 <a className="ksm-nav" href={excerpt.sourceHref} target="_blank" rel="noopener noreferrer">
                   {excerpt.source}
                 </a>
@@ -168,14 +161,6 @@ export function ProjectConceptPage({ page }: { page: ProjectPage }) {
                 {excerpt.text}
               </Text>
             </View>
-          ))}
-        </View>
-
-        <View className="flex-row flex-wrap gap-3" style={{ marginTop: 8 }}>
-          {page.secondaryLinks.filter((link) => !isRetiredPublicUrl(link.href)).map((link) => (
-            <a key={link.href} className="ksm-nav" href={link.href} target="_blank" rel="noopener noreferrer">
-              {link.label}
-            </a>
           ))}
         </View>
 

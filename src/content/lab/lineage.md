@@ -49,6 +49,13 @@ The index says six files in that folder matched local sizes on 13 Nov 2026 at 8:
 
 Repo, still up when this was written: [Artometrics/lineage](https://github.com/Artometrics/lineage).
 
+
+## Files and links
+
+- Host (may be retired): [https://lineage-waterloo.web.app](https://lineage-waterloo.web.app)
+- Drive folder: [https://drive.google.com/drive/folders/13jIB8WmZ9r1PZomNeP2MP9qJsQDhfant](https://drive.google.com/drive/folders/13jIB8WmZ9r1PZomNeP2MP9qJsQDhfant)
+- Source repo: [https://github.com/Artometrics/lineage](https://github.com/Artometrics/lineage)
+
 ## Sources
 
 - `Artometrics/lineage` README, `DEPLOY.md`, `public/index.html`, and `public/` listing, read 14 Nov 2026

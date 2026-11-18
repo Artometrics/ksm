@@ -66,11 +66,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
         href: "https://github.com/Artometrics/cardinal",
       },
     ],
-    heroImage: "/images/projects/cardinal/cardinal-hero.webp",
-    inlineImage: {
-      src: "/images/projects/cardinal/cardinal-inline-sign.webp",
-      alt: "Watercolor of a blank street-sign post at morning light on notebook paper.",
-    },
+    heroImage: "/images/projects/cardinal/banner.jpg",
     excerpts: [
       {
         date: "Oct 30, 2026",
@@ -133,11 +129,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
         href: "https://artometrics.com/legal/ethics-statement",
       },
     ],
-    heroImage: "/images/projects/artometrics/artometrics-hero.webp",
-    inlineImage: {
-      src: "/images/projects/artometrics/artometrics-inline-covers.webp",
-      alt: "Blank magazine stack with soft chart arcs on watercolor paper.",
-    },
+    heroImage: "/images/projects/artometrics/banner.jpg",
     excerpts: [
       {
         date: "Oct 30, 2026",
@@ -189,11 +181,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
         href: "https://github.com/Artometrics/pantheon",
       },
     ],
-    heroImage: "/images/projects/pantheon/pantheon-hero.webp",
-    inlineImage: {
-      src: "/images/projects/pantheon/pantheon-inline-select.webp",
-      alt: "Watercolor of a character-select screen with legend tiles on notebook paper.",
-    },
+    heroImage: "/images/projects/pantheon/banner.jpg",
     excerpts: [
       {
         date: "Oct 31, 2026",
@@ -259,11 +247,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
         href: "https://github.com/Artometrics/dawn",
       },
     ],
-    heroImage: "/images/projects/dawn/dawn-hero.webp",
-    inlineImage: {
-      src: "/images/projects/dawn/dawn-inline-agents.webp",
-      alt: "Three colorful cottage silhouettes for the agent cast at dusk.",
-    },
+    heroImage: "/images/projects/dawn/banner.jpg",
     excerpts: [
       {
         date: "Oct 31, 2026",
@@ -319,11 +303,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       href: "https://nightlight-510519.web.app",
     },
     secondaryLinks: [],
-    heroImage: "/images/projects/nightlight/nightlight-hero.webp",
-    inlineImage: {
-      src: "/images/projects/nightlight/nightlight-inline-beam.webp",
-      alt: "Soft flashlight beam on a twilight pine path toward a warm-window cabin.",
-    },
+    heroImage: "/images/projects/nightlight/banner.jpg",
     excerpts: [
       {
         date: "Oct 31, 2026",
@@ -384,11 +364,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
         href: "https://cardinal-510519.web.app",
       },
     ],
-    heroImage: "/images/projects/cardinal-quest/cardinal-quest-hero.webp",
-    inlineImage: {
-      src: "/images/projects/cardinal-quest/cardinal-quest-hero.webp",
-      alt: "Campus map with soft blank pins and colonnades.",
-    },
+    heroImage: "/images/projects/cardinal-quest/banner.jpg",
     excerpts: [
       {
         date: "Oct 31, 2026",
@@ -448,11 +424,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
         href: "https://docs.google.com/document/d/1uR1MuowaDaiNvRKk-q4uB1H5gdX45fAi--F5x6Tv0kk/edit",
       },
     ],
-    heroImage: "/images/projects/knightmare/knightmare-hero.webp",
-    inlineImage: {
-      src: "/images/projects/knightmare/knightmare-hero.webp",
-      alt: "Quiet kitchen doorway with steam and an abstract focus ring; soft morning light.",
-    },
+    heroImage: "/images/projects/knightmare/banner.jpg",
     excerpts: [
       {
         date: "Oct 29, 2026",
@@ -503,11 +475,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       href: "https://questroad-510519.web.app",
     },
     secondaryLinks: [],
-    heroImage: "/images/projects/questroad/questroad-hero.webp",
-    inlineImage: {
-      src: "/images/projects/questroad/questroad-hero.webp",
-      alt: "Winding road across soft hills with glowing quest dots and a blank compass rose.",
-    },
+    heroImage: "/images/projects/questroad/banner.jpg",
     excerpts: [
       {
         date: "Oct 25, 2026",
@@ -550,11 +518,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
         href: "https://ksm-510519.web.app",
       },
     ],
-    heroImage: "/images/projects/style-lab/style-lab-hero.webp",
-    inlineImage: {
-      src: "/images/projects/style-lab/style-lab-hero.webp",
-      alt: "Blank colorful swatch cards and soft fabric samples on notebook paper.",
-    },
+    heroImage: "/images/projects/style-lab/banner.jpg",
     excerpts: [
       {
         date: "Oct 21, 2026",
@@ -597,11 +561,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
         href: "https://github.com/Artometrics/ksm",
       },
     ],
-    heroImage: "/images/gallery/bw-hero-clean.jpg",
-    inlineImage: {
-      src: "/images/gallery/bw-hero-clean.jpg",
-      alt: "Studio notebook hero treatment on the KSM site.",
-    },
+    heroImage: "/images/projects/ksm/banner.jpg",
     excerpts: [
       {
         date: "2026",

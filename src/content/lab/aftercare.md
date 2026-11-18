@@ -8,6 +8,10 @@ tags:
   - Lab report
 author: "Kyle McAuliffe"
 ---
+<figure>
+<img src="/images/lab/aftercare/banner.jpg" alt="The Aftercare desk on Dawn, captured 17 November 2026.">
+<figcaption>The live Dawn desk at https://dawn.artometrics.com/aftercare, captured 17 November 2026 at 1280×800.</figcaption>
+</figure>
 
 Aftercare is astrology, tarot, and a journal. The README on `Artometrics/aftercare` calls it "soft guidance for your inner life." The repo was still readable on 14 Nov 2026. The archive index says not to delete it until a Dawn merge exists. The host named for the Astro app is [aftercare-510519.web.app](https://aftercare-510519.web.app). The Netlify app is [aftercare-artometrics.netlify.app](https://aftercare-artometrics.netlify.app).
 
@@ -46,6 +50,15 @@ Dawn, as a profile, in the archive plan. The repo was still separate on 14 Nov 2
 Folder: [Aftercare](https://drive.google.com/drive/folders/1dSMnzvf6H_tytYjdbTGnNj2m5HQvS_-0).
 
 The index says four files in the folder matched local sizes on 13 Nov 2026 at 8:29 PM PT. The repo itself is the fuller history: [Artometrics/aftercare](https://github.com/Artometrics/aftercare).
+
+
+## Files and links
+
+- Live on Dawn (Aftercare desk): [https://dawn.artometrics.com/aftercare](https://dawn.artometrics.com/aftercare)
+- Host (may be retired): [https://aftercare-510519.web.app](https://aftercare-510519.web.app)
+- Host (may be retired): [https://aftercare-artometrics.netlify.app](https://aftercare-artometrics.netlify.app)
+- Drive folder: [https://drive.google.com/drive/folders/1dSMnzvf6H_tytYjdbTGnNj2m5HQvS_-0](https://drive.google.com/drive/folders/1dSMnzvf6H_tytYjdbTGnNj2m5HQvS_-0)
+- Source repo: [https://github.com/Artometrics/aftercare](https://github.com/Artometrics/aftercare)
 
 ## Sources
 

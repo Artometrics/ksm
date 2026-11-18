@@ -82,7 +82,7 @@
   {
     "id": "gotha",
     "title": "Gotha",
-    "line": "Biographies of artifacts — a poem, a book, an object — and the real-world actions they connect to.",
+    "line": "Biographies of artifacts \u2014 a poem, a book, an object \u2014 and the real-world actions they connect to.",
     "year": "2026",
     "tags": [
       "Research",
@@ -150,7 +150,7 @@
   {
     "id": "osv",
     "title": "OSV",
-    "line": "Dark gothic magazine — essays, interviews, and cultural signal.",
+    "line": "Dark gothic magazine \u2014 essays, interviews, and cultural signal.",
     "year": "2026",
     "tags": [
       "Writing"
@@ -163,15 +163,16 @@
   {
     "id": "fernbound",
     "title": "Fernbound",
-    "line": "An original wildkin-binding story on The Fern Marches, played in the browser.",
+    "line": "A wildkin-binding game on The Fern Marches. Retired from Dawn on 17 Nov 2026; the lab report keeps the record.",
     "year": "2026",
     "tags": [
-      "Games"
+      "Games",
+      "Retired"
     ],
     "kind": "project",
-    "href": "https://dawn-510519.web.app/fernbound",
+    "href": "/lab/fernbound",
     "thumbnail": "/images/marks/games.svg",
-    "source": "https://dawn-510519.web.app/fernbound"
+    "source": "https://kylesmcauliffe.com/lab/fernbound"
   },
   {
     "id": "hoops",
@@ -215,7 +216,7 @@
   {
     "id": "intern-to-impact",
     "title": "Intern to Impact",
-    "line": "Career resources from Ariana Cirkelis — practical guides, real stories, and curated opportunities for young professionals.",
+    "line": "Career resources from Ariana Cirkelis \u2014 practical guides, real stories, and curated opportunities for young professionals.",
     "year": "2026",
     "tags": [
       "Writing"
@@ -228,7 +229,7 @@
   {
     "id": "ksm",
     "title": "KSM",
-    "line": "This studio notebook — projects, styles, and live links.",
+    "line": "This studio notebook \u2014 projects, writing, and lab reports.",
     "year": "2026",
     "tags": [
       "Apps"

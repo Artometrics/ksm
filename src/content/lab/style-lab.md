@@ -8,6 +8,10 @@ tags:
   - Lab report
 author: "Kyle McAuliffe"
 ---
+<figure>
+<img src="/images/projects/style-lab/banner.jpg" alt="Screenshot of style lab.">
+<figcaption>Capture of the current host, or a typographic stand-in when the public site is gone.</figcaption>
+</figure>
 
 Style Lab was a gallery for trying on the Artometrics visual system. Compare options, circle favorites, export Markdown or JSON. The box source is `/workspace/sl-dep`. There was no GitHub repo. The host was [stylelab-510519.web.app](https://stylelab-510519.web.app).
 
@@ -40,6 +44,14 @@ Retired. The index says the Firebase project delete was requested at 8:22 PM PT 
 Firestore dump: [stylelab-510519-firestore.json](https://drive.google.com/file/d/1zHw90Ym1tAbuz6NDy2_Q_imTHIdxNEPw/view) (SHA-256 `a57ee5adb763f7747acd9acf41d760a13b8149c400492605d2d8412545c5d512`).
 
 Folder: [Unlisted sites 2026-11-13](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw).
+
+
+## Files and links
+
+- Host (may be retired): [https://stylelab-510519.web.app](https://stylelab-510519.web.app)
+- Drive file: [https://drive.google.com/file/d/1RZNr5lHj0WxdFRl8f4NH_lnr_ONnn9jB/view](https://drive.google.com/file/d/1RZNr5lHj0WxdFRl8f4NH_lnr_ONnn9jB/view)
+- Drive file: [https://drive.google.com/file/d/1zHw90Ym1tAbuz6NDy2_Q_imTHIdxNEPw/view](https://drive.google.com/file/d/1zHw90Ym1tAbuz6NDy2_Q_imTHIdxNEPw/view)
+- Drive folder: [https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw)
 
 ## Sources
 

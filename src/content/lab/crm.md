@@ -39,6 +39,13 @@ The recorded destination is Dawn, as a contacts and pipeline desk. Dawn itself w
 
 Folder: [Unlisted sites 2026-11-13](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw).
 
+
+## Files and links
+
+- Host (may be retired): [https://crm-510519.web.app](https://crm-510519.web.app)
+- Drive file: [https://drive.google.com/file/d/1CRJwhCt20Zj7znBZ9r7321W7lqDudFXB/view](https://drive.google.com/file/d/1CRJwhCt20Zj7znBZ9r7321W7lqDudFXB/view)
+- Drive folder: [https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw)
+
 ## Sources
 
 - Artometrics Archive Index, CRM row

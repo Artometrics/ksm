@@ -100,9 +100,20 @@ The standalone Firebase site, `fernbound-510519`, already answers “Site Not Fo
 
 On 17 November 2026, Kyle asked to get rid of Fernbound: archive it completely, write the article, then take it out of Dawn. The retirement archive — source tree, Dawn git bundle, desktop and mobile screenshots of the landing, the play state, the Games tab, and the raw export, plus a short screen recording — is in [Box Archive Nov 17 / Fernbound](https://drive.google.com/drive/folders/1v7lZPg_ZyXas_j7hHVuZ5EJb_jiZdb0f).
 
-After that copy was verified, Fernbound was removed from Dawn’s route, sidebar, Games tab, preview list, and the published `/play/fernbound` export. `/fernbound` should no longer serve the desk. Dilemma and Towers remain on `/games`. The compiled original stays in Drive, and this report stays on the lab shelf.
+After that copy was verified, [Dawn PR #50](https://github.com/Artometrics/dawn/pull/50) removed Fernbound from the live desk — the route, sidebar, Games tab, preview list, and the published `/play/fernbound` export. At about 11:12 PM PT on 17 November 2026, `https://dawn.artometrics.com/fernbound` and `/play/fernbound/index.html` returned HTTP 404, with the same `X-Robots-Tag: noindex, nofollow` header as the rest of Dawn. Dilemma and Towers remain on `/games`. There was never a standalone GitHub repository to archive. The compiled original stays in Drive, and this report stays on the lab shelf.
 
 The earlier 13 November zips and README remain at [the original Fernbound Drive folder](https://drive.google.com/drive/folders/1xtMxmPjFzBpJqs45PllaseDVljyPsWFW). They are the first archive, not the retirement set.
+
+
+## Files and links
+
+- Lab report (this page): `/lab/fernbound`
+- Retirement archive (Drive): [Box Archive Nov 17 / Fernbound](https://drive.google.com/drive/folders/1v7lZPg_ZyXas_j7hHVuZ5EJb_jiZdb0f)
+- Earlier 13 November archive (Drive): [Fernbound folder](https://drive.google.com/drive/folders/1xtMxmPjFzBpJqs45PllaseDVljyPsWFW)
+- Dawn merge and boot-fix PRs: [#40](https://github.com/Artometrics/dawn/pull/40), [#45](https://github.com/Artometrics/dawn/pull/45), [#47](https://github.com/Artometrics/dawn/pull/47)
+- Removal PR: [Dawn #50](https://github.com/Artometrics/dawn/pull/50)
+- Former Dawn desk (now 404): `https://dawn.artometrics.com/fernbound`
+- Former standalone host (already Site Not Found): `https://fernbound-510519.web.app`
 
 ## Sources
 
@@ -112,3 +123,4 @@ The earlier 13 November zips and README remain at [the original Fernbound Drive 
 - 13 November 2026 archive README in the Fernbound Drive folder
 - Live captures of `https://dawn.artometrics.com/fernbound`, `/games`, and `/play/fernbound/index.html` on 17 November 2026, plus the box deploy tree at `/workspace/fernbound-deploy`
 - HTTP check of `https://fernbound-510519.web.app` on 17 November 2026, which returned Firebase’s “Site Not Found” page
+- HTTP check of `https://dawn.artometrics.com/fernbound` and `/play/fernbound/index.html` after PR #50 deployed, which returned 404 with noindex

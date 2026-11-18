@@ -213,10 +213,11 @@
   },
   {
     "title": "Fernbound",
-    "line": "An original wildkin-binding story on The Fern Marches, played in the browser.",
-    "href": "https://dawn-510519.web.app/fernbound",
+    "line": "A wildkin-binding game on The Fern Marches. Retired from Dawn on 17 Nov 2026; the lab report keeps the record.",
+    "href": "/lab/fernbound",
     "tags": [
-      "Games"
+      "Games",
+      "Retired"
     ],
     "kind": "project"
   },
@@ -258,7 +259,7 @@
   },
   {
     "title": "KSM",
-    "line": "This studio notebook — projects, styles, and live links.",
+    "line": "This studio notebook — projects, writing, and lab reports.",
     "href": "https://ksm-510519.web.app",
     "tags": [
       "Apps"

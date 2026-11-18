@@ -39,6 +39,13 @@ Retired. The index records the delete. It did not fold into Dawn, Bagel, or Pant
 
 Folder: [Unlisted sites 2026-11-13](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw).
 
+
+## Files and links
+
+- Host (may be retired): [https://storefront-510519.web.app](https://storefront-510519.web.app)
+- Drive file: [https://drive.google.com/file/d/1ohRZDZ0C6reI4fDzPGCTT8x0fz2pQ7C8/view](https://drive.google.com/file/d/1ohRZDZ0C6reI4fDzPGCTT8x0fz2pQ7C8/view)
+- Drive folder: [https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw)
+
 ## Sources
 
 - Artometrics Archive Index, both Storefront rows

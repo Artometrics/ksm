@@ -6,23 +6,33 @@ export type ProjectRecord = (typeof projectsJson)[number] & {
 
 /**
  * Raster files that exist under public/images.
+ * Covers are live-site screenshots (or typographic banners when a host is gone).
  * The mark SVGs are icons, not screenshots, so they are never used as covers.
- * The games report has no project art on file.
- * KSM uses this site's pixel sunset poster. The gallery portraits are people
- * and stay off the launcher.
  */
 const COVER_BY_ID: Record<string, string> = {
-  artometrics: "/images/projects/artometrics/artometrics-hero.webp",
-  cardinal: "/images/projects/cardinal/cardinal-hero.webp",
-  "cardinal-quest": "/images/projects/cardinal-quest/cardinal-quest-hero.webp",
-  dawn: "/images/projects/dawn/dawn-hero.webp",
-  knightmare: "/images/projects/knightmare/knightmare-hero.webp",
-  "lab-log": "/images/projects/artometrics/artometrics-inline-covers.webp",
-  nightlight: "/images/projects/nightlight/nightlight-hero.webp",
-  pantheon: "/images/projects/pantheon/pantheon-hero.webp",
-  questroad: "/images/projects/questroad/questroad-hero.webp",
-  "style-lab": "/images/projects/style-lab/style-lab-hero.webp",
-  ksm: "/images/pixel/poster-sunset.png",
+  artometrics: "/images/projects/artometrics/banner.jpg",
+  cardinal: "/images/projects/cardinal/banner.jpg",
+  "cardinal-quest": "/images/projects/cardinal-quest/banner.jpg",
+  dawn: "/images/projects/dawn/banner.jpg",
+  knightmare: "/images/projects/knightmare/banner.jpg",
+  "lab-log": "/images/projects/lab-log/banner.jpg",
+  nightlight: "/images/projects/nightlight/banner.jpg",
+  pantheon: "/images/projects/pantheon/banner.jpg",
+  questroad: "/images/projects/questroad/banner.jpg",
+  "style-lab": "/images/projects/style-lab/banner.jpg",
+  ksm: "/images/projects/ksm/banner.jpg",
+  games: "/images/projects/games/banner.jpg",
+  gotha: "/images/projects/gotha/banner.jpg",
+  academy: "/images/projects/academy/banner.jpg",
+  glossary: "/images/projects/glossary/banner.jpg",
+  dwts: "/images/projects/dwts/banner.jpg",
+  ballpark: "/images/projects/ballpark/banner.jpg",
+  osv: "/images/projects/osv/banner.jpg",
+  fernbound: "/images/projects/fernbound/banner.jpg",
+  hoops: "/images/projects/hoops/banner.jpg",
+  "hum-to-suno": "/images/projects/hum-to-suno/banner.jpg",
+  twilda: "/images/projects/twilda/banner.jpg",
+  "intern-to-impact": "/images/projects/intern-to-impact/banner.jpg",
 };
 
 /**
@@ -38,7 +48,6 @@ const PUBLIC_LAUNCH_URLS = new Set([
   "https://cardinal-510519.web.app",
   "https://pantheon-game-ksm.web.app",
   "https://dawn-510519.web.app",
-  "https://dawn-510519.web.app/fernbound",
   "https://gotha.artometrics.com",
   "https://academy.artometrics.com",
   "https://glossary.artometrics.com",

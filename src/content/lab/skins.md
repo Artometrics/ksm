@@ -41,6 +41,15 @@ Folder: [Skins](https://drive.google.com/drive/folders/12rvO8-4cTWHN-hE95UlnYW9j
 
 The index says three files matched local sizes on 13 Nov 2026 at 8:29 PM PT.
 
+
+## Files and links
+
+- Host (may be retired): [https://artometrics-skins-510519.web.app](https://artometrics-skins-510519.web.app)
+- Drive folder: [https://drive.google.com/drive/folders/12rvO8-4cTWHN-hE95UlnYW9jiLGLHD50](https://drive.google.com/drive/folders/12rvO8-4cTWHN-hE95UlnYW9jiLGLHD50)
+- Drive file: [https://drive.google.com/file/d/1trhygkIrrgE1_mb2k5aQmOoxtyCElFpM/view](https://drive.google.com/file/d/1trhygkIrrgE1_mb2k5aQmOoxtyCElFpM/view)
+- Drive file: [https://drive.google.com/file/d/1oXhNKMoQv0intxZLsfeOPx5_4cn9NThu/view](https://drive.google.com/file/d/1oXhNKMoQv0intxZLsfeOPx5_4cn9NThu/view)
+- Drive file: [https://drive.google.com/file/d/1EQsbH2-2-UROcBHgDb4KQpTIskYJlGRg/view](https://drive.google.com/file/d/1EQsbH2-2-UROcBHgDb4KQpTIskYJlGRg/view)
+
 ## Sources
 
 - Artometrics Archive Index, Skins row

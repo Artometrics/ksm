@@ -2,7 +2,6 @@ import { Pressable, Text, View } from "react-native";
 import { Link } from "expo-router";
 import { Wrapper } from "@/components/Wrapper";
 import { DeskSearch } from "@/components/DeskSearch";
-import { StylePicker } from "@/components/StylePicker";
 import { useChrome } from "@/lib/chrome";
 
 const NAV = [
@@ -45,7 +44,6 @@ export function SiteHeader() {
         </View>
         <View className="flex-row flex-wrap items-center gap-3">
           <DeskSearch />
-          <StylePicker />
         </View>
       </Wrapper>
     </View>

@@ -4,7 +4,7 @@ import {
   readNowPlaying,
   type NowPlaying,
 } from "@/lib/nowPlaying";
-import { isDisplayArt, isPublicLaunchUrl } from "@/lib/projects";
+import { isPublicLaunchUrl } from "@/lib/projects";
 
 export function NowPlayingBar() {
   const [entry, setEntry] = useState<NowPlaying | null>(null);
@@ -26,9 +26,6 @@ export function NowPlayingBar() {
 
   return (
     <div className="ksm-now-playing" role="region" aria-label="Now playing">
-      {isDisplayArt(entry.cover) ? (
-        <img className="ksm-now-playing-art" src={entry.cover} alt="" />
-      ) : null}
       <div className="ksm-now-playing-copy">
         <span className="ksm-now-playing-label">Now playing</span>
         <span className="ksm-now-playing-title">{entry.title}</span>

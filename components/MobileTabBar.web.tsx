@@ -1,7 +1,7 @@
 import { Pressable, Text, View } from "react-native";
 import { Link, usePathname } from "expo-router";
 import { SITE_TABS, isTabActive } from "@/lib/nav";
-import { NavPixelIcon } from "@/components/NavPixelIcon";
+import { NavIcon } from "@/components/NavIcon";
 
 export function MobileTabBar() {
   const pathname = usePathname();
@@ -24,7 +24,7 @@ export function MobileTabBar() {
               accessibilityRole="link"
               accessibilityState={{ selected: active }}
             >
-              <NavPixelIcon name={item.icon} />
+              <NavIcon name={item.icon} />
               <Text>{item.short ?? item.label}</Text>
             </Pressable>
           </Link>

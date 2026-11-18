@@ -1,9 +1,7 @@
 import { Pressable, Text, View } from "react-native";
 import { Link, usePathname } from "expo-router";
 import { DeskSearch } from "@/components/DeskSearch";
-import { StylePicker } from "@/components/StylePicker";
-import { CrtToggle } from "@/components/CrtToggle";
-import { NavPixelIcon } from "@/components/NavPixelIcon";
+import { NavIcon } from "@/components/NavIcon";
 import { SITE_TABS, isTabActive } from "@/lib/nav";
 
 function SideLinks() {
@@ -20,7 +18,7 @@ function SideLinks() {
               accessibilityRole="link"
               accessibilityState={{ selected: active }}
             >
-              <NavPixelIcon name={item.icon} />
+              <NavIcon name={item.icon} />
               <Text>{item.label}</Text>
             </Pressable>
           </Link>
@@ -40,8 +38,6 @@ export function SiteSidebarPanel() {
       </View>
       <View className="ksm-side-foot">
         <DeskSearch />
-        <StylePicker />
-        <CrtToggle />
       </View>
     </View>
   );

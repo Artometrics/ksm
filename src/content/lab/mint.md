@@ -44,6 +44,16 @@ Folder: [Mint](https://drive.google.com/drive/folders/17kKorqgcZYM-qtQzAM2BHRWQ9
 
 The index says three files matched local sizes on 13 Nov 2026 at 8:29 PM PT. The data-export file is newer (14 Nov 2026 in Drive) and was not part of that three-file check.
 
+
+## Files and links
+
+- Host (may be retired): [https://mint-510519.web.app](https://mint-510519.web.app)
+- Drive folder: [https://drive.google.com/drive/folders/17kKorqgcZYM-qtQzAM2BHRWQ9S0cYnSF](https://drive.google.com/drive/folders/17kKorqgcZYM-qtQzAM2BHRWQ9S0cYnSF)
+- Drive file: [https://drive.google.com/file/d/1XAW7cXcSD3I65ZE2ZFmNGEzXRrKkvArT/view](https://drive.google.com/file/d/1XAW7cXcSD3I65ZE2ZFmNGEzXRrKkvArT/view)
+- Drive file: [https://drive.google.com/file/d/1raGF1m0E2eUSE0i1iUb9rNydW2g35R-u/view](https://drive.google.com/file/d/1raGF1m0E2eUSE0i1iUb9rNydW2g35R-u/view)
+- Drive file: [https://drive.google.com/file/d/1yjrmNrcIpvfZgsGfqdPq4XgIk00nc_Rw/view](https://drive.google.com/file/d/1yjrmNrcIpvfZgsGfqdPq4XgIk00nc_Rw/view)
+- Drive file: [https://drive.google.com/file/d/1t7sbsQWip4Xi8h7H-ku2J3kjTinpd0Kl/view](https://drive.google.com/file/d/1t7sbsQWip4Xi8h7H-ku2J3kjTinpd0Kl/view)
+
 ## Sources
 
 - Artometrics Archive Index, Mint row
