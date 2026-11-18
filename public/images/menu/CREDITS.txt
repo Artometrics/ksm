@@ -1,0 +1,19 @@
+Public-domain paintings used as KSM menu tiles (Wikimedia Commons).
+
+projects  Johannes Vermeer, The Art of Painting, c. 1666–1668
+          https://commons.wikimedia.org/wiki/File:Jan_Vermeer_-_The_Art_of_Painting_-_Google_Art_Project.jpg
+
+journal   Jean-Honoré Fragonard, A Young Girl Reading, 1770
+          https://commons.wikimedia.org/wiki/File:Fragonard,_The_Reader.jpg
+
+lab       Joseph Wright of Derby, An Experiment on a Bird in an Air Pump, 1768
+          https://commons.wikimedia.org/wiki/File:An_Experiment_on_a_Bird_in_an_Air_Pump_by_Joseph_Wright_of_Derby,_1768.jpg
+
+archive   Domenico Remps, Cabinet of Curiosities, 1690s
+          https://commons.wikimedia.org/wiki/File:Cabinet_of_Curiosities_1690s_Domenico_Remps.jpg
+
+about     Caspar David Friedrich, Wanderer above the Sea of Fog, c. 1817
+          https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg
+
+art       Vincent van Gogh, The Starry Night, 1889
+          https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg

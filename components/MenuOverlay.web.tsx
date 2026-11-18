@@ -38,6 +38,7 @@ export function MenuOverlay() {
         aria-label="Close menu"
         onClick={() => setMenuOpen(false)}
       />
+      <div className="ksm-lava-grain" aria-hidden="true" />
       <div className="ksm-menu-panel">
         <div className="ksm-menu-head">
           <p className="ksm-wordmark ksm-wordmark--masthead">KSM</p>

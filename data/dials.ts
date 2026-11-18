@@ -10,12 +10,12 @@ export type Dial = {
 };
 
 export const SITE_DIALS: Dial[] = [
-  { id: "projects", title: "Projects", href: "/projects", group: "site", line: "The work" },
-  { id: "journal", title: "Journal", href: "/blog", group: "site", line: "Notes" },
-  { id: "lab", title: "Lab", href: "/lab", group: "site", line: "Lab reports" },
-  { id: "archive", title: "Archive", href: "/archive", group: "site", line: "The files" },
-  { id: "about", title: "About", href: "/about", group: "site", line: "Kyle" },
-  { id: "gallery", title: "Art", href: "/gallery", group: "site", line: "Pictures" },
+  { id: "projects", title: "Projects", href: "/projects", group: "site", line: "The work", art: "/images/menu/projects.jpg" },
+  { id: "journal", title: "Journal", href: "/blog", group: "site", line: "Notes", art: "/images/menu/journal.jpg" },
+  { id: "lab", title: "Lab", href: "/lab", group: "site", line: "Lab reports", art: "/images/menu/lab.jpg" },
+  { id: "archive", title: "Archive", href: "/archive", group: "site", line: "The files", art: "/images/menu/archive.jpg" },
+  { id: "about", title: "About", href: "/about", group: "site", line: "Kyle", art: "/images/menu/about.jpg" },
+  { id: "gallery", title: "Art", href: "/gallery", group: "site", line: "Pictures", art: "/images/menu/art.jpg" },
 ];
 
 export const PROJECT_DIALS: Dial[] = [
