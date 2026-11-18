@@ -1194,7 +1194,7 @@ html body .ksm-filters label span {
   overflow: auto;
   margin-top: 12px;
   padding: 16px 16px 20px;
-  background: #ffffff;
+  background: transparent;
   color: #111111;
   border: 1px solid #111111;
   box-shadow: 6px 6px 0 #111111;
@@ -1561,4 +1561,17 @@ html[data-theme="dark"] .ksm-filter-chip:has(input:checked) {
 html[data-theme="dark"] .ksm-tab:not(.is-active):not(.ksm-tab--center) {
   background: #111111 !important;
   color: #f4f1ea !important;
+}
+
+/* Keep the menu/search stage on the lava field in both themes. */
+.ksm-menu-panel,
+html[data-theme="dark"] .ksm-menu-panel {
+  background: transparent !important;
+  color: #111111 !important;
+  border-color: #111111 !important;
+  box-shadow: 6px 6px 0 #111111 !important;
+}
+html[data-theme="dark"] .ksm-menu-label,
+html[data-theme="dark"] .ksm-wordmark--masthead {
+  color: #111111 !important;
 }
