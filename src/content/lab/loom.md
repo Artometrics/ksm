@@ -39,6 +39,13 @@ Retired. The inventory's alternate was a later Dawn "YouTube cut" board. That me
 
 Folder: [Unlisted sites 2026-11-13](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw).
 
+
+## Files and links
+
+- Host (may be retired): [https://loom-510519.web.app](https://loom-510519.web.app)
+- Drive file: [https://drive.google.com/file/d/1YVshCnV0go12zgw1hIP2P3QMDHw-iy7I/view](https://drive.google.com/file/d/1YVshCnV0go12zgw1hIP2P3QMDHw-iy7I/view)
+- Drive folder: [https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw)
+
 ## Sources
 
 - Artometrics Archive Index, both Loom rows

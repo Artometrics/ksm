@@ -4,7 +4,10 @@
     "title": "Artometrics",
     "line": "Independent data journalism on culture, place, history, persona, and power.",
     "year": "2026",
-    "tags": ["Research", "Writing"],
+    "tags": [
+      "Research",
+      "Writing"
+    ],
     "kind": "project",
     "href": "https://artometrics.com",
     "thumbnail": "/images/marks/research.svg",
@@ -15,18 +18,23 @@
     "title": "Cardinal",
     "line": "The Stanford corridor, as a book and a public reading room.",
     "year": "2026",
-    "tags": ["Writing"],
+    "tags": [
+      "Writing",
+      "Books"
+    ],
     "kind": "project",
     "href": "https://cardinal-510519.web.app",
     "thumbnail": "/images/marks/writing.svg",
-    "source": "https://github.com/kylesmcauliffe/cardinal/blob/main/README.md"
+    "source": "https://github.com/Artometrics/cardinal/blob/main/README.md"
   },
   {
     "id": "pantheon",
     "title": "Pantheon",
     "line": "A historical 3D fighter you can play in the browser.",
     "year": "2026",
-    "tags": ["Games"],
+    "tags": [
+      "Games"
+    ],
     "kind": "project",
     "href": "https://pantheon-game-ksm.web.app",
     "thumbnail": "/images/marks/games.svg",
@@ -37,7 +45,10 @@
     "title": "Games",
     "line": "A public report on board-game ratings and popularity.",
     "year": "2026",
-    "tags": ["Research", "Games"],
+    "tags": [
+      "Research",
+      "Games"
+    ],
     "kind": "paper",
     "href": "https://artometrics.com/games",
     "thumbnail": "/images/marks/games.svg",
@@ -48,7 +59,9 @@
     "title": "Lab log",
     "line": "How Artometrics is made, plus a dated log.",
     "year": "2026",
-    "tags": ["Research"],
+    "tags": [
+      "Research"
+    ],
     "kind": "project",
     "href": "https://artometrics.com/lab-log",
     "thumbnail": "/images/marks/writing.svg",
@@ -59,76 +72,188 @@
     "title": "Dawn",
     "line": "A pixel-art village of agents, plus a studio for the Artometrics tools.",
     "year": "2026",
-    "tags": ["Apps"],
+    "tags": [
+      "Tools"
+    ],
     "kind": "project",
     "href": "https://dawn-510519.web.app",
     "thumbnail": "/images/marks/apps.svg",
     "source": "https://github.com/Artometrics/dawn/blob/main/README.md"
   },
   {
-    "id": "nightlight",
-    "title": "Nightlight",
-    "line": "Flashlight horror: walk to the radio cabin with only your beam.",
+    "id": "gotha",
+    "title": "Gotha",
+    "line": "Biographies of artifacts \u2014 a poem, a book, an object \u2014 and the real-world actions they connect to.",
     "year": "2026",
-    "tags": ["Games"],
+    "tags": [
+      "Research",
+      "Writing",
+      "Tools"
+    ],
     "kind": "project",
-    "href": "https://nightlight-510519.web.app",
-    "thumbnail": "/images/marks/games.svg",
-    "source": "https://github.com/Artometrics/nightlight/blob/main/README.md"
+    "href": "https://gotha.artometrics.com",
+    "thumbnail": "/images/marks/research.svg",
+    "source": "https://gotha.artometrics.com"
   },
   {
-    "id": "cardinal-quest",
-    "title": "Cardinal Quest",
-    "line": "Walk Stanford's map to unlock landmarks, history, and badges.",
+    "id": "academy",
+    "title": "Artometrics Academy",
+    "line": "Beginner guides to where art and science meet.",
     "year": "2026",
-    "tags": ["Games"],
+    "tags": [
+      "Research",
+      "Writing"
+    ],
     "kind": "project",
-    "href": "https://cardinal-quest-510519.web.app",
-    "thumbnail": "/images/marks/games.svg",
-    "source": "https://github.com/Artometrics/cardinal-quest/blob/main/README.md"
+    "href": "https://academy.artometrics.com",
+    "thumbnail": "/images/marks/writing.svg",
+    "source": "https://github.com/Artometrics/academy"
   },
   {
-    "id": "knightmare",
-    "title": "Knightmare",
-    "line": "Listen with your eyes — Tuning In from silence to clear speech.",
+    "id": "glossary",
+    "title": "Artometrics Glossary",
+    "line": "An encyclopedia and a style board: people, events and visual languages.",
     "year": "2026",
-    "tags": ["Games"],
+    "tags": [
+      "Research",
+      "Writing"
+    ],
     "kind": "project",
-    "href": "https://cursor.com/codebase/artometrics/knightmare",
-    "thumbnail": "/images/marks/games.svg",
-    "source": "https://cursor.com/codebase/artometrics/knightmare"
+    "href": "https://glossary.artometrics.com",
+    "thumbnail": "/images/marks/research.svg",
+    "source": "https://github.com/Artometrics/glossary"
   },
   {
-    "id": "questroad",
-    "title": "Questroad",
-    "line": "A Waze-style MMORPG adventure on the real map.",
+    "id": "dwts",
+    "title": "Data with the Stars",
+    "line": "Unofficial Dancing with the Stars fan stats: seasons, couples, scores, songs and judges.",
     "year": "2026",
-    "tags": ["Games"],
+    "tags": [
+      "Research"
+    ],
     "kind": "project",
-    "href": "https://questroad-510519.web.app",
-    "thumbnail": "/images/marks/games.svg",
-    "source": "https://github.com/Artometrics/questroad/blob/main/README.md"
+    "href": "https://dwts-510519.web.app",
+    "thumbnail": "/images/marks/research.svg",
+    "source": "https://github.com/Artometrics/data-with-the-stars"
   },
   {
-    "id": "style-lab",
-    "title": "Style Lab",
-    "line": "A hosted playground for visual recipes and skins.",
+    "id": "ballpark",
+    "title": "Ballpark",
+    "line": "Teams, venues, players and iconic moments across the major leagues, on one map.",
     "year": "2026",
-    "tags": ["Apps"],
+    "tags": [
+      "Research"
+    ],
     "kind": "project",
-    "href": "https://stylelab-510519.web.app",
+    "href": "https://ballpark-510519.web.app",
+    "thumbnail": "/images/marks/research.svg",
+    "source": "https://ballpark-510519.web.app"
+  },
+  {
+    "id": "osv",
+    "title": "OSV",
+    "line": "Dark gothic magazine \u2014 essays, interviews, and cultural signal.",
+    "year": "2026",
+    "tags": [
+      "Writing"
+    ],
+    "kind": "project",
+    "href": "https://osv-510519.web.app",
+    "thumbnail": "/images/marks/writing.svg",
+    "source": "https://osv-510519.web.app"
+  },
+  {
+    "id": "fernbound",
+    "title": "Fernbound",
+    "line": "A wildkin-binding game on The Fern Marches. Retired from Dawn on 17 Nov 2026; the lab report keeps the record.",
+    "year": "2026",
+    "tags": [
+      "Games",
+      "Retired"
+    ],
+    "kind": "project",
+    "href": "/lab/fernbound",
+    "thumbnail": "/images/marks/games.svg",
+    "source": "https://kylesmcauliffe.com/lab/fernbound"
+  },
+  {
+    "id": "hoops",
+    "title": "Hoops",
+    "line": "A toss game you can play in the browser.",
+    "year": "2026",
+    "tags": [
+      "Games"
+    ],
+    "kind": "project",
+    "href": "https://storm-toss.vercel.app",
+    "thumbnail": "/images/marks/games.svg",
+    "source": "https://storm-toss.vercel.app"
+  },
+  {
+    "id": "hum-to-suno",
+    "title": "Hum to Suno",
+    "line": "Hum a melody and get a prompt for Suno.",
+    "year": "2026",
+    "tags": [
+      "Tools"
+    ],
+    "kind": "project",
+    "href": "https://hum-to-suno.vercel.app",
     "thumbnail": "/images/marks/apps.svg",
-    "source": "https://stylelab-510519.web.app"
+    "source": "https://hum-to-suno.vercel.app"
+  },
+  {
+    "id": "twilda",
+    "title": "Twilda",
+    "line": "A writing-first, Git-friendly CMS for Astro websites.",
+    "year": "2026",
+    "tags": [
+      "Tools"
+    ],
+    "kind": "project",
+    "href": "https://twilda.com",
+    "thumbnail": "/images/marks/apps.svg",
+    "source": "https://github.com/Artometrics/twilda"
+  },
+  {
+    "id": "intern-to-impact",
+    "title": "Intern to Impact",
+    "line": "Career resources from Ariana Cirkelis \u2014 practical guides, real stories, and curated opportunities for young professionals.",
+    "year": "2026",
+    "tags": [
+      "Writing"
+    ],
+    "kind": "project",
+    "href": "https://interntoimpact-510519.web.app",
+    "thumbnail": "/images/marks/writing.svg",
+    "source": "https://interntoimpact-510519.web.app"
   },
   {
     "id": "ksm",
     "title": "KSM",
-    "line": "This studio notebook — projects, styles, and live links.",
+    "line": "This studio notebook \u2014 projects, writing, and lab reports.",
     "year": "2026",
-    "tags": ["Apps"],
+    "tags": [
+      "Tools"
+    ],
     "kind": "project",
     "href": "https://ksm-510519.web.app",
     "thumbnail": "/images/marks/apps.svg",
     "source": "https://github.com/Artometrics/ksm"
+  },
+  {
+    "id": "books",
+    "title": "Books",
+    "line": "PageMatch and the Books desk, now on Dawn.",
+    "year": "2026",
+    "tags": [
+      "Writing",
+      "Books"
+    ],
+    "kind": "project",
+    "href": "https://dawn.artometrics.com/books",
+    "thumbnail": "/images/marks/writing.svg",
+    "source": "https://github.com/Artometrics/carrie",
+    "cover": "/images/collectibles/books-still-life.jpg"
   }
 ]

@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
-import {
-  getDefaultNowPlaying,
-  readNowPlaying,
-  type NowPlaying,
-} from "@/lib/nowPlaying";
-import { isDisplayArt, isPublicLaunchUrl } from "@/lib/projects";
+import { readNowPlaying, type NowPlaying } from "@/lib/nowPlaying";
+import { isPublicLaunchUrl } from "@/lib/projects";
 
+type Playing = NowPlaying & { audioUrl?: string };
+
+/** Hidden unless something is actually playing audio. Nothing plays on the site today. */
 export function NowPlayingBar() {
-  const [entry, setEntry] = useState<NowPlaying | null>(null);
+  const [entry, setEntry] = useState<Playing | null>(null);
 
   useEffect(() => {
-    const sync = () => setEntry(readNowPlaying() ?? getDefaultNowPlaying());
+    const sync = () => {
+      const current = readNowPlaying() as Playing | null;
+      setEntry(current?.audioUrl ? current : null);
+    };
     sync();
     window.addEventListener("ksm-now-playing", sync);
     window.addEventListener("storage", sync);
@@ -20,28 +22,21 @@ export function NowPlayingBar() {
     };
   }, []);
 
-  if (!entry) return null;
+  if (!entry?.audioUrl) return null;
 
   const external = isPublicLaunchUrl(entry.href);
-
   return (
-    <div className="ksm-now-playing" role="region" aria-label="Now playing">
-      {isDisplayArt(entry.cover) ? (
-        <img className="ksm-now-playing-art" src={entry.cover} alt="" />
-      ) : null}
+    <a
+      className="ksm-now-playing"
+      href={entry.href}
+      aria-label={`Now playing: ${entry.title}`}
+      {...(external ? { target: "_blank" as const, rel: "noopener noreferrer" } : {})}
+    >
       <div className="ksm-now-playing-copy">
         <span className="ksm-now-playing-label">Now playing</span>
         <span className="ksm-now-playing-title">{entry.title}</span>
       </div>
-      <a
-        className="ksm-now-playing-open"
-        href={entry.href}
-        {...(external
-          ? { target: "_blank" as const, rel: "noopener noreferrer" }
-          : {})}
-      >
-        {external ? "Open" : "Story"}
-      </a>
-    </div>
+      <audio src={entry.audioUrl} autoPlay controls />
+    </a>
   );
 }

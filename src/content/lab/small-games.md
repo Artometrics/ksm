@@ -70,6 +70,22 @@ Each link is the Drive folder from the archive index. The index says the files i
 - [Godot game page](https://drive.google.com/drive/folders/1kGUV0AK0CO3Fcffof1ZyDPjCKZjXDCmV)
 - [Godot test](https://drive.google.com/drive/folders/1GoQd0osrLA3sMQC-Bey8AmfbeKe8XRmG)
 
+
+## Files and links
+
+- Drive folder: [https://drive.google.com/drive/folders/1aUzM6Nj6QCX1FbVrtSlqXo2Mylfgxac1](https://drive.google.com/drive/folders/1aUzM6Nj6QCX1FbVrtSlqXo2Mylfgxac1)
+- Drive file: [https://drive.google.com/file/d/1msK9uujx7V-tw5K5i7ZGkKxb-KrNyXXe/view](https://drive.google.com/file/d/1msK9uujx7V-tw5K5i7ZGkKxb-KrNyXXe/view)
+- Drive file: [https://drive.google.com/file/d/1jxZG05gfenjG3OQFrbrBsr_o5AEV-0pG/view](https://drive.google.com/file/d/1jxZG05gfenjG3OQFrbrBsr_o5AEV-0pG/view)
+- Drive folder: [https://drive.google.com/drive/folders/1ugpj1946MfvEp_1zpQwW8ErZJKh0f9VN](https://drive.google.com/drive/folders/1ugpj1946MfvEp_1zpQwW8ErZJKh0f9VN)
+- Drive folder: [https://drive.google.com/drive/folders/1o4S_O7xvWrCM_7__6xPJZJIuOyIU6C5f](https://drive.google.com/drive/folders/1o4S_O7xvWrCM_7__6xPJZJIuOyIU6C5f)
+- Drive folder: [https://drive.google.com/drive/folders/1dqPGnKW6PxP3JkKEHx0pa1auIfPlwQ_9](https://drive.google.com/drive/folders/1dqPGnKW6PxP3JkKEHx0pa1auIfPlwQ_9)
+- Drive folder: [https://drive.google.com/drive/folders/1aIRszIv6lmJXtiJo2OHFcHM5AIHxc531](https://drive.google.com/drive/folders/1aIRszIv6lmJXtiJo2OHFcHM5AIHxc531)
+- Drive folder: [https://drive.google.com/drive/folders/1N7j74cFb-l85G641xf2nQDqExrUES6ph](https://drive.google.com/drive/folders/1N7j74cFb-l85G641xf2nQDqExrUES6ph)
+- Drive folder: [https://drive.google.com/drive/folders/1QstnMgBPoVeTMacCfCGf1mpgshYCRmM8](https://drive.google.com/drive/folders/1QstnMgBPoVeTMacCfCGf1mpgshYCRmM8)
+- Drive folder: [https://drive.google.com/drive/folders/195wGn8hFuSG2O7l59Hi0l7mi3XhduoNJ](https://drive.google.com/drive/folders/195wGn8hFuSG2O7l59Hi0l7mi3XhduoNJ)
+- Drive folder: [https://drive.google.com/drive/folders/1kGUV0AK0CO3Fcffof1ZyDPjCKZjXDCmV](https://drive.google.com/drive/folders/1kGUV0AK0CO3Fcffof1ZyDPjCKZjXDCmV)
+- Drive folder: [https://drive.google.com/drive/folders/1GoQd0osrLA3sMQC-Bey8AmfbeKe8XRmG](https://drive.google.com/drive/folders/1GoQd0osrLA3sMQC-Bey8AmfbeKe8XRmG)
+
 ## Sources
 
 - Artometrics Archive Index, Games rows for 13 Nov 2026

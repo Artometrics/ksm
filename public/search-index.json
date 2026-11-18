@@ -113,7 +113,8 @@
     "line": "The Stanford corridor, as a book and a public reading room.",
     "href": "https://cardinal-510519.web.app",
     "tags": [
-      "Writing"
+      "Writing",
+      "Books"
     ],
     "kind": "project"
   },
@@ -150,61 +151,130 @@
     "line": "A pixel-art village of agents, plus a studio for the Artometrics tools.",
     "href": "https://dawn-510519.web.app",
     "tags": [
-      "Apps"
+      "Tools"
     ],
     "kind": "project"
   },
   {
-    "title": "Nightlight",
-    "line": "Flashlight horror: walk to the radio cabin with only your beam.",
-    "href": "https://nightlight-510519.web.app",
+    "title": "Gotha",
+    "line": "Biographies of artifacts — a poem, a book, an object — and the real-world actions they connect to.",
+    "href": "https://gotha.artometrics.com",
+    "tags": [
+      "Research",
+      "Writing",
+      "Tools"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Artometrics Academy",
+    "line": "Beginner guides to where art and science meet.",
+    "href": "https://academy.artometrics.com",
+    "tags": [
+      "Research",
+      "Writing"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Artometrics Glossary",
+    "line": "An encyclopedia and a style board: people, events and visual languages.",
+    "href": "https://glossary.artometrics.com",
+    "tags": [
+      "Research",
+      "Writing"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Data with the Stars",
+    "line": "Unofficial Dancing with the Stars fan stats: seasons, couples, scores, songs and judges.",
+    "href": "https://dwts-510519.web.app",
+    "tags": [
+      "Research"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Ballpark",
+    "line": "Teams, venues, players and iconic moments across the major leagues, on one map.",
+    "href": "https://ballpark-510519.web.app",
+    "tags": [
+      "Research"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "OSV",
+    "line": "Dark gothic magazine — essays, interviews, and cultural signal.",
+    "href": "https://osv-510519.web.app",
+    "tags": [
+      "Writing"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Fernbound",
+    "line": "A wildkin-binding game on The Fern Marches. Retired from Dawn on 17 Nov 2026; the lab report keeps the record.",
+    "href": "/lab/fernbound",
+    "tags": [
+      "Games",
+      "Retired"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Hoops",
+    "line": "A toss game you can play in the browser.",
+    "href": "https://storm-toss.vercel.app",
     "tags": [
       "Games"
     ],
     "kind": "project"
   },
   {
-    "title": "Cardinal Quest",
-    "line": "Walk Stanford's map to unlock landmarks, history, and badges.",
-    "href": "https://cardinal-quest-510519.web.app",
+    "title": "Hum to Suno",
+    "line": "Hum a melody and get a prompt for Suno.",
+    "href": "https://hum-to-suno.vercel.app",
     "tags": [
-      "Games"
+      "Tools"
     ],
     "kind": "project"
   },
   {
-    "title": "Knightmare",
-    "line": "Listen with your eyes — Tuning In from silence to clear speech.",
-    "href": "https://cursor.com/codebase/artometrics/knightmare",
+    "title": "Twilda",
+    "line": "A writing-first, Git-friendly CMS for Astro websites.",
+    "href": "https://twilda.com",
     "tags": [
-      "Games"
+      "Tools"
     ],
     "kind": "project"
   },
   {
-    "title": "Questroad",
-    "line": "A Waze-style MMORPG adventure on the real map.",
-    "href": "https://questroad-510519.web.app",
+    "title": "Intern to Impact",
+    "line": "Career resources from Ariana Cirkelis — practical guides, real stories, and curated opportunities for young professionals.",
+    "href": "https://interntoimpact-510519.web.app",
     "tags": [
-      "Games"
-    ],
-    "kind": "project"
-  },
-  {
-    "title": "Style Lab",
-    "line": "A hosted playground for visual recipes and skins.",
-    "href": "https://stylelab-510519.web.app",
-    "tags": [
-      "Apps"
+      "Writing"
     ],
     "kind": "project"
   },
   {
     "title": "KSM",
-    "line": "This studio notebook — projects, styles, and live links.",
+    "line": "This studio notebook — projects, writing, and lab reports.",
     "href": "https://ksm-510519.web.app",
     "tags": [
-      "Apps"
+      "Tools"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Books",
+    "line": "PageMatch and the Books desk, now on Dawn.",
+    "href": "https://dawn.artometrics.com/books",
+    "tags": [
+      "Writing",
+      "Books"
     ],
     "kind": "project"
   },

@@ -1,190 +1,149 @@
 import { Text, View } from "react-native";
-import { Image } from "expo-image";
 import { Link } from "expo-router";
 import type { ProjectPage } from "@/data/project-pages";
+import { getProjectEssay, type ProjectEssay } from "@/data/projectEssays";
+import { ImageCarousel } from "@/components/ImageCarousel";
 import { isPublicLaunchUrl } from "@/lib/projects";
 
-const ctaStyle = {
-  display: "inline-block" as const,
-  padding: "14px 22px",
-  backgroundColor: "var(--ink)",
-  color: "var(--cta-label, var(--paper))",
-  textDecoration: "none" as const,
-  fontFamily: "var(--sans)",
-  fontSize: 15,
-  fontWeight: 600,
-  border: "2px solid var(--rule)",
-  marginTop: 8,
-  marginBottom: 8,
-};
-
-const blockStyle = {
-  border: "1px solid var(--rule)",
-  backgroundColor: "var(--card)",
-  padding: 16,
-  marginBottom: 12,
-};
-
-export function ProjectConceptPage({ page }: { page: ProjectPage }) {
-  const heroUri = page.heroImage?.trim();
-  const inline = page.inlineImage?.src?.trim()
-    ? page.inlineImage
-    : undefined;
-
+function Links({
+  cta,
+  links,
+}: {
+  cta?: { label: string; href: string };
+  links?: { label: string; href: string }[];
+}) {
+  const all = [
+    cta && isPublicLaunchUrl(cta.href) ? cta : null,
+    ...(links ?? []),
+  ].filter(Boolean) as { label: string; href: string }[];
+  if (!all.length) return null;
   return (
-    <>
-      <View
-        className="relative w-full overflow-hidden"
-        style={{
-          borderBottomWidth: 2,
-          borderColor: "var(--rule)",
-          minHeight: heroUri ? 220 : 0,
-          backgroundColor: "var(--card)",
-        }}
-      >
-        {heroUri ? (
-          <Image
-            source={{ uri: heroUri }}
-            style={{ width: "100%", height: 280, maxHeight: "42vh" }}
-            contentFit="cover"
-            accessibilityLabel={`${page.title} concept art`}
-          />
-        ) : null}
-        <View
-          style={{
-            position: heroUri ? "absolute" : "relative",
-            inset: heroUri ? 0 : undefined,
-            backgroundColor: heroUri ? "rgba(0,0,0,0.35)" : "transparent",
-          }}
-        />
-        <View
-          style={{
-            position: heroUri ? "absolute" : "relative",
-            bottom: heroUri ? 0 : undefined,
-            left: 0,
-            right: 0,
-            padding: 20,
-            maxWidth: 680,
-          }}
-        >
-          <Text
-            className="ksm-kicker"
-            style={{ color: heroUri ? "#F6F1E7" : "var(--accent)" }}
-          >
-            Concept book
-          </Text>
-          <Text
-            accessibilityRole="header"
-            className="ksm-headline"
-            style={{
-              color: heroUri ? "#F6F1E7" : "var(--ink)",
-              fontSize: 32,
-            }}
-          >
-            {page.title}
-          </Text>
-          <Text
-            className="ksm-lede"
-            style={{
-              color: heroUri ? "#F6F1E7" : "var(--muted)",
-              opacity: heroUri ? 0.92 : 1,
-            }}
-          >
-            {page.tagline}
-          </Text>
-        </View>
-      </View>
-
-      <View
-        className="ksm-copy gap-4 py-8"
-        style={{ maxWidth: 680, alignSelf: "center", width: "100%", paddingHorizontal: 20 }}
-      >
-        {isPublicLaunchUrl(page.primaryCta.href) ? (
-          <a href={page.primaryCta.href} style={ctaStyle} target="_blank" rel="noopener noreferrer">
-            {page.primaryCta.label}
-          </a>
-        ) : (
-          <p className="ksm-lede">No public play link yet. This build is not hosted.</p>
-        )}
-
-        <View className="ksm-prose gap-3">
-          {page.overview.map((paragraph) => (
-            <Text key={paragraph.slice(0, 40)} className="ksm-lede" style={{ maxWidth: "100%" }}>
-              {paragraph}
-            </Text>
-          ))}
-        </View>
-
-        {inline ? (
-          <figure style={{ marginVertical: 16 }}>
-            <Image
-              source={{ uri: inline.src }}
-              style={{ width: "100%", height: 240, borderWidth: 1, borderColor: "var(--rule)" }}
-              contentFit="cover"
-              accessibilityLabel={inline.alt}
-            />
-            {inline.caption ? (
-              <Text className="ksm-fine" style={{ marginTop: 8 }}>
-                {inline.caption}
-              </Text>
-            ) : null}
-          </figure>
-        ) : null}
-
-        <Text accessibilityRole="header" className="ksm-section">
-          What&apos;s built
-        </Text>
-        <View style={blockStyle}>
-          {page.builtSoFar.map((item) => (
-            <Text key={item.slice(0, 48)} className="ksm-fine" style={{ marginBottom: 8, lineHeight: 20 }}>
-              · {item}
-            </Text>
-          ))}
-        </View>
-
-        <Text accessibilityRole="header" className="ksm-section">
-          Status
-        </Text>
-        <Text className="ksm-lede">{page.status}</Text>
-
-        <Text accessibilityRole="header" className="ksm-section">
-          Sourced notes
-        </Text>
-        <View className="gap-3">
-          {page.excerpts.map((excerpt) => (
-            <View key={`${excerpt.date}-${excerpt.source}`} style={blockStyle}>
-              <Text className="ksm-kicker">{excerpt.date}</Text>
-              <Text className="ksm-fine" style={{ marginBottom: 8 }}>
-                Source:{" "}
-              </Text>
-              {excerpt.sourceHref ? (
-                <a className="ksm-nav" href={excerpt.sourceHref} target="_blank" rel="noopener noreferrer">
-                  {excerpt.source}
-                </a>
-              ) : (
-                <Text className="ksm-fine">{excerpt.source}</Text>
-              )}
-              <Text className="ksm-lede" style={{ fontSize: 15 }}>
-                {excerpt.text}
-              </Text>
-            </View>
-          ))}
-        </View>
-
-        <View className="flex-row flex-wrap gap-3" style={{ marginTop: 8 }}>
-          {page.secondaryLinks.map((link) => (
-            <a key={link.href} className="ksm-nav" href={link.href} target="_blank" rel="noopener noreferrer">
+    <div className="ksm-files">
+      <h2 className="ksm-section">Files and links</h2>
+      <ul>
+        {all.map((link) => (
+          <li key={link.href}>
+            <a
+              href={link.href}
+              {...(/^[a-z]+:/i.test(link.href)
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
               {link.label}
             </a>
-          ))}
-        </View>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
-        <View style={{ marginTop: 24, paddingTop: 16, borderTopWidth: 1, borderColor: "var(--rule)" }}>
-          <Link href="/projects">
-            <Text className="ksm-nav">← All projects</Text>
-          </Link>
-        </View>
-      </View>
-    </>
+function EssayView({ essay }: { essay: ProjectEssay }) {
+  return (
+    <article className="ksm-essay">
+      <header className="ksm-essay-head">
+        <p className="ksm-kicker">Project</p>
+        <h1 className="ksm-headline ksm-article-title">{essay.title}</h1>
+        <p className="ksm-lede">{essay.tagline}</p>
+        {essay.primaryCta && isPublicLaunchUrl(essay.primaryCta.href) ? (
+          <a
+            className="ksm-essay-cta"
+            href={essay.primaryCta.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {essay.primaryCta.label}
+          </a>
+        ) : null}
+      </header>
+
+      {essay.gallery?.length ? <ImageCarousel slides={essay.gallery} /> : null}
+
+      {essay.sections.map((section) => (
+        <section key={section.title} className="ksm-essay-section">
+          <h2 className="ksm-section">{section.title}</h2>
+          {section.gallery?.length ? <ImageCarousel slides={section.gallery} /> : null}
+          {section.paragraphs.map((paragraph, i) => (
+            <p key={`${section.title}-${i}`} className="ksm-essay-p">
+              {paragraph}
+            </p>
+          ))}
+          {section.books?.length ? (
+            <ol className="ksm-book-series">
+              {section.books.map((book) => (
+                <li key={book.title}>
+                  <strong>
+                    {book.volume ? `${book.volume} — ${book.title}` : book.title}
+                  </strong>
+                  {book.hook ? <span className="ksm-book-hook">{book.hook}</span> : null}
+                </li>
+              ))}
+            </ol>
+          ) : null}
+        </section>
+      ))}
+
+      <Links cta={essay.primaryCta} links={essay.links} />
+
+      {essay.sources.length ? (
+        <section className="ksm-essay-section">
+          <h2 className="ksm-section">Sources</h2>
+          <ul className="ksm-essay-sources">
+            {essay.sources.map((source) => (
+              <li key={source.label}>
+                {source.date ? <span className="ksm-card-year">{source.date}</span> : null}{" "}
+                {source.href ? (
+                  <a href={source.href} {...(/^[a-z]+:/i.test(source.href) ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                    {source.label}
+                  </a>
+                ) : (
+                  source.label
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      <p className="ksm-essay-back">
+        <Link href="/projects">
+          <Text className="ksm-nav">← All projects</Text>
+        </Link>
+      </p>
+    </article>
+  );
+}
+
+export function ProjectConceptPage({
+  page,
+  slug,
+}: {
+  page?: ProjectPage;
+  slug?: string;
+}) {
+  const essay = getProjectEssay(slug ?? page?.slug ?? "");
+  if (essay) return <EssayView essay={essay} />;
+  if (!page) return null;
+
+  return (
+    <View className="ksm-copy gap-4 py-8" style={{ maxWidth: 720, alignSelf: "center", width: "100%", paddingHorizontal: 20 }}>
+      {page.heroImage ? (
+        <img className="ksm-banner" src={page.heroImage} alt={`Picture from ${page.title}`} />
+      ) : null}
+      <Text className="ksm-kicker">Project</Text>
+      <Text accessibilityRole="header" className="ksm-headline ksm-article-title">
+        {page.title}
+      </Text>
+      <Text className="ksm-lede">{page.tagline}</Text>
+      {page.overview.map((paragraph) => (
+        <Text key={paragraph.slice(0, 40)} className="ksm-essay-p">
+          {paragraph}
+        </Text>
+      ))}
+      <Links cta={page.primaryCta} links={page.secondaryLinks} />
+      <Link href="/projects">
+        <Text className="ksm-nav">← All projects</Text>
+      </Link>
+    </View>
   );
 }

@@ -8,6 +8,10 @@ tags:
   - Lab report
 author: "Kyle McAuliffe"
 ---
+<figure>
+<img src="/images/lab/carrie/banner.jpg" alt="The Carrie desk on Dawn, captured 17 November 2026.">
+<figcaption>The live Dawn desk at https://dawn.artometrics.com/books, captured 17 November 2026 at 1280×800.</figcaption>
+</figure>
 
 Carrie is a web suite Carrie made, hosted as three Firebase sites in the Artometrics org. The README on `Artometrics/carrie` names them: PageMatch at [carrie-books.web.app](https://carrie-books.web.app), PawCert Studio at [carrie-pets.web.app](https://carrie-pets.web.app), and a portal at [carrie-510519.web.app](https://carrie-510519.web.app). The repo was still readable on 14 Nov 2026. The latest commit on main that day, `a7345400`, adds `noindex` for all three sites (an `X-Robots-Tag` header and `robots.txt`).
 
@@ -48,6 +52,16 @@ Books into Dawn, pets into Bagel, as the recorded plan. On 14 Nov 2026 a code se
 Folder: [Carrie](https://drive.google.com/drive/folders/1W4tnGH_653YJboRw-yIUf28LRnO2l475).
 
 The index says four files matched local sizes on 13 Nov 2026 at 8:29 PM PT, and that `Artometrics--carrie.bundle` in the GitHub remainder set covers the repo again. The live repo is [Artometrics/carrie](https://github.com/Artometrics/carrie).
+
+
+## Files and links
+
+- Live on Dawn (Books desk): [https://dawn.artometrics.com/books](https://dawn.artometrics.com/books)
+- Host (may be retired): [https://carrie-books.web.app](https://carrie-books.web.app)
+- Host (may be retired): [https://carrie-pets.web.app](https://carrie-pets.web.app)
+- Host (may be retired): [https://carrie-510519.web.app](https://carrie-510519.web.app)
+- Drive folder: [https://drive.google.com/drive/folders/1W4tnGH_653YJboRw-yIUf28LRnO2l475](https://drive.google.com/drive/folders/1W4tnGH_653YJboRw-yIUf28LRnO2l475)
+- Source repo: [https://github.com/Artometrics/carrie](https://github.com/Artometrics/carrie)
 
 ## Sources
 

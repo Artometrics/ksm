@@ -1,7 +1,9 @@
 import { Link, useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
 import { ArticleBody } from "@/components/ArticleBody";
+import { ImageCarousel } from "@/components/ImageCarousel";
 import { formatAuthorName, formatDate, getLabReport, getLabReports } from "@/lib/content";
+import { labCoverSrc, labShots } from "@/lib/labMedia";
 import { paramString } from "@/lib/params";
 
 export async function generateStaticParams() {
@@ -33,6 +35,7 @@ export default function LabReportScreen() {
   const author = report.author
     ? formatAuthorName(String(report.author))
     : "Kyle McAuliffe";
+  const shots = labShots(report.slug);
 
   return (
     <>
@@ -47,14 +50,19 @@ export default function LabReportScreen() {
       <div className="ksm-page-sheet ksm-journal">
         <header className="ksm-journal-head">
           <p className="ksm-note-meta">
-            <Link href="/lab">Lab reports</Link>
+            <Link href="/lab">Lab</Link>
             {report.disposition ? ` · ${report.disposition}` : ""}
             {report.pubDate ? ` · ${formatDate(report.pubDate)}` : ""}
             {` · ${author}`}
           </p>
           <h1 className="ksm-headline ksm-sheet-title ksm-article-title">{report.title}</h1>
-          {report.description ? <p className="ksm-lede">{report.description}</p> : null}
         </header>
+        <img
+          className="ksm-ticket-hero"
+          src={labCoverSrc(report.slug)}
+          alt=""
+        />
+        {shots.length ? <ImageCarousel slides={shots} /> : null}
         <ArticleBody html={report.body} />
         <p className="ksm-lede">
           <Link href="/lab">All lab reports</Link>

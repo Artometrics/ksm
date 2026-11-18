@@ -1,0 +1,1791 @@
+/* KSM app skin — black and white, serif body, monospace titles.
+   Feels like artometrics.com (hard edges, mono kickers, 4px offset)
+   without the color system or the style switcher. */
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("/fonts/dm-mono-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Mono";
+  src: url("/fonts/dm-mono-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/source-serif-4-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/source-serif-4-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root,
+html {
+  --paper: #ffffff;
+  --ink: #111111;
+  --muted: #444444;
+  --rule: #111111;
+  --card: #ffffff;
+  --accent: #111111;
+  --cta-label: #ffffff;
+  --serif: "Source Serif 4", "Iowan Old Style", Palatino, Georgia, "Times New Roman", serif;
+  --sans: "Source Serif 4", "Iowan Old Style", Palatino, Georgia, serif;
+  --mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display: "DM Mono", ui-monospace, Menlo, monospace;
+  --shadow: 4px 4px 0 #111111;
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  background: #ffffff !important;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+body,
+#root,
+#root div {
+  background-color: transparent;
+}
+
+.ksm-page,
+.ksm-frame,
+.ksm-main {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+/* Decorative landscape and the style switcher are gone. */
+.pixel-world {
+  display: none !important;
+}
+
+.ksm-headline,
+.ksm-wordmark,
+.ksm-section,
+.ksm-home-title,
+.ksm-cv-name,
+.ksm-play-title,
+.ksm-shelf-title,
+.ksm-home-picked-title,
+.ksm-card-title,
+.ksm-utility-title,
+.ksm-home-section-title,
+.ksm-sheet-title,
+.ksm-article-title,
+.ksm-home-read-title,
+.ksm-cv-section h2,
+.ksm-about-group-title,
+.ksm-about-row-title,
+.ksm-note h3 {
+  font-family: var(--mono) !important;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  color: var(--ink);
+  max-width: none;
+  text-transform: none;
+  image-rendering: auto;
+}
+
+.ksm-wordmark {
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ksm-headline,
+.ksm-article-title,
+.ksm-sheet-title,
+.ksm-home-title,
+.ksm-cv-name {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+/* Always show the article title (the old desktop rule hid .ksm-sheet-title). */
+.ksm-article-title,
+.ksm-journal-head .ksm-article-title,
+.ksm-journal-head .ksm-headline,
+.ksm-journal-head .ksm-sheet-title {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  clip: auto !important;
+  position: static !important;
+}
+
+.ksm-kicker,
+.ksm-nav,
+.ksm-note-meta,
+.ksm-tab,
+.ksm-side-link,
+.ksm-now-playing-label,
+.ksm-home-cat-label,
+.ksm-filter-btn,
+.ksm-sheet-back,
+.ksm-home-play-btn,
+.ksm-shelf-launch,
+.ksm-now-playing-open {
+  font-family: var(--mono) !important;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.ksm-lede,
+.ksm-fine,
+.ksm-card-line,
+.ksm-prose,
+.ksm-prose p,
+.ksm-prose li,
+.ksm-about-row-line,
+.ksm-note p,
+.ksm-cv-lede,
+.ksm-cv-section p,
+.ksm-home-picked-line,
+.ksm-shelf-line,
+.ksm-play-body,
+.ksm-home-read-line,
+.ksm-home-update p {
+  font-family: var(--serif) !important;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 100%;
+}
+
+.ksm-prose {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.ksm-prose img,
+.ksm-prose video,
+.ksm-prose iframe,
+.ksm-article-hero img,
+.ksm-article-hero-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ksm-prose pre,
+.ksm-prose table,
+.ksm-prose code {
+  max-width: 100%;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.ksm-article-hero {
+  background: #f4f4f4;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ksm-article-hero-img {
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: top center;
+  background: #f4f4f4;
+}
+
+/* Chrome */
+.ksm-side {
+  background: #ffffff;
+  border-right: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+.ksm-side-link,
+.ksm-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+}
+
+.ksm-side-link.is-active,
+.ksm-tab.is-active {
+  background: #111111;
+  color: #ffffff;
+}
+
+.ksm-side-link svg,
+.ksm-tab svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  stroke: currentColor;
+}
+
+.ksm-tabs {
+  background: #ffffff;
+  border-top: 1px solid var(--rule);
+}
+
+.ksm-now-playing {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  color: var(--ink);
+  border-top: 1px solid var(--rule);
+  padding: 8px 14px;
+}
+
+.ksm-now-playing-art {
+  display: none !important;
+}
+
+.ksm-now-playing-title {
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.ksm-now-playing-open {
+  margin-left: auto;
+  border: 1px solid var(--rule);
+  padding: 4px 8px;
+  text-decoration: none;
+}
+
+.ksm-search input,
+.ksm-home-search input,
+.ksm-archive-search input,
+.ksm-utility-search input {
+  font-family: var(--mono);
+  font-size: 13px;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+/* Cards and project banners */
+.ksm-card,
+.ksm-project-card,
+.ksm-play-card,
+.ksm-shelf-card,
+.ksm-home-picked,
+.ksm-home-update,
+.ksm-journal-box,
+.ksm-note,
+.ksm-archive-card,
+.ksm-about-row,
+.ksm-sheet,
+.ksm-page-sheet {
+  background: #ffffff;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  box-shadow: var(--shadow);
+}
+
+.ksm-page-sheet,
+.ksm-sheet,
+.ksm-journal {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  box-shadow: none;
+  border: 0;
+}
+
+.ksm-project-cover,
+.ksm-launcher-cover--hero,
+.ksm-play-art,
+.ksm-shelf-art,
+.ksm-home-picked-art,
+.ksm-home-read-art,
+.ksm-archive-hero,
+.ksm-home-cat-art {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: top center;
+  background: #f4f4f4;
+  border-bottom: 1px solid var(--rule);
+  image-rendering: auto;
+}
+
+/* Category tiles are restyled in the chrome polish block at the end of this file. */
+
+.ksm-home-cat--games,
+.ksm-home-cat--books,
+.ksm-home-cat--magazine,
+.ksm-home-cat--apps,
+.ksm-home-cat--art,
+.ksm-home-cat--archive,
+.ksm-home-cat--text {
+  background: #ffffff !important;
+}
+
+a {
+  color: var(--ink);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+button,
+.ksm-home-play-btn,
+.ksm-shelf-launch,
+.ksm-filter-btn,
+.ksm-archive-download {
+  font-family: var(--mono);
+  border-radius: 0;
+  border: 1px solid var(--rule);
+  background: #ffffff;
+  color: var(--ink);
+  box-shadow: none;
+}
+
+.ksm-home-play-btn,
+.ksm-shelf-launch,
+a.ksm-nav[href]:not(.ksm-side-link) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* CTA blocks from project pages */
+.ksm-copy a[style],
+a[style*="backgroundColor"] {
+  box-shadow: var(--shadow);
+}
+
+/* Mobile tools row no longer needs room for the style picker. */
+.ksm-mobile-tools {
+  padding: 10px 12px !important;
+}
+
+@media (max-width: 1023px) {
+  .ksm-page-sheet,
+  .ksm-sheet,
+  .ksm-journal,
+  .ksm-copy {
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 100%;
+  }
+
+  .ksm-headline,
+  .ksm-article-title,
+  .ksm-sheet-title {
+    font-size: 1.5rem;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Files & links block used in lab reports and project pages */
+.ksm-files {
+  margin: 1.75rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+
+.ksm-files h2,
+.ksm-files .ksm-section {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ksm-files ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ksm-files li {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.5;
+  margin: 0 0 0.4rem;
+  overflow-wrap: anywhere;
+}
+
+.ksm-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: top center;
+  background: #f4f4f4;
+  border: 1px solid var(--rule);
+  margin: 0 0 1.25rem;
+}
+
+/* Project cards use <span>s; those used to be display:block only inside a style skin. */
+.ksm-project-card,
+.ksm-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 0 !important;
+  padding: 0;
+}
+
+.ksm-card-year,
+.ksm-card-title,
+.ksm-card-line,
+.ksm-card-tags {
+  display: block;
+  padding: 0 14px;
+  overflow-wrap: anywhere;
+}
+
+.ksm-card-year {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.ksm-card-title {
+  font-family: var(--mono) !important;
+  font-size: 1.05rem !important;
+  margin: 6px 0 0;
+  line-height: 1.25;
+}
+
+.ksm-card-line {
+  margin: 6px 0 0;
+  color: var(--ink);
+}
+
+.ksm-card-tags {
+  margin: 6px 0 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Hard edges, like artometrics.com. Do not hide real buttons. */
+.ksm-home-cat,
+.ksm-play-card,
+.ksm-shelf-card,
+.ksm-project-cover,
+.ksm-search input,
+.ksm-home-search input,
+.ksm-archive-search input,
+button,
+.ksm-pixel-btn {
+  border-radius: 0 !important;
+}
+
+/* CRT / style-picker only — .ksm-pixel-btn is also the sheet close button. */
+.ksm-picker,
+.ksm-picker-btn {
+  display: none !important;
+}
+
+.ksm-pixel-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  margin-top: 12px;
+  background: #fff;
+  color: #111;
+  border: 1px solid #111;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+/* ---------- Chrome polish: tiles, chips, tab bar, now playing ---------- */
+
+.ksm-home {
+  gap: 28px;
+  padding: 8px 16px 24px;
+  max-width: 1100px;
+}
+
+.ksm-home-cat-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+@media (min-width: 720px) {
+  .ksm-home-cat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+@media (min-width: 1180px) {
+  .ksm-home-cat-grid { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+}
+
+.ksm-home-cat,
+.ksm-home-cat--games,
+.ksm-home-cat--books,
+.ksm-home-cat--magazine,
+.ksm-home-cat--apps,
+.ksm-home-cat--art,
+.ksm-home-cat--archive,
+.ksm-home-cat--text {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  background: #ffffff !important;
+  color: #111111 !important;
+  border: 1px solid #111111 !important;
+  box-shadow: 4px 4px 0 #111111 !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+}
+
+.ksm-home-cat-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background: #f4f4f4;
+  border-bottom: 1px solid #111111;
+  color: #111111;
+}
+
+.ksm-home-cat-art {
+  display: block !important;
+  position: static !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  transform: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  background: #f4f4f4 !important;
+}
+
+.ksm-home-cat-label {
+  display: block;
+  position: static !important;
+  z-index: auto;
+  max-width: none !important;
+  margin: 0;
+  padding: 10px 8px;
+  text-align: center;
+  font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #111111 !important;
+}
+
+/* Featured / picked — keep the screenshot, even spacing */
+.ksm-home-picked {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  background: #fff;
+  overflow: hidden;
+}
+@media (min-width: 800px) {
+  .ksm-home-picked { grid-template-columns: 1.2fr 1fr; }
+}
+.ksm-home-picked-media { display: block; background: #f4f4f4; }
+.ksm-home-picked-art {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top center;
+}
+.ksm-home-picked-copy { padding: 16px 18px 20px; }
+
+/* Project filter chips */
+.ksm-filters {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  gap: 8px !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 2px 0 10px;
+  margin: 0 0 8px;
+}
+.ksm-filters::-webkit-scrollbar { display: none; }
+
+.ksm-filter-chip {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  cursor: pointer;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid #111111 !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+  font-size: 12px !important;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: none !important;
+  outline: none !important;
+  box-sizing: border-box;
+}
+
+.ksm-filter-chip input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* The label is the only pill. The inner span must not draw a second outline. */
+.ksm-filter-chip span,
+.ksm-filters label span,
+html body .ksm-filters label span {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  color: inherit !important;
+  font: inherit !important;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  white-space: inherit;
+}
+
+.ksm-filter-chip:has(input:checked),
+.ksm-filters label:has(input:checked) {
+  background: #111111 !important;
+  color: #ffffff !important;
+  border-color: #111111 !important;
+}
+
+.ksm-filters:has(#filter-games:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="games"]),
+.ksm-filters:has(#filter-writing:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="writing"]):not([data-tags~="books"]),
+.ksm-filters:has(#filter-research:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="research"]),
+.ksm-filters:has(#filter-tools:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="tools"]):not([data-tags~="apps"]),
+.ksm-filters:has(#filter-art:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="art"]) {
+  display: none !important;
+}
+
+.ksm-empty-art { display: none; }
+.ksm-filters:has(#filter-art:checked) ~ .ksm-empty-art {
+  display: block;
+  font-family: "Source Serif 4", Georgia, serif;
+  padding: 8px 0 16px;
+}
+
+/* Five equal-width tab blocks */
+@media (max-width: 1023px) {
+  .ksm-tabs {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: stretch !important;
+    gap: 0 !important;
+    padding: 0 0 env(safe-area-inset-bottom, 0px) !important;
+    background: #ffffff !important;
+    border-top: 1px solid #111111 !important;
+    box-shadow: none !important;
+  }
+  .ksm-tab,
+  .ksm-tab--home {
+    position: relative !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    height: 56px !important;
+    margin: 0 !important;
+    padding: 8px 2px 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    border: 0 !important;
+    border-right: 1px solid #111111 !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+  .ksm-tab:last-child { border-right: 0 !important; }
+  .ksm-tab svg,
+  .ksm-tab--home svg {
+    width: 18px !important;
+    height: 18px !important;
+    flex-shrink: 0;
+    filter: none !important;
+    transform: none !important;
+    stroke: currentColor;
+  }
+  .ksm-tab--home::before { display: none !important; content: none !important; }
+  .ksm-tab.is-active,
+  .ksm-tab--home.is-active {
+    background: #111111 !important;
+    color: #ffffff !important;
+    font-weight: 500 !important;
+  }
+  /* Beat React Native Web's inline black text, and Lucide's stroke. */
+  .ksm-tab.is-active,
+  .ksm-tab.is-active *,
+  .ksm-tab--home.is-active,
+  .ksm-tab--home.is-active * {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+  }
+  .ksm-tab Text,
+  .ksm-tab div,
+  .ksm-tab span {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ksm-now-playing {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    min-height: 40px !important;
+    padding: 8px 16px !important;
+    background: #ffffff !important;
+    border-top: 1px solid #111111 !important;
+    border-bottom: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    text-decoration: none !important;
+    color: #111111 !important;
+  }
+  .ksm-now-playing-open {
+    margin-left: auto;
+    flex-shrink: 0;
+    padding: 0 !important;
+    min-height: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #111111 !important;
+    font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .ksm-main {
+    padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* Search fields should never look like a lone question mark */
+.ksm-search input,
+.ksm-home-search input,
+.ksm-utility-search input {
+  font-family: "DM Mono", ui-monospace, Menlo, monospace;
+  font-size: 13px;
+  border-radius: 0 !important;
+}
+
+
+/* ---------- Collectible cards and the sidebar collection ---------- */
+
+.ksm-side {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+@media (min-width: 1024px) {
+  html body .ksm-frame .ksm-side,
+  .ksm-side {
+    overflow: hidden !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+  }
+  .ksm-side-links { flex: 0 0 auto; }
+  .ksm-side-foot { flex: 0 0 auto; margin-top: 8px !important; }
+  .ksm-side .ksm-wordmark { flex: 0 0 auto; }
+  .ksm-side-link { padding-top: 6px !important; padding-bottom: 6px !important; }
+}
+
+.ksm-collection {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 8px 0 0;
+  padding-right: 0;
+}
+
+.ksm-collection-label {
+  margin: 0 0 8px;
+  font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+  font-size: 10px !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.ksm-collection-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.ksm-mini-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+  text-decoration: none !important;
+  border: 1px solid #111;
+  box-shadow: 2px 2px 0 #111;
+  border-radius: 0 !important;
+}
+
+.ksm-mini-card-art {
+  display: block;
+  flex: 1 1 auto;
+  min-height: 0;
+  aspect-ratio: auto;
+  overflow: hidden;
+  background: #111;
+}
+
+.ksm-mini-card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.ksm-mini-card-title {
+  display: block;
+  padding: 5px 5px 6px;
+  text-align: center;
+  font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+  font-size: 9px !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #111;
+  line-height: 1.2;
+}
+
+/* Mobile collection is a horizontal ticket rail; hidden on the desk. */
+.ksm-collection--mobile {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .ksm-collection--mobile {
+    display: block;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 8px 12px 12px;
+    border-bottom: 1px solid #111;
+    overflow: visible;
+  }
+  .ksm-collection--mobile .ksm-collection-grid {
+    display: flex;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    flex: 0 0 auto;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 0 4px;
+  }
+  .ksm-collection--mobile .ksm-mini-card-art {
+    flex: 0 0 auto;
+    aspect-ratio: 1 / 1;
+    height: 108px;
+  }
+  .ksm-collection--mobile .ksm-collection-grid::-webkit-scrollbar { display: none; }
+  .ksm-collection--mobile .ksm-mini-card {
+    flex: 0 0 108px;
+    width: 108px;
+  }
+}
+
+/* Project grid: museum-ticket / art-card */
+.ksm-collectible {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+  overflow: hidden;
+  background: #fff !important;
+}
+
+.ksm-collectible-plate {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #111;
+  border-bottom: 1px solid #111;
+}
+
+.ksm-collectible-art {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block;
+}
+
+.ksm-collectible-shot {
+  position: absolute !important;
+  right: 8px;
+  bottom: 8px;
+  width: 40% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 10 !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  border: 1px solid #fff !important;
+  box-shadow: 2px 2px 0 #111;
+  background: #fff;
+  z-index: 1;
+}
+
+.ksm-collectible-body {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4px;
+}
+
+.ksm-collectible-credit {
+  display: block;
+  padding: 4px 14px 12px;
+  font-family: "Source Serif 4", Georgia, serif !important;
+  font-size: 11px;
+  font-style: italic;
+  color: #444;
+  line-height: 1.35;
+}
+
+/* ---------- Chomsky masthead, thin top bar, menu overlay ---------- */
+@font-face {
+  font-family: "Chomsky";
+  src: url("/fonts/Chomsky.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.ksm-wordmark--masthead,
+.ksm-side .ksm-wordmark--masthead,
+.ksm-topbar .ksm-wordmark--masthead {
+  font-family: "Chomsky", "UnifrakturCook", "Times New Roman", serif !important;
+  font-weight: 400 !important;
+  font-size: 34px !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.ksm-topbar {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .ksm-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: grid !important;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    height: 56px;
+    padding: 0 10px;
+    background: #ffffff;
+    border-bottom: 1px solid #111111;
+  }
+  .ksm-mobile-tools { display: none !important; }
+  .ksm-collection--mobile { display: none !important; }
+}
+
+.ksm-topbar-btn,
+.ksm-theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #111111;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111111;
+  cursor: pointer;
+}
+
+.ksm-topbar .ksm-wordmark--masthead { justify-self: center; text-align: center; }
+
+.ksm-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px 12px 24px;
+}
+
+.ksm-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 20% 15%, #ffd18a 0%, transparent 42%),
+    radial-gradient(ellipse at 85% 10%, #ff8aa8 0%, transparent 40%),
+    radial-gradient(ellipse at 70% 85%, #ff7a3c 0%, transparent 48%),
+    radial-gradient(ellipse at 10% 80%, #e85d4c 0%, transparent 44%),
+    #c44b1a;
+  background-size: 140% 140%;
+  animation: ksm-lava-shift 22s ease-in-out infinite alternate;
+}
+
+.ksm-menu-backdrop::before,
+.ksm-menu-backdrop::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(48px);
+  will-change: transform;
+}
+
+.ksm-menu-backdrop::before {
+  width: 62vmax;
+  height: 62vmax;
+  top: -18%;
+  left: -16%;
+  background: radial-gradient(circle, #ffb24a 0%, #ff6b4a 38%, rgba(232, 93, 76, 0) 70%);
+  animation: ksm-lava-blob 18s ease-in-out infinite alternate;
+}
+
+.ksm-menu-backdrop::after {
+  width: 70vmax;
+  height: 70vmax;
+  right: -22%;
+  bottom: -24%;
+  background: radial-gradient(circle, #ffd9a0 0%, #ff6b9a 42%, rgba(255, 107, 154, 0) 72%);
+  animation: ksm-lava-blob 26s ease-in-out infinite alternate-reverse;
+}
+
+/* Grain sits in the panel's search well and as an overlay via box-shadow layer on a child-free button:
+   use a dedicated grain layer in the overlay markup instead. */
+@keyframes ksm-lava-shift {
+  0% { background-position: 0% 20%, 100% 0%, 80% 100%, 0% 80%, 0 0; }
+  100% { background-position: 30% 0%, 70% 30%, 50% 70%, 20% 100%, 0 0; }
+}
+@keyframes ksm-lava-blob {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(12%, 8%) scale(1.18); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ksm-menu-backdrop,
+  .ksm-menu-backdrop::before,
+  .ksm-menu-backdrop::after,
+  .ksm-lava-grain { animation: none; }
+}
+
+.ksm-lava-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.28;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 180px 180px;
+}
+
+.ksm-menu-panel {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 100%);
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  margin-top: 12px;
+  padding: 16px 16px 20px;
+  background: transparent;
+  color: #111111;
+  border: 1px solid #111111;
+  box-shadow: 6px 6px 0 #111111;
+  animation: ksm-rise 0.28s ease both;
+}
+
+.ksm-menu-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ksm-menu-head-actions { display: flex; gap: 8px; }
+
+.ksm-menu-label,
+.ksm-menu-search { margin: 0 0 10px; }
+
+.ksm-menu-search {
+  position: relative;
+  padding: 10px;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(255, 209, 138, 0.85), transparent 55%),
+    radial-gradient(ellipse at 90% 100%, rgba(255, 107, 154, 0.55), transparent 50%),
+    #e85d4c;
+  animation: ksm-lava-shift 18s ease-in-out infinite alternate;
+}
+.ksm-menu-search::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 180px 180px;
+}
+.ksm-menu-search .ksm-search {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 248, 236, 0.92) !important;
+  border-color: #3a1c0f !important;
+  color: #2a1208 !important;
+}
+
+.ksm-menu-label {
+  font-family: "DM Mono", ui-monospace, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ksm-menu-grid,
+.ksm-dial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .ksm-dial-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.ksm-dial {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+  text-decoration: none !important;
+  border: 1px solid #111;
+  box-shadow: 2px 2px 0 #111;
+  animation: ksm-rise 0.45s ease both;
+}
+
+.ksm-dial-art {
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+}
+
+.ksm-dial-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: contrast(1.06) saturate(1.08);
+}
+
+.ksm-dial-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: "Chomsky", "Times New Roman", serif;
+  font-size: 42px;
+}
+
+.ksm-dial-title {
+  display: block;
+  padding: 6px 4px 7px;
+  text-align: center;
+  font-family: "DM Mono", ui-monospace, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ksm-dials { margin: 8px 0 28px; }
+
+/* Bottom tabs: center Home is red; any selected tab is blue. */
+@media (max-width: 1023px) {
+  .ksm-tab--center,
+  .ksm-tab--center * {
+    background: #c4161c !important;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+  }
+  .ksm-tab.is-active,
+  .ksm-tab.is-active *,
+  .ksm-tab--center.is-active,
+  .ksm-tab--center.is-active * {
+    background: #1a4fb8 !important;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+  }
+}
+
+/* Essays, carousels, journal cards, motion */
+.ksm-essay {
+  max-width: 720px;
+  width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 20px 16px 64px;
+  box-sizing: border-box;
+}
+
+.ksm-essay-head { margin-bottom: 20px; }
+.ksm-essay-cta {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 18px;
+  background: #111;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-family: "DM Mono", ui-monospace, Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid #111;
+  box-shadow: 3px 3px 0 #111;
+}
+
+.ksm-essay-section { margin: 28px 0; }
+.ksm-essay-section .ksm-carousel { margin: 10px 0 18px; }
+.ksm-book-series {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.ksm-book-series li {
+  border-top: 1px solid #111;
+  padding: 14px 0;
+}
+.ksm-book-series strong {
+  display: block;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+}
+.ksm-book-hook {
+  display: block;
+  margin-top: 4px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #333;
+}
+html[data-theme="dark"] .ksm-book-series li { border-top-color: #444; }
+html[data-theme="dark"] .ksm-book-hook { color: #c8c8c8; }
+
+.ksm-essay-p,
+.ksm-essay p {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.55;
+  margin: 0 0 1em;
+}
+
+.ksm-essay-sources {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 15px;
+}
+
+.ksm-essay-back { margin-top: 32px; padding-top: 16px; border-top: 1px solid #111; }
+
+.ksm-carousel {
+  margin: 8px 0 28px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ksm-carousel-track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.ksm-carousel-slide {
+  flex: 0 0 85%;
+  max-width: 640px;
+  min-width: 0;
+  margin: 0;
+  scroll-snap-align: start;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  background: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ksm-carousel-slide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.ksm-carousel-slide figcaption {
+  padding: 8px 12px 10px;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+  color: #444;
+}
+
+.ksm-journal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 640px) {
+  .ksm-journal-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.ksm-journal-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+  text-decoration: none !important;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  animation: ksm-rise 0.45s ease both;
+}
+
+.ksm-journal-card-art {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.ksm-journal-card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ksm-journal-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px 14px;
+  gap: 4px;
+}
+
+@keyframes ksm-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.ksm-collectible,
+.ksm-dial--home {
+  animation: ksm-rise 0.5s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ksm-collectible,
+  .ksm-dial,
+  .ksm-journal-card,
+  .ksm-menu-panel {
+    animation: none !important;
+  }
+}
+
+/* Dark mode — invert the B&W chrome, keep photography in color. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  background: #111111;
+  color: #f4f1ea;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .ksm-page,
+html[data-theme="dark"] .ksm-main,
+html[data-theme="dark"] .ksm-side,
+html[data-theme="dark"] .ksm-topbar,
+html[data-theme="dark"] .ksm-tabs,
+html[data-theme="dark"] .ksm-menu-panel,
+html[data-theme="dark"] .ksm-collectible,
+html[data-theme="dark"] .ksm-dial,
+html[data-theme="dark"] .ksm-journal-card,
+html[data-theme="dark"] .ksm-carousel-slide,
+html[data-theme="dark"] .ksm-filter-chip,
+html[data-theme="dark"] .ksm-essay-cta {
+  background: #111111 !important;
+  color: #f4f1ea !important;
+  border-color: #f4f1ea !important;
+  box-shadow: 3px 3px 0 #000 !important;
+}
+
+html[data-theme="dark"] .ksm-topbar-btn,
+html[data-theme="dark"] .ksm-theme-toggle,
+html[data-theme="dark"] .ksm-filter-chip:not(:has(input:checked)) {
+  background: #111111 !important;
+  color: #f4f1ea !important;
+  border-color: #f4f1ea !important;
+}
+
+html[data-theme="dark"] .ksm-wordmark--masthead,
+html[data-theme="dark"] .ksm-lede,
+html[data-theme="dark"] .ksm-essay-p,
+html[data-theme="dark"] .ksm-card-title,
+html[data-theme="dark"] .ksm-headline {
+  color: #f4f1ea;
+}
+
+html[data-theme="dark"] .ksm-filter-chip:has(input:checked) {
+  background: #f4f1ea !important;
+  color: #111111 !important;
+}
+
+html[data-theme="dark"] .ksm-tab:not(.is-active):not(.ksm-tab--center) {
+  background: #111111 !important;
+  color: #f4f1ea !important;
+}
+
+/* Keep the menu/search stage on the lava field in both themes. */
+.ksm-menu-panel,
+html[data-theme="dark"] .ksm-menu-panel {
+  background: transparent !important;
+  color: #111111 !important;
+  border-color: #111111 !important;
+  box-shadow: 6px 6px 0 #111111 !important;
+}
+html[data-theme="dark"] .ksm-menu-label,
+html[data-theme="dark"] .ksm-wordmark--masthead {
+  color: #111111 !important;
+}
+
+
+/* Unified exhibition tickets */
+.ksm-page-sheet.ksm-has-tickets {
+  max-width: 72rem;
+}
+
+.ksm-ticket-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+}
+
+@media (min-width: 640px) {
+  .ksm-ticket-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1100px) {
+  .ksm-ticket-grid.ksm-ticket-grid--3 { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.ksm-ticket {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  background: #fff;
+  color: #111;
+  text-decoration: none !important;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  position: relative;
+  margin: 0 2px;
+  animation: ksm-rise 0.45s ease both;
+}
+
+.ksm-ticket-plate {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #1a1410;
+}
+
+.ksm-ticket-plate img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: contrast(1.05) saturate(1.06);
+}
+
+.ksm-ticket-plate--contain {
+  background: #f4f1ea;
+}
+
+.ksm-ticket-plate--contain img {
+  object-fit: contain;
+  filter: none;
+}
+
+.ksm-journal .ksm-carousel-slide img {
+  object-fit: contain;
+  object-position: center;
+  background: #111;
+}
+
+.ksm-ticket-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px 14px;
+  border-top: 1px dashed #111;
+  background: #fff;
+}
+
+.ksm-ticket-body::before,
+.ksm-ticket-body::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  width: 14px;
+  height: 14px;
+  background: var(--page, #f4f1ea);
+  border: 1px solid #111;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ksm-ticket-body::before { left: -8px; }
+.ksm-ticket-body::after { right: -8px; }
+
+.ksm-ticket--paper {
+  max-width: 28rem;
+}
+
+.ksm-ticket--paper .ksm-ticket-body {
+  border-top: 0;
+  padding-top: 16px;
+}
+
+.ksm-ticket--paper .ksm-ticket-body::before,
+.ksm-ticket--paper .ksm-ticket-body::after {
+  display: none;
+}
+
+.ksm-ticket-hero {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  margin: 0 0 1.25rem;
+  background: #1a1410;
+}
+
+.ksm-journal .ksm-carousel {
+  margin: 0 0 1.5rem;
+}
+
+.ksm-adjacent {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule, #111);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.95rem;
+}
+
+.ksm-about-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 720px) {
+  .ksm-about-intro {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+.ksm-about-portrait {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+}
+
+.ksm-about-life-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .ksm-about-life-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.ksm-about-figure {
+  margin: 0;
+  background: #fff;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+}
+
+.ksm-about-figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.ksm-about-figure figcaption {
+  padding: 8px 12px 12px;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+html[data-theme="dark"] .ksm-ticket,
+html[data-theme="dark"] .ksm-ticket-body,
+html[data-theme="dark"] .ksm-about-figure,
+html[data-theme="dark"] .ksm-about-portrait,
+html[data-theme="dark"] .ksm-ticket-hero {
+  background: #111111 !important;
+  color: #f4f1ea !important;
+  border-color: #f4f1ea !important;
+  box-shadow: 3px 3px 0 #000 !important;
+}
+
+html[data-theme="dark"] .ksm-ticket-body {
+  border-top-color: #f4f1ea !important;
+}
+
+html[data-theme="dark"] .ksm-ticket-body::before,
+html[data-theme="dark"] .ksm-ticket-body::after {
+  background: #111111;
+  border-color: #f4f1ea;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ksm-ticket { animation: none !important; }
+}

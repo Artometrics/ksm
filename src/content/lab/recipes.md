@@ -41,6 +41,15 @@ Folder: [Style Recipes](https://drive.google.com/drive/folders/1E9fo6M4T6hVJB0Pl
 
 The index says the folder's three files matched local sizes on 13 Nov 2026 at 8:29 PM PT, and that the host was deleted at 6:38 PM PT.
 
+
+## Files and links
+
+- Host (may be retired): [https://recipes-510519.web.app](https://recipes-510519.web.app)
+- Drive folder: [https://drive.google.com/drive/folders/1E9fo6M4T6hVJB0Pltu4TO9g_afGmPlIM](https://drive.google.com/drive/folders/1E9fo6M4T6hVJB0Pltu4TO9g_afGmPlIM)
+- Drive file: [https://drive.google.com/file/d/119xxs-SCs7_eFWRD56kdJkpK0B8QzKuc/view](https://drive.google.com/file/d/119xxs-SCs7_eFWRD56kdJkpK0B8QzKuc/view)
+- Drive file: [https://drive.google.com/file/d/13Tii95MiJ9L9HQblXy_ReyS333OhS7xI/view](https://drive.google.com/file/d/13Tii95MiJ9L9HQblXy_ReyS333OhS7xI/view)
+- Drive file: [https://drive.google.com/file/d/12hjlv865kkQIY8aDEmYcHJbP1kjxV1Kg/view](https://drive.google.com/file/d/12hjlv865kkQIY8aDEmYcHJbP1kjxV1Kg/view)
+
 ## Sources
 
 - Artometrics Archive Index, Style Recipes row

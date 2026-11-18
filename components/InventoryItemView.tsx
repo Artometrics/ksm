@@ -2,6 +2,8 @@ import { Text, View } from "react-native";
 import { Link } from "expo-router";
 import { formatStatus, type InventoryItem } from "@/lib/inventory";
 
+import { liveCatalogUrl } from "@/lib/projects";
+
 export function InventoryItemView({ item }: { item: InventoryItem }) {
   return (
     <View className="ksm-shelves">
@@ -19,8 +21,8 @@ export function InventoryItemView({ item }: { item: InventoryItem }) {
         </View>
       </View>
 
-      {item.publicUrl ? (
-        <a className="ksm-shelves-download" href={item.publicUrl} target="_blank" rel="noopener noreferrer">
+      {liveCatalogUrl(item.publicUrl) ? (
+        <a className="ksm-shelves-download" href={liveCatalogUrl(item.publicUrl) ?? undefined} target="_blank" rel="noopener noreferrer">
           Open
         </a>
       ) : null}

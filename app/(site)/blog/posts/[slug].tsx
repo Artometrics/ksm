@@ -1,8 +1,5 @@
-import { Text, View } from "react-native";
-import { Image } from "expo-image";
 import { Link, useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
-import { Wrapper } from "@/components/Wrapper";
 import { ArticleBody } from "@/components/ArticleBody";
 import { PageSeo } from "@/components/PageSeo";
 import { assetUrl } from "@/lib/assets";
@@ -26,16 +23,18 @@ export default function BlogPostScreen() {
 
   if (!post) {
     return (
-      <Wrapper className="gap-3 py-10">
-        <Text className="font-[Anton] text-4xl uppercase text-fg">
-          Post not found
-        </Text>
-        <Link href="/blog">
-          <Text className="font-[Anton] uppercase tracking-[2px] text-accent">
-            Back to magazine
-          </Text>
-        </Link>
-      </Wrapper>
+      <>
+        <Head>
+          <title>Post not found · Kyle McAuliffe</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Head>
+        <div className="ksm-page-sheet ksm-journal">
+          <h1 className="ksm-headline ksm-sheet-title">Post not found</h1>
+          <p className="ksm-lede">
+            <Link href="/blog">Back to journal</Link>
+          </p>
+        </div>
+      </>
     );
   }
 
@@ -45,7 +44,6 @@ export default function BlogPostScreen() {
     ? formatAuthorName(String(post.author))
     : "Staff";
   const tag = post.tags?.[0];
-
   const og = post.heroImage || `/images/og/${post.slug}.svg`;
 
   return (
@@ -66,58 +64,39 @@ export default function BlogPostScreen() {
         image={og}
         type="article"
       />
-      {hero ? (
-        <View className="ksm-article-hero">
-          <Image
-            source={{ uri: hero }}
-            className="ksm-article-hero-img"
-            contentFit="contain"
-            accessibilityLabel={typeof post.image === "object" && post.image?.alt ? String(post.image.alt) : post.title}
-          />
-        </View>
-      ) : null}
-      <Wrapper variant="prose" className="gap-4 py-10">
-        {post.draft ? (
-          <Text className="ksm-lede">Draft. Not published. Left off the journal index until review.</Text>
+      <div className="ksm-page-sheet ksm-journal">
+        <header className="ksm-journal-head">
+          <p className="ksm-note-meta">
+            <Link href="/blog">Journal</Link>
+            {tag ? ` · ${tag}` : ""}
+            {post.pubDate ? ` · ${formatDate(post.pubDate)}` : ""}
+            {` · ${author}`}
+            {post.isLocked ? " · Members" : ""}
+          </p>
+          <h1 className="ksm-headline ksm-sheet-title ksm-article-title">{post.title}</h1>
+          {post.draft ? (
+            <p className="ksm-lede">Draft. Not published.</p>
+          ) : null}
+        </header>
+        {hero ? (
+          <img className="ksm-ticket-hero" src={hero} alt={post.title} />
         ) : null}
-        {tag ? (
-          <Text className="font-[Anton] text-[12px] uppercase tracking-[2px] text-accent">
-            {tag}
-          </Text>
-        ) : null}
-        <Text className="font-[Anton] text-4xl uppercase leading-[0.95] tracking-[1px] text-fg md:text-5xl">
-          {post.title}
-        </Text>
-        <Text className="font-sans text-base leading-6 text-muted">
-          {post.description}
-        </Text>
-        <Text className="text-[11px] uppercase tracking-[1.4px] text-subtle">
-          {author} · {formatDate(post.pubDate)}
-          {post.isLocked ? " · Members" : ""}
-        </Text>
-        <View className="mt-4 h-1 w-16 bg-accent" />
-        <View className="mt-2">
-          <ArticleBody html={post.body} />
-        </View>
-        <View className="mt-10 flex-row flex-wrap justify-between gap-4 border-t-2 border-border pt-6">
+        <ArticleBody html={post.body} />
+        <nav className="ksm-adjacent" aria-label="Adjacent notes">
           {adjacent.previous ? (
             <Link href={adjacent.previous.href as `/blog/posts/${string}`}>
-              <Text className="font-[Anton] text-[12px] uppercase tracking-[1px] text-muted">
-                ← {adjacent.previous.title}
-              </Text>
+              ← {adjacent.previous.title}
             </Link>
           ) : (
-            <View />
+            <span />
           )}
           {adjacent.next ? (
             <Link href={adjacent.next.href as `/blog/posts/${string}`}>
-              <Text className="font-[Anton] text-[12px] uppercase tracking-[1px] text-muted">
-                {adjacent.next.title} →
-              </Text>
+              {adjacent.next.title} →
             </Link>
           ) : null}
-        </View>
-      </Wrapper>
+        </nav>
+      </div>
     </>
   );
 }

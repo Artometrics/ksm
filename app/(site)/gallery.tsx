@@ -1,63 +1,35 @@
-import { Text, View } from "react-native";
-import { Image } from "expo-image";
-import { Wrapper } from "@/components/Wrapper";
-import { PageSeo } from "@/components/PageSeo";
-import { aspectRatioValue, galleryItems } from "@/data/gallery";
+import Head from "expo-router/head";
+import { galleryItems } from "@/data/gallery";
 
 export default function GalleryScreen() {
   return (
     <>
-      <PageSeo
-        title="Work"
-        description="KSM portfolio archive — brand, editorial, identity, and campaign stills."
-        path="/gallery"
-      />
-      <View className="border-b-2 border-border bg-black py-10">
-        <Wrapper>
-          <Text className="font-[GreatVibes] text-3xl text-accent">Archive</Text>
-          <Text className="font-[Anton] text-5xl uppercase tracking-[2px] text-white md:text-7xl">
-            Work
-          </Text>
-          <Text className="mt-3 max-w-[42ch] font-sans text-[15px] leading-6 text-white/70">
-            Selected KSM pieces — brand systems, editorial stills, and identity
-            studies. Drop refs anytime to grow the set.
-          </Text>
-        </Wrapper>
-      </View>
-      <View className="border-b-2 border-border bg-accent px-0 py-2">
-        <Wrapper>
-          <Text className="font-[Anton] text-[11px] uppercase tracking-[2px] text-black">
-            {galleryItems.length} pieces · Brand · Editorial · Systems
-          </Text>
-        </Wrapper>
-      </View>
-      <Wrapper className="py-8">
-        <View className="flex-row flex-wrap gap-4">
+      <Head>
+        <title>Art · Kyle McAuliffe</title>
+        <meta
+          name="description"
+          content="Pictures on file — brand, editorial, and identity stills."
+        />
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
+      <div className="ksm-page-sheet ksm-has-tickets">
+        <header className="ksm-journal-head">
+          <h1 className="ksm-headline ksm-sheet-title">Art</h1>
+          <p className="ksm-lede">Pictures on file.</p>
+        </header>
+        <div className="ksm-ticket-grid ksm-ticket-grid--3">
           {galleryItems.map((item) => (
-            <View
-              key={item.id}
-              className="w-full gap-2 md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)]"
-            >
-              <Image
-                source={{ uri: item.src }}
-                className="w-full border-2 border-border"
-                style={{
-                  aspectRatio: aspectRatioValue(item.aspect),
-                  width: "100%",
-                }}
-                contentFit="cover"
-                accessibilityLabel={item.title}
-              />
-              <Text className="font-[Anton] text-[15px] uppercase tracking-[1.5px] text-fg">
-                {item.title}
-              </Text>
-              <Text className="font-sans text-[13px] leading-5 text-muted">
-                {item.mood}
-              </Text>
-            </View>
+            <figure key={item.id} className="ksm-ticket">
+              <span className="ksm-ticket-plate">
+                <img src={item.src} alt={item.title} />
+              </span>
+              <figcaption className="ksm-ticket-body">
+                <span className="ksm-card-title">{item.title}</span>
+              </figcaption>
+            </figure>
           ))}
-        </View>
-      </Wrapper>
+        </div>
+      </div>
     </>
   );
 }

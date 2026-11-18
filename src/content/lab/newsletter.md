@@ -41,6 +41,13 @@ The recorded destination is Dawn, as Newsletter. The 13 Nov inventory says Dawn 
 
 Folder: [Unlisted sites 2026-11-13](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw).
 
+
+## Files and links
+
+- Host (may be retired): [https://newsletter-510519.web.app](https://newsletter-510519.web.app)
+- Drive file: [https://drive.google.com/file/d/1YkJi4KKkibDaqJa0ei5dCY14y4nJ25v5/view](https://drive.google.com/file/d/1YkJi4KKkibDaqJa0ei5dCY14y4nJ25v5/view)
+- Drive folder: [https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw)
+
 ## Sources
 
 - Artometrics Archive Index, both Newsletter rows

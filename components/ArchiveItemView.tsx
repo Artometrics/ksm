@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Link } from "expo-router";
+import { liveCatalogUrl } from "@/lib/projects";
 import {
   categoryLabel,
   formatArchiveDate,
@@ -71,8 +72,8 @@ export function ArchiveItemView({ item }: { item: ArchiveItem }) {
             <Text className="ksm-shelves-textlink">Article · {article.title}</Text>
           </Link>
         ) : null}
-        {item.publicUrl ? (
-          <a className="ksm-shelves-textlink" href={item.publicUrl} target="_blank" rel="noopener noreferrer">
+        {liveCatalogUrl(item.publicUrl) ? (
+          <a className="ksm-shelves-textlink" href={liveCatalogUrl(item.publicUrl) ?? undefined} target="_blank" rel="noopener noreferrer">
             Open public page
           </a>
         ) : null}

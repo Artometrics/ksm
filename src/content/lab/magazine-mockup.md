@@ -43,6 +43,17 @@ Folder: [Magazine mockup](https://drive.google.com/drive/folders/1TAzV0K9p1LiE_G
 - [magazine-mockup-live-mirror.zip](https://drive.google.com/file/d/1q6L_s2hFWIsh2xHVr3nRU_RUMlnCUSPs/view)
 - [README](https://drive.google.com/file/d/1nZxXgNraGcXXS-o3pZhLy1gBwexqTPiv/view)
 
+
+## Files and links
+
+- Host (may be retired): [https://artometrics-mag-510519.web.app](https://artometrics-mag-510519.web.app)
+- Drive folder: [https://drive.google.com/drive/folders/1TAzV0K9p1LiE_GFG1iastRJDV6Hd_Wat](https://drive.google.com/drive/folders/1TAzV0K9p1LiE_GFG1iastRJDV6Hd_Wat)
+- Drive file: [https://drive.google.com/file/d/1m3LAUbJF7q5eawRDm-y-f8HIwAiMeuil/view](https://drive.google.com/file/d/1m3LAUbJF7q5eawRDm-y-f8HIwAiMeuil/view)
+- Drive file: [https://drive.google.com/file/d/1u7pjmovrHcwA-Emn-FJ0nwChyJ03wPgQ/view](https://drive.google.com/file/d/1u7pjmovrHcwA-Emn-FJ0nwChyJ03wPgQ/view)
+- Drive file: [https://drive.google.com/file/d/1PL0x2Xi3iGDMyYRi6p5SemKfO55pVvw6/view](https://drive.google.com/file/d/1PL0x2Xi3iGDMyYRi6p5SemKfO55pVvw6/view)
+- Drive file: [https://drive.google.com/file/d/1q6L_s2hFWIsh2xHVr3nRU_RUMlnCUSPs/view](https://drive.google.com/file/d/1q6L_s2hFWIsh2xHVr3nRU_RUMlnCUSPs/view)
+- Drive file: [https://drive.google.com/file/d/1nZxXgNraGcXXS-o3pZhLy1gBwexqTPiv/view](https://drive.google.com/file/d/1nZxXgNraGcXXS-o3pZhLy1gBwexqTPiv/view)
+
 ## Sources
 
 - Artometrics Archive Index, Magazine mockup row

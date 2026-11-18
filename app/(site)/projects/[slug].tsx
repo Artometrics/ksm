@@ -9,12 +9,13 @@ import {
   CONCEPT_PAGE_SLUGS,
   getConceptPage,
 } from "@/data/project-pages";
+import { allEssaySlugs, getProjectEssay } from "@/data/projectEssays";
 import { archivePathForSiteProject } from "@/lib/archive";
 import { getProjectById, isDisplayArt, isPublicLaunchUrl } from "@/lib/projects";
 import { paramString } from "@/lib/params";
 
 export async function generateStaticParams() {
-  const concept = CONCEPT_PAGE_SLUGS.map((slug) => ({ slug }));
+  const concept = Array.from(new Set([...CONCEPT_PAGE_SLUGS, ...allEssaySlugs()])).map((slug) => ({ slug }));
   const rest = projectsJson
     .filter((item) => !CONCEPT_PAGE_SLUGS.includes(item.id as (typeof CONCEPT_PAGE_SLUGS)[number]))
     .map((item) => ({ slug: item.id }));
@@ -26,6 +27,17 @@ function MinimalProjectDetail({
 }: {
   project: NonNullable<ReturnType<typeof getProjectById>>;
 }) {
+  const live = isPublicLaunchUrl(project.href) ? project.href : null;
+  const internal = project.href?.startsWith("/") ? project.href : null;
+  const archiveHref = (archivePathForSiteProject(project.id) ?? "/archive") as "/archive";
+  const links: { label: string; href: string }[] = [];
+  if (live) links.push({ label: "Live site", href: live });
+  if (internal) links.push({ label: "Lab report", href: internal });
+  if (project.source && project.source !== live && project.source !== internal) {
+    links.push({ label: "Source", href: project.source });
+  }
+  links.push({ label: "Files in the archive", href: archiveHref });
+
   return (
     <>
       <Head>
@@ -35,30 +47,45 @@ function MinimalProjectDetail({
       <Wrapper className="gap-4 py-8">
         {isDisplayArt(project.cover) ? (
           <img
-            className="ksm-launcher-cover ksm-launcher-cover--hero"
+            className="ksm-banner"
             src={project.cover}
-            alt=""
+            alt={`Screenshot of ${project.title}`}
           />
         ) : null}
         <Text className="ksm-kicker">{project.year}</Text>
-        <Text accessibilityRole="header" className="ksm-headline">
+        <Text accessibilityRole="header" className="ksm-headline ksm-article-title">
           {project.title}
         </Text>
         <Text className="ksm-lede">{project.line}</Text>
         <Text className="ksm-card-tags">{project.tags.join(" · ")}</Text>
-        {isPublicLaunchUrl(project.href) ? (
-          <a className="ksm-nav" href={project.href} target="_blank" rel="noopener noreferrer">
+        {live ? (
+          <a className="ksm-nav" href={live} target="_blank" rel="noopener noreferrer">
             Open live site
           </a>
+        ) : internal ? (
+          <Link href={internal as "/lab/fernbound"}>
+            <Text className="ksm-nav">Read the lab report</Text>
+          </Link>
         ) : (
           <Text className="ksm-lede">No public link for this project yet.</Text>
         )}
-        <a className="ksm-nav" href={project.source}>
-          Source note
-        </a>
-        <Link href={(archivePathForSiteProject(project.id) ?? "/archive") as "/archive"}>
-          <Text className="ksm-nav">Files in the archive</Text>
-        </Link>
+        <div className="ksm-files">
+          <h2 className="ksm-section">Files and links</h2>
+          <ul>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  {...(/^[a-z]+:/i.test(link.href)
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
         <Link href="/projects">
           <Text className="ksm-nav">All projects</Text>
         </Link>
@@ -70,25 +97,27 @@ function MinimalProjectDetail({
 export default function ProjectDetailScreen() {
   const params = useLocalSearchParams<{ slug: string | string[] }>();
   const slug = paramString(params.slug);
+  const essay = getProjectEssay(slug);
   const conceptPage = getConceptPage(slug);
   const project = getProjectById(slug);
+  const heading = essay ?? conceptPage;
 
-  if (conceptPage) {
+  if (heading) {
     return (
       <>
         <Head>
-          <title>{`${conceptPage.title} · Kyle McAuliffe`}</title>
+          <title>{`${heading.title} · Kyle McAuliffe`}</title>
           <meta name="robots" content="noindex, nofollow" />
-          <meta name="description" content={conceptPage.tagline} />
+          <meta name="description" content={heading.tagline} />
         </Head>
         <PageSeo
-          title={conceptPage.title}
-          description={conceptPage.tagline}
-          path={`/projects/${conceptPage.slug}`}
-          image={conceptPage.heroImage}
+          title={heading.title}
+          description={heading.tagline}
+          path={`/projects/${slug}`}
+          image={essay?.gallery?.[0]?.src ?? conceptPage?.heroImage}
         />
         <View className="w-full">
-          <ProjectConceptPage page={conceptPage} />
+          <ProjectConceptPage page={conceptPage} slug={slug} />
         </View>
       </>
     );

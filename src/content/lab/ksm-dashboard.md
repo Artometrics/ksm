@@ -41,6 +41,15 @@ Folder: [KSM dashboard](https://drive.google.com/drive/folders/1teofuvOwveIfquoW
 
 The index says four files in the folder matched local sizes on 13 Nov 2026 at 8:29 PM PT.
 
+
+## Files and links
+
+- Host (may be retired): [https://ksm-dashboard-510519.web.app](https://ksm-dashboard-510519.web.app)
+- Drive folder: [https://drive.google.com/drive/folders/1teofuvOwveIfquoWb537KRvD0DO4q58V](https://drive.google.com/drive/folders/1teofuvOwveIfquoWb537KRvD0DO4q58V)
+- Drive file: [https://drive.google.com/file/d/1NWQjsyDXQlpCKjIN10bnLvgDgwSV1NhE/view](https://drive.google.com/file/d/1NWQjsyDXQlpCKjIN10bnLvgDgwSV1NhE/view)
+- Drive file: [https://drive.google.com/file/d/1c8dnD1zva9Hhk2_DyCPC8LUZy2pfIIFF/view](https://drive.google.com/file/d/1c8dnD1zva9Hhk2_DyCPC8LUZy2pfIIFF/view)
+- Drive file: [https://drive.google.com/file/d/1FXcoQ5bzTr4yM2OXH3JnjUSXpdDfalCw/view](https://drive.google.com/file/d/1FXcoQ5bzTr4yM2OXH3JnjUSXpdDfalCw/view)
+
 ## Sources
 
 - Artometrics Archive Index, KSM dashboard row

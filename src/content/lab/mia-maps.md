@@ -37,6 +37,14 @@ Retired as a product. The useful copy is the Drive package. It did not move into
 
 [mia-maps-archive.zip](https://drive.google.com/file/d/19hGawSGNTwI2qlZYOX2YezZJMZE6CEoR/view) in the [Unlisted sites 2026-11-13](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw) folder. The index records 2,802,879 bytes and SHA-256 `5e5c98c3672f02695647bdd07dfcc52d8acc9b337bf86f44fe1861c872148743`. `SUMMARY.json` lists a git bundle, a working-tree zip, and a live mirror inside that package.
 
+
+## Files and links
+
+- Host (may be retired): [https://mia-rentals-510519.web.app](https://mia-rentals-510519.web.app)
+- Source repo: [https://github.com/Artometrics/mia-maps](https://github.com/Artometrics/mia-maps)
+- Drive file: [https://drive.google.com/file/d/19hGawSGNTwI2qlZYOX2YezZJMZE6CEoR/view](https://drive.google.com/file/d/19hGawSGNTwI2qlZYOX2YezZJMZE6CEoR/view)
+- Drive folder: [https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw](https://drive.google.com/drive/folders/1wDiQIMnNhlBACtIRokeRQXPku_wD6Ljw)
+
 ## Sources
 
 - Artometrics Archive Index, Mia Maps row

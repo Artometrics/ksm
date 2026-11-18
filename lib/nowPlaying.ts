@@ -25,7 +25,7 @@ export function launchLabelFor(tags: string[]) {
 }
 
 export function getFeaturedProject(): ProjectRecord {
-  return getProjectById("cardinal") ?? getProjectById("artometrics") ?? projects[0];
+  return getProjectById("artometrics") ?? getProjectById("dawn") ?? projects[0];
 }
 
 export function projectToNowPlaying(project: ProjectRecord): NowPlaying {

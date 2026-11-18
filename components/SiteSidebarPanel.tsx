@@ -1,10 +1,10 @@
 import { Pressable, Text, View } from "react-native";
 import { Link, usePathname } from "expo-router";
 import { DeskSearch } from "@/components/DeskSearch";
-import { StylePicker } from "@/components/StylePicker";
-import { CrtToggle } from "@/components/CrtToggle";
-import { NavPixelIcon } from "@/components/NavPixelIcon";
+import { NavIcon } from "@/components/NavIcon";
 import { SITE_TABS, isTabActive } from "@/lib/nav";
+import { CollectionRail } from "@/components/CollectionRail";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 function SideLinks() {
   const pathname = usePathname();
@@ -20,7 +20,7 @@ function SideLinks() {
               accessibilityRole="link"
               accessibilityState={{ selected: active }}
             >
-              <NavPixelIcon name={item.icon} />
+              <NavIcon name={item.icon} />
               <Text>{item.label}</Text>
             </Pressable>
           </Link>
@@ -34,14 +34,14 @@ function SideLinks() {
 export function SiteSidebarPanel() {
   return (
     <View className="ksm-side" accessibilityRole="none">
-      <Text className="ksm-wordmark">KSM</Text>
+      <Text className="ksm-wordmark ksm-wordmark--masthead">KSM</Text>
       <View className="ksm-side-links">
         <SideLinks />
       </View>
+      <CollectionRail variant="sidebar" />
       <View className="ksm-side-foot">
-        <DeskSearch />
-        <StylePicker />
-        <CrtToggle />
+        <ThemeToggle />
+        <DeskSearch placeholder="Search" />
       </View>
     </View>
   );
