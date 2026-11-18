@@ -114,7 +114,7 @@ export default function ProjectDetailScreen() {
           title={heading.title}
           description={heading.tagline}
           path={`/projects/${slug}`}
-          image={essay?.gallery[0]?.src ?? conceptPage?.heroImage}
+          image={essay?.gallery?.[0]?.src ?? conceptPage?.heroImage}
         />
         <View className="w-full">
           <ProjectConceptPage page={conceptPage} slug={slug} />
