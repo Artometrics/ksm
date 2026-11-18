@@ -53,21 +53,34 @@ export default function BlogIndex() {
             Drafts
           </h2>
           <p className="ksm-lede">Still drafts. Not the published journal.</p>
-          <div className="ksm-journal-drafts">
-            {drafts.map((post) => (
-              <article key={post.slug} className="ksm-note">
-                <p className="ksm-note-meta">
-                  Draft
-                  {post.pubDate ? ` · ${formatDate(post.pubDate)}` : ""}
-                  {post.tags?.length ? ` · ${post.tags.join(" · ")}` : ""}
-                </p>
-                <h3>
-                  <Link href={`/blog/posts/${post.slug}` as "/blog"}>{post.title}</Link>
-                </h3>
-                {post.description ? <p>{post.description}</p> : null}
-                <Link href={`/blog/posts/${post.slug}` as "/blog"}>Read the draft</Link>
-              </article>
-            ))}
+          <div className="ksm-journal-grid">
+            {drafts.map((post) => {
+              const thumb =
+                post.heroImage ||
+                (typeof post.image === "object" && post.image && "url" in post.image
+                  ? String(post.image.url)
+                  : undefined);
+              return (
+                <a
+                  key={post.slug}
+                  className="ksm-journal-card"
+                  href={`/blog/posts/${post.slug}`}
+                >
+                  <span className="ksm-journal-card-art">
+                    {thumb ? <img src={thumb} alt="" /> : null}
+                  </span>
+                  <span className="ksm-journal-card-body">
+                    <span className="ksm-card-year">
+                      Draft{post.pubDate ? ` · ${formatDate(post.pubDate)}` : ""}
+                    </span>
+                    <span className="ksm-card-title">{post.title}</span>
+                    {post.description ? (
+                      <span className="ksm-card-line">{post.description}</span>
+                    ) : null}
+                  </span>
+                </a>
+              );
+            })}
           </div>
         </section>
       </div>

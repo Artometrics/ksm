@@ -19,7 +19,8 @@
     "line": "The Stanford corridor, as a book and a public reading room.",
     "year": "2026",
     "tags": [
-      "Writing"
+      "Writing",
+      "Books"
     ],
     "kind": "project",
     "href": "https://cardinal-510519.web.app",
@@ -72,7 +73,7 @@
     "line": "A pixel-art village of agents, plus a studio for the Artometrics tools.",
     "year": "2026",
     "tags": [
-      "Apps"
+      "Tools"
     ],
     "kind": "project",
     "href": "https://dawn-510519.web.app",
@@ -86,7 +87,8 @@
     "year": "2026",
     "tags": [
       "Research",
-      "Writing"
+      "Writing",
+      "Tools"
     ],
     "kind": "project",
     "href": "https://gotha.artometrics.com",
@@ -132,7 +134,7 @@
     "kind": "project",
     "href": "https://dwts-510519.web.app",
     "thumbnail": "/images/marks/research.svg",
-    "source": "https://dwts-510519.web.app"
+    "source": "https://github.com/Artometrics/data-with-the-stars"
   },
   {
     "id": "ballpark",
@@ -193,7 +195,7 @@
     "line": "Hum a melody and get a prompt for Suno.",
     "year": "2026",
     "tags": [
-      "Apps"
+      "Tools"
     ],
     "kind": "project",
     "href": "https://hum-to-suno.vercel.app",
@@ -206,7 +208,7 @@
     "line": "A writing-first, Git-friendly CMS for Astro websites.",
     "year": "2026",
     "tags": [
-      "Apps"
+      "Tools"
     ],
     "kind": "project",
     "href": "https://twilda.com",
@@ -232,11 +234,26 @@
     "line": "This studio notebook \u2014 projects, writing, and lab reports.",
     "year": "2026",
     "tags": [
-      "Apps"
+      "Tools"
     ],
     "kind": "project",
     "href": "https://ksm-510519.web.app",
     "thumbnail": "/images/marks/apps.svg",
     "source": "https://github.com/Artometrics/ksm"
+  },
+  {
+    "id": "books",
+    "title": "Books",
+    "line": "PageMatch and the Books desk, now on Dawn.",
+    "year": "2026",
+    "tags": [
+      "Writing",
+      "Books"
+    ],
+    "kind": "project",
+    "href": "https://dawn.artometrics.com/books",
+    "thumbnail": "/images/marks/writing.svg",
+    "source": "https://github.com/Artometrics/carrie",
+    "cover": "/images/collectibles/books-still-life.jpg"
   }
 ]

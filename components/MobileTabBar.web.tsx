@@ -10,9 +10,15 @@ export function MobileTabBar() {
     <View className="ksm-tabs" accessibilityRole="tablist">
       {MOBILE_TABS.map((item) => {
         const active = isTabActive(pathname, item.href);
-        const className = ["ksm-tab", active ? "is-active" : ""]
+        const className = [
+          "ksm-tab",
+          item.center ? "ksm-tab--center" : "",
+          active ? "is-active" : "",
+        ]
           .filter(Boolean)
           .join(" ");
+        const light = Boolean(active || item.center);
+        const ink = light ? "#ffffff" : "#111111";
         return (
           <Link key={item.href} href={item.href} asChild>
             <Pressable
@@ -20,14 +26,8 @@ export function MobileTabBar() {
               accessibilityRole="link"
               accessibilityState={{ selected: active }}
             >
-              <NavIcon
-                name={item.icon}
-                size={18}
-                color={active ? "#ffffff" : "#111111"}
-              />
-              <Text style={{ color: active ? "#ffffff" : "#111111" }}>
-                {item.short ?? item.label}
-              </Text>
+              <NavIcon name={item.icon} size={18} color={ink} />
+              <Text style={{ color: ink }}>{item.short ?? item.label}</Text>
             </Pressable>
           </Link>
         );

@@ -113,7 +113,8 @@
     "line": "The Stanford corridor, as a book and a public reading room.",
     "href": "https://cardinal-510519.web.app",
     "tags": [
-      "Writing"
+      "Writing",
+      "Books"
     ],
     "kind": "project"
   },
@@ -150,7 +151,7 @@
     "line": "A pixel-art village of agents, plus a studio for the Artometrics tools.",
     "href": "https://dawn-510519.web.app",
     "tags": [
-      "Apps"
+      "Tools"
     ],
     "kind": "project"
   },
@@ -160,7 +161,8 @@
     "href": "https://gotha.artometrics.com",
     "tags": [
       "Research",
-      "Writing"
+      "Writing",
+      "Tools"
     ],
     "kind": "project"
   },
@@ -235,7 +237,7 @@
     "line": "Hum a melody and get a prompt for Suno.",
     "href": "https://hum-to-suno.vercel.app",
     "tags": [
-      "Apps"
+      "Tools"
     ],
     "kind": "project"
   },
@@ -244,7 +246,7 @@
     "line": "A writing-first, Git-friendly CMS for Astro websites.",
     "href": "https://twilda.com",
     "tags": [
-      "Apps"
+      "Tools"
     ],
     "kind": "project"
   },
@@ -262,7 +264,17 @@
     "line": "This studio notebook — projects, writing, and lab reports.",
     "href": "https://ksm-510519.web.app",
     "tags": [
-      "Apps"
+      "Tools"
+    ],
+    "kind": "project"
+  },
+  {
+    "title": "Books",
+    "line": "PageMatch and the Books desk, now on Dawn.",
+    "href": "https://dawn.artometrics.com/books",
+    "tags": [
+      "Writing",
+      "Books"
     ],
     "kind": "project"
   },

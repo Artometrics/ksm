@@ -14,9 +14,9 @@ import { SiteSidebar } from "@/components/SiteSidebar";
 import { MobileBottomChrome } from "@/components/MobileBottomChrome";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ViewTransitions } from "@/components/ViewTransitions";
-import { DeskSearch } from "@/components/DeskSearch";
 import { DesktopUtility } from "@/components/DesktopUtility";
-import { CollectionRail } from "@/components/CollectionRail";
+import { SiteHeader } from "@/components/SiteHeader";
+import { MenuOverlay } from "@/components/MenuOverlay";
 import { ChromeProvider, useChrome } from "@/lib/chrome";
 import { LaunchQueryProvider } from "@/lib/launchQuery";
 import { ThemeProvider, useTheme } from "@/lib/theme";
@@ -80,18 +80,8 @@ function SiteChrome() {
       <View className="ksm-frame" style={frameStyle}>
         <SiteSidebar />
         <View className="ksm-main" style={mainStyle}>
-        <View
-          className={["ksm-mobile-tools", organizedChrome ? "ksm-organized-chrome" : ""]
-            .filter(Boolean)
-            .join(" ")}
-          style={{ padding: 12, gap: 8 }}
-        >
-          {!isHome ? (
-            <DeskSearch placeholder="Search" />
-          ) : null}
-        </View>
+        <SiteHeader />
         <DesktopUtility />
-        <CollectionRail variant="mobile" />
         <ScrollView
           ref={scrollRef}
           className="flex-1"
@@ -107,6 +97,7 @@ function SiteChrome() {
         </ScrollView>
         </View>
       </View>
+      <MenuOverlay />
       <MobileBottomChrome />
       <ViewTransitions />
     </SafeAreaView>

@@ -28,7 +28,7 @@ export default function Root({ children }: PropsWithChildren) {
           href="/rss.xml"
         />
         <meta name="theme-color" content="#111111" />
-        <meta name="color-scheme" content="light" />
+        <meta name="color-scheme" content="light dark" />
         <link
           rel="preload"
           href="/fonts/dm-mono-medium.woff2"
@@ -41,6 +41,13 @@ export default function Root({ children }: PropsWithChildren) {
           href="/fonts/source-serif-4-regular.woff2"
           as="font"
           type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Chomsky.otf"
+          as="font"
+          type="font/otf"
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href={css("/layout.css")} />

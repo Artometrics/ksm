@@ -21,9 +21,9 @@ export const SITE_TABS: SiteTab[] = [
 
 /** Mobile tab bar is five equal blocks so labels fit a 390px phone. About stays in the desktop sidebar. */
 export const MOBILE_TABS: SiteTab[] = [
-  { href: "/", label: "Home", icon: "home" },
   { href: "/projects", label: "Projects", icon: "projects" },
   { href: "/blog", label: "Journal", icon: "journal" },
+  { href: "/", label: "Home", icon: "home", short: "Home", center: true },
   { href: "/lab", label: "Lab reports", short: "Lab", icon: "lab" },
   { href: "/archive", label: "Archive", icon: "archive" },
 ];

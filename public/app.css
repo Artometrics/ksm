@@ -719,10 +719,10 @@ html body .ksm-filters label span {
   border-color: #111111 !important;
 }
 
-.ksm-filters:has(#filter-research:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="research"]),
-.ksm-filters:has(#filter-writing:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="writing"]),
 .ksm-filters:has(#filter-games:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="games"]),
-.ksm-filters:has(#filter-apps:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="apps"]),
+.ksm-filters:has(#filter-writing:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="writing"]):not([data-tags~="books"]),
+.ksm-filters:has(#filter-research:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="research"]),
+.ksm-filters:has(#filter-tools:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="tools"]):not([data-tags~="apps"]),
 .ksm-filters:has(#filter-art:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="art"]) {
   display: none !important;
 }
@@ -1040,4 +1040,394 @@ html body .ksm-filters label span {
   font-style: italic;
   color: #444;
   line-height: 1.35;
+}
+
+/* ---------- Chomsky masthead, thin top bar, menu overlay ---------- */
+@font-face {
+  font-family: "Chomsky";
+  src: url("/fonts/Chomsky.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.ksm-wordmark--masthead,
+.ksm-side .ksm-wordmark--masthead,
+.ksm-topbar .ksm-wordmark--masthead {
+  font-family: "Chomsky", "UnifrakturCook", "Times New Roman", serif !important;
+  font-weight: 400 !important;
+  font-size: 34px !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  line-height: 1 !important;
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.ksm-topbar {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .ksm-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: grid !important;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    height: 56px;
+    padding: 0 10px;
+    background: #ffffff;
+    border-bottom: 1px solid #111111;
+  }
+  .ksm-mobile-tools { display: none !important; }
+  .ksm-collection--mobile { display: none !important; }
+}
+
+.ksm-topbar-btn,
+.ksm-theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #111111;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111111;
+  cursor: pointer;
+}
+
+.ksm-topbar .ksm-wordmark--masthead { justify-self: center; text-align: center; }
+
+.ksm-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px 12px 24px;
+}
+
+.ksm-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(17, 17, 17, 0.45);
+  cursor: pointer;
+}
+
+.ksm-menu-panel {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 100%);
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  margin-top: 12px;
+  padding: 16px 16px 20px;
+  background: #ffffff;
+  color: #111111;
+  border: 1px solid #111111;
+  box-shadow: 6px 6px 0 #111111;
+  animation: ksm-rise 0.28s ease both;
+}
+
+.ksm-menu-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ksm-menu-head-actions { display: flex; gap: 8px; }
+
+.ksm-menu-label,
+.ksm-menu-search { margin: 0 0 10px; }
+
+.ksm-menu-label {
+  font-family: "DM Mono", ui-monospace, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ksm-menu-grid,
+.ksm-dial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .ksm-dial-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.ksm-dial {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+  text-decoration: none !important;
+  border: 1px solid #111;
+  box-shadow: 2px 2px 0 #111;
+  animation: ksm-rise 0.45s ease both;
+}
+
+.ksm-dial-art {
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+}
+
+.ksm-dial-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ksm-dial-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: "Chomsky", "Times New Roman", serif;
+  font-size: 42px;
+}
+
+.ksm-dial-title {
+  display: block;
+  padding: 6px 4px 7px;
+  text-align: center;
+  font-family: "DM Mono", ui-monospace, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ksm-dials { margin: 8px 0 28px; }
+
+/* Bottom tabs: center Home is red; any selected tab is blue. */
+@media (max-width: 1023px) {
+  .ksm-tab--center,
+  .ksm-tab--center * {
+    background: #c4161c !important;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+  }
+  .ksm-tab.is-active,
+  .ksm-tab.is-active *,
+  .ksm-tab--center.is-active,
+  .ksm-tab--center.is-active * {
+    background: #1a4fb8 !important;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+  }
+}
+
+/* Essays, carousels, journal cards, motion */
+.ksm-essay {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 16px 64px;
+}
+
+.ksm-essay-head { margin-bottom: 20px; }
+.ksm-essay-cta {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 18px;
+  background: #111;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-family: "DM Mono", ui-monospace, Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid #111;
+  box-shadow: 3px 3px 0 #111;
+}
+
+.ksm-essay-section { margin: 28px 0; }
+.ksm-essay-p,
+.ksm-essay p {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.55;
+  margin: 0 0 1em;
+}
+
+.ksm-essay-sources {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 15px;
+}
+
+.ksm-essay-back { margin-top: 32px; padding-top: 16px; border-top: 1px solid #111; }
+
+.ksm-carousel {
+  margin: 8px 0 28px;
+}
+
+.ksm-carousel-track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.ksm-carousel-slide {
+  flex: 0 0 min(100%, 640px);
+  margin: 0;
+  scroll-snap-align: start;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  background: #fff;
+  overflow: hidden;
+}
+
+.ksm-carousel-slide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.ksm-carousel-slide figcaption {
+  padding: 8px 12px 10px;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+  color: #444;
+}
+
+.ksm-journal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 640px) {
+  .ksm-journal-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.ksm-journal-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+  text-decoration: none !important;
+  border: 1px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  animation: ksm-rise 0.45s ease both;
+}
+
+.ksm-journal-card-art {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.ksm-journal-card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ksm-journal-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px 14px;
+  gap: 4px;
+}
+
+@keyframes ksm-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.ksm-collectible,
+.ksm-dial--home {
+  animation: ksm-rise 0.5s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ksm-collectible,
+  .ksm-dial,
+  .ksm-journal-card,
+  .ksm-menu-panel {
+    animation: none !important;
+  }
+}
+
+/* Dark mode — invert the B&W chrome, keep photography in color. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  background: #111111;
+  color: #f4f1ea;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .ksm-page,
+html[data-theme="dark"] .ksm-main,
+html[data-theme="dark"] .ksm-side,
+html[data-theme="dark"] .ksm-topbar,
+html[data-theme="dark"] .ksm-tabs,
+html[data-theme="dark"] .ksm-menu-panel,
+html[data-theme="dark"] .ksm-collectible,
+html[data-theme="dark"] .ksm-dial,
+html[data-theme="dark"] .ksm-journal-card,
+html[data-theme="dark"] .ksm-carousel-slide,
+html[data-theme="dark"] .ksm-filter-chip,
+html[data-theme="dark"] .ksm-essay-cta {
+  background: #111111 !important;
+  color: #f4f1ea !important;
+  border-color: #f4f1ea !important;
+  box-shadow: 3px 3px 0 #000 !important;
+}
+
+html[data-theme="dark"] .ksm-topbar-btn,
+html[data-theme="dark"] .ksm-theme-toggle,
+html[data-theme="dark"] .ksm-filter-chip:not(:has(input:checked)) {
+  background: #111111 !important;
+  color: #f4f1ea !important;
+  border-color: #f4f1ea !important;
+}
+
+html[data-theme="dark"] .ksm-wordmark--masthead,
+html[data-theme="dark"] .ksm-lede,
+html[data-theme="dark"] .ksm-essay-p,
+html[data-theme="dark"] .ksm-card-title,
+html[data-theme="dark"] .ksm-headline {
+  color: #f4f1ea;
+}
+
+html[data-theme="dark"] .ksm-filter-chip:has(input:checked) {
+  background: #f4f1ea !important;
+  color: #111111 !important;
+}
+
+html[data-theme="dark"] .ksm-tab:not(.is-active):not(.ksm-tab--center) {
+  background: #111111 !important;
+  color: #f4f1ea !important;
 }

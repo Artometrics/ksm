@@ -4,6 +4,7 @@ import { DeskSearch } from "@/components/DeskSearch";
 import { NavIcon } from "@/components/NavIcon";
 import { SITE_TABS, isTabActive } from "@/lib/nav";
 import { CollectionRail } from "@/components/CollectionRail";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 function SideLinks() {
   const pathname = usePathname();
@@ -33,12 +34,13 @@ function SideLinks() {
 export function SiteSidebarPanel() {
   return (
     <View className="ksm-side" accessibilityRole="none">
-      <Text className="ksm-wordmark">KSM</Text>
+      <Text className="ksm-wordmark ksm-wordmark--masthead">KSM</Text>
       <View className="ksm-side-links">
         <SideLinks />
       </View>
       <CollectionRail variant="sidebar" />
       <View className="ksm-side-foot">
+        <ThemeToggle />
         <DeskSearch placeholder="Search" />
       </View>
     </View>

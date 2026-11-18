@@ -6,10 +6,10 @@ import projects from "@/data/projects.json";
 
 const FILTERS = [
   { id: "filter-all", label: "All" },
-  { id: "filter-research", label: "Research" },
-  { id: "filter-writing", label: "Writing" },
   { id: "filter-games", label: "Games" },
-  { id: "filter-apps", label: "Apps" },
+  { id: "filter-writing", label: "Writing / Books" },
+  { id: "filter-research", label: "Research" },
+  { id: "filter-tools", label: "Tools" },
   { id: "filter-art", label: "Art" },
 ] as const;
 

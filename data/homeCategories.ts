@@ -21,7 +21,7 @@ export const HOME_CATEGORIES: HomeCategory[] = [
   },
   {
     id: "books",
-    label: "Books",
+    label: "Writing / Books",
     href: "/projects/cardinal",
     cover: "/images/collectibles/books-still-life.jpg",
     icon: "books",
@@ -29,7 +29,7 @@ export const HOME_CATEGORIES: HomeCategory[] = [
   },
   {
     id: "magazine",
-    label: "Magazine",
+    label: "Research",
     href: "/projects/artometrics",
     cover: "/images/projects/artometrics/banner.jpg",
     icon: "magazine",
@@ -37,7 +37,7 @@ export const HOME_CATEGORIES: HomeCategory[] = [
   },
   {
     id: "apps",
-    label: "Apps",
+    label: "Tools",
     href: "/projects/dawn",
     cover: "/images/projects/dawn/banner.jpg",
     icon: "apps",

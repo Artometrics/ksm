@@ -9,12 +9,13 @@ import {
   CONCEPT_PAGE_SLUGS,
   getConceptPage,
 } from "@/data/project-pages";
+import { allEssaySlugs, getProjectEssay } from "@/data/projectEssays";
 import { archivePathForSiteProject } from "@/lib/archive";
 import { getProjectById, isDisplayArt, isPublicLaunchUrl } from "@/lib/projects";
 import { paramString } from "@/lib/params";
 
 export async function generateStaticParams() {
-  const concept = CONCEPT_PAGE_SLUGS.map((slug) => ({ slug }));
+  const concept = Array.from(new Set([...CONCEPT_PAGE_SLUGS, ...allEssaySlugs()])).map((slug) => ({ slug }));
   const rest = projectsJson
     .filter((item) => !CONCEPT_PAGE_SLUGS.includes(item.id as (typeof CONCEPT_PAGE_SLUGS)[number]))
     .map((item) => ({ slug: item.id }));
@@ -96,25 +97,27 @@ function MinimalProjectDetail({
 export default function ProjectDetailScreen() {
   const params = useLocalSearchParams<{ slug: string | string[] }>();
   const slug = paramString(params.slug);
+  const essay = getProjectEssay(slug);
   const conceptPage = getConceptPage(slug);
   const project = getProjectById(slug);
+  const heading = essay ?? conceptPage;
 
-  if (conceptPage) {
+  if (heading) {
     return (
       <>
         <Head>
-          <title>{`${conceptPage.title} · Kyle McAuliffe`}</title>
+          <title>{`${heading.title} · Kyle McAuliffe`}</title>
           <meta name="robots" content="noindex, nofollow" />
-          <meta name="description" content={conceptPage.tagline} />
+          <meta name="description" content={heading.tagline} />
         </Head>
         <PageSeo
-          title={conceptPage.title}
-          description={conceptPage.tagline}
-          path={`/projects/${conceptPage.slug}`}
-          image={conceptPage.heroImage}
+          title={heading.title}
+          description={heading.tagline}
+          path={`/projects/${slug}`}
+          image={essay?.gallery[0]?.src ?? conceptPage?.heroImage}
         />
         <View className="w-full">
-          <ProjectConceptPage page={conceptPage} />
+          <ProjectConceptPage page={conceptPage} slug={slug} />
         </View>
       </>
     );

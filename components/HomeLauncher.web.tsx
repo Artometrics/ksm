@@ -11,6 +11,7 @@ import {
 import { HOME_CATEGORIES, type HomeCategory } from "@/data/homeCategories";
 import { NOW_UPDATES } from "@/data/now";
 import { RasterImage } from "@/components/RasterImage";
+import { FastDials } from "@/components/FastDials";
 import { getBlogPosts } from "@/lib/content";
 import { useLaunchQuery } from "@/lib/launchQuery";
 import {
@@ -230,7 +231,8 @@ export function HomeLauncher() {
 
       {filteredCategories.length > 0 ? (
         <section className="ksm-home-section">
-          <h2 className="ksm-home-section-title">Browse all</h2>
+          <FastDials />
+          <h2 className="ksm-home-section-title">Browse by category</h2>
           <div className="ksm-home-cat-grid">
             {filteredCategories.map((cat) => (
               <CategoryTile key={cat.id} cat={cat} />
