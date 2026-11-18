@@ -20,10 +20,12 @@ const ICONS: Record<SiteTab["icon"], typeof House> = {
 export function NavIcon({
   name,
   size = 18,
+  color = "currentColor",
 }: {
   name: SiteTab["icon"];
   size?: number;
+  color?: string;
 }) {
   const Icon = ICONS[name];
-  return <Icon size={size} color="currentColor" strokeWidth={1.75} />;
+  return <Icon size={size} color={color} strokeWidth={1.75} />;
 }

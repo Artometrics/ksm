@@ -13,7 +13,7 @@ function Tile({ item, compact }: { item: Collectible; compact?: boolean }) {
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       <span className="ksm-mini-card-art">
-        <img src={item.art} alt="" />
+        <img src={item.tile ?? item.art} alt="" />
       </span>
       <span className="ksm-mini-card-title">{item.title}</span>
     </a>

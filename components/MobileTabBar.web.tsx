@@ -20,8 +20,14 @@ export function MobileTabBar() {
               accessibilityRole="link"
               accessibilityState={{ selected: active }}
             >
-              <NavIcon name={item.icon} size={18} />
-              <Text>{item.short ?? item.label}</Text>
+              <NavIcon
+                name={item.icon}
+                size={18}
+                color={active ? "#ffffff" : "#111111"}
+              />
+              <Text style={{ color: active ? "#ffffff" : "#111111" }}>
+                {item.short ?? item.label}
+              </Text>
             </Pressable>
           </Link>
         );

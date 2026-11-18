@@ -659,12 +659,28 @@ button,
 .ksm-filters::-webkit-scrollbar { display: none; }
 
 .ksm-filter-chip {
+  position: relative;
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin: 0;
   cursor: pointer;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid #111111 !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+  font-size: 12px !important;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: none !important;
+  outline: none !important;
+  box-sizing: border-box;
 }
 
 .ksm-filter-chip input {
@@ -676,32 +692,31 @@ button,
   clip: rect(0, 0, 0, 0);
 }
 
+/* The label is the only pill. The inner span must not draw a second outline. */
 .ksm-filter-chip span,
-.ksm-filters label,
-html body .ksm-filters label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 36px;
-  padding: 0 14px;
-  border: 1px solid #111111;
-  border-radius: 999px !important;
-  background: #ffffff;
-  color: #111111;
-  font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
-  font-size: 12px !important;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  box-shadow: none;
+.ksm-filters label span,
+html body .ksm-filters label span {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  color: inherit !important;
+  font: inherit !important;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  white-space: inherit;
 }
 
-.ksm-filter-chip:has(input:checked) span,
-.ksm-filters input:checked + span,
-.ksm-filters input:checked + label {
+.ksm-filter-chip:has(input:checked),
+.ksm-filters label:has(input:checked) {
   background: #111111 !important;
   color: #ffffff !important;
+  border-color: #111111 !important;
 }
 
 .ksm-filters:has(#filter-research:checked) ~ .ksm-project-grid .ksm-project-card:not([data-tags~="research"]),
@@ -775,6 +790,14 @@ html body .ksm-filters label {
     background: #111111 !important;
     color: #ffffff !important;
     font-weight: 500 !important;
+  }
+  /* Beat React Native Web's inline black text, and Lucide's stroke. */
+  .ksm-tab.is-active,
+  .ksm-tab.is-active *,
+  .ksm-tab--home.is-active,
+  .ksm-tab--home.is-active * {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
   }
   .ksm-tab Text,
   .ksm-tab div,

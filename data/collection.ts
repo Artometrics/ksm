@@ -6,6 +6,8 @@ export type Collectible = {
   line: string;
   href: string;
   art: string;
+  /** Square crop or logo used in the sidebar / mobile rail. Falls back to art. */
+  tile?: string;
   shot?: string;
   credit: string;
   kind: "ticket" | "plate" | "card";
@@ -27,8 +29,9 @@ export const COLLECTION: Collectible[] = [
     line: "Independent data journalism on culture, place, and power.",
     href: "/projects/artometrics",
     art: "/images/projects/artometrics/banner.jpg",
+    tile: "/images/collectibles/artometrics-tile.jpg",
     shot: "/images/projects/artometrics/banner.jpg",
-    credit: "Live capture of artometrics.com, 17 Nov 2026.",
+    credit: "Live capture of artometrics.com, 17 Nov 2026. Tile is the site wordmark.",
     kind: "plate",
   },
   {
