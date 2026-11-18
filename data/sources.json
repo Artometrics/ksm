@@ -1,0 +1,44 @@
+{
+  "title": "KSM sources",
+  "journal": [
+    {
+      "slug": "fact-checking-cardinal-ep-7",
+      "title": "Fact-checking Cardinal Ep 7",
+      "urls": [
+        "https://cardinal-510519.web.app/episodes",
+        "https://github.com/kylesmcauliffe/cardinal/commit/8d267256882110f5f1d5313678ae593954c989f9",
+        "https://github.com/kylesmcauliffe/cardinal/blob/main/README.md"
+      ]
+    },
+    {
+      "slug": "how-i-build-with-ai-agents",
+      "title": "How I build with AI agents",
+      "urls": [
+        "https://github.com/Artometrics/dawn/blob/main/README.md",
+        "https://github.com/Artometrics/dawn/commit/0ff2c61",
+        "https://github.com/Artometrics/dawn/pull/3",
+        "https://dawn-510519.web.app"
+      ]
+    },
+    {
+      "slug": "pantheon-dev-log",
+      "title": "Pantheon dev log",
+      "urls": [
+        "https://github.com/Artometrics/artometrics/blob/main/articles/pantheon/README.md",
+        "https://artometrics.com/pantheon"
+      ]
+    }
+  ],
+  "hosted_libraries": [
+    {
+      "label": "Archive",
+      "path": "/archive",
+      "files": "/archive"
+    },
+    {
+      "label": "Inventory",
+      "path": "/inventory",
+      "files": "/inventory"
+    }
+  ]
+}
