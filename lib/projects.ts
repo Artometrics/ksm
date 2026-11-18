@@ -26,7 +26,7 @@ const COVER_BY_ID: Record<string, string> = {
 };
 
 /**
- * Direct hosts that answered HTTP 200.
+ * Direct hosts that answered HTTP 200 (re-checked Nov 17, 2026 PT).
  * Knightmare's Origin URL (cursor.com/codebase/...) returns 403 and is omitted.
  */
 const PUBLIC_LAUNCH_URLS = new Set([
@@ -36,11 +36,21 @@ const PUBLIC_LAUNCH_URLS = new Set([
   "https://cardinal-510519.web.app",
   "https://pantheon-game-ksm.web.app",
   "https://dawn-510519.web.app",
-  "https://nightlight-510519.web.app",
-  "https://cardinal-quest-510519.web.app",
-  "https://questroad-510519.web.app",
-  "https://stylelab-510519.web.app",
   "https://ksm-510519.web.app",
+  // Added Nov 17, 2026 (Go-Live plan F): checked HTTP 200 that day.
+  "https://gotha.artometrics.com",
+  "https://academy.artometrics.com",
+  "https://glossary.artometrics.com",
+  "https://dwts-510519.web.app",
+  "https://ballpark-510519.web.app",
+  "https://osv-510519.web.app",
+  "https://dawn-510519.web.app/fernbound",
+  "https://storm-toss.vercel.app",
+  "https://hum-to-suno.vercel.app",
+  "https://interntoimpact-510519.web.app",
+  // Removed Nov 17, 2026: these hosts now return 404 (Nov 13 Firebase cleanup),
+  // so their cards show no play link until a new host exists:
+  // nightlight-510519, cardinal-quest-510519, questroad-510519, stylelab-510519.
 ]);
 
 export function isPublicLaunchUrl(href: string | null | undefined): href is string {

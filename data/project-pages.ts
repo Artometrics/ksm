@@ -65,10 +65,6 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
         label: "Source repo (GitHub)",
         href: "https://github.com/kylesmcauliffe/cardinal",
       },
-      {
-        label: "Cardinal Quest (campus map game)",
-        href: "https://cardinal-quest-510519.web.app",
-      },
     ],
     heroImage: "/images/projects/cardinal/cardinal-hero.webp",
     inlineImage: {
@@ -309,7 +305,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       "What you can play today is the live noindex build. Design tables for flashlight, movement, and cabin beats sit in Drive for the next polish pass.",
     ],
     builtSoFar: [
-      "Live noindex prototype at nightlight-510519.web.app.",
+      "Was a noindex prototype at nightlight-510519.web.app; that host returns 404 since the Nov 13, 2026 hosting cleanup.",
       "Flashlight range/focus hold; rim glow on lit objects; hold-to-open cabin door; hand-lettered prompts.",
       "Footsteps (gravel/wood) via Web Audio; rain; stair flicker once per run; window reveal with pines.",
       "Character swap / custom .glb; run button.",
@@ -374,7 +370,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       "What you can play today is the v0 noindex build, including spoken bridge lines built only from cited land facts. Founders' Walk and Ohlone narration options are drafted for the next audio pass.",
     ],
     builtSoFar: [
-      "Live at cardinal-quest-510519.web.app.",
+      "Was live at cardinal-quest-510519.web.app; that host returns 404 since the Nov 13, 2026 hosting cleanup.",
       "OpenStreetMap / OpenFreeMap map.",
       "14 landmarks: Main Quad, MemChu, Hoover Tower, Oval, Mausoleum, Angel of Grief, Cantor, Rodin Garden, Green Library, Encina, White Plaza, Frost, Stadium, the Dish.",
       "Tap marker or GPS unlock within 60 m; XP bar; badge grid; progress on device.",
@@ -507,7 +503,7 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       "What you can open today is the v0 noindex play host. The page stays humble about systems still waiting on auth and deploy polish.",
     ],
     builtSoFar: [
-      "Live noindex at questroad-510519.web.app.",
+      "Was live (noindex) at questroad-510519.web.app; that host returns 404 since the Nov 13, 2026 hosting cleanup.",
       "Private Artometrics/questroad repo.",
       "Listed v0 playable / top priority in Games Index (Oct 25).",
       "Oct 25 inventory: needs deploy workflow; Firestore/auth go-ahead flagged.",
@@ -553,10 +549,10 @@ const pages: Record<ConceptPageSlug, ProjectPage> = {
       "A hosted playground for visual recipes beside magazine skins and KSM themes.",
     overview: [
       "Style Lab is where looks get tried on: a hosted playground for visual recipes that sit beside the magazine skins and the KSM style picker.",
-      "What you can open today is the live Style Lab host at stylelab-510519.web.app. Treat the page as an invitation to look and remix, not a claim of a finished product catalog.",
+      "The Style Lab host at stylelab-510519.web.app returns 404 since the Nov 13, 2026 hosting cleanup, so there is nothing to open right now. Treat the page as a record of the idea, not a finished product catalog.",
     ],
     builtSoFar: [
-      "Hosting live at stylelab-510519.web.app (among nine -510519 sites live ~Oct 21).",
+      "Was hosted at stylelab-510519.web.app (among nine -510519 sites live ~Oct 21); 404 since the Nov 13, 2026 cleanup.",
       "Adjacent work: KSM multi-style picker; Artometrics issue skins; design-recipes board interest (Oct 27 profile).",
     ],
     status:

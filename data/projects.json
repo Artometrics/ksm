@@ -130,5 +130,115 @@
     "href": "https://ksm-510519.web.app",
     "thumbnail": "/images/marks/apps.svg",
     "source": "https://github.com/Artometrics/ksm"
+  },
+  {
+    "id": "gotha",
+    "title": "Gotha",
+    "line": "Biographies of artifacts that lead with the craziest documented fact and the real-world actions they connect to.",
+    "year": "2026",
+    "tags": ["Research", "Writing"],
+    "kind": "project",
+    "href": "https://gotha.artometrics.com",
+    "thumbnail": "/images/marks/research.svg",
+    "source": "https://gotha.artometrics.com"
+  },
+  {
+    "id": "academy",
+    "title": "Artometrics Academy",
+    "line": "Beginner guides to the art–science intersection.",
+    "year": "2026",
+    "tags": ["Research", "Writing"],
+    "kind": "project",
+    "href": "https://academy.artometrics.com",
+    "thumbnail": "/images/marks/research.svg",
+    "source": "https://academy.artometrics.com"
+  },
+  {
+    "id": "glossary",
+    "title": "Artometrics Glossary",
+    "line": "An encyclopedia and a style board: entries for people and events, and visual languages with starter files.",
+    "year": "2026",
+    "tags": ["Research", "Writing"],
+    "kind": "project",
+    "href": "https://glossary.artometrics.com",
+    "thumbnail": "/images/marks/research.svg",
+    "source": "https://glossary.artometrics.com"
+  },
+  {
+    "id": "dwts",
+    "title": "Data with the Stars",
+    "line": "Unofficial Dancing with the Stars fan stats: seasons, couples, scores, songs, and judges.",
+    "year": "2026",
+    "tags": ["Research"],
+    "kind": "project",
+    "href": "https://dwts-510519.web.app",
+    "thumbnail": "/images/marks/research.svg",
+    "source": "https://dwts-510519.web.app"
+  },
+  {
+    "id": "ballpark",
+    "title": "Ballpark",
+    "line": "Teams, venues, players and iconic moments across major leagues.",
+    "year": "2026",
+    "tags": ["Research"],
+    "kind": "project",
+    "href": "https://ballpark-510519.web.app",
+    "thumbnail": "/images/marks/research.svg",
+    "source": "https://ballpark-510519.web.app"
+  },
+  {
+    "id": "osv",
+    "title": "OSV",
+    "line": "Dark gothic magazine. Essays, interviews, and cultural signal.",
+    "year": "2026",
+    "tags": ["Writing"],
+    "kind": "project",
+    "href": "https://osv-510519.web.app",
+    "thumbnail": "/images/marks/writing.svg",
+    "source": "https://osv-510519.web.app"
+  },
+  {
+    "id": "fernbound",
+    "title": "Fernbound",
+    "line": "An original wildkin-binding story on The Fern Marches. It plays in the browser, inside Dawn.",
+    "year": "2026",
+    "tags": ["Games"],
+    "kind": "project",
+    "href": "https://dawn-510519.web.app/fernbound",
+    "thumbnail": "/images/marks/games.svg",
+    "source": "https://dawn-510519.web.app/fernbound"
+  },
+  {
+    "id": "storm-toss",
+    "title": "Storm Toss",
+    "line": "Nature-themed toss game.",
+    "year": "2026",
+    "tags": ["Games"],
+    "kind": "project",
+    "href": "https://storm-toss.vercel.app",
+    "thumbnail": "/images/marks/games.svg",
+    "source": "https://storm-toss.vercel.app"
+  },
+  {
+    "id": "hum-to-suno",
+    "title": "Hum to Suno",
+    "line": "Turn a hummed melody into a Suno prompt.",
+    "year": "2026",
+    "tags": ["Apps"],
+    "kind": "project",
+    "href": "https://hum-to-suno.vercel.app",
+    "thumbnail": "/images/marks/apps.svg",
+    "source": "https://hum-to-suno.vercel.app"
+  },
+  {
+    "id": "intern-to-impact",
+    "title": "Intern to Impact",
+    "line": "Career resources for young professionals, built for Ariana Cirkelis.",
+    "year": "2026",
+    "tags": ["Writing"],
+    "kind": "project",
+    "href": "https://interntoimpact-510519.web.app",
+    "thumbnail": "/images/marks/writing.svg",
+    "source": "https://interntoimpact-510519.web.app"
   }
 ]
