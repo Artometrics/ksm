@@ -10,6 +10,7 @@ const LINKS = [
   ["/archive", "Archive"],
   ["/inventory", "Inventory"],
   ["/about", "About"],
+  ["/sources", "Sources"],
   ["/cv", "CV"],
   ["/desk", "Desk"],
   ["/legal/privacy", "Privacy"],
