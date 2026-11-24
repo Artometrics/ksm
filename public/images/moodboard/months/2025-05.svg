@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="May 2025 moodboard">
+  <rect width="800" height="450" fill="#111111"/>
+  <rect x="28" y="28" width="360" height="250" fill="#f6eeec"/>
+  <rect x="404" y="28" width="368" height="160" fill="#e8eef3"/>
+  <rect x="404" y="204" width="176" height="74" fill="#f3efe4"/>
+  <rect x="596" y="204" width="176" height="74" fill="#e7f0e8"/>
+  <text x="28" y="360" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="64">May</text>
+  <text x="28" y="408" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="28">2025 · Moodboard</text>
+</svg>

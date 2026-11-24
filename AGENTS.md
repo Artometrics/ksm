@@ -38,6 +38,7 @@ Path alias: `@/*` → project root.
 - `/authors`, `/authors/<id>`
 - `/legal/<id>`
 - `/about`, `/pricing`, `/contact`, `/login`, `/signup`
+- `/moodboard` — reference journal and library (`content/moodboard/`)
 - `/bio` — unlisted link-in-bio (outside `(site)` chrome; do not add to nav)
 
 ## Visual system
