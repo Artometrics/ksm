@@ -3,6 +3,7 @@ import {
   FlaskConical,
   FolderKanban,
   House,
+  Images,
   Newspaper,
   UserRound,
 } from "lucide-react-native";
@@ -13,6 +14,7 @@ const ICONS: Record<SiteTab["icon"], typeof House> = {
   about: UserRound,
   home: House,
   journal: Newspaper,
+  moodboard: Images,
   lab: FlaskConical,
   archive: Archive,
 };

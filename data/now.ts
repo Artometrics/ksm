@@ -23,4 +23,34 @@ export const NOW_UPDATES: NowUpdate[] = [
     text: "Artometrics added a lab log page and magazine issue PDFs.",
     href: "https://github.com/Artometrics/artometrics/commit/ce457b2",
   },
+  {
+    date: "2025-12-01",
+    text: "December’s moodboard is in the journal: 486 references kept, with credits.",
+    href: "/blog/posts/moodboard-2025-12",
+  },
+  {
+    date: "2025-08-01",
+    text: "August’s moodboard is in the journal: 760 references kept, with credits.",
+    href: "/blog/posts/moodboard-2025-08",
+  },
+  {
+    date: "2025-07-12",
+    text: "July’s moodboard is in the journal: 231 references kept, with credits.",
+    href: "/blog/posts/moodboard-2025-07",
+  },
+  {
+    date: "2025-05-07",
+    text: "May’s moodboard is in the journal: 13 references kept, with credits.",
+    href: "/blog/posts/moodboard-2025-05",
+  },
+  {
+    date: "2025-04-12",
+    text: "April’s moodboard is in the journal: 166 references kept, with credits.",
+    href: "/blog/posts/moodboard-2025-04",
+  },
+  {
+    date: "2025-01-07",
+    text: "January’s moodboard is in the journal: a documentary still and a typographic thumbnail.",
+    href: "/blog/posts/moodboard-2025-01",
+  },
 ];

@@ -3,7 +3,7 @@
 export type SiteTab = {
   href: string;
   label: string;
-  icon: "projects" | "about" | "home" | "journal" | "archive" | "lab";
+  icon: "projects" | "about" | "home" | "journal" | "archive" | "lab" | "moodboard";
   /** Shorter label for the mobile tab */
   short?: string;
   /** Center tab in the mobile bar */
@@ -15,6 +15,7 @@ export const SITE_TABS: SiteTab[] = [
   { href: "/about", label: "About", icon: "about" },
   { href: "/", label: "Home", icon: "home" },
   { href: "/blog", label: "Journal", icon: "journal" },
+  { href: "/moodboard", label: "Moodboard", icon: "moodboard" },
   { href: "/lab", label: "Lab reports", short: "Lab", icon: "lab" },
   { href: "/archive", label: "Archive", icon: "archive" },
 ];
@@ -35,6 +36,7 @@ export function sectionLabel(pathname: string) {
   );
   if (tab) return tab.label;
   if (pathname.startsWith("/cv")) return "CV";
+  if (pathname.startsWith("/moodboard")) return "Moodboard";
   if (pathname.startsWith("/gallery")) return "Gallery";
   if (pathname.startsWith("/desk")) return "Desk";
   if (pathname.startsWith("/legal")) return "Legal";
